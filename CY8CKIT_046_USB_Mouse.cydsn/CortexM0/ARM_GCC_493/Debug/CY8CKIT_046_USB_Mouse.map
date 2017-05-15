@@ -1,0 +1,2485 @@
+Archive member included because of file (symbol)
+
+.\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(cyfitter_cfg.o)
+                              .\CortexM0\ARM_GCC_493\Debug\Cm0Start.o (cyfitter_cfg)
+.\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+                              .\CortexM0\ARM_GCC_493\Debug\main.o (USBFS_Start)
+.\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+                              .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o) (USBFS_lastPacketSize)
+.\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_episr.o)
+                              .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o) (USBFS_INTR_HI_ISR)
+.\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_hid.o)
+                              .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o) (USBFS_hidProtocol)
+.\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_pm.o)
+                              .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o) (USBFS_DP_ISR)
+.\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_std.o)
+                              .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_pm.o) (USBFS_ConfigReg)
+.\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_vnd.o)
+                              .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o) (USBFS_HandleVendorRqst)
+.\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+                              .\CortexM0\ARM_GCC_493\Debug\main.o (CapSense_IsBusy)
+.\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+                              .\CortexM0\ARM_GCC_493\Debug\main.o (CapSense_InitializeAllBaselines)
+.\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_INT.o)
+                              .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o) (CapSense_ISR)
+.\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+                              .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o) (CapSense_UpdateThresholds)
+.\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART.o)
+                              .\CortexM0\ARM_GCC_493\Debug\main.o (UART_Start)
+.\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_UART.o)
+                              .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART.o) (UART_UartInit)
+.\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_RedLED.o)
+                              .\CortexM0\ARM_GCC_493\Debug\main.o (Pin_RedLED_SetDriveMode)
+.\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_GreenLED.o)
+                              .\CortexM0\ARM_GCC_493\Debug\main.o (Pin_GreenLED_SetDriveMode)
+.\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_BlueLED.o)
+                              .\CortexM0\ARM_GCC_493\Debug\main.o (Pin_BlueLED_SetDriveMode)
+.\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+                              .\CortexM0\ARM_GCC_493\Debug\LedControl.o (PWM_Red_WriteCompare)
+.\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+                              .\CortexM0\ARM_GCC_493\Debug\LedControl.o (PWM_Green_WriteCompare)
+.\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+                              .\CortexM0\ARM_GCC_493\Debug\LedControl.o (PWM_Blue_WriteCompare)
+.\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_Dp.o)
+                              .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_pm.o) (USBFS_Dp_ClearInterrupt)
+.\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SampleClk.o)
+                              .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o) (CapSense_SampleClk_StartEx)
+.\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SenseClk.o)
+                              .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o) (CapSense_SenseClk_StartEx)
+.\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyBootAsmGnu.o)
+                              .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(cyfitter_cfg.o) (CyDelayCycles)
+.\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+                              .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(cyfitter_cfg.o) (CySysClkImoEnableUsbLock)
+.\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+                              .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(cyfitter_cfg.o) (CySysClkWcoStart)
+.\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_cls.o)
+                              .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o) (USBFS_DispatchClassRqst)
+.\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_descr.o)
+                              .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_std.o) (USBFS_idSerialNumberStringDescriptor)
+.\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_SPI_UART.o)
+                              .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_UART.o) (UART_SpiUartWriteTxData)
+.\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyFlash.o)
+                              .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o) (CySysFlashSetWaitCycles)
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_P4_v2_40\PSoC4\Library\CapsenseP4Library_GCC.a(CSD_P4_SmartSense_v2_40.o)
+                              .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o) (CalibrateSensors_P4_v2_40)
+c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_udivsi3.o)
+                              .\CortexM0\ARM_GCC_493\Debug\Gesture.o (__aeabi_uidiv)
+c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_divsi3.o)
+                              .\CortexM0\ARM_GCC_493\Debug\Gesture.o (__aeabi_idiv)
+c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_dvmd_tls.o)
+                              c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_udivsi3.o) (__aeabi_idiv0)
+c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+                              .\CortexM0\ARM_GCC_493\Debug\Cm0Start.o (__errno)
+c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+                              c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m/crt0.o (exit)
+c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+                              c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o) (_global_impure_ptr)
+c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+                              c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m/crt0.o (__libc_init_array)
+c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy.o)
+                              .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyFlash.o) (memcpy)
+c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+                              c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m/crt0.o (memset)
+
+Allocating common symbols
+Common symbol       size              file
+
+CapSense_noiseThreshold
+                    0x6               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+CapSense_csdTrim1   0x1               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+accTheta            0x4               .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+USBFS_deviceAddress
+                    0x1               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+USBFS_ep0Mode       0x1               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+CapSense_scanSpeedTbl
+                    0x2               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+CapSense_lowBaselineResetCnt
+                    0xd               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+USBFS_interfaceSetting
+                    0x2               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_IN_RPT_SCB
+                    0x4               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_descr.o)
+CapSense_runningDifferenceTbl
+                    0xd               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+CapSense_sensorEnableMaskBackup
+                    0x2               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+CapSense_senseClkDividerVal
+                    0xd               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+USBFS_hidIdleRate   0x2               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_hid.o)
+USBFS_currentTD     0xc               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+USBFS_device        0x1               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+CapSense_negativeNoiseThreshold
+                    0x6               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+CapSense_signRegisterTbl
+                    0xd               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+radius              0x4               .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+CapSense_modulationIDAC
+                    0xd               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+CapSense_compensationIDAC
+                    0xd               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_ALTERNATE0_HID_IN_RPT_SCB
+                    0x4               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_descr.o)
+USBFS_interfaceNumber
+                    0x1               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+capsenseButtonStatus
+                    0x4               .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+sliderCentroid      0x2               .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+USBFS_ep0Toggle     0x1               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+yPos                0x4               .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+CapSense_sampleMaxTbl
+                    0x1a              .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+CapSense_noiseEnvelopeTbl
+                    0xd               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+CapSense_unscannedSnsDriveMode
+                    0xd               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+theta               0x4               .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+USBFS_deviceStatus  0x1               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_ALTERNATE0_HID_IN_BUF
+                    0x5               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_descr.o)
+CapSense_sampleClkDividerVal
+                    0xd               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_IN_BUF
+                    0x9               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_descr.o)
+USBFS_configurationChanged
+                    0x1               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+USBFS_configuration
+                    0x1               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+CapSense_previousSampleTbl
+                    0x1a              .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+CapSense_sampleMinTbl
+                    0x1a              .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+USBFS_transferState
+                    0x1               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+USBFS_interfaceStatus
+                    0x2               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+USBFS_interfaceClass
+                    0x4               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+USBFS_EP            0x6c              .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+CapSense_config     0xc               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+USBFS_idSerialNumberStringDescriptor
+                    0x22              .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_descr.o)
+USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_OUT_BUF
+                    0x2               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_descr.o)
+xPos                0x4               .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+CapSense_rawFilterData1
+                    0x1a              .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+USBFS_hidIdleTimer  0x2               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_hid.o)
+CapSense_kValueTbl  0xd               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+USBFS_lastPacketSize
+                    0x1               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+CapSense_hysteresis
+                    0x6               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+USBFS_hidProtocol   0x2               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_hid.o)
+USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_OUT_RPT_SCB
+                    0x4               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_descr.o)
+USBFS_ep0Count      0x1               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+USBFS_interfaceSettingLast
+                    0x2               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+USBFS_transferByteCount
+                    0x2               .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+accRadius           0x4               .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+
+Discarded input sections
+
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crti.o
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crti.o
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crti.o
+ .data          0x00000000        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
+ .text          0x00000000       0x78 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .ARM.extab     0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .ARM.exidx     0x00000000        0x8 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\main.o
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\main.o
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\main.o
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\LedControl.o
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\HidReport.o
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\HidReport.o
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\cymetadata.o
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\cymetadata.o
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\cymetadata.o
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\Cm0Start.o
+ .data          0x00000000        0x4 .\CortexM0\ARM_GCC_493\Debug\Cm0Start.o
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\Cm0Start.o
+ .text._exit    0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\Cm0Start.o
+ .text._sbrk    0x00000000       0x30 .\CortexM0\ARM_GCC_493\Debug\Cm0Start.o
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(cyfitter_cfg.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(cyfitter_cfg.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(cyfitter_cfg.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+ .text.USBFS_Stop
+                0x00000000       0x7c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+ .text.USBFS_CheckActivity
+                0x00000000       0x1c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+ .text.USBFS_IsConfigurationChanged
+                0x00000000       0x1c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+ .text.USBFS_GetInterfaceSetting
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+ .text.USBFS_GetEPCount
+                0x00000000       0x2c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+ .text.USBFS_LoadInEP16
+                0x00000000       0xb8 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+ .text.USBFS_EnableOutEP
+                0x00000000       0x2c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+ .text.USBFS_ReadOutEP
+                0x00000000       0x58 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+ .text.USBFS_ReadOutEP16
+                0x00000000       0x6c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+ .text.USBFS_DisableOutEP
+                0x00000000       0x18 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+ .text.USBFS_Force
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+ .text.USBFS_SetPowerStatus
+                0x00000000       0x20 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+ .text.USBFS_RWUEnabled
+                0x00000000       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+ .text.USBFS_GetDeviceAddress
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+ .text.USBFS_EnableSofInt
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+ .text.USBFS_DisableSofInt
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_episr.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_episr.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_episr.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_hid.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_hid.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_hid.o)
+ .text.USBFS_UpdateHIDTimer
+                0x00000000       0x38 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_hid.o)
+ .text.USBFS_GetProtocol
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_hid.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_pm.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_pm.o)
+ .bss           0x00000000        0x4 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_pm.o)
+ .text.USBFS_SaveConfig
+                0x00000000        0x4 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_pm.o)
+ .text.USBFS_RestoreConfig
+                0x00000000       0x18 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_pm.o)
+ .text.USBFS_Suspend
+                0x00000000       0x68 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_pm.o)
+ .text.USBFS_Resume
+                0x00000000       0x88 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_pm.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_std.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_std.o)
+ .text.USBFS_EpStateInit
+                0x00000000       0x40 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_std.o)
+ .text.USBFS_TerminateEP
+                0x00000000       0x50 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_std.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_vnd.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_vnd.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_vnd.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+ .text.CapSense_Stop
+                0x00000000       0x2c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+ .text.CapSense_WriteSensorRaw
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+ .text.CapSense_SetScanResolution
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+ .text.CapSense_GetScanResolution
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+ .text.CapSense_SetPinDriveMode
+                0x00000000       0x24 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+ .text.CapSense_SetDriveModeAllPins
+                0x00000000       0x30 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+ .text.CapSense_RestoreDriveModeAllPins
+                0x00000000       0x24 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+ .text.CapSense_EnableShieldElectrode
+                0x00000000       0x34 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+ .text.CapSense_ReadCurrentScanningSensor
+                0x00000000       0x1c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+ .text.CapSense_ScanWidget
+                0x00000000       0x8c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+ .text.CapSense_GetSenseClkDivider
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+ .text.CapSense_SetSenseClkDivider
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+ .text.CapSense_GetModulatorClkDivider
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+ .text.CapSense_SetModulatorClkDivider
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+ .text.CapSense_GetModulationIDAC
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+ .text.CapSense_SetModulationIDAC
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+ .text.CapSense_GetCompensationIDAC
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+ .text.CapSense_SetCompensationIDAC
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+ .text.CapSense_GetIDACRange
+                0x00000000       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+ .text.CapSense_SetIDACRange
+                0x00000000       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .text.CapSense_InitializeEnabledBaselines
+                0x00000000       0x30 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .text.CapSense_GetBaselineData
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .text.CapSense_SetBaselineData
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .text.CapSense_SetDiffCountData
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .text.CapSense_GetFingerThreshold
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .text.CapSense_GetNoiseThreshold
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .text.CapSense_GetFingerHysteresis
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .text.CapSense_GetNegativeNoiseThreshold
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .text.CapSense_SetFingerThreshold
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .text.CapSense_SetNoiseThreshold
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .text.CapSense_SetFingerHysteresis
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .text.CapSense_SetNegativeNoiseThreshold
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .text.CapSense_SetDebounce
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .text.CapSense_SetLowBaselineReset
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .text.CapSense_EnableWidget
+                0x00000000       0x2c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .text.CapSense_DisableWidget
+                0x00000000       0x2c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .text.CapSense_GetCentroidPos
+                0x00000000       0x4c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .text.CapSense_UpdateWidgetBaseline
+                0x00000000       0x30 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .text.CapSense_GetWidgetNumber
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .text.CapSense_GetLowBaselineReset
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .text.CapSense_GetDebounce
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .text.CapSense_EnableRawDataFilters
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .text.CapSense_DisableRawDataFilters
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_INT.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_INT.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+ .text.CapSense_SetSensitivity
+                0x00000000       0x1c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+ .text.CapSense_GetSensitivityCoefficient
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+ .text.CapSense_GetNoiseEnvelope
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+ .text.CapSense_GetNormalizedDiffCountData
+                0x00000000       0x20 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART.o)
+ .text.UART_ScbModeStop
+                0x00000000        0x8 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART.o)
+ .text.UART_Stop
+                0x00000000       0x20 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART.o)
+ .text.UART_SetRxFifoLevel
+                0x00000000       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART.o)
+ .text.UART_SetTxFifoLevel
+                0x00000000       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_UART.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_UART.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_UART.o)
+ .text.UART_UartStop
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_UART.o)
+ .text.UART_UartSetRxAddress
+                0x00000000       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_UART.o)
+ .text.UART_UartSetRxAddressMask
+                0x00000000       0x18 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_UART.o)
+ .text.UART_UartPutCRLF
+                0x00000000       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_UART.o)
+ .text.UART_UartEnableCts
+                0x00000000       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_UART.o)
+ .text.UART_UartDisableCts
+                0x00000000       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_UART.o)
+ .text.UART_UartSetCtsPolarity
+                0x00000000       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_UART.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_RedLED.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_RedLED.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_RedLED.o)
+ .text.Pin_RedLED_Write
+                0x00000000       0x18 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_RedLED.o)
+ .text.Pin_RedLED_Read
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_RedLED.o)
+ .text.Pin_RedLED_ReadDataReg
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_RedLED.o)
+ .text.Pin_RedLED_SetInterruptMode
+                0x00000000       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_RedLED.o)
+ .text.Pin_RedLED_ClearInterrupt
+                0x00000000       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_RedLED.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_GreenLED.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_GreenLED.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_GreenLED.o)
+ .text.Pin_GreenLED_Write
+                0x00000000       0x18 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_GreenLED.o)
+ .text.Pin_GreenLED_Read
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_GreenLED.o)
+ .text.Pin_GreenLED_ReadDataReg
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_GreenLED.o)
+ .text.Pin_GreenLED_SetInterruptMode
+                0x00000000       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_GreenLED.o)
+ .text.Pin_GreenLED_ClearInterrupt
+                0x00000000       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_GreenLED.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_BlueLED.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_BlueLED.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_BlueLED.o)
+ .text.Pin_BlueLED_Write
+                0x00000000       0x18 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_BlueLED.o)
+ .text.Pin_BlueLED_Read
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_BlueLED.o)
+ .text.Pin_BlueLED_ReadDataReg
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_BlueLED.o)
+ .text.Pin_BlueLED_SetInterruptMode
+                0x00000000       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_BlueLED.o)
+ .text.Pin_BlueLED_ClearInterrupt
+                0x00000000       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_BlueLED.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text.PWM_Red_Stop
+                0x00000000       0x1c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text.PWM_Red_SetMode
+                0x00000000       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text.PWM_Red_SetQDMode
+                0x00000000       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text.PWM_Red_SetPrescaler
+                0x00000000       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text.PWM_Red_SetOneShot
+                0x00000000       0x2c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text.PWM_Red_SetPWMMode
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text.PWM_Red_SetPWMSyncKill
+                0x00000000       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text.PWM_Red_SetPWMStopOnKill
+                0x00000000       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text.PWM_Red_SetPWMDeadTime
+                0x00000000       0x2c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text.PWM_Red_SetPWMInvert
+                0x00000000       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text.PWM_Red_ReadCounter
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text.PWM_Red_SetCounterMode
+                0x00000000       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text.PWM_Red_ReadPeriod
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text.PWM_Red_SetCompareSwap
+                0x00000000       0x24 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text.PWM_Red_WritePeriodBuf
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text.PWM_Red_ReadPeriodBuf
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text.PWM_Red_SetPeriodSwap
+                0x00000000       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text.PWM_Red_ReadCompare
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text.PWM_Red_WriteCompareBuf
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text.PWM_Red_ReadCompareBuf
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text.PWM_Red_ReadCapture
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text.PWM_Red_ReadCaptureBuf
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text.PWM_Red_SetCaptureMode
+                0x00000000       0x24 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text.PWM_Red_SetReloadMode
+                0x00000000       0x24 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text.PWM_Red_SetStartMode
+                0x00000000       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text.PWM_Red_SetStopMode
+                0x00000000       0x24 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text.PWM_Red_SetCountMode
+                0x00000000       0x24 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text.PWM_Red_ReadStatus
+                0x00000000       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text.PWM_Red_GetInterruptSourceMasked
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text.PWM_Red_GetInterruptSource
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text.PWM_Red_ClearInterrupt
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text.PWM_Red_SetInterrupt
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text.PWM_Green_Stop
+                0x00000000       0x1c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text.PWM_Green_SetMode
+                0x00000000       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text.PWM_Green_SetQDMode
+                0x00000000       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text.PWM_Green_SetPrescaler
+                0x00000000       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text.PWM_Green_SetOneShot
+                0x00000000       0x2c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text.PWM_Green_SetPWMMode
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text.PWM_Green_SetPWMSyncKill
+                0x00000000       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text.PWM_Green_SetPWMStopOnKill
+                0x00000000       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text.PWM_Green_SetPWMDeadTime
+                0x00000000       0x2c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text.PWM_Green_SetPWMInvert
+                0x00000000       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text.PWM_Green_ReadCounter
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text.PWM_Green_SetCounterMode
+                0x00000000       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text.PWM_Green_ReadPeriod
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text.PWM_Green_SetCompareSwap
+                0x00000000       0x24 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text.PWM_Green_WritePeriodBuf
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text.PWM_Green_ReadPeriodBuf
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text.PWM_Green_SetPeriodSwap
+                0x00000000       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text.PWM_Green_ReadCompare
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text.PWM_Green_WriteCompareBuf
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text.PWM_Green_ReadCompareBuf
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text.PWM_Green_ReadCapture
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text.PWM_Green_ReadCaptureBuf
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text.PWM_Green_SetCaptureMode
+                0x00000000       0x24 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text.PWM_Green_SetReloadMode
+                0x00000000       0x24 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text.PWM_Green_SetStartMode
+                0x00000000       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text.PWM_Green_SetStopMode
+                0x00000000       0x24 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text.PWM_Green_SetCountMode
+                0x00000000       0x24 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text.PWM_Green_ReadStatus
+                0x00000000       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text.PWM_Green_GetInterruptSourceMasked
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text.PWM_Green_GetInterruptSource
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text.PWM_Green_ClearInterrupt
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text.PWM_Green_SetInterrupt
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text.PWM_Blue_Stop
+                0x00000000       0x1c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text.PWM_Blue_SetMode
+                0x00000000       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text.PWM_Blue_SetQDMode
+                0x00000000       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text.PWM_Blue_SetPrescaler
+                0x00000000       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text.PWM_Blue_SetOneShot
+                0x00000000       0x2c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text.PWM_Blue_SetPWMMode
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text.PWM_Blue_SetPWMSyncKill
+                0x00000000       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text.PWM_Blue_SetPWMStopOnKill
+                0x00000000       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text.PWM_Blue_SetPWMDeadTime
+                0x00000000       0x2c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text.PWM_Blue_SetPWMInvert
+                0x00000000       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text.PWM_Blue_ReadCounter
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text.PWM_Blue_SetCounterMode
+                0x00000000       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text.PWM_Blue_ReadPeriod
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text.PWM_Blue_SetCompareSwap
+                0x00000000       0x24 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text.PWM_Blue_WritePeriodBuf
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text.PWM_Blue_ReadPeriodBuf
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text.PWM_Blue_SetPeriodSwap
+                0x00000000       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text.PWM_Blue_ReadCompare
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text.PWM_Blue_WriteCompareBuf
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text.PWM_Blue_ReadCompareBuf
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text.PWM_Blue_ReadCapture
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text.PWM_Blue_ReadCaptureBuf
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text.PWM_Blue_SetCaptureMode
+                0x00000000       0x24 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text.PWM_Blue_SetReloadMode
+                0x00000000       0x24 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text.PWM_Blue_SetStartMode
+                0x00000000       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text.PWM_Blue_SetStopMode
+                0x00000000       0x24 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text.PWM_Blue_SetCountMode
+                0x00000000       0x24 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text.PWM_Blue_ReadStatus
+                0x00000000       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text.PWM_Blue_GetInterruptSourceMasked
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text.PWM_Blue_GetInterruptSource
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text.PWM_Blue_ClearInterrupt
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text.PWM_Blue_SetInterrupt
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_Dp.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_Dp.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_Dp.o)
+ .text.USBFS_Dp_SetDriveMode
+                0x00000000       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_Dp.o)
+ .text.USBFS_Dp_Write
+                0x00000000       0x18 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_Dp.o)
+ .text.USBFS_Dp_Read
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_Dp.o)
+ .text.USBFS_Dp_ReadDataReg
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_Dp.o)
+ .text.USBFS_Dp_SetInterruptMode
+                0x00000000       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_Dp.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SampleClk.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SampleClk.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SampleClk.o)
+ .text.CapSense_SampleClk_GetDividerRegister
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SampleClk.o)
+ .text.CapSense_SampleClk_GetFractionalDividerRegister
+                0x00000000        0x4 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SampleClk.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SenseClk.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SenseClk.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SenseClk.o)
+ .text.CapSense_SenseClk_GetDividerRegister
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SenseClk.o)
+ .text.CapSense_SenseClk_GetFractionalDividerRegister
+                0x00000000        0x4 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SenseClk.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyBootAsmGnu.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyBootAsmGnu.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysClkImoStart
+                0x00000000       0x18 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysClkImoStop
+                0x00000000       0x1c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysClkWriteHfclkDirect
+                0x00000000       0x44 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysClkGetSysclkSource
+                0x00000000       0x34 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysClkWriteSysclkDiv
+                0x00000000       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysClkEcoStop
+                0x00000000       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysClkEcoReadStatus
+                0x00000000       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysClkConfigureEcoTrim
+                0x00000000       0x60 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysClkConfigureEcoDrive
+                0x00000000      0x174 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysClkPllStop
+                0x00000000       0x2c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysClkPllSetBypassMode
+                0x00000000       0x38 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysClkPllGetUnlockStatus
+                0x00000000       0x34 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysClkPllSetSource
+                0x00000000       0x34 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysLvdDisable
+                0x00000000       0x20 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysLvdGetInterruptSource
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysLvdClearInterrupt
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysGetResetReason
+                0x00000000       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CyDisableInts
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CyEnableInts
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CyIntGetState
+                0x00000000       0x18 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CyIntSetPending
+                0x00000000       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CyIntClearPending
+                0x00000000       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysClkPllGetLockStatus
+                0x00000000       0x40 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysClkPllGetBypassMode
+                0x00000000       0x2c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysClkPllConfigChangeAllowed
+                0x00000000       0x40 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysClkPllSetPQ
+                0x00000000       0xa4 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysClkPllSetOutputDivider
+                0x00000000       0x58 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysClkPllSetFrequency
+                0x00000000      0x110 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CyIntSetSysVector
+                0x00000000       0x20 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CyIntGetSysVector
+                0x00000000       0x1c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CyIntGetVector
+                0x00000000       0x20 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CyIntGetPriority
+                0x00000000       0x2c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySoftwareReset
+                0x00000000       0x18 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysClkEcoStart
+                0x00000000       0x48 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysClkPllStart
+                0x00000000       0x9c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysLvdEnable
+                0x00000000       0x44 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CyDelayFreq
+                0x00000000       0x4c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysTickStop
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysTickEnableInterrupt
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysTickEnable
+                0x00000000       0x18 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysTickDisableInterrupt
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysTickSetReload
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysTickGetReload
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysTickGetValue
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysTickSetClockSource
+                0x00000000       0x20 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysTickGetCountFlag
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysTickServiceCallbacks
+                0x00000000       0x2c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysTickClear
+                0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysTickInit
+                0x00000000       0x4c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysTickStart
+                0x00000000       0x20 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysTickSetCallback
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysTickGetCallback
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysSetRamAccessArbPriority
+                0x00000000       0x20 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysSetFlashAccessArbPriority
+                0x00000000       0x20 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysSetDmacAccessArbPriority
+                0x00000000       0x20 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text.CySysSetPeripheralAccessArbPriority
+                0x00000000       0x68 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysClkIloEnabled
+                0x00000000       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysClkGetLfclkSource
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysClkIloStart
+                0x00000000       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysClkWcoSetPowerMode
+                0x00000000       0x80 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysWdtGetEnabledStatus
+                0x00000000       0x24 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysWdtSetMode
+                0x00000000       0x38 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysClkLfclkPosedgeRestore
+                0x00000000       0x2c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysWdtGetMode
+                0x00000000       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysWdtSetClearOnMatch
+                0x00000000       0x38 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysWdtGetClearOnMatch
+                0x00000000       0x24 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysWdtEnable
+                0x00000000       0x3c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysWdtDisable
+                0x00000000       0x44 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysWdtSetCascade
+                0x00000000       0x34 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysWdtGetCascade
+                0x00000000       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysWdtSetMatch
+                0x00000000       0x58 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysWdtSetToggleBit
+                0x00000000       0x2c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysWdtGetToggleBit
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysWdtGetMatch
+                0x00000000       0x20 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysWdtGetCount
+                0x00000000       0x3c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysClkLfclkPosedgeCatch
+                0x00000000       0x74 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysClkIloStop
+                0x00000000       0x4c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysClkSetLfclkSource
+                0x00000000       0x38 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysClkWcoStop
+                0x00000000       0x48 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysWdtGetInterruptSource
+                0x00000000       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysWdtResetCounters
+                0x00000000       0x20 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysWdtSetInterruptCallback
+                0x00000000       0x20 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysWdtGetInterruptCallback
+                0x00000000       0x20 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysWdtEnableCounterIsr
+                0x00000000       0x34 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysWdtDisableCounterIsr
+                0x00000000       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysTimerDelayUntilMatch
+                0x00000000       0x6c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysTimerDelay
+                0x00000000       0x3c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysWatchdogFeed
+                0x00000000       0x60 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .rodata        0x00000000        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_cls.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_cls.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_cls.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_descr.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_descr.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_descr.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_SPI_UART.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_SPI_UART.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_SPI_UART.o)
+ .text.UART_SpiUartPutArray
+                0x00000000       0x18 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_SPI_UART.o)
+ .text.UART_SpiUartGetTxBufferSize
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_SPI_UART.o)
+ .text.UART_SpiUartClearTxBuffer
+                0x00000000       0x20 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_SPI_UART.o)
+ .text.UART_SpiUartDisableIntRx
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_SPI_UART.o)
+ .text.UART_SpiUartDisableIntTx
+                0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_SPI_UART.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyFlash.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyFlash.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyFlash.o)
+ .text.CySysFlashClockBackup
+                0x00000000        0x4 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyFlash.o)
+ .text.CySysFlashClockRestore
+                0x00000000        0x4 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyFlash.o)
+ .text.CySysFlashWriteRow
+                0x00000000       0xd8 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyFlash.o)
+ .text.CySysSFlashWriteUserRow
+                0x00000000       0xcc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyFlash.o)
+ .text          0x00000000        0x0 C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_P4_v2_40\PSoC4\Library\CapsenseP4Library_GCC.a(CSD_P4_SmartSense_v2_40.o)
+ .data          0x00000000        0x0 C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_P4_v2_40\PSoC4\Library\CapsenseP4Library_GCC.a(CSD_P4_SmartSense_v2_40.o)
+ .bss           0x00000000        0x0 C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_P4_v2_40\PSoC4\Library\CapsenseP4Library_GCC.a(CSD_P4_SmartSense_v2_40.o)
+ .text.CalculateThresholds_P4_v2_40
+                0x00000000       0x36 C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_P4_v2_40\PSoC4\Library\CapsenseP4Library_GCC.a(CSD_P4_SmartSense_v2_40.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_udivsi3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_udivsi3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_divsi3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_divsi3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_dvmd_tls.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_dvmd_tls.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+ .text.__errno  0x00000000        0xc c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+ .text.exit     0x00000000       0x2c c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+ .data.impure_data
+                0x00000000       0x60 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+ .data._impure_ptr
+                0x00000000        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+ .rodata.str1.1
+                0x00000000        0x2 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+ .rodata._global_impure_ptr
+                0x00000000        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy.o)
+ .text.memcpy   0x00000000       0x12 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtend.o
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtend.o
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtend.o
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtn.o
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtn.o
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+rom              0x00000000         0x00040000         xr
+ram              0x20000000         0x00008000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crti.o
+LOAD c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
+LOAD c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+START GROUP
+LOAD .\CortexM0\ARM_GCC_493\Debug\main.o
+LOAD .\CortexM0\ARM_GCC_493\Debug\LedControl.o
+LOAD .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+LOAD .\CortexM0\ARM_GCC_493\Debug\HidReport.o
+LOAD .\CortexM0\ARM_GCC_493\Debug\cymetadata.o
+LOAD .\CortexM0\ARM_GCC_493\Debug\Cm0Start.o
+LOAD .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a
+LOAD C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_P4_v2_40\PSoC4\Library\CapsenseP4Library_GCC.a
+LOAD C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM0\ARM_GCC_493\Debug\CyComponentLibrary.a
+END GROUP
+START GROUP
+LOAD c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a
+LOAD c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a
+LOAD c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a
+END GROUP
+START GROUP
+LOAD c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a
+LOAD c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a
+END GROUP
+LOAD c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtend.o
+LOAD c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtn.o
+START GROUP
+LOAD c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a
+LOAD c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libc.a
+LOAD c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libnosys.a
+END GROUP
+                0x00000000                CY_APPL_ORIGIN = 0x0
+                0x00000100                CY_FLASH_ROW_SIZE = 0x100
+                0x00000001                CY_APPL_NUM = 0x1
+                0x00000001                CY_APPL_MAX = 0x1
+                0x00000040                CY_METADATA_SIZE = 0x40
+                0x00000000                CY_APPL_LOADABLE = 0x0
+                0x00000000                CY_CHECKSUM_EXCLUDE_SIZE = ALIGN (0x0, CY_FLASH_ROW_SIZE)
+                0x00000000                CY_APP_FOR_STACK_AND_COPIER = 0x0
+                0x200004d8                PROVIDE (__cy_heap_start, _end)
+                0x00000001                PROVIDE (__cy_region_num, ((__cy_regions_end - __cy_regions) / 0x10))
+                0x20008000                PROVIDE (__cy_stack, (ORIGIN (ram) + 0x8000))
+                0x20007800                PROVIDE (__cy_heap_end, (__cy_stack - 0x800))
+
+.cybootloader   0x00000000        0x0
+ *(.cybootloader)
+                0x00000000                appl1_start = CY_APPL_ORIGIN?CY_APPL_ORIGIN:ALIGN (CY_FLASH_ROW_SIZE)
+                0x0001ff00                appl2_start = (appl1_start + ALIGN ((((0x40000 - appl1_start) - (0x2 * CY_FLASH_ROW_SIZE)) / 0x2), CY_FLASH_ROW_SIZE))
+                0x00000000                appl_start = (CY_APPL_NUM == 0x1)?appl1_start:appl2_start
+                0x00000001                cy_project_type_bootloader = (appl_start == 0x0)?0x1:0x0
+                0x00000000                cy_project_type_app_for_stack_and_copier = (CY_APP_FOR_STACK_AND_COPIER == 0x1)?0x1:0x0
+
+.text           0x00000000     0x4420
+ CREATE_OBJECT_SYMBOLS
+                0x00000000                PROVIDE (__cy_interrupt_vector, RomVectors)
+ *(.romvectors)
+ .romvectors    0x00000000       0x10 .\CortexM0\ARM_GCC_493\Debug\Cm0Start.o
+                0x00000000                RomVectors
+                0x00000001                ASSERT ((. != __cy_interrupt_vector), No interrupt vector)
+                0x00000001                ASSERT (CY_APPL_ORIGIN?(SIZEOF (.cybootloader) <= CY_APPL_ORIGIN):0x1, Wrong image location)
+                0x00000010                PROVIDE (__cy_reset, Reset)
+ *(.text.Reset)
+ .text.Reset    0x00000010        0x8 .\CortexM0\ARM_GCC_493\Debug\Cm0Start.o
+                0x00000010                Reset
+                0x00000001                ASSERT ((. != __cy_reset), No reset code)
+ *(.psocinit)
+ .psocinit      0x00000018      0x284 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(cyfitter_cfg.o)
+                0x0000012c                cyfitter_cfg
+                0x0000029c                . = MAX (., 0x100)
+ *(.text .text.* .gnu.linkonce.t.*)
+ .text          0x0000029c       0x60 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
+ .text.InitSystem
+                0x000002fc       0x50 .\CortexM0\ARM_GCC_493\Debug\main.o
+ .text.main     0x0000034c      0x10c .\CortexM0\ARM_GCC_493\Debug\main.o
+                0x0000034c                main
+ .text.SetLedColor
+                0x00000458       0xfc .\CortexM0\ARM_GCC_493\Debug\LedControl.o
+                0x00000458                SetLedColor
+ .text.UpdateLedColor
+                0x00000554      0x29c .\CortexM0\ARM_GCC_493\Debug\LedControl.o
+                0x00000554                UpdateLedColor
+ .text.Gestures_CalculateRadius
+                0x000007f0       0x2c .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+ .text.Gestures_CalculateTheta
+                0x0000081c       0x5c .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+ .text.Gestures_LookUpGesture
+                0x00000878       0x98 .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+ .text.Gestures_ValidateButtons
+                0x00000910       0xfc .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+ .text.GetSinTheta
+                0x00000a0c       0x48 .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+                0x00000a0c                GetSinTheta
+ .text.GetCosTheta
+                0x00000a54       0x30 .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+                0x00000a54                GetCosTheta
+ .text.Gestures_CalculateX
+                0x00000a84       0x1c .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+                0x00000a84                Gestures_CalculateX
+ .text.Gestures_CalculateY
+                0x00000aa0       0x1c .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+                0x00000aa0                Gestures_CalculateY
+ .text.Gestures_GetSector
+                0x00000abc       0x2c .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+                0x00000abc                Gestures_GetSector
+ .text.Gestures_Process
+                0x00000ae8      0x368 .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+ .text.DetectGesture
+                0x00000e50       0xac .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+                0x00000e50                DetectGesture
+ .text.ConvertGestureToHidReport
+                0x00000efc      0x1b8 .\CortexM0\ARM_GCC_493\Debug\HidReport.o
+                0x00000efc                ConvertGestureToHidReport
+ .text.IntDefaultHandler
+                0x000010b4        0x4 .\CortexM0\ARM_GCC_493\Debug\Cm0Start.o
+                0x000010b4                IntDefaultHandler
+ .text.Start_c  0x000010b8       0x48 .\CortexM0\ARM_GCC_493\Debug\Cm0Start.o
+                0x000010b8                Start_c
+ .text.initialize_psoc
+                0x00001100       0x54 .\CortexM0\ARM_GCC_493\Debug\Cm0Start.o
+                0x00001100                initialize_psoc
+ .text.cfg_write_bytes32
+                0x00001154       0x34 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(cyfitter_cfg.o)
+ .text.CYMEMZERO
+                0x00001188        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(cyfitter_cfg.o)
+ .text.SetAnalogRoutingPumps
+                0x00001194       0x40 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(cyfitter_cfg.o)
+                0x00001194                SetAnalogRoutingPumps
+ .text.AnalogSetDefault
+                0x000011d4       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(cyfitter_cfg.o)
+ .text.USBFS_Init
+                0x000011fc       0xd0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+                0x000011fc                USBFS_Init
+ .text.USBFS_InitComponent
+                0x000012cc       0xd0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+                0x000012cc                USBFS_InitComponent
+ .text.USBFS_Start
+                0x0000139c       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+                0x0000139c                USBFS_Start
+ .text.USBFS_ReInitComponent
+                0x000013c4       0x68 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+                0x000013c4                USBFS_ReInitComponent
+ .text.USBFS_GetConfiguration
+                0x0000142c        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+                0x0000142c                USBFS_GetConfiguration
+ .text.USBFS_GetEPState
+                0x00001438       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+                0x00001438                USBFS_GetEPState
+ .text.USBFS_LoadInEP
+                0x0000144c       0x9c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+                0x0000144c                USBFS_LoadInEP
+ .text.USBFS_GetEPAckState
+                0x000014e8       0x20 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+                0x000014e8                USBFS_GetEPAckState
+ .text.USBFS_VBusPresent
+                0x00001508       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+                0x00001508                USBFS_VBusPresent
+ .text.USBFS_LoadEP0
+                0x00001518       0x9c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+                0x00001518                USBFS_LoadEP0
+ .text.USBFS_InitZeroLengthControlTransfer
+                0x000015b4       0x34 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+                0x000015b4                USBFS_InitZeroLengthControlTransfer
+ .text.USBFS_ControlReadDataStage
+                0x000015e8        0x8 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+                0x000015e8                USBFS_ControlReadDataStage
+ .text.USBFS_ControlWriteDataStage
+                0x000015f0       0x80 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+                0x000015f0                USBFS_ControlWriteDataStage
+ .text.USBFS_InitNoDataControlTransfer
+                0x00001670       0x2c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+                0x00001670                USBFS_InitNoDataControlTransfer
+ .text.USBFS_UpdateStatusBlock
+                0x0000169c       0x24 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+                0x0000169c                USBFS_UpdateStatusBlock
+ .text.USBFS_HandleSetup
+                0x000016c0       0x60 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+                0x000016c0                USBFS_HandleSetup
+ .text.USBFS_ControlReadStatusStage
+                0x00001720       0x34 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+                0x00001720                USBFS_ControlReadStatusStage
+ .text.USBFS_HandleOUT
+                0x00001754       0x38 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+                0x00001754                USBFS_HandleOUT
+ .text.USBFS_ControlWriteStatusStage
+                0x0000178c       0x20 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+                0x0000178c                USBFS_ControlWriteStatusStage
+ .text.USBFS_NoDataControlStatusStage
+                0x000017ac       0x40 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+                0x000017ac                USBFS_NoDataControlStatusStage
+ .text.USBFS_HandleIN
+                0x000017ec       0x2c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+                0x000017ec                USBFS_HandleIN
+ .text.USBFS_EP_0_ISR
+                0x00001818       0xb4 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+                0x00001818                USBFS_EP_0_ISR
+ .text.USBFS_InitializeStatusBlock
+                0x000018cc       0x24 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+                0x000018cc                USBFS_InitializeStatusBlock
+ .text.USBFS_InitControlRead
+                0x000018f0       0x58 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+                0x000018f0                USBFS_InitControlRead
+ .text.USBFS_InitControlWrite
+                0x00001948       0x50 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+                0x00001948                USBFS_InitControlWrite
+ .text.USBFS_EP_1_ISR
+                0x00001998       0x34 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_episr.o)
+                0x00001998                USBFS_EP_1_ISR
+ .text.USBFS_EP_2_ISR
+                0x000019cc       0x38 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_episr.o)
+                0x000019cc                USBFS_EP_2_ISR
+ .text.USBFS_SOF_ISR
+                0x00001a04        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_episr.o)
+                0x00001a04                USBFS_SOF_ISR
+ .text.USBFS_BUS_RESET_ISR
+                0x00001a10       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_episr.o)
+                0x00001a10                USBFS_BUS_RESET_ISR
+ .text.USBFS_INTR_HI_ISR
+                0x00001a24       0x40 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_episr.o)
+                0x00001a24                USBFS_INTR_HI_ISR
+ .text.USBFS_INTR_MED_ISR
+                0x00001a64       0x40 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_episr.o)
+                0x00001a64                USBFS_INTR_MED_ISR
+ .text.USBFS_INTR_LO_ISR
+                0x00001aa4       0x40 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_episr.o)
+                0x00001aa4                USBFS_INTR_LO_ISR
+ .text.USBFS_FindHidClassDecriptor
+                0x00001ae4       0x44 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_hid.o)
+                0x00001ae4                USBFS_FindHidClassDecriptor
+ .text.USBFS_FindReportDescriptor
+                0x00001b28       0x4c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_hid.o)
+                0x00001b28                USBFS_FindReportDescriptor
+ .text.USBFS_FindReport
+                0x00001b74       0x8c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_hid.o)
+                0x00001b74                USBFS_FindReport
+ .text.USBFS_DispatchHIDClassRqst
+                0x00001c00      0x18c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_hid.o)
+                0x00001c00                USBFS_DispatchHIDClassRqst
+ .text.USBFS_DP_ISR
+                0x00001d8c        0x8 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_pm.o)
+                0x00001d8c                USBFS_DP_ISR
+ .text.USBFS_ReadDieID
+                0x00001d94       0x64 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_std.o)
+                0x00001d94                USBFS_ReadDieID
+ .text.USBFS_ConfigReg
+                0x00001df8       0x98 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_std.o)
+                0x00001df8                USBFS_ConfigReg
+ .text.USBFS_GetConfigTablePtr
+                0x00001e90       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_std.o)
+                0x00001e90                USBFS_GetConfigTablePtr
+ .text.USBFS_ConfigAltChanged
+                0x00001eb8      0x120 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_std.o)
+                0x00001eb8                USBFS_ConfigAltChanged
+ .text.USBFS_GetDeviceTablePtr
+                0x00001fd8       0x18 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_std.o)
+                0x00001fd8                USBFS_GetDeviceTablePtr
+ .text.USBFS_GetInterfaceClassTablePtr
+                0x00001ff0       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_std.o)
+                0x00001ff0                USBFS_GetInterfaceClassTablePtr
+ .text.USBFS_Config
+                0x00002018      0x1d0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_std.o)
+                0x00002018                USBFS_Config
+ .text.USBFS_SetEndpointHalt
+                0x000021e8       0x68 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_std.o)
+                0x000021e8                USBFS_SetEndpointHalt
+ .text.USBFS_ClearEndpointHalt
+                0x00002250       0xac .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_std.o)
+                0x00002250                USBFS_ClearEndpointHalt
+ .text.USBFS_ValidateAlternateSetting
+                0x000022fc       0x50 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_std.o)
+                0x000022fc                USBFS_ValidateAlternateSetting
+ .text.USBFS_HandleStandardRqst
+                0x0000234c      0x30c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_std.o)
+                0x0000234c                USBFS_HandleStandardRqst
+ .text.USBFS_HandleVendorRqst
+                0x00002658       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_vnd.o)
+                0x00002658                USBFS_HandleVendorRqst
+ .text.CapSense_CsdHwBlockInit
+                0x0000266c       0x88 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+                0x0000266c                CapSense_CsdHwBlockInit
+ .text.CapSense_Enable
+                0x000026f4       0x40 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+                0x000026f4                CapSense_Enable
+ .text.CapSense_IsBusy
+                0x00002734       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+                0x00002734                CapSense_IsBusy
+ .text.CapSense_ReadSensorRaw
+                0x00002744       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+                0x00002744                CapSense_ReadSensorRaw
+ .text.CapSense_EnableSensor
+                0x00002754       0x48 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+                0x00002754                CapSense_EnableSensor
+ .text.CapSense_DisableSensor
+                0x0000279c       0x78 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+                0x0000279c                CapSense_DisableSensor
+ .text.CapSense_ClearSensors
+                0x00002814       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+                0x00002814                CapSense_ClearSensors
+ .text.CapSense_SetShieldDelay
+                0x00002828       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+                0x00002828                CapSense_SetShieldDelay
+ .text.CapSense_GetBitValue
+                0x0000283c       0x1c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+                0x0000283c                CapSense_GetBitValue
+ .text.CapSense_FindNextSensor
+                0x00002858       0x24 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+                0x00002858                CapSense_FindNextSensor
+ .text.CapSense_PreScan
+                0x0000287c      0x128 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+                0x0000287c                CapSense_PreScan
+ .text.CapSense_ScanSensor
+                0x000029a4       0x1c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+                0x000029a4                CapSense_ScanSensor
+ .text.CapSense_ScanEnabledWidgets
+                0x000029c0       0x34 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+                0x000029c0                CapSense_ScanEnabledWidgets
+ .text.CapSense_PostScan
+                0x000029f4       0x8c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+                0x000029f4                CapSense_PostScan
+ .text.CapSense_SetBitValue
+                0x00002a80       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+                0x00002a80                CapSense_SetBitValue
+ .text.CapSense_GetSensorRaw
+                0x00002aa8       0x2c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+                0x00002aa8                CapSense_GetSensorRaw
+ .text.CapSense_SetUnscannedSensorState
+                0x00002ad4        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+                0x00002ad4                CapSense_SetUnscannedSensorState
+ .text.CapSense_Init
+                0x00002ae0       0x24 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+                0x00002ae0                CapSense_Init
+ .text.CapSense_Start
+                0x00002b04       0x40 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+                0x00002b04                CapSense_Start
+ .text.CapSense_NormalizeWidgets
+                0x00002b44       0x40 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+                0x00002b44                CapSense_NormalizeWidgets
+ .text.CapSense_BaseInit
+                0x00002b84       0x48 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+                0x00002b84                CapSense_BaseInit
+ .text.CapSense_InitializeSensorBaseline
+                0x00002bcc       0x18 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+                0x00002bcc                CapSense_InitializeSensorBaseline
+ .text.CapSense_InitializeAllBaselines
+                0x00002be4       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+                0x00002be4                CapSense_InitializeAllBaselines
+ .text.CapSense_GetDiffCountData
+                0x00002bf8        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+                0x00002bf8                CapSense_GetDiffCountData
+ .text.CapSense_CheckIsSensorActive
+                0x00002c04       0xb8 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+                0x00002c04                CapSense_CheckIsSensorActive
+ .text.CapSense_CheckIsWidgetActive
+                0x00002cbc       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+                0x00002cbc                CapSense_CheckIsWidgetActive
+ .text.CapSense_CheckIsAnyWidgetActive
+                0x00002ce4       0x20 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+                0x00002ce4                CapSense_CheckIsAnyWidgetActive
+ .text.CapSense_FindMaximum
+                0x00002d04       0x2c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+                0x00002d04                CapSense_FindMaximum
+ .text.CapSense_CalcCentroid
+                0x00002d30       0xe0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+                0x00002d30                CapSense_CalcCentroid
+ .text.CapSense_MedianFilter
+                0x00002e10       0x1c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+                0x00002e10                CapSense_MedianFilter
+ .text.CapSense_GetRadialCentroidPos
+                0x00002e2c       0xa0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+                0x00002e2c                CapSense_GetRadialCentroidPos
+ .text.CapSense_IIR4Filter
+                0x00002ecc        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+                0x00002ecc                CapSense_IIR4Filter
+ .text.CapSense_UpdateBaselineNoThreshold
+                0x00002ed8      0x120 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+                0x00002ed8                CapSense_UpdateBaselineNoThreshold
+ .text.CapSense_UpdateSensorBaseline
+                0x00002ff8       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+                0x00002ff8                CapSense_UpdateSensorBaseline
+ .text.CapSense_UpdateEnabledBaselines
+                0x00003008       0x24 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+                0x00003008                CapSense_UpdateEnabledBaselines
+ .text.CapSense_ISR
+                0x0000302c       0x9c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_INT.o)
+                0x0000302c                CapSense_ISR
+ .text.CapSense_UpdateThresholds
+                0x000030c8       0x30 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+                0x000030c8                CapSense_UpdateThresholds
+ .text.CapSense_SetAnalogSwitchesSrcDirect
+                0x000030f8       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+                0x000030f8                CapSense_SetAnalogSwitchesSrcDirect
+ .text.CapSense_DisableBaselineIDAC
+                0x00003108       0x1c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+                0x00003108                CapSense_DisableBaselineIDAC
+ .text.CapSense_EnableBaselineIDAC
+                0x00003124       0x50 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+                0x00003124                CapSense_EnableBaselineIDAC
+ .text.CapSense_AutoTune
+                0x00003174       0xc8 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+                0x00003174                CapSense_AutoTune
+ .text.UART_ScbModePostEnable
+                0x0000323c        0x8 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART.o)
+ .text.UART_Init
+                0x00003244        0x8 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART.o)
+                0x00003244                UART_Init
+ .text.UART_Enable
+                0x0000324c       0x18 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART.o)
+                0x0000324c                UART_Enable
+ .text.UART_Start
+                0x00003264       0x20 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART.o)
+                0x00003264                UART_Start
+ .text.UART_UartInit
+                0x00003284       0x98 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_UART.o)
+                0x00003284                UART_UartInit
+ .text.UART_UartPostEnable
+                0x0000331c       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_UART.o)
+                0x0000331c                UART_UartPostEnable
+ .text.UART_UartPutString
+                0x00003330       0x18 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_UART.o)
+                0x00003330                UART_UartPutString
+ .text.Pin_RedLED_SetDriveMode
+                0x00003348       0x18 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_RedLED.o)
+                0x00003348                Pin_RedLED_SetDriveMode
+ .text.Pin_GreenLED_SetDriveMode
+                0x00003360       0x18 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_GreenLED.o)
+                0x00003360                Pin_GreenLED_SetDriveMode
+ .text.Pin_BlueLED_SetDriveMode
+                0x00003378       0x18 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_BlueLED.o)
+                0x00003378                Pin_BlueLED_SetDriveMode
+ .text.PWM_Red_WriteCounter
+                0x00003390       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+                0x00003390                PWM_Red_WriteCounter
+ .text.PWM_Red_WritePeriod
+                0x000033a0       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+                0x000033a0                PWM_Red_WritePeriod
+ .text.PWM_Red_WriteCompare
+                0x000033b0       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+                0x000033b0                PWM_Red_WriteCompare
+ .text.PWM_Red_TriggerCommand
+                0x000033c0       0x1c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+                0x000033c0                PWM_Red_TriggerCommand
+ .text.PWM_Red_Enable
+                0x000033dc       0x24 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+                0x000033dc                PWM_Red_Enable
+ .text.PWM_Red_SetInterruptMode
+                0x00003400        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+                0x00003400                PWM_Red_SetInterruptMode
+ .text.PWM_Red_Init
+                0x0000340c       0x4c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+                0x0000340c                PWM_Red_Init
+ .text.PWM_Red_Start
+                0x00003458       0x20 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+                0x00003458                PWM_Red_Start
+ .text.PWM_Green_WriteCounter
+                0x00003478       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+                0x00003478                PWM_Green_WriteCounter
+ .text.PWM_Green_WritePeriod
+                0x00003488       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+                0x00003488                PWM_Green_WritePeriod
+ .text.PWM_Green_WriteCompare
+                0x00003498       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+                0x00003498                PWM_Green_WriteCompare
+ .text.PWM_Green_TriggerCommand
+                0x000034a8       0x1c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+                0x000034a8                PWM_Green_TriggerCommand
+ .text.PWM_Green_Enable
+                0x000034c4       0x24 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+                0x000034c4                PWM_Green_Enable
+ .text.PWM_Green_SetInterruptMode
+                0x000034e8        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+                0x000034e8                PWM_Green_SetInterruptMode
+ .text.PWM_Green_Init
+                0x000034f4       0x4c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+                0x000034f4                PWM_Green_Init
+ .text.PWM_Green_Start
+                0x00003540       0x20 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+                0x00003540                PWM_Green_Start
+ .text.PWM_Blue_WriteCounter
+                0x00003560       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+                0x00003560                PWM_Blue_WriteCounter
+ .text.PWM_Blue_WritePeriod
+                0x00003570       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+                0x00003570                PWM_Blue_WritePeriod
+ .text.PWM_Blue_WriteCompare
+                0x00003580       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+                0x00003580                PWM_Blue_WriteCompare
+ .text.PWM_Blue_TriggerCommand
+                0x00003590       0x1c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+                0x00003590                PWM_Blue_TriggerCommand
+ .text.PWM_Blue_Enable
+                0x000035ac       0x24 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+                0x000035ac                PWM_Blue_Enable
+ .text.PWM_Blue_SetInterruptMode
+                0x000035d0        0xc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+                0x000035d0                PWM_Blue_SetInterruptMode
+ .text.PWM_Blue_Init
+                0x000035dc       0x4c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+                0x000035dc                PWM_Blue_Init
+ .text.PWM_Blue_Start
+                0x00003628       0x20 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+                0x00003628                PWM_Blue_Start
+ .text.USBFS_Dp_ClearInterrupt
+                0x00003648       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_Dp.o)
+                0x00003648                USBFS_Dp_ClearInterrupt
+ .text.CapSense_SampleClk_StartEx
+                0x00003658       0x1c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SampleClk.o)
+                0x00003658                CapSense_SampleClk_StartEx
+ .text.CapSense_SampleClk_Stop
+                0x00003674       0x18 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SampleClk.o)
+                0x00003674                CapSense_SampleClk_Stop
+ .text.CapSense_SampleClk_SetFractionalDividerRegister
+                0x0000368c       0x20 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SampleClk.o)
+                0x0000368c                CapSense_SampleClk_SetFractionalDividerRegister
+ .text.CapSense_SenseClk_StartEx
+                0x000036ac       0x1c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SenseClk.o)
+                0x000036ac                CapSense_SenseClk_StartEx
+ .text.CapSense_SenseClk_Stop
+                0x000036c8       0x18 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SenseClk.o)
+                0x000036c8                CapSense_SenseClk_Stop
+ .text.CapSense_SenseClk_SetFractionalDividerRegister
+                0x000036e0       0x20 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SenseClk.o)
+                0x000036e0                CapSense_SenseClk_SetFractionalDividerRegister
+ .text          0x00003700       0x20 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyBootAsmGnu.o)
+                0x00003700                CyDelayCycles
+                0x00003712                CyEnterCriticalSection
+                0x0000371a                CyExitCriticalSection
+ .text.CySysClkImoDisableWcoLock
+                0x00003720       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+                0x00003720                CySysClkImoDisableWcoLock
+ .text.CySysClkImoGetWcoLock
+                0x00003734       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+                0x00003734                CySysClkImoGetWcoLock
+ .text.CySysClkImoEnableUsbLock
+                0x00003748       0x3c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+                0x00003748                CySysClkImoEnableUsbLock
+ .text.CySysClkImoDisableUsbLock
+                0x00003784       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+                0x00003784                CySysClkImoDisableUsbLock
+ .text.CySysClkImoGetUsbLock
+                0x000037ac       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+                0x000037ac                CySysClkImoGetUsbLock
+ .text.CyIntEnable
+                0x000037c0       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+                0x000037c0                CyIntEnable
+ .text.CyIntDisable
+                0x000037d4       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+                0x000037d4                CyIntDisable
+ .text.CyHalt   0x000037e8        0x4 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+                0x000037e8                CyHalt
+ .text.CyIntSetVector
+                0x000037ec       0x24 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+                0x000037ec                CyIntSetVector
+ .text.CyIntSetPriority
+                0x00003810       0x4c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+                0x00003810                CyIntSetPriority
+ .text.CyDelay  0x0000385c       0x30 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+                0x0000385c                CyDelay
+ .text.CySysClkImoEnableWcoLock
+                0x0000388c       0xf4 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+                0x0000388c                CySysClkImoEnableWcoLock
+ .text.CyDelayUs
+                0x00003980       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+                0x00003980                CyDelayUs
+ .text.CySysClkWriteImoFreq
+                0x00003994      0x1d4 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+                0x00003994                CySysClkWriteImoFreq
+ .text.CyGetUniqueId
+                0x00003b68       0x70 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+                0x00003b68                CyGetUniqueId
+ .text.CySysWdtLocked
+                0x00003bd8       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .text.CySysClkWcoStart
+                0x00003bec       0x40 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+                0x00003bec                CySysClkWcoStart
+ .text.CySysClkWcoEnabled
+                0x00003c2c       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+                0x00003c2c                CySysClkWcoEnabled
+ .text.CySysWdtLock
+                0x00003c40       0x1c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+                0x00003c40                CySysWdtLock
+ .text.CySysWdtUnlock
+                0x00003c5c       0x30 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+                0x00003c5c                CySysWdtUnlock
+ .text.CySysWdtClearInterrupt
+                0x00003c8c       0x4c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+                0x00003c8c                CySysWdtClearInterrupt
+ .text.CySysWdtIsr
+                0x00003cd8       0xa4 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+                0x00003cd8                CySysWdtIsr
+ .text.USBFS_DispatchClassRqst
+                0x00003d7c       0x58 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_cls.o)
+                0x00003d7c                USBFS_DispatchClassRqst
+ .text.UART_SpiUartWriteTxData
+                0x00003dd4       0x1c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_SPI_UART.o)
+                0x00003dd4                UART_SpiUartWriteTxData
+ .text.CySysFlashSetWaitCycles
+                0x00003df0       0x54 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyFlash.o)
+                0x00003df0                CySysFlashSetWaitCycles
+ .text.CalibrateOneDAC_P4_v2_40
+                0x00003e44       0x40 C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_P4_v2_40\PSoC4\Library\CapsenseP4Library_GCC.a(CSD_P4_SmartSense_v2_40.o)
+                0x00003e44                CalibrateOneDAC_P4_v2_40
+ .text.CalibrateSensors_P4_v2_40
+                0x00003e84       0x22 C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_P4_v2_40\PSoC4\Library\CapsenseP4Library_GCC.a(CSD_P4_SmartSense_v2_40.o)
+                0x00003e84                CalibrateSensors_P4_v2_40
+ .text.TunePrescalers_P4_v2_40
+                0x00003ea6       0x42 C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_P4_v2_40\PSoC4\Library\CapsenseP4Library_GCC.a(CSD_P4_SmartSense_v2_40.o)
+                0x00003ea6                TunePrescalers_P4_v2_40
+ .text.TuneSensitivity_P4_v2_40
+                0x00003ee8       0xdc C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_P4_v2_40\PSoC4\Library\CapsenseP4Library_GCC.a(CSD_P4_SmartSense_v2_40.o)
+                0x00003ee8                TuneSensitivity_P4_v2_40
+ .text.MeasureNoiseEnvelope_P4_v2_40
+                0x00003fc4       0xfc C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_P4_v2_40\PSoC4\Library\CapsenseP4Library_GCC.a(CSD_P4_SmartSense_v2_40.o)
+                0x00003fc4                MeasureNoiseEnvelope_P4_v2_40
+ .text          0x000040c0      0x120 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_udivsi3.o)
+                0x000040c0                __aeabi_uidiv
+                0x000040c0                __udivsi3
+                0x000041cc                __aeabi_uidivmod
+ .text          0x000041e0      0x1e0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_divsi3.o)
+                0x000041e0                __divsi3
+                0x000041e0                __aeabi_idiv
+                0x000043ac                __aeabi_idivmod
+ .text          0x000043c0        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_dvmd_tls.o)
+                0x000043c0                __aeabi_idiv0
+                0x000043c0                __aeabi_ldiv0
+ .text.__libc_init_array
+                0x000043c4       0x4c c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+                0x000043c4                __libc_init_array
+ .text.memset   0x00004410       0x10 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+                0x00004410                memset
+ *(.plt)
+ *(.gnu.warning)
+ *(.glue_7t)
+ .glue_7t       0x00000000        0x0 linker stubs
+ *(.glue_7)
+ .glue_7        0x00000000        0x0 linker stubs
+ *(.vfp11_veneer)
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+ *(.bootloader)
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+ *(.gcc_except_table)
+
+.v4_bx          0x00004420        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.iplt           0x00004420        0x0
+ .iplt          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+
+.eh_frame       0x00004420        0x4
+ *(.eh_frame)
+ .eh_frame      0x00004420        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
+ .eh_frame      0x00004420        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtend.o
+                0x00004424                PROVIDE (__exidx_start, .)
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x00004424                __exidx_end = .
+
+.rodata         0x00004424      0x87c
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata.str1.4
+                0x00004424       0x45 .\CortexM0\ARM_GCC_493\Debug\main.o
+                                 0x48 (size before relaxing)
+ *fill*         0x00004469        0x3 
+ .rodata        0x0000446c       0x64 .\CortexM0\ARM_GCC_493\Debug\LedControl.o
+ .rodata        0x000044d0       0xd0 .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+                0x0000451c                sinLookUp
+                0x00004578                sectorToButtonLookup
+                0x0000458c                sectorLookup
+ .rodata        0x000045a0       0x24 .\CortexM0\ARM_GCC_493\Debug\HidReport.o
+ .rodata.str1.4
+                0x000045c4       0xda .\CortexM0\ARM_GCC_493\Debug\HidReport.o
+                                 0xdc (size before relaxing)
+ *fill*         0x0000469e        0x2 
+ .rodata        0x000046a0       0x84 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(cyfitter_cfg.o)
+ .rodata        0x00004724       0x34 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_episr.o)
+ .rodata        0x00004758       0x30 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_std.o)
+ .rodata.str1.4
+                0x00004788       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_std.o)
+ .rodata        0x0000479c      0x100 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+                0x0000479c                CapSense_portTable
+                0x000047ac                CapSense_pinShiftTbl
+                0x000047bc                CapSense_prtSelTbl
+                0x000047f0                CapSense_prtCfgTbl
+                0x00004824                CapSense_prtDRTbl
+                0x00004858                CapSense_widgetNumber
+                0x00004868                CapSense_maskTable
+ .rodata        0x0000489c       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+                0x0000489c                CapSense_rawDataIndex
+                0x000048a4                CapSense_numberOfSensors
+ .rodata        0x000048ac       0x6c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+                0x000048ac                CapSense_configPointers
+                0x00004908                CapSense_prescalerTable
+ .rodata        0x00004918       0x48 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+                0x00004918                cyImoFreqMhz2Reg
+                0x00004948                cyImoFreqMhz2DpllOffset
+ .rodata        0x00004960      0x30c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_descr.o)
+                0x00004960                USBFS_TABLE
+                0x00004968                USBFS_DEVICE0_TABLE
+                0x00004980                USBFS_DEVICE0_CONFIGURATION0_TABLE
+                0x000049a8                USBFS_DEVICE0_CONFIGURATION0_INTERFACE_CLASS
+                0x000049ac                USBFS_DEVICE0_CONFIGURATION0_EP_SETTINGS_TABLE
+                0x000049bc                USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_TABLE
+                0x000049c4                USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_TABLE
+                0x000049cc                USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_ALTERNATE0_HID_TABLE
+                0x000049f4                USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_ALTERNATE0_HID_IN_RPT_TABLE
+                0x00004a00                USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_TABLE
+                0x00004a28                USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_OUT_RPT_TABLE
+                0x00004a34                USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_IN_RPT_TABLE
+                0x00004a40                USBFS_HIDREPORT_DESCRIPTOR2
+                0x00004a88                USBFS_HIDREPORT_DESCRIPTOR1
+                0x00004acc                USBFS_SN_STRING_DESCRIPTOR
+                0x00004ad0                USBFS_STRING_DESCRIPTORS
+                0x00004c1c                USBFS_DEVICE0_CONFIGURATION0_DESCR
+                0x00004c58                USBFS_DEVICE0_DESCR
+                0x00004c6c                . = ALIGN (0x4)
+ *(.init)
+ .init          0x00004c6c        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crti.o
+                0x00004c6c                _init
+ .init          0x00004c70        0x8 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtn.o
+                0x00004c78                . = ALIGN (0x4)
+                0x00004c78                __preinit_array_start = .
+ *(.preinit_array)
+                0x00004c78                __preinit_array_end = .
+                0x00004c78                . = ALIGN (0x4)
+                0x00004c78                __init_array_start = .
+ *(SORT(.init_array.*))
+ *(.init_array)
+ .init_array    0x00004c78        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
+ .init_array    0x00004c7c        0x4 .\CortexM0\ARM_GCC_493\Debug\Cm0Start.o
+                0x00004c80                __init_array_end = .
+                0x00004c80                . = ALIGN (0x4)
+ *(.fini)
+ .fini          0x00004c80        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crti.o
+                0x00004c80                _fini
+ .fini          0x00004c84        0x8 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtn.o
+                0x00004c8c                . = ALIGN (0x4)
+                0x00004c8c                __fini_array_start = .
+ *(.fini_array)
+ .fini_array    0x00004c8c        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
+ *(SORT(.fini_array.*))
+                0x00004c90                __fini_array_end = .
+                0x00004c90                . = ALIGN (0x4)
+ *crtbegin.o(.ctors)
+ *(EXCLUDE_FILE(*crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *crtend.o(.ctors)
+                0x00004c90                . = ALIGN (0x4)
+ *crtbegin.o(.dtors)
+ *(EXCLUDE_FILE(*crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *crtend.o(.dtors)
+                0x00004c90                . = ALIGN (0x4)
+                0x00004c90                __cy_regions = .
+                0x00004c90        0x4 LONG 0x4ca0 __cy_region_init_ram
+                0x00004c94        0x4 LONG 0x200000c8 __cy_region_start_data
+                0x00004c98        0x4 LONG 0xb8 __cy_region_init_size_ram
+                0x00004c9c        0x4 LONG 0x358 __cy_region_zero_size_ram
+                0x00004ca0                __cy_regions_end = .
+                0x00004ca0                . = ALIGN (0x8)
+                0x00004ca0                _etext = .
+
+.cy_checksum_exclude
+                0x00004ca0        0x0
+ *(.cy_checksum_exclude)
+
+.ramvectors     0x20000000       0xc0
+                0x20000000                __cy_region_start_ram = .
+ *(.ramvectors)
+ .ramvectors    0x20000000       0xc0 .\CortexM0\ARM_GCC_493\Debug\Cm0Start.o
+                0x20000000                CyRamVectors
+
+.noinit         0x200000c0        0x4
+ *(.noinit)
+ .noinit        0x200000c0        0x4 .\CortexM0\ARM_GCC_493\Debug\Cm0Start.o
+
+.data           0x200000c8       0xb8 load address 0x00004ca0
+                0x200000c8                __cy_region_start_data = .
+ *(.jcr)
+ .jcr           0x200000c8        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
+ .jcr           0x200000c8        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtend.o
+ *(.got.plt)
+ *(.got)
+ *(.shdata)
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x200000cc        0x2 .\CortexM0\ARM_GCC_493\Debug\LedControl.o
+ *fill*         0x200000ce        0x2 
+ .data          0x200000d0       0x10 .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+ .data          0x200000e0       0x50 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+                0x200000e0                CapSense_widgetResolution
+                0x200000f8                CapSense_sensorEnableMask
+                0x200000fc                CapSense_pcTable
+ .data          0x20000130       0x28 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+                0x20000130                CapSense_debounce
+                0x20000138                CapSense_fingerThreshold
+                0x20000140                CapSense_lowBaselineReset
+                0x20000154                CapSense_enableRawFilters
+ .data          0x20000158       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+                0x20000158                CapSense_sensorSensitivity
+ .data          0x20000168       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+                0x20000168                cydelay32kMs
+                0x2000016c                cydelayFreqKhz
+                0x20000170                cydelayFreqMhz
+                0x20000174                cydelayFreqHz
+ .data          0x20000178        0x4 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+                0x20000180                . = ALIGN (0x8)
+ *fill*         0x2000017c        0x4 
+ *(.ram)
+                0x20000180                _edata = .
+
+.igot.plt       0x20000180        0x0 load address 0x00004d58
+ .igot.plt      0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
+
+.bss            0x20000180      0x358 load address 0x00004d58
+                0x20000180                PROVIDE (__bss_start__, .)
+ *(.shbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x20000180       0x1c c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
+ .bss           0x2000019c        0x2 .\CortexM0\ARM_GCC_493\Debug\LedControl.o
+ *fill*         0x2000019e        0x2 
+ .bss           0x200001a0       0x20 .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+ .bss           0x200001c0       0x14 .\CortexM0\ARM_GCC_493\Debug\HidReport.o
+                0x200001c0                keyboardReport
+                0x200001c8                mouseReport
+ .bss           0x200001d4        0x1 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+                0x200001d4                USBFS_initVar
+ *fill*         0x200001d5        0x3 
+ .bss           0x200001d8        0x4 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_std.o)
+ .bss           0x200001dc       0x24 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+                0x200001dc                CapSense_csdStatusVar
+                0x200001e0                CapSense_sensorRaw
+                0x200001fa                CapSense_sensorIndex
+                0x200001fb                CapSense_prescalersTuningDone
+                0x200001fd                CapSense_lowLevelTuningDone
+ .bss           0x20000200       0x4c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+                0x20000200                CapSense_sensorBaseline
+                0x2000021c                CapSense_sensorBaselineLow
+                0x2000022c                CapSense_sensorSignal
+                0x20000244                CapSense_sensorOnMask
+ .bss           0x2000024c        0x1 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_INT.o)
+ .bss           0x2000024d        0x1 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART.o)
+                0x2000024d                UART_initVar
+ .bss           0x2000024e        0x1 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+                0x2000024e                PWM_Red_initVar
+ .bss           0x2000024f        0x1 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+                0x2000024f                PWM_Green_initVar
+ .bss           0x20000250        0x1 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+                0x20000250                PWM_Blue_initVar
+ *fill*         0x20000251        0x3 
+ .bss           0x20000254       0x1c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+                0x20000254                CySysClkImoTrim4
+                0x2000026c                CySysTickInitVar
+ .bss           0x20000270       0x1c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ *(COMMON)
+ COMMON         0x2000028c       0x20 .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+                0x2000028c                accTheta
+                0x20000290                radius
+                0x20000294                capsenseButtonStatus
+                0x20000298                sliderCentroid
+                0x2000029c                yPos
+                0x200002a0                theta
+                0x200002a4                xPos
+                0x200002a8                accRadius
+ COMMON         0x200002ac       0x98 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+                0x200002ac                USBFS_deviceAddress
+                0x200002ad                USBFS_ep0Mode
+                0x200002b0                USBFS_interfaceSetting
+                0x200002b4                USBFS_currentTD
+                0x200002c0                USBFS_device
+                0x200002c1                USBFS_interfaceNumber
+                0x200002c2                USBFS_ep0Toggle
+                0x200002c3                USBFS_deviceStatus
+                0x200002c4                USBFS_configurationChanged
+                0x200002c5                USBFS_configuration
+                0x200002c6                USBFS_transferState
+                0x200002c8                USBFS_interfaceStatus
+                0x200002cc                USBFS_interfaceClass
+                0x200002d0                USBFS_EP
+                0x2000033c                USBFS_lastPacketSize
+                0x2000033d                USBFS_ep0Count
+                0x20000340                USBFS_interfaceSettingLast
+                0x20000342                USBFS_transferByteCount
+ COMMON         0x20000344        0xa .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_hid.o)
+                0x20000344                USBFS_hidIdleRate
+                0x20000348                USBFS_hidIdleTimer
+                0x2000034c                USBFS_hidProtocol
+ *fill*         0x2000034e        0x2 
+ COMMON         0x20000350       0x59 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+                0x20000350                CapSense_csdTrim1
+                0x20000354                CapSense_scanSpeedTbl
+                0x20000358                CapSense_sensorEnableMaskBackup
+                0x2000035c                CapSense_senseClkDividerVal
+                0x2000036c                CapSense_modulationIDAC
+                0x2000037c                CapSense_compensationIDAC
+                0x2000038c                CapSense_unscannedSnsDriveMode
+                0x2000039c                CapSense_sampleClkDividerVal
+ *fill*         0x200003a9        0x3 
+ COMMON         0x200003ac       0x42 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+                0x200003ac                CapSense_noiseThreshold
+                0x200003b4                CapSense_lowBaselineResetCnt
+                0x200003c4                CapSense_negativeNoiseThreshold
+                0x200003cc                CapSense_rawFilterData1
+                0x200003e8                CapSense_hysteresis
+ *fill*         0x200003ee        0x2 
+ COMMON         0x200003f0       0x9d .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+                0x200003f0                CapSense_runningDifferenceTbl
+                0x20000400                CapSense_signRegisterTbl
+                0x20000410                CapSense_sampleMaxTbl
+                0x2000042c                CapSense_noiseEnvelopeTbl
+                0x2000043c                CapSense_previousSampleTbl
+                0x20000458                CapSense_sampleMinTbl
+                0x20000474                CapSense_config
+                0x20000480                CapSense_kValueTbl
+ *fill*         0x2000048d        0x3 
+ COMMON         0x20000490       0x48 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_descr.o)
+                0x20000490                USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_IN_RPT_SCB
+                0x20000494                USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_ALTERNATE0_HID_IN_RPT_SCB
+                0x20000498                USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_ALTERNATE0_HID_IN_BUF
+                0x200004a0                USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_IN_BUF
+                0x200004ac                USBFS_idSerialNumberStringDescriptor
+                0x200004d0                USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_OUT_BUF
+                0x200004d4                USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_OUT_RPT_SCB
+                0x200004d8                . = ALIGN (0x8)
+ *(.ram.b)
+                0x200004d8                _end = .
+                0x200004d8                __end = .
+                0x200004d8                PROVIDE (end, .)
+                0x200004d8                PROVIDE (__bss_end__, .)
+                0x00004ca0                __cy_region_init_ram = LOADADDR (.data)
+                0x000000b8                __cy_region_init_size_ram = (_edata - ADDR (.data))
+                0x00000358                __cy_region_zero_size_ram = (_end - _edata)
+
+.heap           0x200004d8       0x80 load address 0x00004d58
+                0x200004d8                . = _end
+                0x20000558                . = (. + 0x80)
+ *fill*         0x200004d8       0x80 
+                0x20000558                __cy_heap_limit = .
+
+.stack          0x20007800      0x800
+                0x20007800                __cy_stack_limit = .
+                0x20008000                . = (. + 0x800)
+ *fill*         0x20007800      0x800 
+                0x00000001                ASSERT ((__cy_stack_limit >= __cy_heap_limit), region RAM overflowed with stack)
+                0x00000000                cy_checksum_exclude_size = (CY_APPL_LOADABLE == 0x1)?SIZEOF (.cy_checksum_exclude):0x0
+                0x00000001                ASSERT ((cy_checksum_exclude_size <= CY_CHECKSUM_EXCLUDE_SIZE), CY_BOOT: Section .cy_checksum_exclude size exceedes specified limit.)
+                0x0003ffc0                cyloadermeta_start = (cy_project_type_bootloader || cy_project_type_app_for_stack_and_copier)?(0x40000 - CY_METADATA_SIZE):0xf0000000
+
+.cyloadermeta
+ *(.cyloadermeta)
+                0x0003ffc0                cyloadablemeta_start = cy_project_type_app_for_stack_and_copier?((0x40000 - CY_FLASH_ROW_SIZE) - CY_METADATA_SIZE):((0x40000 - (CY_FLASH_ROW_SIZE * (CY_APPL_NUM - 0x1))) - CY_METADATA_SIZE)
+
+.cyloadablemeta
+ *(.cyloadablemeta)
+
+.cyflashprotect
+                0x90400000       0x80
+ *(.cyflashprotect)
+ .cyflashprotect
+                0x90400000       0x80 .\CortexM0\ARM_GCC_493\Debug\cymetadata.o
+                0x90400000                cy_meta_flashprotect
+
+.cymeta         0x90500000        0xc
+ *(.cymeta)
+ .cymeta        0x90500000        0xc .\CortexM0\ARM_GCC_493\Debug\cymetadata.o
+                0x90500000                cy_metadata
+
+.cychipprotect  0x90600000        0x4
+ *(.cychipprotect)
+ .cychipprotect
+                0x90600000        0x4 .\CortexM0\ARM_GCC_493\Debug\cymetadata.o
+                0x90600000                cy_meta_chipprotect
+
+.rel.dyn        0x00004d58        0x0 load address 0x90600004
+ .rel.iplt      0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000     0x12c8
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x28 .\CortexM0\ARM_GCC_493\Debug\main.o
+ .debug_aranges
+                0x00000028       0x28 .\CortexM0\ARM_GCC_493\Debug\LedControl.o
+ .debug_aranges
+                0x00000050       0x70 .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+ .debug_aranges
+                0x000000c0       0x20 .\CortexM0\ARM_GCC_493\Debug\HidReport.o
+ .debug_aranges
+                0x000000e0       0x18 .\CortexM0\ARM_GCC_493\Debug\cymetadata.o
+ .debug_aranges
+                0x000000f8       0x48 .\CortexM0\ARM_GCC_493\Debug\Cm0Start.o
+ .debug_aranges
+                0x00000140       0x48 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(cyfitter_cfg.o)
+ .debug_aranges
+                0x00000188       0xe0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+ .debug_aranges
+                0x00000268       0x98 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+ .debug_aranges
+                0x00000300       0x50 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_episr.o)
+ .debug_aranges
+                0x00000350       0x48 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_hid.o)
+ .debug_aranges
+                0x00000398       0x40 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_pm.o)
+ .debug_aranges
+                0x000003d8       0x80 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_std.o)
+ .debug_aranges
+                0x00000458       0x20 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_vnd.o)
+ .debug_aranges
+                0x00000478      0x158 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+ .debug_aranges
+                0x000005d0      0x148 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .debug_aranges
+                0x00000718       0x20 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_INT.o)
+ .debug_aranges
+                0x00000738       0x60 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+ .debug_aranges
+                0x00000798       0x58 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART.o)
+ .debug_aranges
+                0x000007f0       0x68 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_UART.o)
+ .debug_aranges
+                0x00000858       0x48 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_RedLED.o)
+ .debug_aranges
+                0x000008a0       0x48 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_GreenLED.o)
+ .debug_aranges
+                0x000008e8       0x48 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_BlueLED.o)
+ .debug_aranges
+                0x00000930      0x158 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .debug_aranges
+                0x00000a88      0x158 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .debug_aranges
+                0x00000be0      0x158 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .debug_aranges
+                0x00000d38       0x48 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_Dp.o)
+ .debug_aranges
+                0x00000d80       0x40 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SampleClk.o)
+ .debug_aranges
+                0x00000dc0       0x40 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SenseClk.o)
+ .debug_aranges
+                0x00000e00       0x20 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyBootAsmGnu.o)
+ .debug_aranges
+                0x00000e20      0x250 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .debug_aranges
+                0x00001070      0x150 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .debug_aranges
+                0x000011c0       0x20 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_cls.o)
+ .debug_aranges
+                0x000011e0       0x18 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_descr.o)
+ .debug_aranges
+                0x000011f8       0x48 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_SPI_UART.o)
+ .debug_aranges
+                0x00001240       0x40 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyFlash.o)
+ .debug_aranges
+                0x00001280       0x48 C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_P4_v2_40\PSoC4\Library\CapsenseP4Library_GCC.a(CSD_P4_SmartSense_v2_40.o)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x00000000     0xd3f2
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000      0x644 .\CortexM0\ARM_GCC_493\Debug\main.o
+ .debug_info    0x00000644      0x420 .\CortexM0\ARM_GCC_493\Debug\LedControl.o
+ .debug_info    0x00000a64      0x82c .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+ .debug_info    0x00001290      0x350 .\CortexM0\ARM_GCC_493\Debug\HidReport.o
+ .debug_info    0x000015e0       0xfe .\CortexM0\ARM_GCC_493\Debug\cymetadata.o
+ .debug_info    0x000016de      0x38e .\CortexM0\ARM_GCC_493\Debug\Cm0Start.o
+ .debug_info    0x00001a6c      0x46a .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(cyfitter_cfg.o)
+ .debug_info    0x00001ed6      0xb93 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+ .debug_info    0x00002a69      0x65a .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+ .debug_info    0x000030c3      0x3cf .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_episr.o)
+ .debug_info    0x00003492      0x44a .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_hid.o)
+ .debug_info    0x000038dc      0x2c6 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_pm.o)
+ .debug_info    0x00003ba2      0xb9b .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_std.o)
+ .debug_info    0x0000473d       0xf2 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_vnd.o)
+ .debug_info    0x0000482f     0x114f .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+ .debug_info    0x0000597e     0x118c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .debug_info    0x00006b0a      0x1af .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_INT.o)
+ .debug_info    0x00006cb9      0x7b1 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+ .debug_info    0x0000746a      0x20a .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART.o)
+ .debug_info    0x00007674      0x254 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_UART.o)
+ .debug_info    0x000078c8      0x19d .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_RedLED.o)
+ .debug_info    0x00007a65      0x19d .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_GreenLED.o)
+ .debug_info    0x00007c02      0x19d .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_BlueLED.o)
+ .debug_info    0x00007d9f      0x906 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .debug_info    0x000086a5      0x906 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .debug_info    0x00008fab      0x906 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .debug_info    0x000098b1      0x19b .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_Dp.o)
+ .debug_info    0x00009a4c      0x166 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SampleClk.o)
+ .debug_info    0x00009bb2      0x166 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SenseClk.o)
+ .debug_info    0x00009d18       0xb2 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyBootAsmGnu.o)
+ .debug_info    0x00009dca     0x16f6 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .debug_info    0x0000b4c0      0xdbd .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .debug_info    0x0000c27d      0x1de .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_cls.o)
+ .debug_info    0x0000c45b      0x492 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_descr.o)
+ .debug_info    0x0000c8ed      0x1b6 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_SPI_UART.o)
+ .debug_info    0x0000caa3      0x36d .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyFlash.o)
+ .debug_info    0x0000ce10      0x5e2 C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_P4_v2_40\PSoC4\Library\CapsenseP4Library_GCC.a(CSD_P4_SmartSense_v2_40.o)
+
+.debug_abbrev   0x00000000     0x3232
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x1c3 .\CortexM0\ARM_GCC_493\Debug\main.o
+ .debug_abbrev  0x000001c3      0x126 .\CortexM0\ARM_GCC_493\Debug\LedControl.o
+ .debug_abbrev  0x000002e9      0x1f3 .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+ .debug_abbrev  0x000004dc      0x123 .\CortexM0\ARM_GCC_493\Debug\HidReport.o
+ .debug_abbrev  0x000005ff       0x5d .\CortexM0\ARM_GCC_493\Debug\cymetadata.o
+ .debug_abbrev  0x0000065c      0x1d5 .\CortexM0\ARM_GCC_493\Debug\Cm0Start.o
+ .debug_abbrev  0x00000831      0x21c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(cyfitter_cfg.o)
+ .debug_abbrev  0x00000a4d      0x290 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+ .debug_abbrev  0x00000cdd      0x18b .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+ .debug_abbrev  0x00000e68      0x19c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_episr.o)
+ .debug_abbrev  0x00001004      0x18b .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_hid.o)
+ .debug_abbrev  0x0000118f      0x146 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_pm.o)
+ .debug_abbrev  0x000012d5      0x244 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_std.o)
+ .debug_abbrev  0x00001519       0x9b .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_vnd.o)
+ .debug_abbrev  0x000015b4      0x1de .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+ .debug_abbrev  0x00001792      0x2a4 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .debug_abbrev  0x00001a36       0xf9 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_INT.o)
+ .debug_abbrev  0x00001b2f      0x1fe .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+ .debug_abbrev  0x00001d2d       0xd5 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART.o)
+ .debug_abbrev  0x00001e02      0x10c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_UART.o)
+ .debug_abbrev  0x00001f0e       0xc8 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_RedLED.o)
+ .debug_abbrev  0x00001fd6       0xc8 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_GreenLED.o)
+ .debug_abbrev  0x0000209e       0xc8 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_BlueLED.o)
+ .debug_abbrev  0x00002166      0x133 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .debug_abbrev  0x00002299      0x133 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .debug_abbrev  0x000023cc      0x133 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .debug_abbrev  0x000024ff       0xc8 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_Dp.o)
+ .debug_abbrev  0x000025c7       0xb7 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SampleClk.o)
+ .debug_abbrev  0x0000267e       0xb7 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SenseClk.o)
+ .debug_abbrev  0x00002735       0x14 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyBootAsmGnu.o)
+ .debug_abbrev  0x00002749      0x29d .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .debug_abbrev  0x000029e6      0x26d .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .debug_abbrev  0x00002c53       0xe3 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_cls.o)
+ .debug_abbrev  0x00002d36       0xc4 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_descr.o)
+ .debug_abbrev  0x00002dfa      0x117 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_SPI_UART.o)
+ .debug_abbrev  0x00002f11      0x1c1 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyFlash.o)
+ .debug_abbrev  0x000030d2      0x160 C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_P4_v2_40\PSoC4\Library\CapsenseP4Library_GCC.a(CSD_P4_SmartSense_v2_40.o)
+
+.debug_line     0x00000000     0x48ae
+ *(.debug_line)
+ .debug_line    0x00000000      0x19c .\CortexM0\ARM_GCC_493\Debug\main.o
+ .debug_line    0x0000019c      0x145 .\CortexM0\ARM_GCC_493\Debug\LedControl.o
+ .debug_line    0x000002e1      0x2ca .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+ .debug_line    0x000005ab       0xcf .\CortexM0\ARM_GCC_493\Debug\HidReport.o
+ .debug_line    0x0000067a       0x53 .\CortexM0\ARM_GCC_493\Debug\cymetadata.o
+ .debug_line    0x000006cd      0x249 .\CortexM0\ARM_GCC_493\Debug\Cm0Start.o
+ .debug_line    0x00000916      0x1c3 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(cyfitter_cfg.o)
+ .debug_line    0x00000ad9      0x3a5 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+ .debug_line    0x00000e7e      0x22b .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+ .debug_line    0x000010a9      0x147 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_episr.o)
+ .debug_line    0x000011f0      0x14e .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_hid.o)
+ .debug_line    0x0000133e       0xfe .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_pm.o)
+ .debug_line    0x0000143c      0x3ca .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_std.o)
+ .debug_line    0x00001806       0x71 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_vnd.o)
+ .debug_line    0x00001877      0x504 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+ .debug_line    0x00001d7b      0x489 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .debug_line    0x00002204       0xae .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_INT.o)
+ .debug_line    0x000022b2      0x1a6 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+ .debug_line    0x00002458      0x121 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART.o)
+ .debug_line    0x00002579      0x159 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_UART.o)
+ .debug_line    0x000026d2       0xc4 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_RedLED.o)
+ .debug_line    0x00002796       0xc6 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_GreenLED.o)
+ .debug_line    0x0000285c       0xc5 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_BlueLED.o)
+ .debug_line    0x00002921      0x382 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .debug_line    0x00002ca3      0x384 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .debug_line    0x00003027      0x383 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .debug_line    0x000033aa       0xc1 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_Dp.o)
+ .debug_line    0x0000346b       0xe0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SampleClk.o)
+ .debug_line    0x0000354b       0xdf .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SenseClk.o)
+ .debug_line    0x0000362a       0x68 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyBootAsmGnu.o)
+ .debug_line    0x00003692      0x84f .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .debug_line    0x00003ee1      0x4cf .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .debug_line    0x000043b0       0x8c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_cls.o)
+ .debug_line    0x0000443c       0x5f .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_descr.o)
+ .debug_line    0x0000449b       0xf7 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_SPI_UART.o)
+ .debug_line    0x00004592      0x147 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyFlash.o)
+ .debug_line    0x000046d9      0x1d5 C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_P4_v2_40\PSoC4\Library\CapsenseP4Library_GCC.a(CSD_P4_SmartSense_v2_40.o)
+
+.debug_frame    0x00000000     0x2fec
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x54 .\CortexM0\ARM_GCC_493\Debug\main.o
+ .debug_frame   0x00000054       0x48 .\CortexM0\ARM_GCC_493\Debug\LedControl.o
+ .debug_frame   0x0000009c      0x11c .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+ .debug_frame   0x000001b8       0x30 .\CortexM0\ARM_GCC_493\Debug\HidReport.o
+ .debug_frame   0x000001e8       0xb0 .\CortexM0\ARM_GCC_493\Debug\Cm0Start.o
+ .debug_frame   0x00000298       0xb8 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(cyfitter_cfg.o)
+ .debug_frame   0x00000350      0x228 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+ .debug_frame   0x00000578      0x1a0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+ .debug_frame   0x00000718       0xbc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_episr.o)
+ .debug_frame   0x000007d4       0xa4 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_hid.o)
+ .debug_frame   0x00000878       0x98 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_pm.o)
+ .debug_frame   0x00000910      0x184 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_std.o)
+ .debug_frame   0x00000a94       0x20 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_vnd.o)
+ .debug_frame   0x00000ab4      0x3cc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+ .debug_frame   0x00000e80      0x394 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .debug_frame   0x00001214       0x2c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_INT.o)
+ .debug_frame   0x00001240       0xd8 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+ .debug_frame   0x00001318       0xd8 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART.o)
+ .debug_frame   0x000013f0       0xcc .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_UART.o)
+ .debug_frame   0x000014bc       0x70 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_RedLED.o)
+ .debug_frame   0x0000152c       0x70 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_GreenLED.o)
+ .debug_frame   0x0000159c       0x70 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_BlueLED.o)
+ .debug_frame   0x0000160c      0x390 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .debug_frame   0x0000199c      0x390 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .debug_frame   0x00001d2c      0x390 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .debug_frame   0x000020bc       0x70 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_Dp.o)
+ .debug_frame   0x0000212c       0x6c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SampleClk.o)
+ .debug_frame   0x00002198       0x6c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SenseClk.o)
+ .debug_frame   0x00002204      0x6c4 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .debug_frame   0x000028c8      0x400 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .debug_frame   0x00002cc8       0x2c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_cls.o)
+ .debug_frame   0x00002cf4       0x80 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_SPI_UART.o)
+ .debug_frame   0x00002d74       0x90 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyFlash.o)
+ .debug_frame   0x00002e04       0xec C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_P4_v2_40\PSoC4\Library\CapsenseP4Library_GCC.a(CSD_P4_SmartSense_v2_40.o)
+ .debug_frame   0x00002ef0       0x20 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_udivsi3.o)
+ .debug_frame   0x00002f10       0x20 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_divsi3.o)
+ .debug_frame   0x00002f30       0x20 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+ .debug_frame   0x00002f50       0x28 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+ .debug_frame   0x00002f78       0x2c c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+ .debug_frame   0x00002fa4       0x28 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy.o)
+ .debug_frame   0x00002fcc       0x20 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+
+.debug_str      0x00000000     0x52b1
+ *(.debug_str)
+ .debug_str     0x00000000      0x66b .\CortexM0\ARM_GCC_493\Debug\main.o
+                                0x6b3 (size before relaxing)
+ .debug_str     0x0000066b       0x9a .\CortexM0\ARM_GCC_493\Debug\LedControl.o
+                                0x4d4 (size before relaxing)
+ .debug_str     0x00000705      0x26c .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+                                0x5cb (size before relaxing)
+ .debug_str     0x00000971       0x32 .\CortexM0\ARM_GCC_493\Debug\HidReport.o
+                                0x3b1 (size before relaxing)
+ .debug_str     0x000009a3       0x5b .\CortexM0\ARM_GCC_493\Debug\cymetadata.o
+                                0x1f0 (size before relaxing)
+ .debug_str     0x000009fe      0x15c .\CortexM0\ARM_GCC_493\Debug\Cm0Start.o
+                                0x317 (size before relaxing)
+ .debug_str     0x00000b5a      0x165 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(cyfitter_cfg.o)
+                                0x358 (size before relaxing)
+ .debug_str     0x00000cbf      0x48d .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+                                0x6ff (size before relaxing)
+ .debug_str     0x0000114c      0x31e .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+                                0x612 (size before relaxing)
+ .debug_str     0x0000146a       0xd3 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_episr.o)
+                                0x351 (size before relaxing)
+ .debug_str     0x0000153d      0x126 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_hid.o)
+                                0x3f5 (size before relaxing)
+ .debug_str     0x00001663       0xf6 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_pm.o)
+                                0x319 (size before relaxing)
+ .debug_str     0x00001759      0x256 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_std.o)
+                                0x7b6 (size before relaxing)
+ .debug_str     0x000019af       0x25 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_vnd.o)
+                                0x204 (size before relaxing)
+ .debug_str     0x000019d4      0x8b3 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+                                0xb35 (size before relaxing)
+ .debug_str     0x00002287      0x789 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+                                0xbff (size before relaxing)
+ .debug_str     0x00002a10       0x4a .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_INT.o)
+                                0x2a5 (size before relaxing)
+ .debug_str     0x00002a5a      0x23f .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+                                0x7fc (size before relaxing)
+ .debug_str     0x00002c99       0xe9 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART.o)
+                                0x296 (size before relaxing)
+ .debug_str     0x00002d82       0xf6 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_UART.o)
+                                0x2e3 (size before relaxing)
+ .debug_str     0x00002e78       0xaf .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_RedLED.o)
+                                0x27b (size before relaxing)
+ .debug_str     0x00002f27       0xa0 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_GreenLED.o)
+                                0x289 (size before relaxing)
+ .debug_str     0x00002fc7       0x9a .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_BlueLED.o)
+                                0x282 (size before relaxing)
+ .debug_str     0x00003061      0x40d .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+                                0x61b (size before relaxing)
+ .debug_str     0x0000346e      0x3aa .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+                                0x66f (size before relaxing)
+ .debug_str     0x00003818      0x382 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+                                0x645 (size before relaxing)
+ .debug_str     0x00003b9a       0x86 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_Dp.o)
+                                0x26d (size before relaxing)
+ .debug_str     0x00003c20       0xb8 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SampleClk.o)
+                                0x2bb (size before relaxing)
+ .debug_str     0x00003cd8       0x81 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SenseClk.o)
+                                0x2b5 (size before relaxing)
+ .debug_str     0x00003d59      0x7f5 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+                                0xaf4 (size before relaxing)
+ .debug_str     0x0000454e      0x4fb .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+                                0x740 (size before relaxing)
+ .debug_str     0x00004a49       0x25 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_cls.o)
+                                0x2bb (size before relaxing)
+ .debug_str     0x00004a6e      0x455 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_descr.o)
+                                0x6fe (size before relaxing)
+ .debug_str     0x00004ec3       0xcb .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_SPI_UART.o)
+                                0x290 (size before relaxing)
+ .debug_str     0x00004f8e       0xb4 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyFlash.o)
+                                0x2c6 (size before relaxing)
+ .debug_str     0x00005042      0x26f C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_P4_v2_40\PSoC4\Library\CapsenseP4Library_GCC.a(CSD_P4_SmartSense_v2_40.o)
+                                0x59f (size before relaxing)
+
+.debug_loc      0x00000000     0x7d19
+ *(.debug_loc)
+ .debug_loc     0x00000000       0xf4 .\CortexM0\ARM_GCC_493\Debug\main.o
+ .debug_loc     0x000000f4      0x15d .\CortexM0\ARM_GCC_493\Debug\LedControl.o
+ .debug_loc     0x00000251      0xce8 .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+ .debug_loc     0x00000f39       0x72 .\CortexM0\ARM_GCC_493\Debug\HidReport.o
+ .debug_loc     0x00000fab      0x14f .\CortexM0\ARM_GCC_493\Debug\Cm0Start.o
+ .debug_loc     0x000010fa      0x14d .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(cyfitter_cfg.o)
+ .debug_loc     0x00001247      0x5c6 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+ .debug_loc     0x0000180d      0x150 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+ .debug_loc     0x0000195d       0xb7 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_episr.o)
+ .debug_loc     0x00001a14      0x37e .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_hid.o)
+ .debug_loc     0x00001d92       0x26 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_pm.o)
+ .debug_loc     0x00001db8      0x937 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_std.o)
+ .debug_loc     0x000026ef      0xb18 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+ .debug_loc     0x00003207      0xc71 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .debug_loc     0x00003e78      0x185 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+ .debug_loc     0x00003ffd       0x7e .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART.o)
+ .debug_loc     0x0000407b       0xf5 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_UART.o)
+ .debug_loc     0x00004170       0xa2 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_RedLED.o)
+ .debug_loc     0x00004212       0xa2 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_GreenLED.o)
+ .debug_loc     0x000042b4       0xa2 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_BlueLED.o)
+ .debug_loc     0x00004356      0x547 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .debug_loc     0x0000489d      0x547 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .debug_loc     0x00004de4      0x547 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .debug_loc     0x0000532b       0x81 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_Dp.o)
+ .debug_loc     0x000053ac       0x76 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SampleClk.o)
+ .debug_loc     0x00005422       0x76 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SenseClk.o)
+ .debug_loc     0x00005498     0x174c .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .debug_loc     0x00006be4      0x8a2 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .debug_loc     0x00007486       0x47 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_cls.o)
+ .debug_loc     0x000074cd       0x77 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_SPI_UART.o)
+ .debug_loc     0x00007544      0x147 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyFlash.o)
+ .debug_loc     0x0000768b      0x68e C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_P4_v2_40\PSoC4\Library\CapsenseP4Library_GCC.a(CSD_P4_SmartSense_v2_40.o)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_ranges   0x00000000     0x1088
+ *(.debug_ranges)
+ .debug_ranges  0x00000000       0x18 .\CortexM0\ARM_GCC_493\Debug\main.o
+ .debug_ranges  0x00000018       0x18 .\CortexM0\ARM_GCC_493\Debug\LedControl.o
+ .debug_ranges  0x00000030       0x60 .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+ .debug_ranges  0x00000090       0x10 .\CortexM0\ARM_GCC_493\Debug\HidReport.o
+ .debug_ranges  0x000000a0       0x38 .\CortexM0\ARM_GCC_493\Debug\Cm0Start.o
+ .debug_ranges  0x000000d8       0x38 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(cyfitter_cfg.o)
+ .debug_ranges  0x00000110      0x100 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+ .debug_ranges  0x00000210       0x88 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+ .debug_ranges  0x00000298       0x40 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_episr.o)
+ .debug_ranges  0x000002d8       0x38 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_hid.o)
+ .debug_ranges  0x00000310       0x30 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_pm.o)
+ .debug_ranges  0x00000340       0x70 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_std.o)
+ .debug_ranges  0x000003b0       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_vnd.o)
+ .debug_ranges  0x000003c0      0x148 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+ .debug_ranges  0x00000508      0x138 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .debug_ranges  0x00000640       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_INT.o)
+ .debug_ranges  0x00000650       0x50 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+ .debug_ranges  0x000006a0       0x48 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART.o)
+ .debug_ranges  0x000006e8       0x58 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_UART.o)
+ .debug_ranges  0x00000740       0x38 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_RedLED.o)
+ .debug_ranges  0x00000778       0x38 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_GreenLED.o)
+ .debug_ranges  0x000007b0       0x38 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_BlueLED.o)
+ .debug_ranges  0x000007e8      0x148 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .debug_ranges  0x00000930      0x148 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .debug_ranges  0x00000a78      0x148 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .debug_ranges  0x00000bc0       0x38 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_Dp.o)
+ .debug_ranges  0x00000bf8       0x30 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SampleClk.o)
+ .debug_ranges  0x00000c28       0x30 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SenseClk.o)
+ .debug_ranges  0x00000c58      0x240 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .debug_ranges  0x00000e98      0x140 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .debug_ranges  0x00000fd8       0x10 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_cls.o)
+ .debug_ranges  0x00000fe8       0x38 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_SPI_UART.o)
+ .debug_ranges  0x00001020       0x30 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyFlash.o)
+ .debug_ranges  0x00001050       0x38 C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_P4_v2_40\PSoC4\Library\CapsenseP4Library_GCC.a(CSD_P4_SmartSense_v2_40.o)
+
+.comment        0x00000000       0x70
+ .comment       0x00000000       0x70 .\CortexM0\ARM_GCC_493\Debug\main.o
+                                 0x71 (size before relaxing)
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\LedControl.o
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\HidReport.o
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\cymetadata.o
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\Cm0Start.o
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(cyfitter_cfg.o)
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_episr.o)
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_hid.o)
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_pm.o)
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_std.o)
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_vnd.o)
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_INT.o)
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART.o)
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_UART.o)
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_RedLED.o)
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_GreenLED.o)
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_BlueLED.o)
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_Dp.o)
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SampleClk.o)
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SenseClk.o)
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_cls.o)
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_descr.o)
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_SPI_UART.o)
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyFlash.o)
+ .comment       0x00000000       0x71 C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_P4_v2_40\PSoC4\Library\CapsenseP4Library_GCC.a(CSD_P4_SmartSense_v2_40.o)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.note.gnu.arm.ident
+ *(.note.gnu.arm.ident)
+
+.ARM.attributes
+                0x00000000       0x28
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x00000000       0x1e c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crti.o
+ .ARM.attributes
+                0x0000001e       0x2c c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
+ .ARM.attributes
+                0x0000004a       0x1b c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .ARM.attributes
+                0x00000065       0x31 .\CortexM0\ARM_GCC_493\Debug\main.o
+ .ARM.attributes
+                0x00000096       0x31 .\CortexM0\ARM_GCC_493\Debug\LedControl.o
+ .ARM.attributes
+                0x000000c7       0x31 .\CortexM0\ARM_GCC_493\Debug\Gesture.o
+ .ARM.attributes
+                0x000000f8       0x31 .\CortexM0\ARM_GCC_493\Debug\HidReport.o
+ .ARM.attributes
+                0x00000129       0x31 .\CortexM0\ARM_GCC_493\Debug\cymetadata.o
+ .ARM.attributes
+                0x0000015a       0x31 .\CortexM0\ARM_GCC_493\Debug\Cm0Start.o
+ .ARM.attributes
+                0x0000018b       0x31 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(cyfitter_cfg.o)
+ .ARM.attributes
+                0x000001bc       0x31 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS.o)
+ .ARM.attributes
+                0x000001ed       0x31 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_drv.o)
+ .ARM.attributes
+                0x0000021e       0x31 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_episr.o)
+ .ARM.attributes
+                0x0000024f       0x31 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_hid.o)
+ .ARM.attributes
+                0x00000280       0x31 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_pm.o)
+ .ARM.attributes
+                0x000002b1       0x31 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_std.o)
+ .ARM.attributes
+                0x000002e2       0x31 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_vnd.o)
+ .ARM.attributes
+                0x00000313       0x31 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense.o)
+ .ARM.attributes
+                0x00000344       0x31 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_CSHL.o)
+ .ARM.attributes
+                0x00000375       0x31 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_INT.o)
+ .ARM.attributes
+                0x000003a6       0x31 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SMS.o)
+ .ARM.attributes
+                0x000003d7       0x31 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART.o)
+ .ARM.attributes
+                0x00000408       0x31 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_UART.o)
+ .ARM.attributes
+                0x00000439       0x31 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_RedLED.o)
+ .ARM.attributes
+                0x0000046a       0x31 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_GreenLED.o)
+ .ARM.attributes
+                0x0000049b       0x31 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(Pin_BlueLED.o)
+ .ARM.attributes
+                0x000004cc       0x31 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Red.o)
+ .ARM.attributes
+                0x000004fd       0x31 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Green.o)
+ .ARM.attributes
+                0x0000052e       0x31 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(PWM_Blue.o)
+ .ARM.attributes
+                0x0000055f       0x31 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_Dp.o)
+ .ARM.attributes
+                0x00000590       0x31 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SampleClk.o)
+ .ARM.attributes
+                0x000005c1       0x31 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CapSense_SenseClk.o)
+ .ARM.attributes
+                0x000005f2       0x21 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyBootAsmGnu.o)
+ .ARM.attributes
+                0x00000613       0x31 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLib.o)
+ .ARM.attributes
+                0x00000644       0x31 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyLFClk.o)
+ .ARM.attributes
+                0x00000675       0x31 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_cls.o)
+ .ARM.attributes
+                0x000006a6       0x31 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(USBFS_descr.o)
+ .ARM.attributes
+                0x000006d7       0x31 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(UART_SPI_UART.o)
+ .ARM.attributes
+                0x00000708       0x31 .\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.a(CyFlash.o)
+ .ARM.attributes
+                0x00000739       0x31 C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_P4_v2_40\PSoC4\Library\CapsenseP4Library_GCC.a(CSD_P4_SmartSense_v2_40.o)
+ .ARM.attributes
+                0x0000076a       0x1e c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_udivsi3.o)
+ .ARM.attributes
+                0x00000788       0x1e c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_divsi3.o)
+ .ARM.attributes
+                0x000007a6       0x1e c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_dvmd_tls.o)
+ .ARM.attributes
+                0x000007c4       0x2c c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+ .ARM.attributes
+                0x000007f0       0x2c c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+ .ARM.attributes
+                0x0000081c       0x2c c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+ .ARM.attributes
+                0x00000848       0x2c c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+ .ARM.attributes
+                0x00000874       0x2c c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy.o)
+ .ARM.attributes
+                0x000008a0       0x2c c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+ .ARM.attributes
+                0x000008cc       0x2c c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtend.o
+ .ARM.attributes
+                0x000008f8       0x1e c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtn.o
+
+/DISCARD/
+ *(.note.GNU-stack)
+OUTPUT(.\CortexM0\ARM_GCC_493\Debug\CY8CKIT_046_USB_Mouse.elf elf32-littlearm)

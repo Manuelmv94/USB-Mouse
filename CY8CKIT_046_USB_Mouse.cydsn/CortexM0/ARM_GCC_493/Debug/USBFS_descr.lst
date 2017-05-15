@@ -1,0 +1,1957 @@
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"USBFS_descr.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.comm	USBFS_idSerialNumberStringDescriptor,34,4
+  18              		.global	USBFS_TABLE
+  19              		.global	USBFS_DEVICE0_TABLE
+  20              		.global	USBFS_DEVICE0_CONFIGURATION0_TABLE
+  21              		.global	USBFS_DEVICE0_CONFIGURATION0_INTERFACE_CLASS
+  22              		.global	USBFS_DEVICE0_CONFIGURATION0_EP_SETTINGS_TABLE
+  23              		.global	USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_TABLE
+  24              		.global	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_TABLE
+  25              		.global	USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_ALTERNATE0_HID_TABLE
+  26              		.global	USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_ALTERNATE0_HID_IN_RPT_TABLE
+  27              		.comm	USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_ALTERNATE0_HID_IN_BUF,5,4
+  28              		.comm	USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_ALTERNATE0_HID_IN_RPT_SCB,4,4
+  29              		.global	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_TABLE
+  30              		.global	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_OUT_RPT_TABLE
+  31              		.comm	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_OUT_BUF,2,4
+  32              		.comm	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_OUT_RPT_SCB,4,4
+  33              		.global	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_IN_RPT_TABLE
+  34              		.comm	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_IN_BUF,9,4
+  35              		.comm	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_IN_RPT_SCB,4,4
+  36              		.global	USBFS_HIDREPORT_DESCRIPTOR2
+  37              		.global	USBFS_HIDREPORT_DESCRIPTOR1
+  38              		.global	USBFS_SN_STRING_DESCRIPTOR
+  39              		.global	USBFS_STRING_DESCRIPTORS
+  40              		.global	USBFS_DEVICE0_CONFIGURATION0_DESCR
+  41              		.global	USBFS_DEVICE0_DESCR
+  42              		.section	.rodata
+  43              		.align	2
+  44              		.type	USBFS_TABLE, %object
+  45              		.size	USBFS_TABLE, 8
+  46              	USBFS_TABLE:
+  47 0000 01       		.byte	1
+  48 0001 000000   		.space	3
+  49 0004 00000000 		.word	USBFS_DEVICE0_TABLE
+  50              		.type	USBFS_DEVICE0_TABLE, %object
+  51              		.size	USBFS_DEVICE0_TABLE, 24
+  52              	USBFS_DEVICE0_TABLE:
+  53 0008 01       		.byte	1
+  54 0009 000000   		.space	3
+  55 000c 00000000 		.word	USBFS_DEVICE0_DESCR
+  56 0010 00       		.byte	0
+  57 0011 000000   		.space	3
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 2
+
+
+  58 0014 00000000 		.word	0
+  59 0018 01       		.byte	1
+  60 0019 000000   		.space	3
+  61 001c 00000000 		.word	USBFS_DEVICE0_CONFIGURATION0_TABLE
+  62              		.type	USBFS_DEVICE0_CONFIGURATION0_TABLE, %object
+  63              		.size	USBFS_DEVICE0_CONFIGURATION0_TABLE, 40
+  64              	USBFS_DEVICE0_CONFIGURATION0_TABLE:
+  65 0020 01       		.byte	1
+  66 0021 000000   		.space	3
+  67 0024 00000000 		.word	USBFS_DEVICE0_CONFIGURATION0_DESCR
+  68 0028 02       		.byte	2
+  69 0029 000000   		.space	3
+  70 002c 00000000 		.word	USBFS_DEVICE0_CONFIGURATION0_EP_SETTINGS_TABLE
+  71 0030 01       		.byte	1
+  72 0031 000000   		.space	3
+  73 0034 00000000 		.word	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_TABLE
+  74 0038 01       		.byte	1
+  75 0039 000000   		.space	3
+  76 003c 00000000 		.word	USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_TABLE
+  77 0040 00       		.byte	0
+  78 0041 000000   		.space	3
+  79 0044 00000000 		.word	USBFS_DEVICE0_CONFIGURATION0_INTERFACE_CLASS
+  80              		.type	USBFS_DEVICE0_CONFIGURATION0_INTERFACE_CLASS, %object
+  81              		.size	USBFS_DEVICE0_CONFIGURATION0_INTERFACE_CLASS, 2
+  82              	USBFS_DEVICE0_CONFIGURATION0_INTERFACE_CLASS:
+  83 0048 03       		.byte	3
+  84 0049 03       		.byte	3
+  85 004a 0000     		.space	2
+  86              		.type	USBFS_DEVICE0_CONFIGURATION0_EP_SETTINGS_TABLE, %object
+  87              		.size	USBFS_DEVICE0_CONFIGURATION0_EP_SETTINGS_TABLE, 16
+  88              	USBFS_DEVICE0_CONFIGURATION0_EP_SETTINGS_TABLE:
+  89 004c 00       		.byte	0
+  90 004d 00       		.byte	0
+  91 004e 81       		.byte	-127
+  92 004f 03       		.byte	3
+  93 0050 0800     		.short	8
+  94 0052 03       		.byte	3
+  95 0053 00       		.space	1
+  96 0054 01       		.byte	1
+  97 0055 00       		.byte	0
+  98 0056 82       		.byte	-126
+  99 0057 03       		.byte	3
+ 100 0058 0800     		.short	8
+ 101 005a 03       		.byte	3
+ 102 005b 00       		.space	1
+ 103              		.type	USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_TABLE, %object
+ 104              		.size	USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_TABLE, 8
+ 105              	USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_TABLE:
+ 106 005c 01       		.byte	1
+ 107 005d 000000   		.space	3
+ 108 0060 00000000 		.word	USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_ALTERNATE0_HID_TABLE
+ 109              		.type	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_TABLE, %object
+ 110              		.size	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_TABLE, 8
+ 111              	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_TABLE:
+ 112 0064 01       		.byte	1
+ 113 0065 000000   		.space	3
+ 114 0068 00000000 		.word	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_TABLE
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 3
+
+
+ 115              		.type	USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_ALTERNATE0_HID_TABLE, %object
+ 116              		.size	USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_ALTERNATE0_HID_TABLE, 40
+ 117              	USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_ALTERNATE0_HID_TABLE:
+ 118 006c 00       		.byte	0
+ 119 006d 000000   		.space	3
+ 120 0070 00000000 		.word	USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_ALTERNATE0_HID_IN_RPT_TABLE
+ 121 0074 00       		.byte	0
+ 122 0075 000000   		.space	3
+ 123 0078 00000000 		.word	0
+ 124 007c 00       		.byte	0
+ 125 007d 000000   		.space	3
+ 126 0080 00000000 		.word	0
+ 127 0084 01       		.byte	1
+ 128 0085 000000   		.space	3
+ 129 0088 00000000 		.word	USBFS_HIDREPORT_DESCRIPTOR2
+ 130 008c 01       		.byte	1
+ 131 008d 000000   		.space	3
+ 132 0090 2B000000 		.word	USBFS_DEVICE0_CONFIGURATION0_DESCR+43
+ 133              		.type	USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_ALTERNATE0_HID_IN_RPT_TABLE, %object
+ 134              		.size	USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_ALTERNATE0_HID_IN_RPT_TABLE, 12
+ 135              	USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_ALTERNATE0_HID_IN_RPT_TABLE:
+ 136 0094 0500     		.short	5
+ 137 0096 0000     		.space	2
+ 138 0098 00000000 		.word	USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_ALTERNATE0_HID_IN_BUF
+ 139 009c 00000000 		.word	USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_ALTERNATE0_HID_IN_RPT_SCB
+ 140              		.type	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_TABLE, %object
+ 141              		.size	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_TABLE, 40
+ 142              	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_TABLE:
+ 143 00a0 00       		.byte	0
+ 144 00a1 000000   		.space	3
+ 145 00a4 00000000 		.word	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_IN_RPT_TABLE
+ 146 00a8 00       		.byte	0
+ 147 00a9 000000   		.space	3
+ 148 00ac 00000000 		.word	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_OUT_RPT_TABLE
+ 149 00b0 00       		.byte	0
+ 150 00b1 000000   		.space	3
+ 151 00b4 00000000 		.word	0
+ 152 00b8 01       		.byte	1
+ 153 00b9 000000   		.space	3
+ 154 00bc 00000000 		.word	USBFS_HIDREPORT_DESCRIPTOR1
+ 155 00c0 01       		.byte	1
+ 156 00c1 000000   		.space	3
+ 157 00c4 12000000 		.word	USBFS_DEVICE0_CONFIGURATION0_DESCR+18
+ 158              		.type	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_OUT_RPT_TABLE, %object
+ 159              		.size	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_OUT_RPT_TABLE, 12
+ 160              	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_OUT_RPT_TABLE:
+ 161 00c8 0200     		.short	2
+ 162 00ca 0000     		.space	2
+ 163 00cc 00000000 		.word	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_OUT_BUF
+ 164 00d0 00000000 		.word	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_OUT_RPT_SCB
+ 165              		.type	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_IN_RPT_TABLE, %object
+ 166              		.size	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_IN_RPT_TABLE, 12
+ 167              	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_IN_RPT_TABLE:
+ 168 00d4 0900     		.short	9
+ 169 00d6 0000     		.space	2
+ 170 00d8 00000000 		.word	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_IN_BUF
+ 171 00dc 00000000 		.word	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_IN_RPT_SCB
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 4
+
+
+ 172              		.type	USBFS_HIDREPORT_DESCRIPTOR2, %object
+ 173              		.size	USBFS_HIDREPORT_DESCRIPTOR2, 71
+ 174              	USBFS_HIDREPORT_DESCRIPTOR2:
+ 175 00e0 43       		.byte	67
+ 176 00e1 00       		.byte	0
+ 177 00e2 05       		.byte	5
+ 178 00e3 01       		.byte	1
+ 179 00e4 09       		.byte	9
+ 180 00e5 02       		.byte	2
+ 181 00e6 A1       		.byte	-95
+ 182 00e7 01       		.byte	1
+ 183 00e8 09       		.byte	9
+ 184 00e9 01       		.byte	1
+ 185 00ea A1       		.byte	-95
+ 186 00eb 00       		.byte	0
+ 187 00ec 05       		.byte	5
+ 188 00ed 09       		.byte	9
+ 189 00ee 19       		.byte	25
+ 190 00ef 01       		.byte	1
+ 191 00f0 29       		.byte	41
+ 192 00f1 03       		.byte	3
+ 193 00f2 15       		.byte	21
+ 194 00f3 00       		.byte	0
+ 195 00f4 25       		.byte	37
+ 196 00f5 01       		.byte	1
+ 197 00f6 95       		.byte	-107
+ 198 00f7 03       		.byte	3
+ 199 00f8 75       		.byte	117
+ 200 00f9 01       		.byte	1
+ 201 00fa 81       		.byte	-127
+ 202 00fb 02       		.byte	2
+ 203 00fc 95       		.byte	-107
+ 204 00fd 01       		.byte	1
+ 205 00fe 75       		.byte	117
+ 206 00ff 05       		.byte	5
+ 207 0100 81       		.byte	-127
+ 208 0101 03       		.byte	3
+ 209 0102 05       		.byte	5
+ 210 0103 01       		.byte	1
+ 211 0104 09       		.byte	9
+ 212 0105 30       		.byte	48
+ 213 0106 09       		.byte	9
+ 214 0107 31       		.byte	49
+ 215 0108 15       		.byte	21
+ 216 0109 81       		.byte	-127
+ 217 010a 25       		.byte	37
+ 218 010b 7F       		.byte	127
+ 219 010c 95       		.byte	-107
+ 220 010d 02       		.byte	2
+ 221 010e 75       		.byte	117
+ 222 010f 08       		.byte	8
+ 223 0110 81       		.byte	-127
+ 224 0111 06       		.byte	6
+ 225 0112 C0       		.byte	-64
+ 226 0113 A1       		.byte	-95
+ 227 0114 00       		.byte	0
+ 228 0115 05       		.byte	5
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 5
+
+
+ 229 0116 01       		.byte	1
+ 230 0117 09       		.byte	9
+ 231 0118 38       		.byte	56
+ 232 0119 95       		.byte	-107
+ 233 011a 01       		.byte	1
+ 234 011b 75       		.byte	117
+ 235 011c 08       		.byte	8
+ 236 011d 15       		.byte	21
+ 237 011e 81       		.byte	-127
+ 238 011f 25       		.byte	37
+ 239 0120 7F       		.byte	127
+ 240 0121 81       		.byte	-127
+ 241 0122 06       		.byte	6
+ 242 0123 C0       		.byte	-64
+ 243 0124 C0       		.byte	-64
+ 244 0125 00       		.byte	0
+ 245 0126 00       		.byte	0
+ 246 0127 00       		.space	1
+ 247              		.type	USBFS_HIDREPORT_DESCRIPTOR1, %object
+ 248              		.size	USBFS_HIDREPORT_DESCRIPTOR1, 67
+ 249              	USBFS_HIDREPORT_DESCRIPTOR1:
+ 250 0128 3F       		.byte	63
+ 251 0129 00       		.byte	0
+ 252 012a 05       		.byte	5
+ 253 012b 01       		.byte	1
+ 254 012c 09       		.byte	9
+ 255 012d 06       		.byte	6
+ 256 012e A1       		.byte	-95
+ 257 012f 01       		.byte	1
+ 258 0130 05       		.byte	5
+ 259 0131 07       		.byte	7
+ 260 0132 19       		.byte	25
+ 261 0133 E0       		.byte	-32
+ 262 0134 29       		.byte	41
+ 263 0135 E7       		.byte	-25
+ 264 0136 15       		.byte	21
+ 265 0137 00       		.byte	0
+ 266 0138 25       		.byte	37
+ 267 0139 01       		.byte	1
+ 268 013a 75       		.byte	117
+ 269 013b 01       		.byte	1
+ 270 013c 95       		.byte	-107
+ 271 013d 08       		.byte	8
+ 272 013e 81       		.byte	-127
+ 273 013f 02       		.byte	2
+ 274 0140 95       		.byte	-107
+ 275 0141 01       		.byte	1
+ 276 0142 75       		.byte	117
+ 277 0143 08       		.byte	8
+ 278 0144 81       		.byte	-127
+ 279 0145 01       		.byte	1
+ 280 0146 95       		.byte	-107
+ 281 0147 05       		.byte	5
+ 282 0148 75       		.byte	117
+ 283 0149 01       		.byte	1
+ 284 014a 05       		.byte	5
+ 285 014b 08       		.byte	8
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 6
+
+
+ 286 014c 19       		.byte	25
+ 287 014d 01       		.byte	1
+ 288 014e 29       		.byte	41
+ 289 014f 05       		.byte	5
+ 290 0150 91       		.byte	-111
+ 291 0151 02       		.byte	2
+ 292 0152 95       		.byte	-107
+ 293 0153 01       		.byte	1
+ 294 0154 75       		.byte	117
+ 295 0155 03       		.byte	3
+ 296 0156 91       		.byte	-111
+ 297 0157 01       		.byte	1
+ 298 0158 95       		.byte	-107
+ 299 0159 06       		.byte	6
+ 300 015a 75       		.byte	117
+ 301 015b 08       		.byte	8
+ 302 015c 15       		.byte	21
+ 303 015d 00       		.byte	0
+ 304 015e 25       		.byte	37
+ 305 015f 65       		.byte	101
+ 306 0160 05       		.byte	5
+ 307 0161 07       		.byte	7
+ 308 0162 19       		.byte	25
+ 309 0163 00       		.byte	0
+ 310 0164 29       		.byte	41
+ 311 0165 65       		.byte	101
+ 312 0166 81       		.byte	-127
+ 313 0167 00       		.byte	0
+ 314 0168 C0       		.byte	-64
+ 315 0169 00       		.byte	0
+ 316 016a 00       		.byte	0
+ 317 016b 00       		.space	1
+ 318              		.type	USBFS_SN_STRING_DESCRIPTOR, %object
+ 319              		.size	USBFS_SN_STRING_DESCRIPTOR, 2
+ 320              	USBFS_SN_STRING_DESCRIPTOR:
+ 321 016c 02       		.byte	2
+ 322 016d 03       		.byte	3
+ 323 016e 0000     		.space	2
+ 324              		.type	USBFS_STRING_DESCRIPTORS, %object
+ 325              		.size	USBFS_STRING_DESCRIPTORS, 329
+ 326              	USBFS_STRING_DESCRIPTORS:
+ 327 0170 04       		.byte	4
+ 328 0171 03       		.byte	3
+ 329 0172 09       		.byte	9
+ 330 0173 04       		.byte	4
+ 331 0174 2C       		.byte	44
+ 332 0175 03       		.byte	3
+ 333 0176 43       		.byte	67
+ 334 0177 00       		.byte	0
+ 335 0178 79       		.byte	121
+ 336 0179 00       		.byte	0
+ 337 017a 70       		.byte	112
+ 338 017b 00       		.byte	0
+ 339 017c 72       		.byte	114
+ 340 017d 00       		.byte	0
+ 341 017e 65       		.byte	101
+ 342 017f 00       		.byte	0
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 7
+
+
+ 343 0180 73       		.byte	115
+ 344 0181 00       		.byte	0
+ 345 0182 73       		.byte	115
+ 346 0183 00       		.byte	0
+ 347 0184 20       		.byte	32
+ 348 0185 00       		.byte	0
+ 349 0186 53       		.byte	83
+ 350 0187 00       		.byte	0
+ 351 0188 65       		.byte	101
+ 352 0189 00       		.byte	0
+ 353 018a 6D       		.byte	109
+ 354 018b 00       		.byte	0
+ 355 018c 69       		.byte	105
+ 356 018d 00       		.byte	0
+ 357 018e 63       		.byte	99
+ 358 018f 00       		.byte	0
+ 359 0190 6F       		.byte	111
+ 360 0191 00       		.byte	0
+ 361 0192 6E       		.byte	110
+ 362 0193 00       		.byte	0
+ 363 0194 64       		.byte	100
+ 364 0195 00       		.byte	0
+ 365 0196 75       		.byte	117
+ 366 0197 00       		.byte	0
+ 367 0198 63       		.byte	99
+ 368 0199 00       		.byte	0
+ 369 019a 74       		.byte	116
+ 370 019b 00       		.byte	0
+ 371 019c 6F       		.byte	111
+ 372 019d 00       		.byte	0
+ 373 019e 72       		.byte	114
+ 374 019f 00       		.byte	0
+ 375 01a0 36       		.byte	54
+ 376 01a1 03       		.byte	3
+ 377 01a2 43       		.byte	67
+ 378 01a3 00       		.byte	0
+ 379 01a4 59       		.byte	89
+ 380 01a5 00       		.byte	0
+ 381 01a6 38       		.byte	56
+ 382 01a7 00       		.byte	0
+ 383 01a8 43       		.byte	67
+ 384 01a9 00       		.byte	0
+ 385 01aa 4B       		.byte	75
+ 386 01ab 00       		.byte	0
+ 387 01ac 49       		.byte	73
+ 388 01ad 00       		.byte	0
+ 389 01ae 54       		.byte	84
+ 390 01af 00       		.byte	0
+ 391 01b0 2D       		.byte	45
+ 392 01b1 00       		.byte	0
+ 393 01b2 30       		.byte	48
+ 394 01b3 00       		.byte	0
+ 395 01b4 34       		.byte	52
+ 396 01b5 00       		.byte	0
+ 397 01b6 36       		.byte	54
+ 398 01b7 00       		.byte	0
+ 399 01b8 20       		.byte	32
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 8
+
+
+ 400 01b9 00       		.byte	0
+ 401 01ba 55       		.byte	85
+ 402 01bb 00       		.byte	0
+ 403 01bc 53       		.byte	83
+ 404 01bd 00       		.byte	0
+ 405 01be 42       		.byte	66
+ 406 01bf 00       		.byte	0
+ 407 01c0 20       		.byte	32
+ 408 01c1 00       		.byte	0
+ 409 01c2 4D       		.byte	77
+ 410 01c3 00       		.byte	0
+ 411 01c4 6F       		.byte	111
+ 412 01c5 00       		.byte	0
+ 413 01c6 75       		.byte	117
+ 414 01c7 00       		.byte	0
+ 415 01c8 73       		.byte	115
+ 416 01c9 00       		.byte	0
+ 417 01ca 65       		.byte	101
+ 418 01cb 00       		.byte	0
+ 419 01cc 20       		.byte	32
+ 420 01cd 00       		.byte	0
+ 421 01ce 44       		.byte	68
+ 422 01cf 00       		.byte	0
+ 423 01d0 65       		.byte	101
+ 424 01d1 00       		.byte	0
+ 425 01d2 6D       		.byte	109
+ 426 01d3 00       		.byte	0
+ 427 01d4 6F       		.byte	111
+ 428 01d5 00       		.byte	0
+ 429 01d6 12       		.byte	18
+ 430 01d7 03       		.byte	3
+ 431 01d8 4B       		.byte	75
+ 432 01d9 00       		.byte	0
+ 433 01da 65       		.byte	101
+ 434 01db 00       		.byte	0
+ 435 01dc 79       		.byte	121
+ 436 01dd 00       		.byte	0
+ 437 01de 62       		.byte	98
+ 438 01df 00       		.byte	0
+ 439 01e0 6F       		.byte	111
+ 440 01e1 00       		.byte	0
+ 441 01e2 61       		.byte	97
+ 442 01e3 00       		.byte	0
+ 443 01e4 72       		.byte	114
+ 444 01e5 00       		.byte	0
+ 445 01e6 64       		.byte	100
+ 446 01e7 00       		.byte	0
+ 447 01e8 0C       		.byte	12
+ 448 01e9 03       		.byte	3
+ 449 01ea 4D       		.byte	77
+ 450 01eb 00       		.byte	0
+ 451 01ec 6F       		.byte	111
+ 452 01ed 00       		.byte	0
+ 453 01ee 75       		.byte	117
+ 454 01ef 00       		.byte	0
+ 455 01f0 73       		.byte	115
+ 456 01f1 00       		.byte	0
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 9
+
+
+ 457 01f2 65       		.byte	101
+ 458 01f3 00       		.byte	0
+ 459 01f4 2A       		.byte	42
+ 460 01f5 03       		.byte	3
+ 461 01f6 43       		.byte	67
+ 462 01f7 00       		.byte	0
+ 463 01f8 59       		.byte	89
+ 464 01f9 00       		.byte	0
+ 465 01fa 38       		.byte	56
+ 466 01fb 00       		.byte	0
+ 467 01fc 43       		.byte	67
+ 468 01fd 00       		.byte	0
+ 469 01fe 4B       		.byte	75
+ 470 01ff 00       		.byte	0
+ 471 0200 49       		.byte	73
+ 472 0201 00       		.byte	0
+ 473 0202 54       		.byte	84
+ 474 0203 00       		.byte	0
+ 475 0204 2D       		.byte	45
+ 476 0205 00       		.byte	0
+ 477 0206 30       		.byte	48
+ 478 0207 00       		.byte	0
+ 479 0208 34       		.byte	52
+ 480 0209 00       		.byte	0
+ 481 020a 36       		.byte	54
+ 482 020b 00       		.byte	0
+ 483 020c 20       		.byte	32
+ 484 020d 00       		.byte	0
+ 485 020e 4B       		.byte	75
+ 486 020f 00       		.byte	0
+ 487 0210 65       		.byte	101
+ 488 0211 00       		.byte	0
+ 489 0212 79       		.byte	121
+ 490 0213 00       		.byte	0
+ 491 0214 62       		.byte	98
+ 492 0215 00       		.byte	0
+ 493 0216 6F       		.byte	111
+ 494 0217 00       		.byte	0
+ 495 0218 61       		.byte	97
+ 496 0219 00       		.byte	0
+ 497 021a 72       		.byte	114
+ 498 021b 00       		.byte	0
+ 499 021c 64       		.byte	100
+ 500 021d 00       		.byte	0
+ 501 021e 24       		.byte	36
+ 502 021f 03       		.byte	3
+ 503 0220 43       		.byte	67
+ 504 0221 00       		.byte	0
+ 505 0222 59       		.byte	89
+ 506 0223 00       		.byte	0
+ 507 0224 38       		.byte	56
+ 508 0225 00       		.byte	0
+ 509 0226 43       		.byte	67
+ 510 0227 00       		.byte	0
+ 511 0228 4B       		.byte	75
+ 512 0229 00       		.byte	0
+ 513 022a 49       		.byte	73
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 10
+
+
+ 514 022b 00       		.byte	0
+ 515 022c 54       		.byte	84
+ 516 022d 00       		.byte	0
+ 517 022e 2D       		.byte	45
+ 518 022f 00       		.byte	0
+ 519 0230 30       		.byte	48
+ 520 0231 00       		.byte	0
+ 521 0232 34       		.byte	52
+ 522 0233 00       		.byte	0
+ 523 0234 36       		.byte	54
+ 524 0235 00       		.byte	0
+ 525 0236 20       		.byte	32
+ 526 0237 00       		.byte	0
+ 527 0238 4D       		.byte	77
+ 528 0239 00       		.byte	0
+ 529 023a 6F       		.byte	111
+ 530 023b 00       		.byte	0
+ 531 023c 75       		.byte	117
+ 532 023d 00       		.byte	0
+ 533 023e 73       		.byte	115
+ 534 023f 00       		.byte	0
+ 535 0240 65       		.byte	101
+ 536 0241 00       		.byte	0
+ 537 0242 28       		.byte	40
+ 538 0243 03       		.byte	3
+ 539 0244 43       		.byte	67
+ 540 0245 00       		.byte	0
+ 541 0246 59       		.byte	89
+ 542 0247 00       		.byte	0
+ 543 0248 38       		.byte	56
+ 544 0249 00       		.byte	0
+ 545 024a 43       		.byte	67
+ 546 024b 00       		.byte	0
+ 547 024c 4B       		.byte	75
+ 548 024d 00       		.byte	0
+ 549 024e 49       		.byte	73
+ 550 024f 00       		.byte	0
+ 551 0250 54       		.byte	84
+ 552 0251 00       		.byte	0
+ 553 0252 2D       		.byte	45
+ 554 0253 00       		.byte	0
+ 555 0254 30       		.byte	48
+ 556 0255 00       		.byte	0
+ 557 0256 34       		.byte	52
+ 558 0257 00       		.byte	0
+ 559 0258 36       		.byte	54
+ 560 0259 00       		.byte	0
+ 561 025a 20       		.byte	32
+ 562 025b 00       		.byte	0
+ 563 025c 45       		.byte	69
+ 564 025d 00       		.byte	0
+ 565 025e 78       		.byte	120
+ 566 025f 00       		.byte	0
+ 567 0260 61       		.byte	97
+ 568 0261 00       		.byte	0
+ 569 0262 6D       		.byte	109
+ 570 0263 00       		.byte	0
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 11
+
+
+ 571 0264 70       		.byte	112
+ 572 0265 00       		.byte	0
+ 573 0266 6C       		.byte	108
+ 574 0267 00       		.byte	0
+ 575 0268 65       		.byte	101
+ 576 0269 00       		.byte	0
+ 577 026a 24       		.byte	36
+ 578 026b 03       		.byte	3
+ 579 026c 43       		.byte	67
+ 580 026d 00       		.byte	0
+ 581 026e 59       		.byte	89
+ 582 026f 00       		.byte	0
+ 583 0270 38       		.byte	56
+ 584 0271 00       		.byte	0
+ 585 0272 43       		.byte	67
+ 586 0273 00       		.byte	0
+ 587 0274 4B       		.byte	75
+ 588 0275 00       		.byte	0
+ 589 0276 49       		.byte	73
+ 590 0277 00       		.byte	0
+ 591 0278 54       		.byte	84
+ 592 0279 00       		.byte	0
+ 593 027a 2D       		.byte	45
+ 594 027b 00       		.byte	0
+ 595 027c 30       		.byte	48
+ 596 027d 00       		.byte	0
+ 597 027e 34       		.byte	52
+ 598 027f 00       		.byte	0
+ 599 0280 36       		.byte	54
+ 600 0281 00       		.byte	0
+ 601 0282 2D       		.byte	45
+ 602 0283 00       		.byte	0
+ 603 0284 4D       		.byte	77
+ 604 0285 00       		.byte	0
+ 605 0286 6F       		.byte	111
+ 606 0287 00       		.byte	0
+ 607 0288 75       		.byte	117
+ 608 0289 00       		.byte	0
+ 609 028a 73       		.byte	115
+ 610 028b 00       		.byte	0
+ 611 028c 65       		.byte	101
+ 612 028d 00       		.byte	0
+ 613 028e 2A       		.byte	42
+ 614 028f 03       		.byte	3
+ 615 0290 43       		.byte	67
+ 616 0291 00       		.byte	0
+ 617 0292 59       		.byte	89
+ 618 0293 00       		.byte	0
+ 619 0294 38       		.byte	56
+ 620 0295 00       		.byte	0
+ 621 0296 43       		.byte	67
+ 622 0297 00       		.byte	0
+ 623 0298 4B       		.byte	75
+ 624 0299 00       		.byte	0
+ 625 029a 49       		.byte	73
+ 626 029b 00       		.byte	0
+ 627 029c 54       		.byte	84
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 12
+
+
+ 628 029d 00       		.byte	0
+ 629 029e 2D       		.byte	45
+ 630 029f 00       		.byte	0
+ 631 02a0 30       		.byte	48
+ 632 02a1 00       		.byte	0
+ 633 02a2 34       		.byte	52
+ 634 02a3 00       		.byte	0
+ 635 02a4 36       		.byte	54
+ 636 02a5 00       		.byte	0
+ 637 02a6 2D       		.byte	45
+ 638 02a7 00       		.byte	0
+ 639 02a8 4B       		.byte	75
+ 640 02a9 00       		.byte	0
+ 641 02aa 65       		.byte	101
+ 642 02ab 00       		.byte	0
+ 643 02ac 79       		.byte	121
+ 644 02ad 00       		.byte	0
+ 645 02ae 62       		.byte	98
+ 646 02af 00       		.byte	0
+ 647 02b0 6F       		.byte	111
+ 648 02b1 00       		.byte	0
+ 649 02b2 61       		.byte	97
+ 650 02b3 00       		.byte	0
+ 651 02b4 72       		.byte	114
+ 652 02b5 00       		.byte	0
+ 653 02b6 64       		.byte	100
+ 654 02b7 00       		.byte	0
+ 655 02b8 00       		.byte	0
+ 656 02b9 000000   		.space	3
+ 657              		.type	USBFS_DEVICE0_CONFIGURATION0_DESCR, %object
+ 658              		.size	USBFS_DEVICE0_CONFIGURATION0_DESCR, 59
+ 659              	USBFS_DEVICE0_CONFIGURATION0_DESCR:
+ 660 02bc 09       		.byte	9
+ 661 02bd 02       		.byte	2
+ 662 02be 3B       		.byte	59
+ 663 02bf 00       		.byte	0
+ 664 02c0 02       		.byte	2
+ 665 02c1 01       		.byte	1
+ 666 02c2 07       		.byte	7
+ 667 02c3 C0       		.byte	-64
+ 668 02c4 32       		.byte	50
+ 669 02c5 09       		.byte	9
+ 670 02c6 04       		.byte	4
+ 671 02c7 00       		.byte	0
+ 672 02c8 00       		.byte	0
+ 673 02c9 01       		.byte	1
+ 674 02ca 03       		.byte	3
+ 675 02cb 00       		.byte	0
+ 676 02cc 00       		.byte	0
+ 677 02cd 05       		.byte	5
+ 678 02ce 09       		.byte	9
+ 679 02cf 21       		.byte	33
+ 680 02d0 11       		.byte	17
+ 681 02d1 01       		.byte	1
+ 682 02d2 00       		.byte	0
+ 683 02d3 01       		.byte	1
+ 684 02d4 22       		.byte	34
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 13
+
+
+ 685 02d5 3F       		.byte	63
+ 686 02d6 00       		.byte	0
+ 687 02d7 07       		.byte	7
+ 688 02d8 05       		.byte	5
+ 689 02d9 81       		.byte	-127
+ 690 02da 03       		.byte	3
+ 691 02db 08       		.byte	8
+ 692 02dc 00       		.byte	0
+ 693 02dd 0A       		.byte	10
+ 694 02de 09       		.byte	9
+ 695 02df 04       		.byte	4
+ 696 02e0 01       		.byte	1
+ 697 02e1 00       		.byte	0
+ 698 02e2 01       		.byte	1
+ 699 02e3 03       		.byte	3
+ 700 02e4 00       		.byte	0
+ 701 02e5 00       		.byte	0
+ 702 02e6 06       		.byte	6
+ 703 02e7 09       		.byte	9
+ 704 02e8 21       		.byte	33
+ 705 02e9 11       		.byte	17
+ 706 02ea 01       		.byte	1
+ 707 02eb 00       		.byte	0
+ 708 02ec 01       		.byte	1
+ 709 02ed 22       		.byte	34
+ 710 02ee 43       		.byte	67
+ 711 02ef 00       		.byte	0
+ 712 02f0 07       		.byte	7
+ 713 02f1 05       		.byte	5
+ 714 02f2 82       		.byte	-126
+ 715 02f3 03       		.byte	3
+ 716 02f4 08       		.byte	8
+ 717 02f5 00       		.byte	0
+ 718 02f6 0A       		.byte	10
+ 719 02f7 00       		.space	1
+ 720              		.type	USBFS_DEVICE0_DESCR, %object
+ 721              		.size	USBFS_DEVICE0_DESCR, 18
+ 722              	USBFS_DEVICE0_DESCR:
+ 723 02f8 12       		.byte	18
+ 724 02f9 01       		.byte	1
+ 725 02fa 00       		.byte	0
+ 726 02fb 02       		.byte	2
+ 727 02fc 00       		.byte	0
+ 728 02fd 00       		.byte	0
+ 729 02fe 00       		.byte	0
+ 730 02ff 08       		.byte	8
+ 731 0300 B4       		.byte	-76
+ 732 0301 04       		.byte	4
+ 733 0302 42       		.byte	66
+ 734 0303 F1       		.byte	-15
+ 735 0304 00       		.byte	0
+ 736 0305 00       		.byte	0
+ 737 0306 01       		.byte	1
+ 738 0307 02       		.byte	2
+ 739 0308 80       		.byte	-128
+ 740 0309 01       		.byte	1
+ 741 030a 0000     		.text
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 14
+
+
+ 742              	.Letext0:
+ 743              		.file 1 ".\\Generated_Source\\PSoC4\\cytypes.h"
+ 744              		.file 2 ".\\Generated_Source\\PSoC4\\USBFS.h"
+ 745              		.file 3 ".\\Generated_Source\\PSoC4\\USBFS_descr.c"
+ 746              		.section	.debug_info,"",%progbits
+ 747              	.Ldebug_info0:
+ 748 0000 8E040000 		.4byte	0x48e
+ 749 0004 0400     		.2byte	0x4
+ 750 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 751 000a 04       		.byte	0x4
+ 752 000b 01       		.uleb128 0x1
+ 753 000c 54050000 		.4byte	.LASF56
+ 754 0010 01       		.byte	0x1
+ 755 0011 F3020000 		.4byte	.LASF57
+ 756 0015 84040000 		.4byte	.LASF58
+ 757 0019 00000000 		.4byte	.Ldebug_line0
+ 758 001d 02       		.uleb128 0x2
+ 759 001e 01       		.byte	0x1
+ 760 001f 06       		.byte	0x6
+ 761 0020 74060000 		.4byte	.LASF0
+ 762 0024 02       		.uleb128 0x2
+ 763 0025 01       		.byte	0x1
+ 764 0026 08       		.byte	0x8
+ 765 0027 1E050000 		.4byte	.LASF1
+ 766 002b 02       		.uleb128 0x2
+ 767 002c 02       		.byte	0x2
+ 768 002d 05       		.byte	0x5
+ 769 002e ED050000 		.4byte	.LASF2
+ 770 0032 02       		.uleb128 0x2
+ 771 0033 02       		.byte	0x2
+ 772 0034 07       		.byte	0x7
+ 773 0035 90010000 		.4byte	.LASF3
+ 774 0039 02       		.uleb128 0x2
+ 775 003a 04       		.byte	0x4
+ 776 003b 05       		.byte	0x5
+ 777 003c 64060000 		.4byte	.LASF4
+ 778 0040 02       		.uleb128 0x2
+ 779 0041 04       		.byte	0x4
+ 780 0042 07       		.byte	0x7
+ 781 0043 65040000 		.4byte	.LASF5
+ 782 0047 02       		.uleb128 0x2
+ 783 0048 08       		.byte	0x8
+ 784 0049 05       		.byte	0x5
+ 785 004a 35050000 		.4byte	.LASF6
+ 786 004e 02       		.uleb128 0x2
+ 787 004f 08       		.byte	0x8
+ 788 0050 07       		.byte	0x7
+ 789 0051 E6040000 		.4byte	.LASF7
+ 790 0055 03       		.uleb128 0x3
+ 791 0056 04       		.byte	0x4
+ 792 0057 05       		.byte	0x5
+ 793 0058 696E7400 		.ascii	"int\000"
+ 794 005c 02       		.uleb128 0x2
+ 795 005d 04       		.byte	0x4
+ 796 005e 07       		.byte	0x7
+ 797 005f 77040000 		.4byte	.LASF8
+ 798 0063 04       		.uleb128 0x4
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 15
+
+
+ 799 0064 2F060000 		.4byte	.LASF9
+ 800 0068 01       		.byte	0x1
+ 801 0069 3801     		.2byte	0x138
+ 802 006b 24000000 		.4byte	0x24
+ 803 006f 04       		.uleb128 0x4
+ 804 0070 F7030000 		.4byte	.LASF10
+ 805 0074 01       		.byte	0x1
+ 806 0075 3901     		.2byte	0x139
+ 807 0077 32000000 		.4byte	0x32
+ 808 007b 02       		.uleb128 0x2
+ 809 007c 04       		.byte	0x4
+ 810 007d 04       		.byte	0x4
+ 811 007e 8A020000 		.4byte	.LASF11
+ 812 0082 02       		.uleb128 0x2
+ 813 0083 08       		.byte	0x8
+ 814 0084 04       		.byte	0x4
+ 815 0085 F0030000 		.4byte	.LASF12
+ 816 0089 02       		.uleb128 0x2
+ 817 008a 01       		.byte	0x1
+ 818 008b 08       		.byte	0x8
+ 819 008c 4F050000 		.4byte	.LASF13
+ 820 0090 05       		.uleb128 0x5
+ 821 0091 63000000 		.4byte	0x63
+ 822 0095 02       		.uleb128 0x2
+ 823 0096 04       		.byte	0x4
+ 824 0097 07       		.byte	0x7
+ 825 0098 2C050000 		.4byte	.LASF14
+ 826 009c 06       		.uleb128 0x6
+ 827 009d 08       		.byte	0x8
+ 828 009e 02       		.byte	0x2
+ 829 009f A7       		.byte	0xa7
+ 830 00a0 ED000000 		.4byte	0xed
+ 831 00a4 07       		.uleb128 0x7
+ 832 00a5 35060000 		.4byte	.LASF15
+ 833 00a9 02       		.byte	0x2
+ 834 00aa A9       		.byte	0xa9
+ 835 00ab 63000000 		.4byte	0x63
+ 836 00af 00       		.byte	0
+ 837 00b0 07       		.uleb128 0x7
+ 838 00b1 74020000 		.4byte	.LASF16
+ 839 00b5 02       		.byte	0x2
+ 840 00b6 AA       		.byte	0xaa
+ 841 00b7 63000000 		.4byte	0x63
+ 842 00bb 01       		.byte	0x1
+ 843 00bc 07       		.uleb128 0x7
+ 844 00bd 57030000 		.4byte	.LASF17
+ 845 00c1 02       		.byte	0x2
+ 846 00c2 AB       		.byte	0xab
+ 847 00c3 63000000 		.4byte	0x63
+ 848 00c7 02       		.byte	0x2
+ 849 00c8 07       		.uleb128 0x7
+ 850 00c9 E8020000 		.4byte	.LASF18
+ 851 00cd 02       		.byte	0x2
+ 852 00ce AC       		.byte	0xac
+ 853 00cf 63000000 		.4byte	0x63
+ 854 00d3 03       		.byte	0x3
+ 855 00d4 07       		.uleb128 0x7
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 16
+
+
+ 856 00d5 E2050000 		.4byte	.LASF19
+ 857 00d9 02       		.byte	0x2
+ 858 00da AD       		.byte	0xad
+ 859 00db 6F000000 		.4byte	0x6f
+ 860 00df 04       		.byte	0x4
+ 861 00e0 07       		.uleb128 0x7
+ 862 00e1 F8060000 		.4byte	.LASF20
+ 863 00e5 02       		.byte	0x2
+ 864 00e6 AE       		.byte	0xae
+ 865 00e7 63000000 		.4byte	0x63
+ 866 00eb 06       		.byte	0x6
+ 867 00ec 00       		.byte	0
+ 868 00ed 08       		.uleb128 0x8
+ 869 00ee 04050000 		.4byte	.LASF21
+ 870 00f2 02       		.byte	0x2
+ 871 00f3 AF       		.byte	0xaf
+ 872 00f4 9C000000 		.4byte	0x9c
+ 873 00f8 06       		.uleb128 0x6
+ 874 00f9 04       		.byte	0x4
+ 875 00fa 02       		.byte	0x2
+ 876 00fb B1       		.byte	0xb1
+ 877 00fc 19010000 		.4byte	0x119
+ 878 0100 07       		.uleb128 0x7
+ 879 0101 6D060000 		.4byte	.LASF22
+ 880 0105 02       		.byte	0x2
+ 881 0106 B3       		.byte	0xb3
+ 882 0107 63000000 		.4byte	0x63
+ 883 010b 00       		.byte	0
+ 884 010c 07       		.uleb128 0x7
+ 885 010d F1060000 		.4byte	.LASF23
+ 886 0111 02       		.byte	0x2
+ 887 0112 B4       		.byte	0xb4
+ 888 0113 6F000000 		.4byte	0x6f
+ 889 0117 02       		.byte	0x2
+ 890 0118 00       		.byte	0
+ 891 0119 08       		.uleb128 0x8
+ 892 011a 1A030000 		.4byte	.LASF24
+ 893 011e 02       		.byte	0x2
+ 894 011f B5       		.byte	0xb5
+ 895 0120 F8000000 		.4byte	0xf8
+ 896 0124 06       		.uleb128 0x6
+ 897 0125 0C       		.byte	0xc
+ 898 0126 02       		.byte	0x2
+ 899 0127 B7       		.byte	0xb7
+ 900 0128 51010000 		.4byte	0x151
+ 901 012c 07       		.uleb128 0x7
+ 902 012d 5C010000 		.4byte	.LASF25
+ 903 0131 02       		.byte	0x2
+ 904 0132 B9       		.byte	0xb9
+ 905 0133 6F000000 		.4byte	0x6f
+ 906 0137 00       		.byte	0
+ 907 0138 07       		.uleb128 0x7
+ 908 0139 6E020000 		.4byte	.LASF26
+ 909 013d 02       		.byte	0x2
+ 910 013e BA       		.byte	0xba
+ 911 013f 51010000 		.4byte	0x151
+ 912 0143 04       		.byte	0x4
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 17
+
+
+ 913 0144 07       		.uleb128 0x7
+ 914 0145 14000000 		.4byte	.LASF27
+ 915 0149 02       		.byte	0x2
+ 916 014a BB       		.byte	0xbb
+ 917 014b 57010000 		.4byte	0x157
+ 918 014f 08       		.byte	0x8
+ 919 0150 00       		.byte	0
+ 920 0151 09       		.uleb128 0x9
+ 921 0152 04       		.byte	0x4
+ 922 0153 90000000 		.4byte	0x90
+ 923 0157 09       		.uleb128 0x9
+ 924 0158 04       		.byte	0x4
+ 925 0159 19010000 		.4byte	0x119
+ 926 015d 08       		.uleb128 0x8
+ 927 015e 7F020000 		.4byte	.LASF28
+ 928 0162 02       		.byte	0x2
+ 929 0163 BC       		.byte	0xbc
+ 930 0164 24010000 		.4byte	0x124
+ 931 0168 06       		.uleb128 0x6
+ 932 0169 08       		.byte	0x8
+ 933 016a 02       		.byte	0x2
+ 934 016b BE       		.byte	0xbe
+ 935 016c 87010000 		.4byte	0x187
+ 936 0170 0A       		.uleb128 0xa
+ 937 0171 6300     		.ascii	"c\000"
+ 938 0173 02       		.byte	0x2
+ 939 0174 C0       		.byte	0xc0
+ 940 0175 63000000 		.4byte	0x63
+ 941 0179 00       		.byte	0
+ 942 017a 07       		.uleb128 0x7
+ 943 017b FD040000 		.4byte	.LASF29
+ 944 017f 02       		.byte	0x2
+ 945 0180 C1       		.byte	0xc1
+ 946 0181 87010000 		.4byte	0x187
+ 947 0185 04       		.byte	0x4
+ 948 0186 00       		.byte	0
+ 949 0187 09       		.uleb128 0x9
+ 950 0188 04       		.byte	0x4
+ 951 0189 8D010000 		.4byte	0x18d
+ 952 018d 0B       		.uleb128 0xb
+ 953 018e 08       		.uleb128 0x8
+ 954 018f 43050000 		.4byte	.LASF30
+ 955 0193 02       		.byte	0x2
+ 956 0194 C2       		.byte	0xc2
+ 957 0195 68010000 		.4byte	0x168
+ 958 0199 0C       		.uleb128 0xc
+ 959 019a 63000000 		.4byte	0x63
+ 960 019e A9010000 		.4byte	0x1a9
+ 961 01a2 0D       		.uleb128 0xd
+ 962 01a3 95000000 		.4byte	0x95
+ 963 01a7 11       		.byte	0x11
+ 964 01a8 00       		.byte	0
+ 965 01a9 0E       		.uleb128 0xe
+ 966 01aa 00000000 		.4byte	.LASF31
+ 967 01ae 03       		.byte	0x3
+ 968 01af 24       		.byte	0x24
+ 969 01b0 BA010000 		.4byte	0x1ba
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 18
+
+
+ 970 01b4 05       		.uleb128 0x5
+ 971 01b5 03       		.byte	0x3
+ 972 01b6 00000000 		.4byte	USBFS_DEVICE0_DESCR
+ 973 01ba 0F       		.uleb128 0xf
+ 974 01bb 99010000 		.4byte	0x199
+ 975 01bf 0C       		.uleb128 0xc
+ 976 01c0 63000000 		.4byte	0x63
+ 977 01c4 CF010000 		.4byte	0x1cf
+ 978 01c8 0D       		.uleb128 0xd
+ 979 01c9 95000000 		.4byte	0x95
+ 980 01cd 3A       		.byte	0x3a
+ 981 01ce 00       		.byte	0
+ 982 01cf 0E       		.uleb128 0xe
+ 983 01d0 42040000 		.4byte	.LASF32
+ 984 01d4 03       		.byte	0x3
+ 985 01d5 37       		.byte	0x37
+ 986 01d6 E0010000 		.4byte	0x1e0
+ 987 01da 05       		.uleb128 0x5
+ 988 01db 03       		.byte	0x3
+ 989 01dc 00000000 		.4byte	USBFS_DEVICE0_CONFIGURATION0_DESCR
+ 990 01e0 0F       		.uleb128 0xf
+ 991 01e1 BF010000 		.4byte	0x1bf
+ 992 01e5 0C       		.uleb128 0xc
+ 993 01e6 8E010000 		.4byte	0x18e
+ 994 01ea F5010000 		.4byte	0x1f5
+ 995 01ee 0D       		.uleb128 0xd
+ 996 01ef 95000000 		.4byte	0x95
+ 997 01f3 00       		.byte	0
+ 998 01f4 00       		.byte	0
+ 999 01f5 10       		.uleb128 0x10
+ 1000 01f6 62010000 		.4byte	.LASF33
+ 1001 01fa 03       		.byte	0x3
+ 1002 01fb 9001     		.2byte	0x190
+ 1003 01fd 07020000 		.4byte	0x207
+ 1004 0201 05       		.uleb128 0x5
+ 1005 0202 03       		.byte	0x3
+ 1006 0203 00000000 		.4byte	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_TABLE
+ 1007 0207 0F       		.uleb128 0xf
+ 1008 0208 E5010000 		.4byte	0x1e5
+ 1009 020c 10       		.uleb128 0x10
+ 1010 020d 40020000 		.4byte	.LASF34
+ 1011 0211 03       		.byte	0x3
+ 1012 0212 9701     		.2byte	0x197
+ 1013 0214 1E020000 		.4byte	0x21e
+ 1014 0218 05       		.uleb128 0x5
+ 1015 0219 03       		.byte	0x3
+ 1016 021a 00000000 		.4byte	USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_TABLE
+ 1017 021e 0F       		.uleb128 0xf
+ 1018 021f E5010000 		.4byte	0x1e5
+ 1019 0223 0C       		.uleb128 0xc
+ 1020 0224 ED000000 		.4byte	0xed
+ 1021 0228 33020000 		.4byte	0x233
+ 1022 022c 0D       		.uleb128 0xd
+ 1023 022d 95000000 		.4byte	0x95
+ 1024 0231 01       		.byte	0x1
+ 1025 0232 00       		.byte	0
+ 1026 0233 10       		.uleb128 0x10
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 19
+
+
+ 1027 0234 80060000 		.4byte	.LASF35
+ 1028 0238 03       		.byte	0x3
+ 1029 0239 A201     		.2byte	0x1a2
+ 1030 023b 45020000 		.4byte	0x245
+ 1031 023f 05       		.uleb128 0x5
+ 1032 0240 03       		.byte	0x3
+ 1033 0241 00000000 		.4byte	USBFS_DEVICE0_CONFIGURATION0_EP_SETTINGS_TABLE
+ 1034 0245 0F       		.uleb128 0xf
+ 1035 0246 23020000 		.4byte	0x223
+ 1036 024a 0C       		.uleb128 0xc
+ 1037 024b 63000000 		.4byte	0x63
+ 1038 024f 5A020000 		.4byte	0x25a
+ 1039 0253 0D       		.uleb128 0xd
+ 1040 0254 95000000 		.4byte	0x95
+ 1041 0258 01       		.byte	0x1
+ 1042 0259 00       		.byte	0
+ 1043 025a 10       		.uleb128 0x10
+ 1044 025b 21000000 		.4byte	.LASF36
+ 1045 025f 03       		.byte	0x3
+ 1046 0260 A701     		.2byte	0x1a7
+ 1047 0262 6C020000 		.4byte	0x26c
+ 1048 0266 05       		.uleb128 0x5
+ 1049 0267 03       		.byte	0x3
+ 1050 0268 00000000 		.4byte	USBFS_DEVICE0_CONFIGURATION0_INTERFACE_CLASS
+ 1051 026c 0F       		.uleb128 0xf
+ 1052 026d 4A020000 		.4byte	0x24a
+ 1053 0271 0C       		.uleb128 0xc
+ 1054 0272 8E010000 		.4byte	0x18e
+ 1055 0276 81020000 		.4byte	0x281
+ 1056 027a 0D       		.uleb128 0xd
+ 1057 027b 95000000 		.4byte	0x95
+ 1058 027f 04       		.byte	0x4
+ 1059 0280 00       		.byte	0
+ 1060 0281 10       		.uleb128 0x10
+ 1061 0282 34030000 		.4byte	.LASF37
+ 1062 0286 03       		.byte	0x3
+ 1063 0287 AF01     		.2byte	0x1af
+ 1064 0289 93020000 		.4byte	0x293
+ 1065 028d 05       		.uleb128 0x5
+ 1066 028e 03       		.byte	0x3
+ 1067 028f 00000000 		.4byte	USBFS_DEVICE0_CONFIGURATION0_TABLE
+ 1068 0293 0F       		.uleb128 0xf
+ 1069 0294 71020000 		.4byte	0x271
+ 1070 0298 0C       		.uleb128 0xc
+ 1071 0299 8E010000 		.4byte	0x18e
+ 1072 029d A8020000 		.4byte	0x2a8
+ 1073 02a1 0D       		.uleb128 0xd
+ 1074 02a2 95000000 		.4byte	0x95
+ 1075 02a6 02       		.byte	0x2
+ 1076 02a7 00       		.byte	0
+ 1077 02a8 10       		.uleb128 0x10
+ 1078 02a9 5C030000 		.4byte	.LASF38
+ 1079 02ad 03       		.byte	0x3
+ 1080 02ae BA01     		.2byte	0x1ba
+ 1081 02b0 BA020000 		.4byte	0x2ba
+ 1082 02b4 05       		.uleb128 0x5
+ 1083 02b5 03       		.byte	0x3
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 20
+
+
+ 1084 02b6 00000000 		.4byte	USBFS_DEVICE0_TABLE
+ 1085 02ba 0F       		.uleb128 0xf
+ 1086 02bb 98020000 		.4byte	0x298
+ 1087 02bf 10       		.uleb128 0x10
+ 1088 02c0 50010000 		.4byte	.LASF39
+ 1089 02c4 03       		.byte	0x3
+ 1090 02c5 C201     		.2byte	0x1c2
+ 1091 02c7 D1020000 		.4byte	0x2d1
+ 1092 02cb 05       		.uleb128 0x5
+ 1093 02cc 03       		.byte	0x3
+ 1094 02cd 00000000 		.4byte	USBFS_TABLE
+ 1095 02d1 0F       		.uleb128 0xf
+ 1096 02d2 E5010000 		.4byte	0x1e5
+ 1097 02d6 0E       		.uleb128 0xe
+ 1098 02d7 E7010000 		.4byte	.LASF40
+ 1099 02db 03       		.byte	0x3
+ 1100 02dc E2       		.byte	0xe2
+ 1101 02dd E7020000 		.4byte	0x2e7
+ 1102 02e1 05       		.uleb128 0x5
+ 1103 02e2 03       		.byte	0x3
+ 1104 02e3 00000000 		.4byte	USBFS_SN_STRING_DESCRIPTOR
+ 1105 02e7 0F       		.uleb128 0xf
+ 1106 02e8 4A020000 		.4byte	0x24a
+ 1107 02ec 0C       		.uleb128 0xc
+ 1108 02ed 63000000 		.4byte	0x63
+ 1109 02f1 FD020000 		.4byte	0x2fd
+ 1110 02f5 11       		.uleb128 0x11
+ 1111 02f6 95000000 		.4byte	0x95
+ 1112 02fa 4801     		.2byte	0x148
+ 1113 02fc 00       		.byte	0
+ 1114 02fd 0E       		.uleb128 0xe
+ 1115 02fe CF020000 		.4byte	.LASF41
+ 1116 0302 03       		.byte	0x3
+ 1117 0303 85       		.byte	0x85
+ 1118 0304 0E030000 		.4byte	0x30e
+ 1119 0308 05       		.uleb128 0x5
+ 1120 0309 03       		.byte	0x3
+ 1121 030a 00000000 		.4byte	USBFS_STRING_DESCRIPTORS
+ 1122 030e 0F       		.uleb128 0xf
+ 1123 030f EC020000 		.4byte	0x2ec
+ 1124 0313 10       		.uleb128 0x10
+ 1125 0314 AF060000 		.4byte	.LASF42
+ 1126 0318 03       		.byte	0x3
+ 1127 0319 4101     		.2byte	0x141
+ 1128 031b 19010000 		.4byte	0x119
+ 1129 031f 05       		.uleb128 0x5
+ 1130 0320 03       		.byte	0x3
+ 1131 0321 00000000 		.4byte	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_IN_RPT_SCB
+ 1132 0325 0C       		.uleb128 0xc
+ 1133 0326 63000000 		.4byte	0x63
+ 1134 032a 35030000 		.4byte	0x335
+ 1135 032e 0D       		.uleb128 0xd
+ 1136 032f 95000000 		.4byte	0x95
+ 1137 0333 08       		.byte	0x8
+ 1138 0334 00       		.byte	0
+ 1139 0335 10       		.uleb128 0x10
+ 1140 0336 02020000 		.4byte	.LASF43
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 21
+
+
+ 1141 033a 03       		.byte	0x3
+ 1142 033b 4201     		.2byte	0x142
+ 1143 033d 25030000 		.4byte	0x325
+ 1144 0341 05       		.uleb128 0x5
+ 1145 0342 03       		.byte	0x3
+ 1146 0343 00000000 		.4byte	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_IN_BUF
+ 1147 0347 10       		.uleb128 0x10
+ 1148 0348 70030000 		.4byte	.LASF44
+ 1149 034c 03       		.byte	0x3
+ 1150 034d 5001     		.2byte	0x150
+ 1151 034f 19010000 		.4byte	0x119
+ 1152 0353 05       		.uleb128 0x5
+ 1153 0354 03       		.byte	0x3
+ 1154 0355 00000000 		.4byte	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_OUT_RPT_SCB
+ 1155 0359 10       		.uleb128 0x10
+ 1156 035a 90020000 		.4byte	.LASF45
+ 1157 035e 03       		.byte	0x3
+ 1158 035f 5101     		.2byte	0x151
+ 1159 0361 4A020000 		.4byte	0x24a
+ 1160 0365 05       		.uleb128 0x5
+ 1161 0366 03       		.byte	0x3
+ 1162 0367 00000000 		.4byte	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_OUT_BUF
+ 1163 036b 10       		.uleb128 0x10
+ 1164 036c 93000000 		.4byte	.LASF46
+ 1165 0370 03       		.byte	0x3
+ 1166 0371 7001     		.2byte	0x170
+ 1167 0373 19010000 		.4byte	0x119
+ 1168 0377 05       		.uleb128 0x5
+ 1169 0378 03       		.byte	0x3
+ 1170 0379 00000000 		.4byte	USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_ALTERNATE0_HID_IN_RPT_SCB
+ 1171 037d 0C       		.uleb128 0xc
+ 1172 037e 63000000 		.4byte	0x63
+ 1173 0382 8D030000 		.4byte	0x38d
+ 1174 0386 0D       		.uleb128 0xd
+ 1175 0387 95000000 		.4byte	0x95
+ 1176 038b 04       		.byte	0x4
+ 1177 038c 00       		.byte	0
+ 1178 038d 10       		.uleb128 0x10
+ 1179 038e D5000000 		.4byte	.LASF47
+ 1180 0392 03       		.byte	0x3
+ 1181 0393 7101     		.2byte	0x171
+ 1182 0395 7D030000 		.4byte	0x37d
+ 1183 0399 05       		.uleb128 0x5
+ 1184 039a 03       		.byte	0x3
+ 1185 039b 00000000 		.4byte	USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_ALTERNATE0_HID_IN_BUF
+ 1186 039f 0C       		.uleb128 0xc
+ 1187 03a0 63000000 		.4byte	0x63
+ 1188 03a4 AF030000 		.4byte	0x3af
+ 1189 03a8 0D       		.uleb128 0xd
+ 1190 03a9 95000000 		.4byte	0x95
+ 1191 03ad 42       		.byte	0x42
+ 1192 03ae 00       		.byte	0
+ 1193 03af 0E       		.uleb128 0xe
+ 1194 03b0 F7050000 		.4byte	.LASF48
+ 1195 03b4 03       		.byte	0x3
+ 1196 03b5 EA       		.byte	0xea
+ 1197 03b6 C0030000 		.4byte	0x3c0
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 22
+
+
+ 1198 03ba 05       		.uleb128 0x5
+ 1199 03bb 03       		.byte	0x3
+ 1200 03bc 00000000 		.4byte	USBFS_HIDREPORT_DESCRIPTOR1
+ 1201 03c0 0F       		.uleb128 0xf
+ 1202 03c1 9F030000 		.4byte	0x39f
+ 1203 03c5 0C       		.uleb128 0xc
+ 1204 03c6 63000000 		.4byte	0x63
+ 1205 03ca D5030000 		.4byte	0x3d5
+ 1206 03ce 0D       		.uleb128 0xd
+ 1207 03cf 95000000 		.4byte	0x95
+ 1208 03d3 46       		.byte	0x46
+ 1209 03d4 00       		.byte	0
+ 1210 03d5 10       		.uleb128 0x10
+ 1211 03d6 13060000 		.4byte	.LASF49
+ 1212 03da 03       		.byte	0x3
+ 1213 03db 1301     		.2byte	0x113
+ 1214 03dd E7030000 		.4byte	0x3e7
+ 1215 03e1 05       		.uleb128 0x5
+ 1216 03e2 03       		.byte	0x3
+ 1217 03e3 00000000 		.4byte	USBFS_HIDREPORT_DESCRIPTOR2
+ 1218 03e7 0F       		.uleb128 0xf
+ 1219 03e8 C5030000 		.4byte	0x3c5
+ 1220 03ec 0C       		.uleb128 0xc
+ 1221 03ed 5D010000 		.4byte	0x15d
+ 1222 03f1 FC030000 		.4byte	0x3fc
+ 1223 03f5 0D       		.uleb128 0xd
+ 1224 03f6 95000000 		.4byte	0x95
+ 1225 03fa 00       		.byte	0
+ 1226 03fb 00       		.byte	0
+ 1227 03fc 10       		.uleb128 0x10
+ 1228 03fd A3010000 		.4byte	.LASF50
+ 1229 0401 03       		.byte	0x3
+ 1230 0402 4801     		.2byte	0x148
+ 1231 0404 0E040000 		.4byte	0x40e
+ 1232 0408 05       		.uleb128 0x5
+ 1233 0409 03       		.byte	0x3
+ 1234 040a 00000000 		.4byte	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_IN_RPT_TABLE
+ 1235 040e 0F       		.uleb128 0xf
+ 1236 040f EC030000 		.4byte	0x3ec
+ 1237 0413 10       		.uleb128 0x10
+ 1238 0414 4E000000 		.4byte	.LASF51
+ 1239 0418 03       		.byte	0x3
+ 1240 0419 5701     		.2byte	0x157
+ 1241 041b 25040000 		.4byte	0x425
+ 1242 041f 05       		.uleb128 0x5
+ 1243 0420 03       		.byte	0x3
+ 1244 0421 00000000 		.4byte	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_OUT_RPT_TABLE
+ 1245 0425 0F       		.uleb128 0xf
+ 1246 0426 EC030000 		.4byte	0x3ec
+ 1247 042a 10       		.uleb128 0x10
+ 1248 042b B3030000 		.4byte	.LASF52
+ 1249 042f 03       		.byte	0x3
+ 1250 0430 6401     		.2byte	0x164
+ 1251 0432 3C040000 		.4byte	0x43c
+ 1252 0436 05       		.uleb128 0x5
+ 1253 0437 03       		.byte	0x3
+ 1254 0438 00000000 		.4byte	USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_TABLE
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 23
+
+
+ 1255 043c 0F       		.uleb128 0xf
+ 1256 043d 71020000 		.4byte	0x271
+ 1257 0441 10       		.uleb128 0x10
+ 1258 0442 FE030000 		.4byte	.LASF53
+ 1259 0446 03       		.byte	0x3
+ 1260 0447 7701     		.2byte	0x177
+ 1261 0449 53040000 		.4byte	0x453
+ 1262 044d 05       		.uleb128 0x5
+ 1263 044e 03       		.byte	0x3
+ 1264 044f 00000000 		.4byte	USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_ALTERNATE0_HID_IN_RPT_TABLE
+ 1265 0453 0F       		.uleb128 0xf
+ 1266 0454 EC030000 		.4byte	0x3ec
+ 1267 0458 10       		.uleb128 0x10
+ 1268 0459 13010000 		.4byte	.LASF54
+ 1269 045d 03       		.byte	0x3
+ 1270 045e 8401     		.2byte	0x184
+ 1271 0460 6A040000 		.4byte	0x46a
+ 1272 0464 05       		.uleb128 0x5
+ 1273 0465 03       		.byte	0x3
+ 1274 0466 00000000 		.4byte	USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_ALTERNATE0_HID_TABLE
+ 1275 046a 0F       		.uleb128 0xf
+ 1276 046b 71020000 		.4byte	0x271
+ 1277 046f 0C       		.uleb128 0xc
+ 1278 0470 63000000 		.4byte	0x63
+ 1279 0474 7F040000 		.4byte	0x47f
+ 1280 0478 0D       		.uleb128 0xd
+ 1281 0479 95000000 		.4byte	0x95
+ 1282 047d 21       		.byte	0x21
+ 1283 047e 00       		.byte	0
+ 1284 047f 10       		.uleb128 0x10
+ 1285 0480 3F060000 		.4byte	.LASF55
+ 1286 0484 03       		.byte	0x3
+ 1287 0485 F001     		.2byte	0x1f0
+ 1288 0487 6F040000 		.4byte	0x46f
+ 1289 048b 05       		.uleb128 0x5
+ 1290 048c 03       		.byte	0x3
+ 1291 048d 00000000 		.4byte	USBFS_idSerialNumberStringDescriptor
+ 1292 0491 00       		.byte	0
+ 1293              		.section	.debug_abbrev,"",%progbits
+ 1294              	.Ldebug_abbrev0:
+ 1295 0000 01       		.uleb128 0x1
+ 1296 0001 11       		.uleb128 0x11
+ 1297 0002 01       		.byte	0x1
+ 1298 0003 25       		.uleb128 0x25
+ 1299 0004 0E       		.uleb128 0xe
+ 1300 0005 13       		.uleb128 0x13
+ 1301 0006 0B       		.uleb128 0xb
+ 1302 0007 03       		.uleb128 0x3
+ 1303 0008 0E       		.uleb128 0xe
+ 1304 0009 1B       		.uleb128 0x1b
+ 1305 000a 0E       		.uleb128 0xe
+ 1306 000b 10       		.uleb128 0x10
+ 1307 000c 17       		.uleb128 0x17
+ 1308 000d 00       		.byte	0
+ 1309 000e 00       		.byte	0
+ 1310 000f 02       		.uleb128 0x2
+ 1311 0010 24       		.uleb128 0x24
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 24
+
+
+ 1312 0011 00       		.byte	0
+ 1313 0012 0B       		.uleb128 0xb
+ 1314 0013 0B       		.uleb128 0xb
+ 1315 0014 3E       		.uleb128 0x3e
+ 1316 0015 0B       		.uleb128 0xb
+ 1317 0016 03       		.uleb128 0x3
+ 1318 0017 0E       		.uleb128 0xe
+ 1319 0018 00       		.byte	0
+ 1320 0019 00       		.byte	0
+ 1321 001a 03       		.uleb128 0x3
+ 1322 001b 24       		.uleb128 0x24
+ 1323 001c 00       		.byte	0
+ 1324 001d 0B       		.uleb128 0xb
+ 1325 001e 0B       		.uleb128 0xb
+ 1326 001f 3E       		.uleb128 0x3e
+ 1327 0020 0B       		.uleb128 0xb
+ 1328 0021 03       		.uleb128 0x3
+ 1329 0022 08       		.uleb128 0x8
+ 1330 0023 00       		.byte	0
+ 1331 0024 00       		.byte	0
+ 1332 0025 04       		.uleb128 0x4
+ 1333 0026 16       		.uleb128 0x16
+ 1334 0027 00       		.byte	0
+ 1335 0028 03       		.uleb128 0x3
+ 1336 0029 0E       		.uleb128 0xe
+ 1337 002a 3A       		.uleb128 0x3a
+ 1338 002b 0B       		.uleb128 0xb
+ 1339 002c 3B       		.uleb128 0x3b
+ 1340 002d 05       		.uleb128 0x5
+ 1341 002e 49       		.uleb128 0x49
+ 1342 002f 13       		.uleb128 0x13
+ 1343 0030 00       		.byte	0
+ 1344 0031 00       		.byte	0
+ 1345 0032 05       		.uleb128 0x5
+ 1346 0033 35       		.uleb128 0x35
+ 1347 0034 00       		.byte	0
+ 1348 0035 49       		.uleb128 0x49
+ 1349 0036 13       		.uleb128 0x13
+ 1350 0037 00       		.byte	0
+ 1351 0038 00       		.byte	0
+ 1352 0039 06       		.uleb128 0x6
+ 1353 003a 13       		.uleb128 0x13
+ 1354 003b 01       		.byte	0x1
+ 1355 003c 0B       		.uleb128 0xb
+ 1356 003d 0B       		.uleb128 0xb
+ 1357 003e 3A       		.uleb128 0x3a
+ 1358 003f 0B       		.uleb128 0xb
+ 1359 0040 3B       		.uleb128 0x3b
+ 1360 0041 0B       		.uleb128 0xb
+ 1361 0042 01       		.uleb128 0x1
+ 1362 0043 13       		.uleb128 0x13
+ 1363 0044 00       		.byte	0
+ 1364 0045 00       		.byte	0
+ 1365 0046 07       		.uleb128 0x7
+ 1366 0047 0D       		.uleb128 0xd
+ 1367 0048 00       		.byte	0
+ 1368 0049 03       		.uleb128 0x3
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 25
+
+
+ 1369 004a 0E       		.uleb128 0xe
+ 1370 004b 3A       		.uleb128 0x3a
+ 1371 004c 0B       		.uleb128 0xb
+ 1372 004d 3B       		.uleb128 0x3b
+ 1373 004e 0B       		.uleb128 0xb
+ 1374 004f 49       		.uleb128 0x49
+ 1375 0050 13       		.uleb128 0x13
+ 1376 0051 38       		.uleb128 0x38
+ 1377 0052 0B       		.uleb128 0xb
+ 1378 0053 00       		.byte	0
+ 1379 0054 00       		.byte	0
+ 1380 0055 08       		.uleb128 0x8
+ 1381 0056 16       		.uleb128 0x16
+ 1382 0057 00       		.byte	0
+ 1383 0058 03       		.uleb128 0x3
+ 1384 0059 0E       		.uleb128 0xe
+ 1385 005a 3A       		.uleb128 0x3a
+ 1386 005b 0B       		.uleb128 0xb
+ 1387 005c 3B       		.uleb128 0x3b
+ 1388 005d 0B       		.uleb128 0xb
+ 1389 005e 49       		.uleb128 0x49
+ 1390 005f 13       		.uleb128 0x13
+ 1391 0060 00       		.byte	0
+ 1392 0061 00       		.byte	0
+ 1393 0062 09       		.uleb128 0x9
+ 1394 0063 0F       		.uleb128 0xf
+ 1395 0064 00       		.byte	0
+ 1396 0065 0B       		.uleb128 0xb
+ 1397 0066 0B       		.uleb128 0xb
+ 1398 0067 49       		.uleb128 0x49
+ 1399 0068 13       		.uleb128 0x13
+ 1400 0069 00       		.byte	0
+ 1401 006a 00       		.byte	0
+ 1402 006b 0A       		.uleb128 0xa
+ 1403 006c 0D       		.uleb128 0xd
+ 1404 006d 00       		.byte	0
+ 1405 006e 03       		.uleb128 0x3
+ 1406 006f 08       		.uleb128 0x8
+ 1407 0070 3A       		.uleb128 0x3a
+ 1408 0071 0B       		.uleb128 0xb
+ 1409 0072 3B       		.uleb128 0x3b
+ 1410 0073 0B       		.uleb128 0xb
+ 1411 0074 49       		.uleb128 0x49
+ 1412 0075 13       		.uleb128 0x13
+ 1413 0076 38       		.uleb128 0x38
+ 1414 0077 0B       		.uleb128 0xb
+ 1415 0078 00       		.byte	0
+ 1416 0079 00       		.byte	0
+ 1417 007a 0B       		.uleb128 0xb
+ 1418 007b 26       		.uleb128 0x26
+ 1419 007c 00       		.byte	0
+ 1420 007d 00       		.byte	0
+ 1421 007e 00       		.byte	0
+ 1422 007f 0C       		.uleb128 0xc
+ 1423 0080 01       		.uleb128 0x1
+ 1424 0081 01       		.byte	0x1
+ 1425 0082 49       		.uleb128 0x49
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 26
+
+
+ 1426 0083 13       		.uleb128 0x13
+ 1427 0084 01       		.uleb128 0x1
+ 1428 0085 13       		.uleb128 0x13
+ 1429 0086 00       		.byte	0
+ 1430 0087 00       		.byte	0
+ 1431 0088 0D       		.uleb128 0xd
+ 1432 0089 21       		.uleb128 0x21
+ 1433 008a 00       		.byte	0
+ 1434 008b 49       		.uleb128 0x49
+ 1435 008c 13       		.uleb128 0x13
+ 1436 008d 2F       		.uleb128 0x2f
+ 1437 008e 0B       		.uleb128 0xb
+ 1438 008f 00       		.byte	0
+ 1439 0090 00       		.byte	0
+ 1440 0091 0E       		.uleb128 0xe
+ 1441 0092 34       		.uleb128 0x34
+ 1442 0093 00       		.byte	0
+ 1443 0094 03       		.uleb128 0x3
+ 1444 0095 0E       		.uleb128 0xe
+ 1445 0096 3A       		.uleb128 0x3a
+ 1446 0097 0B       		.uleb128 0xb
+ 1447 0098 3B       		.uleb128 0x3b
+ 1448 0099 0B       		.uleb128 0xb
+ 1449 009a 49       		.uleb128 0x49
+ 1450 009b 13       		.uleb128 0x13
+ 1451 009c 3F       		.uleb128 0x3f
+ 1452 009d 19       		.uleb128 0x19
+ 1453 009e 02       		.uleb128 0x2
+ 1454 009f 18       		.uleb128 0x18
+ 1455 00a0 00       		.byte	0
+ 1456 00a1 00       		.byte	0
+ 1457 00a2 0F       		.uleb128 0xf
+ 1458 00a3 26       		.uleb128 0x26
+ 1459 00a4 00       		.byte	0
+ 1460 00a5 49       		.uleb128 0x49
+ 1461 00a6 13       		.uleb128 0x13
+ 1462 00a7 00       		.byte	0
+ 1463 00a8 00       		.byte	0
+ 1464 00a9 10       		.uleb128 0x10
+ 1465 00aa 34       		.uleb128 0x34
+ 1466 00ab 00       		.byte	0
+ 1467 00ac 03       		.uleb128 0x3
+ 1468 00ad 0E       		.uleb128 0xe
+ 1469 00ae 3A       		.uleb128 0x3a
+ 1470 00af 0B       		.uleb128 0xb
+ 1471 00b0 3B       		.uleb128 0x3b
+ 1472 00b1 05       		.uleb128 0x5
+ 1473 00b2 49       		.uleb128 0x49
+ 1474 00b3 13       		.uleb128 0x13
+ 1475 00b4 3F       		.uleb128 0x3f
+ 1476 00b5 19       		.uleb128 0x19
+ 1477 00b6 02       		.uleb128 0x2
+ 1478 00b7 18       		.uleb128 0x18
+ 1479 00b8 00       		.byte	0
+ 1480 00b9 00       		.byte	0
+ 1481 00ba 11       		.uleb128 0x11
+ 1482 00bb 21       		.uleb128 0x21
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 27
+
+
+ 1483 00bc 00       		.byte	0
+ 1484 00bd 49       		.uleb128 0x49
+ 1485 00be 13       		.uleb128 0x13
+ 1486 00bf 2F       		.uleb128 0x2f
+ 1487 00c0 05       		.uleb128 0x5
+ 1488 00c1 00       		.byte	0
+ 1489 00c2 00       		.byte	0
+ 1490 00c3 00       		.byte	0
+ 1491              		.section	.debug_aranges,"",%progbits
+ 1492 0000 14000000 		.4byte	0x14
+ 1493 0004 0200     		.2byte	0x2
+ 1494 0006 00000000 		.4byte	.Ldebug_info0
+ 1495 000a 04       		.byte	0x4
+ 1496 000b 00       		.byte	0
+ 1497 000c 0000     		.2byte	0
+ 1498 000e 0000     		.2byte	0
+ 1499 0010 00000000 		.4byte	0
+ 1500 0014 00000000 		.4byte	0
+ 1501              		.section	.debug_line,"",%progbits
+ 1502              	.Ldebug_line0:
+ 1503 0000 5B000000 		.section	.debug_str,"MS",%progbits,1
+ 1503      02005500 
+ 1503      00000201 
+ 1503      FB0E0D00 
+ 1503      01010101 
+ 1504              	.LASF31:
+ 1505 0000 55534246 		.ascii	"USBFS_DEVICE0_DESCR\000"
+ 1505      535F4445 
+ 1505      56494345 
+ 1505      305F4445 
+ 1505      53435200 
+ 1506              	.LASF27:
+ 1507 0014 70537461 		.ascii	"pStatusBlock\000"
+ 1507      74757342 
+ 1507      6C6F636B 
+ 1507      00
+ 1508              	.LASF36:
+ 1509 0021 55534246 		.ascii	"USBFS_DEVICE0_CONFIGURATION0_INTERFACE_CLASS\000"
+ 1509      535F4445 
+ 1509      56494345 
+ 1509      305F434F 
+ 1509      4E464947 
+ 1510              	.LASF51:
+ 1511 004e 55534246 		.ascii	"USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_"
+ 1511      535F4445 
+ 1511      56494345 
+ 1511      305F434F 
+ 1511      4E464947 
+ 1512 0081 4849445F 		.ascii	"HID_OUT_RPT_TABLE\000"
+ 1512      4F55545F 
+ 1512      5250545F 
+ 1512      5441424C 
+ 1512      4500
+ 1513              	.LASF46:
+ 1514 0093 55534246 		.ascii	"USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_ALTERNATE0_"
+ 1514      535F4445 
+ 1514      56494345 
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 28
+
+
+ 1514      305F434F 
+ 1514      4E464947 
+ 1515 00c6 4849445F 		.ascii	"HID_IN_RPT_SCB\000"
+ 1515      494E5F52 
+ 1515      50545F53 
+ 1515      434200
+ 1516              	.LASF47:
+ 1517 00d5 55534246 		.ascii	"USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_ALTERNATE0_"
+ 1517      535F4445 
+ 1517      56494345 
+ 1517      305F434F 
+ 1517      4E464947 
+ 1518 0108 4849445F 		.ascii	"HID_IN_BUF\000"
+ 1518      494E5F42 
+ 1518      554600
+ 1519              	.LASF54:
+ 1520 0113 55534246 		.ascii	"USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_ALTERNATE0_"
+ 1520      535F4445 
+ 1520      56494345 
+ 1520      305F434F 
+ 1520      4E464947 
+ 1521 0146 4849445F 		.ascii	"HID_TABLE\000"
+ 1521      5441424C 
+ 1521      4500
+ 1522              	.LASF39:
+ 1523 0150 55534246 		.ascii	"USBFS_TABLE\000"
+ 1523      535F5441 
+ 1523      424C4500 
+ 1524              	.LASF25:
+ 1525 015c 636F756E 		.ascii	"count\000"
+ 1525      7400
+ 1526              	.LASF33:
+ 1527 0162 55534246 		.ascii	"USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_TABLE\000"
+ 1527      535F4445 
+ 1527      56494345 
+ 1527      305F434F 
+ 1527      4E464947 
+ 1528              	.LASF3:
+ 1529 0190 73686F72 		.ascii	"short unsigned int\000"
+ 1529      7420756E 
+ 1529      7369676E 
+ 1529      65642069 
+ 1529      6E7400
+ 1530              	.LASF50:
+ 1531 01a3 55534246 		.ascii	"USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_"
+ 1531      535F4445 
+ 1531      56494345 
+ 1531      305F434F 
+ 1531      4E464947 
+ 1532 01d6 4849445F 		.ascii	"HID_IN_RPT_TABLE\000"
+ 1532      494E5F52 
+ 1532      50545F54 
+ 1532      41424C45 
+ 1532      00
+ 1533              	.LASF40:
+ 1534 01e7 55534246 		.ascii	"USBFS_SN_STRING_DESCRIPTOR\000"
+ 1534      535F534E 
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 29
+
+
+ 1534      5F535452 
+ 1534      494E475F 
+ 1534      44455343 
+ 1535              	.LASF43:
+ 1536 0202 55534246 		.ascii	"USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_"
+ 1536      535F4445 
+ 1536      56494345 
+ 1536      305F434F 
+ 1536      4E464947 
+ 1537 0235 4849445F 		.ascii	"HID_IN_BUF\000"
+ 1537      494E5F42 
+ 1537      554600
+ 1538              	.LASF34:
+ 1539 0240 55534246 		.ascii	"USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_TABLE\000"
+ 1539      535F4445 
+ 1539      56494345 
+ 1539      305F434F 
+ 1539      4E464947 
+ 1540              	.LASF26:
+ 1541 026e 70446174 		.ascii	"pData\000"
+ 1541      6100
+ 1542              	.LASF16:
+ 1543 0274 616C7453 		.ascii	"altSetting\000"
+ 1543      65747469 
+ 1543      6E6700
+ 1544              	.LASF28:
+ 1545 027f 545F5553 		.ascii	"T_USBFS_TD\000"
+ 1545      4246535F 
+ 1545      544400
+ 1546              	.LASF11:
+ 1547 028a 666C6F61 		.ascii	"float\000"
+ 1547      7400
+ 1548              	.LASF45:
+ 1549 0290 55534246 		.ascii	"USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_"
+ 1549      535F4445 
+ 1549      56494345 
+ 1549      305F434F 
+ 1549      4E464947 
+ 1550 02c3 4849445F 		.ascii	"HID_OUT_BUF\000"
+ 1550      4F55545F 
+ 1550      42554600 
+ 1551              	.LASF41:
+ 1552 02cf 55534246 		.ascii	"USBFS_STRING_DESCRIPTORS\000"
+ 1552      535F5354 
+ 1552      52494E47 
+ 1552      5F444553 
+ 1552      43524950 
+ 1553              	.LASF18:
+ 1554 02e8 61747472 		.ascii	"attributes\000"
+ 1554      69627574 
+ 1554      657300
+ 1555              	.LASF57:
+ 1556 02f3 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\USBFS_descr.c\000"
+ 1556      6E657261 
+ 1556      7465645F 
+ 1556      536F7572 
+ 1556      63655C50 
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 30
+
+
+ 1557              	.LASF24:
+ 1558 031a 545F5553 		.ascii	"T_USBFS_XFER_STATUS_BLOCK\000"
+ 1558      4246535F 
+ 1558      58464552 
+ 1558      5F535441 
+ 1558      5455535F 
+ 1559              	.LASF37:
+ 1560 0334 55534246 		.ascii	"USBFS_DEVICE0_CONFIGURATION0_TABLE\000"
+ 1560      535F4445 
+ 1560      56494345 
+ 1560      305F434F 
+ 1560      4E464947 
+ 1561              	.LASF17:
+ 1562 0357 61646472 		.ascii	"addr\000"
+ 1562      00
+ 1563              	.LASF38:
+ 1564 035c 55534246 		.ascii	"USBFS_DEVICE0_TABLE\000"
+ 1564      535F4445 
+ 1564      56494345 
+ 1564      305F5441 
+ 1564      424C4500 
+ 1565              	.LASF44:
+ 1566 0370 55534246 		.ascii	"USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_"
+ 1566      535F4445 
+ 1566      56494345 
+ 1566      305F434F 
+ 1566      4E464947 
+ 1567 03a3 4849445F 		.ascii	"HID_OUT_RPT_SCB\000"
+ 1567      4F55545F 
+ 1567      5250545F 
+ 1567      53434200 
+ 1568              	.LASF52:
+ 1569 03b3 55534246 		.ascii	"USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_"
+ 1569      535F4445 
+ 1569      56494345 
+ 1569      305F434F 
+ 1569      4E464947 
+ 1570 03e6 4849445F 		.ascii	"HID_TABLE\000"
+ 1570      5441424C 
+ 1570      4500
+ 1571              	.LASF12:
+ 1572 03f0 646F7562 		.ascii	"double\000"
+ 1572      6C6500
+ 1573              	.LASF10:
+ 1574 03f7 75696E74 		.ascii	"uint16\000"
+ 1574      313600
+ 1575              	.LASF53:
+ 1576 03fe 55534246 		.ascii	"USBFS_DEVICE0_CONFIGURATION0_INTERFACE1_ALTERNATE0_"
+ 1576      535F4445 
+ 1576      56494345 
+ 1576      305F434F 
+ 1576      4E464947 
+ 1577 0431 4849445F 		.ascii	"HID_IN_RPT_TABLE\000"
+ 1577      494E5F52 
+ 1577      50545F54 
+ 1577      41424C45 
+ 1577      00
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 31
+
+
+ 1578              	.LASF32:
+ 1579 0442 55534246 		.ascii	"USBFS_DEVICE0_CONFIGURATION0_DESCR\000"
+ 1579      535F4445 
+ 1579      56494345 
+ 1579      305F434F 
+ 1579      4E464947 
+ 1580              	.LASF5:
+ 1581 0465 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1581      20756E73 
+ 1581      69676E65 
+ 1581      6420696E 
+ 1581      7400
+ 1582              	.LASF8:
+ 1583 0477 756E7369 		.ascii	"unsigned int\000"
+ 1583      676E6564 
+ 1583      20696E74 
+ 1583      00
+ 1584              	.LASF58:
+ 1585 0484 433A5C55 		.ascii	"C:\\Users\\Javier Barragan\\Documents\\PSoC Creator"
+ 1585      73657273 
+ 1585      5C4A6176 
+ 1585      69657220 
+ 1585      42617272 
+ 1586 04b3 5C435938 		.ascii	"\\CY8CKIT_046_USB_Mouse\\CY8CKIT_046_USB_Mouse.cyds"
+ 1586      434B4954 
+ 1586      5F303436 
+ 1586      5F555342 
+ 1586      5F4D6F75 
+ 1587 04e4 6E00     		.ascii	"n\000"
+ 1588              	.LASF7:
+ 1589 04e6 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1589      206C6F6E 
+ 1589      6720756E 
+ 1589      7369676E 
+ 1589      65642069 
+ 1590              	.LASF29:
+ 1591 04fd 705F6C69 		.ascii	"p_list\000"
+ 1591      737400
+ 1592              	.LASF21:
+ 1593 0504 545F5553 		.ascii	"T_USBFS_EP_SETTINGS_BLOCK\000"
+ 1593      4246535F 
+ 1593      45505F53 
+ 1593      45545449 
+ 1593      4E47535F 
+ 1594              	.LASF1:
+ 1595 051e 756E7369 		.ascii	"unsigned char\000"
+ 1595      676E6564 
+ 1595      20636861 
+ 1595      7200
+ 1596              	.LASF14:
+ 1597 052c 73697A65 		.ascii	"sizetype\000"
+ 1597      74797065 
+ 1597      00
+ 1598              	.LASF6:
+ 1599 0535 6C6F6E67 		.ascii	"long long int\000"
+ 1599      206C6F6E 
+ 1599      6720696E 
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 32
+
+
+ 1599      7400
+ 1600              	.LASF30:
+ 1601 0543 545F5553 		.ascii	"T_USBFS_LUT\000"
+ 1601      4246535F 
+ 1601      4C555400 
+ 1602              	.LASF13:
+ 1603 054f 63686172 		.ascii	"char\000"
+ 1603      00
+ 1604              	.LASF56:
+ 1605 0554 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1605      4320342E 
+ 1605      392E3320 
+ 1605      32303135 
+ 1605      30333033 
+ 1606 0587 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 1606      20726576 
+ 1606      6973696F 
+ 1606      6E203232 
+ 1606      31323230 
+ 1607 05ba 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1607      66756E63 
+ 1607      74696F6E 
+ 1607      2D736563 
+ 1607      74696F6E 
+ 1608              	.LASF19:
+ 1609 05e2 62756666 		.ascii	"bufferSize\000"
+ 1609      65725369 
+ 1609      7A6500
+ 1610              	.LASF2:
+ 1611 05ed 73686F72 		.ascii	"short int\000"
+ 1611      7420696E 
+ 1611      7400
+ 1612              	.LASF48:
+ 1613 05f7 55534246 		.ascii	"USBFS_HIDREPORT_DESCRIPTOR1\000"
+ 1613      535F4849 
+ 1613      44524550 
+ 1613      4F52545F 
+ 1613      44455343 
+ 1614              	.LASF49:
+ 1615 0613 55534246 		.ascii	"USBFS_HIDREPORT_DESCRIPTOR2\000"
+ 1615      535F4849 
+ 1615      44524550 
+ 1615      4F52545F 
+ 1615      44455343 
+ 1616              	.LASF9:
+ 1617 062f 75696E74 		.ascii	"uint8\000"
+ 1617      3800
+ 1618              	.LASF15:
+ 1619 0635 696E7465 		.ascii	"interface\000"
+ 1619      72666163 
+ 1619      6500
+ 1620              	.LASF55:
+ 1621 063f 55534246 		.ascii	"USBFS_idSerialNumberStringDescriptor\000"
+ 1621      535F6964 
+ 1621      53657269 
+ 1621      616C4E75 
+ 1621      6D626572 
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccJo1xeX.s 			page 33
+
+
+ 1622              	.LASF4:
+ 1623 0664 6C6F6E67 		.ascii	"long int\000"
+ 1623      20696E74 
+ 1623      00
+ 1624              	.LASF22:
+ 1625 066d 73746174 		.ascii	"status\000"
+ 1625      757300
+ 1626              	.LASF0:
+ 1627 0674 7369676E 		.ascii	"signed char\000"
+ 1627      65642063 
+ 1627      68617200 
+ 1628              	.LASF35:
+ 1629 0680 55534246 		.ascii	"USBFS_DEVICE0_CONFIGURATION0_EP_SETTINGS_TABLE\000"
+ 1629      535F4445 
+ 1629      56494345 
+ 1629      305F434F 
+ 1629      4E464947 
+ 1630              	.LASF42:
+ 1631 06af 55534246 		.ascii	"USBFS_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_"
+ 1631      535F4445 
+ 1631      56494345 
+ 1631      305F434F 
+ 1631      4E464947 
+ 1632 06e2 4849445F 		.ascii	"HID_IN_RPT_SCB\000"
+ 1632      494E5F52 
+ 1632      50545F53 
+ 1632      434200
+ 1633              	.LASF23:
+ 1634 06f1 6C656E67 		.ascii	"length\000"
+ 1634      746800
+ 1635              	.LASF20:
+ 1636 06f8 624D6973 		.ascii	"bMisc\000"
+ 1636      6300
+ 1637              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

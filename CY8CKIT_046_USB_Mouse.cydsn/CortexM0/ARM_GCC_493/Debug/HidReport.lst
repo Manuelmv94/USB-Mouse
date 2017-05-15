@@ -1,0 +1,1793 @@
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccAndZw6.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"HidReport.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.ConvertGestureToHidReport,"ax",%progbits
+  18              		.align	2
+  19              		.global	ConvertGestureToHidReport
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	ConvertGestureToHidReport, %function
+  23              	ConvertGestureToHidReport:
+  24              	.LFB36:
+  25              		.file 1 ".\\HidReport.c"
+   1:.\HidReport.c **** /*******************************************************************************
+   2:.\HidReport.c **** * File Name: HidReport.c
+   3:.\HidReport.c **** *
+   4:.\HidReport.c **** * Version 1.0
+   5:.\HidReport.c **** *
+   6:.\HidReport.c **** * Description: This file contains routines for converting CapSense Gestures to
+   7:.\HidReport.c **** *               HID report.
+   8:.\HidReport.c **** *
+   9:.\HidReport.c **** *******************************************************************************
+  10:.\HidReport.c **** * Copyright (2015), Cypress Semiconductor Corporation.
+  11:.\HidReport.c **** *******************************************************************************
+  12:.\HidReport.c **** * This software, including source code, documentation and related materials
+  13:.\HidReport.c **** * ("Software") is owned by Cypress Semiconductor Corporation (Cypress) and is
+  14:.\HidReport.c **** * protected by and subject to worldwide patent protection (United States and 
+  15:.\HidReport.c **** * foreign), United States copyright laws and international treaty provisions. 
+  16:.\HidReport.c **** * Cypress hereby grants to licensee a personal, non-exclusive, non-transferable
+  17:.\HidReport.c **** * license to copy, use, modify, create derivative works of, and compile the 
+  18:.\HidReport.c **** * Cypress source code and derivative works for the sole purpose of creating 
+  19:.\HidReport.c **** * custom software in support of licensee product, such licensee product to be
+  20:.\HidReport.c **** * used only in conjunction with Cypress's integrated circuit as specified in the
+  21:.\HidReport.c **** * applicable agreement. Any reproduction, modification, translation, compilation,
+  22:.\HidReport.c **** * or representation of this Software except as specified above is prohibited 
+  23:.\HidReport.c **** * without the express written permission of Cypress.
+  24:.\HidReport.c **** * 
+  25:.\HidReport.c **** * Disclaimer: THIS SOFTWARE IS PROVIDED AS-IS, WITH NO WARRANTY OF ANY KIND, 
+  26:.\HidReport.c **** * EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, NONINFRINGEMENT, IMPLIED 
+  27:.\HidReport.c **** * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+  28:.\HidReport.c **** * Cypress reserves the Right to make changes to the Software without notice. 
+  29:.\HidReport.c **** * Cypress does not assume any liability arising out of the application or use
+  30:.\HidReport.c **** * of Software or any product or circuit described in the Software. Cypress does
+  31:.\HidReport.c **** * not authorize its products for use as critical components in any products 
+  32:.\HidReport.c **** * where a malfunction or failure may reasonably be expected to result in 
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccAndZw6.s 			page 2
+
+
+  33:.\HidReport.c **** * significant injury or death ("ACTIVE Risk Product"). By including Cypress's 
+  34:.\HidReport.c **** * product in a ACTIVE Risk Product, the manufacturer of such system or application
+  35:.\HidReport.c **** * assumes all risk of such use and in doing so indemnifies Cypress against all
+  36:.\HidReport.c **** * liability. Use of this Software may be limited by and subject to the applicable
+  37:.\HidReport.c **** * Cypress software license agreement.
+  38:.\HidReport.c **** *******************************************************************************/
+  39:.\HidReport.c **** 
+  40:.\HidReport.c **** #include "HidReport.h"
+  41:.\HidReport.c **** #include "main.h"
+  42:.\HidReport.c **** #include "Gesture.h"
+  43:.\HidReport.c **** #include "cytypes.h"
+  44:.\HidReport.c **** #include "UART_SPI_UART.h"
+  45:.\HidReport.c **** 
+  46:.\HidReport.c **** 
+  47:.\HidReport.c **** /*******************************************************************************
+  48:.\HidReport.c **** *   Global Variable Declarations
+  49:.\HidReport.c **** *******************************************************************************/
+  50:.\HidReport.c **** 
+  51:.\HidReport.c **** /* HID report arrays for keyboard & mouse. */
+  52:.\HidReport.c **** /* Mouse data report array. The report format is as follows. 
+  53:.\HidReport.c ****  * Byte0: Bit0 - Left button, Bit1 - Right button, Bit2 - Middle button, 
+  54:.\HidReport.c ****  * 		  Bit3 to Bit7 - Not used.
+  55:.\HidReport.c ****  * Byte1: X position relative to the current position of the cursor.
+  56:.\HidReport.c ****  * Byte2: Y position relative to the current position of the cursor.
+  57:.\HidReport.c ****  * Byte3: Vertical scroll bar position relative to the current position of the
+  58:.\HidReport.c ****  * 		  scroll bar.
+  59:.\HidReport.c ****  */
+  60:.\HidReport.c **** int8 mouseReport[MOUSE_RPT_SIZE] = {0, 0, 0, 0};
+  61:.\HidReport.c **** 
+  62:.\HidReport.c **** /* Keyboard data report array. The report format is as follows. 
+  63:.\HidReport.c ****  * Byte0: Modifier keys
+  64:.\HidReport.c ****  * Byte1: Reserved (Not used).
+  65:.\HidReport.c ****  * Byte2 to Byte7: Codes of keys 1 to 6.
+  66:.\HidReport.c ****  * Refer to AN58726 to learn more about keyboard report format.
+  67:.\HidReport.c ****  */
+  68:.\HidReport.c **** uint8 keyboardReport[KEY_RPT_SIZE] = {0, 0, 0, 0, 0, 0, 0, 0};
+  69:.\HidReport.c **** 
+  70:.\HidReport.c **** 
+  71:.\HidReport.c **** /*******************************************************************************
+  72:.\HidReport.c **** *   External Variable Declarations
+  73:.\HidReport.c **** *******************************************************************************/
+  74:.\HidReport.c **** 
+  75:.\HidReport.c **** /* Indicates the centroid value of the radial slider. */
+  76:.\HidReport.c **** extern uint16 sliderCentroid;
+  77:.\HidReport.c **** 
+  78:.\HidReport.c **** 
+  79:.\HidReport.c **** /*******************************************************************************
+  80:.\HidReport.c **** * Function Name: ConvertGestureToHidReport
+  81:.\HidReport.c **** ********************************************************************************
+  82:.\HidReport.c **** *
+  83:.\HidReport.c **** * Summary:
+  84:.\HidReport.c **** * This function updates the keyboard and mouse report arrays based on the given
+  85:.\HidReport.c **** * gesture id. 
+  86:.\HidReport.c **** *
+  87:.\HidReport.c **** * Parameters:
+  88:.\HidReport.c **** * gestureId - Id of the detected gesture.
+  89:.\HidReport.c **** *
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccAndZw6.s 			page 3
+
+
+  90:.\HidReport.c **** * Return:
+  91:.\HidReport.c **** * None
+  92:.\HidReport.c **** *
+  93:.\HidReport.c **** *******************************************************************************/
+  94:.\HidReport.c **** void ConvertGestureToHidReport(tGestureId gestureId)
+  95:.\HidReport.c **** {
+  26              		.loc 1 95 0
+  27              		.cfi_startproc
+  28              	.LVL0:
+  29 0000 38B5     		push	{r3, r4, r5, lr}
+  30              		.cfi_def_cfa_offset 16
+  31              		.cfi_offset 3, -16
+  32              		.cfi_offset 4, -12
+  33              		.cfi_offset 5, -8
+  34              		.cfi_offset 14, -4
+  35 0002 041C     		mov	r4, r0
+  96:.\HidReport.c **** 	/* This variable is used to control the speed of the scroll bar movement. Refer
+  97:.\HidReport.c **** 	 * to the usage in the switch-case statement below. 
+  98:.\HidReport.c **** 	 */
+  99:.\HidReport.c **** 	static uint32 scrollUpdateThreshold = 0;	
+ 100:.\HidReport.c **** 	
+ 101:.\HidReport.c **** 	static tGestureId prevGestureId = GESTURE_NONE;
+ 102:.\HidReport.c **** 	
+ 103:.\HidReport.c **** 	uint32 i;
+ 104:.\HidReport.c **** 
+ 105:.\HidReport.c **** 	/* Initialize keyboard & mouse report to zero before updating with valid
+ 106:.\HidReport.c **** 	 * values.
+ 107:.\HidReport.c **** 	 */	
+ 108:.\HidReport.c **** 	keyboardReport[KEY_RPT_MODIF_POS] = 0;
+  36              		.loc 1 108 0
+  37 0004 5B4B     		ldr	r3, .L22
+  38 0006 0022     		mov	r2, #0
+  39 0008 1A70     		strb	r2, [r3]
+ 109:.\HidReport.c **** 	keyboardReport[KEY_RPT_KEY1_POS] = 0;
+  40              		.loc 1 109 0
+  41 000a 9A70     		strb	r2, [r3, #2]
+  42              	.LVL1:
+ 110:.\HidReport.c **** 	
+ 111:.\HidReport.c **** 	for(i = 0; i < MOUSE_RPT_SIZE; i++)
+  43              		.loc 1 111 0
+  44 000c 0023     		mov	r3, #0
+  45 000e 04E0     		b	.L2
+  46              	.LVL2:
+  47              	.L3:
+ 112:.\HidReport.c **** 	{
+ 113:.\HidReport.c **** 		mouseReport[i] = 0;
+  48              		.loc 1 113 0 discriminator 3
+  49 0010 584A     		ldr	r2, .L22
+  50 0012 D218     		add	r2, r2, r3
+  51 0014 0021     		mov	r1, #0
+  52 0016 1172     		strb	r1, [r2, #8]
+ 111:.\HidReport.c **** 	{
+  53              		.loc 1 111 0 discriminator 3
+  54 0018 0133     		add	r3, r3, #1
+  55              	.LVL3:
+  56              	.L2:
+ 111:.\HidReport.c **** 	{
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccAndZw6.s 			page 4
+
+
+  57              		.loc 1 111 0 is_stmt 0 discriminator 1
+  58 001a 032B     		cmp	r3, #3
+  59 001c F8D9     		bls	.L3
+ 114:.\HidReport.c **** 	}
+ 115:.\HidReport.c **** 	
+ 116:.\HidReport.c **** 	/* Process Mouse buttons */
+ 117:.\HidReport.c **** 	switch (capsenseButtonStatus)
+  60              		.loc 1 117 0 is_stmt 1
+  61 001e 564B     		ldr	r3, .L22+4
+  62              	.LVL4:
+  63 0020 1B68     		ldr	r3, [r3]
+  64 0022 022B     		cmp	r3, #2
+  65 0024 0BD0     		beq	.L5
+  66 0026 102B     		cmp	r3, #16
+  67 0028 12D0     		beq	.L6
+  68 002a 012B     		cmp	r3, #1
+  69 002c 18D1     		bne	.L4
+ 118:.\HidReport.c **** 	{
+ 119:.\HidReport.c **** 		case LEFT_BTN_MASK:
+ 120:.\HidReport.c **** 			mouseReport[MOUSE_RPT_BTN_POS] |= MOUSE_RPT_LEFT_BTN_MASK; 
+  70              		.loc 1 120 0
+  71 002e 514A     		ldr	r2, .L22
+  72 0030 117A     		ldrb	r1, [r2, #8]
+  73 0032 0B43     		orr	r3, r1
+  74 0034 1372     		strb	r3, [r2, #8]
+ 121:.\HidReport.c **** 			PRINT("Left Click\n\r");
+  75              		.loc 1 121 0
+  76 0036 5148     		ldr	r0, .L22+8
+  77              	.LVL5:
+  78 0038 FFF7FEFF 		bl	UART_UartPutString
+  79              	.LVL6:
+ 122:.\HidReport.c **** 		break; 
+  80              		.loc 1 122 0
+  81 003c 10E0     		b	.L4
+  82              	.LVL7:
+  83              	.L5:
+ 123:.\HidReport.c **** 		
+ 124:.\HidReport.c **** 		case RIGHT_BTN_MASK:
+ 125:.\HidReport.c **** 			mouseReport[MOUSE_RPT_BTN_POS] |= MOUSE_RPT_RIGHT_BTN_MASK; 
+  84              		.loc 1 125 0
+  85 003e 4D4A     		ldr	r2, .L22
+  86 0040 117A     		ldrb	r1, [r2, #8]
+  87 0042 0223     		mov	r3, #2
+  88 0044 0B43     		orr	r3, r1
+  89 0046 1372     		strb	r3, [r2, #8]
+ 126:.\HidReport.c **** 			PRINT("Right Click\n\r");
+  90              		.loc 1 126 0
+  91 0048 4D48     		ldr	r0, .L22+12
+  92              	.LVL8:
+  93 004a FFF7FEFF 		bl	UART_UartPutString
+  94              	.LVL9:
+ 127:.\HidReport.c **** 		break;
+  95              		.loc 1 127 0
+  96 004e 07E0     		b	.L4
+  97              	.LVL10:
+  98              	.L6:
+ 128:.\HidReport.c **** 			
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccAndZw6.s 			page 5
+
+
+ 129:.\HidReport.c **** 		case CENTRE_BTN_MASK:
+ 130:.\HidReport.c **** 			mouseReport[MOUSE_RPT_BTN_POS] |= MOUSE_RPT_MIDDLE_BTN_MASK; 
+  99              		.loc 1 130 0
+ 100 0050 484A     		ldr	r2, .L22
+ 101 0052 117A     		ldrb	r1, [r2, #8]
+ 102 0054 0423     		mov	r3, #4
+ 103 0056 0B43     		orr	r3, r1
+ 104 0058 1372     		strb	r3, [r2, #8]
+ 131:.\HidReport.c **** 			PRINT("Middle Click\n\r");
+ 105              		.loc 1 131 0
+ 106 005a 4A48     		ldr	r0, .L22+16
+ 107              	.LVL11:
+ 108 005c FFF7FEFF 		bl	UART_UartPutString
+ 109              	.LVL12:
+ 110              	.L4:
+ 132:.\HidReport.c **** 		break;
+ 133:.\HidReport.c **** 			
+ 134:.\HidReport.c **** 		default:
+ 135:.\HidReport.c **** 			break;
+ 136:.\HidReport.c **** 	}
+ 137:.\HidReport.c **** 	
+ 138:.\HidReport.c **** 	/* Refer to the DetectGesture() function in Gesture.c file to learn more on how
+ 139:.\HidReport.c **** 	 * these gestures are detected. 
+ 140:.\HidReport.c **** 	 */
+ 141:.\HidReport.c **** 	switch(gestureId)
+ 111              		.loc 1 141 0
+ 112 0060 631F     		sub	r3, r4, #5
+ 113 0062 DAB2     		uxtb	r2, r3
+ 114 0064 082A     		cmp	r2, #8
+ 115 0066 00D9     		bls	.LCB86
+ 116 0068 80E0     		b	.L8	@long jump
+ 117              	.LCB86:
+ 118 006a 9300     		lsl	r3, r2, #2
+ 119 006c 464A     		ldr	r2, .L22+20
+ 120 006e D358     		ldr	r3, [r2, r3]
+ 121 0070 9F46     		mov	pc, r3
+ 122              		.section	.rodata
+ 123              		.align	2
+ 124              	.L10:
+ 125 0000 72000000 		.word	.L9
+ 126 0004 88000000 		.word	.L11
+ 127 0008 9E000000 		.word	.L12
+ 128 000c D6000000 		.word	.L13
+ 129 0010 0E010000 		.word	.L14
+ 130 0014 3E010000 		.word	.L15
+ 131 0018 46010000 		.word	.L16
+ 132 001c 4E010000 		.word	.L17
+ 133 0020 5E010000 		.word	.L18
+ 134              		.section	.text.ConvertGestureToHidReport
+ 135              	.L9:
+ 142:.\HidReport.c **** 	{		
+ 143:.\HidReport.c **** 	case GESTURE_LEFT_SWIPE:
+ 144:.\HidReport.c **** 		/* Left swipe sends out Ctrl + Shift + TAB keys to computer */
+ 145:.\HidReport.c **** 		PRINT("Left Swipe\n\r");
+ 136              		.loc 1 145 0
+ 137 0072 4648     		ldr	r0, .L22+24
+ 138 0074 FFF7FEFF 		bl	UART_UartPutString
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccAndZw6.s 			page 6
+
+
+ 139              	.LVL13:
+ 146:.\HidReport.c **** 		keyboardReport[KEY_RPT_MODIF_POS] |= (KEY_RPT_LEFT_CTRL_MASK | KEY_RPT_LEFT_SHIFT_MASK); 
+ 140              		.loc 1 146 0
+ 141 0078 3E4B     		ldr	r3, .L22
+ 142 007a 1978     		ldrb	r1, [r3]
+ 143 007c 0322     		mov	r2, #3
+ 144 007e 0A43     		orr	r2, r1
+ 145 0080 1A70     		strb	r2, [r3]
+ 147:.\HidReport.c **** 		keyboardReport[KEY_RPT_KEY1_POS] = KEY_RPT_TAB_CODE;
+ 146              		.loc 1 147 0
+ 147 0082 2B22     		mov	r2, #43
+ 148 0084 9A70     		strb	r2, [r3, #2]
+ 148:.\HidReport.c **** 		break;
+ 149              		.loc 1 148 0
+ 150 0086 71E0     		b	.L8
+ 151              	.L11:
+ 149:.\HidReport.c **** 		
+ 150:.\HidReport.c **** 	case GESTURE_RIGHT_SWIPE:
+ 151:.\HidReport.c **** 		/* Right swipe sends out Ctrl + TAB keys to computer */
+ 152:.\HidReport.c **** 		PRINT("Right Swipe\n\r");
+ 152              		.loc 1 152 0
+ 153 0088 4148     		ldr	r0, .L22+28
+ 154 008a FFF7FEFF 		bl	UART_UartPutString
+ 155              	.LVL14:
+ 153:.\HidReport.c **** 		keyboardReport[KEY_RPT_MODIF_POS] |= KEY_RPT_LEFT_CTRL_MASK; 
+ 156              		.loc 1 153 0
+ 157 008e 394B     		ldr	r3, .L22
+ 158 0090 1978     		ldrb	r1, [r3]
+ 159 0092 0122     		mov	r2, #1
+ 160 0094 0A43     		orr	r2, r1
+ 161 0096 1A70     		strb	r2, [r3]
+ 154:.\HidReport.c **** 		keyboardReport[KEY_RPT_KEY1_POS] = KEY_RPT_TAB_CODE;
+ 162              		.loc 1 154 0
+ 163 0098 2B22     		mov	r2, #43
+ 164 009a 9A70     		strb	r2, [r3, #2]
+ 155:.\HidReport.c **** 		break;
+ 165              		.loc 1 155 0
+ 166 009c 66E0     		b	.L8
+ 167              	.L12:
+ 156:.\HidReport.c **** 		
+ 157:.\HidReport.c **** 	case GESTURE_UP_SWIPE:
+ 158:.\HidReport.c **** 		/* Up swipe moves the vertical scroll bar up. User can release the touch after
+ 159:.\HidReport.c **** 		 * the gesture that would move the scroll bar once or user can continue 
+ 160:.\HidReport.c **** 		 * touching the Up button which would move the scroll bar up continuously. 
+ 161:.\HidReport.c **** 		 */
+ 162:.\HidReport.c **** 		if(prevGestureId != GESTURE_UP_SWIPE)
+ 168              		.loc 1 162 0
+ 169 009e 354B     		ldr	r3, .L22
+ 170 00a0 1B7B     		ldrb	r3, [r3, #12]
+ 171 00a2 072B     		cmp	r3, #7
+ 172 00a4 08D0     		beq	.L19
+ 163:.\HidReport.c **** 		{
+ 164:.\HidReport.c **** 			/* Start with higher speed the first time scroll gesture occurs. */
+ 165:.\HidReport.c **** 			scrollUpdateThreshold = 0;
+ 173              		.loc 1 165 0
+ 174 00a6 334B     		ldr	r3, .L22
+ 175 00a8 0022     		mov	r2, #0
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccAndZw6.s 			page 7
+
+
+ 176 00aa 1A61     		str	r2, [r3, #16]
+ 166:.\HidReport.c **** 			mouseReport[MOUSE_RPT_V_POS] = START_SCROLL_SPEED;
+ 177              		.loc 1 166 0
+ 178 00ac 0432     		add	r2, r2, #4
+ 179 00ae DA72     		strb	r2, [r3, #11]
+ 167:.\HidReport.c **** 			PRINT("Up Swipe\n\r");
+ 180              		.loc 1 167 0
+ 181 00b0 3848     		ldr	r0, .L22+32
+ 182 00b2 FFF7FEFF 		bl	UART_UartPutString
+ 183              	.LVL15:
+ 184 00b6 59E0     		b	.L8
+ 185              	.L19:
+ 168:.\HidReport.c **** 		}
+ 169:.\HidReport.c **** 		else if(++scrollUpdateThreshold >= CONT_SCROLL_UPDATE_FREQ)
+ 186              		.loc 1 169 0
+ 187 00b8 2E4A     		ldr	r2, .L22
+ 188 00ba 1369     		ldr	r3, [r2, #16]
+ 189 00bc 0133     		add	r3, r3, #1
+ 190 00be 1361     		str	r3, [r2, #16]
+ 191 00c0 092B     		cmp	r3, #9
+ 192 00c2 53D9     		bls	.L8
+ 170:.\HidReport.c **** 		{
+ 171:.\HidReport.c **** 			/* Control scroll speed by limiting the update rate */
+ 172:.\HidReport.c **** 			scrollUpdateThreshold = 0;
+ 193              		.loc 1 172 0
+ 194 00c4 151C     		mov	r5, r2
+ 195 00c6 0023     		mov	r3, #0
+ 196 00c8 1361     		str	r3, [r2, #16]
+ 173:.\HidReport.c **** 			PRINT("Up Swipe\n\r");
+ 197              		.loc 1 173 0
+ 198 00ca 3248     		ldr	r0, .L22+32
+ 199 00cc FFF7FEFF 		bl	UART_UartPutString
+ 200              	.LVL16:
+ 174:.\HidReport.c **** 			mouseReport[MOUSE_RPT_V_POS] = CONT_SCROLL_SPEED;
+ 201              		.loc 1 174 0
+ 202 00d0 0123     		mov	r3, #1
+ 203 00d2 EB72     		strb	r3, [r5, #11]
+ 204 00d4 4AE0     		b	.L8
+ 205              	.L13:
+ 175:.\HidReport.c **** 		}
+ 176:.\HidReport.c **** 		break;
+ 177:.\HidReport.c **** 		
+ 178:.\HidReport.c **** 	case GESTURE_DOWN_SWIPE:
+ 179:.\HidReport.c **** 		/* Down swipe moves the vertical scroll bar down. User can release the touch 
+ 180:.\HidReport.c **** 		 * after the gesture that would move the scroll bar once or user can continue 
+ 181:.\HidReport.c **** 		 * touching the Down button which would move the scroll bar down continuously. 
+ 182:.\HidReport.c **** 		 */
+ 183:.\HidReport.c **** 		if(prevGestureId != GESTURE_DOWN_SWIPE)
+ 206              		.loc 1 183 0
+ 207 00d6 274B     		ldr	r3, .L22
+ 208 00d8 1B7B     		ldrb	r3, [r3, #12]
+ 209 00da 082B     		cmp	r3, #8
+ 210 00dc 08D0     		beq	.L20
+ 184:.\HidReport.c **** 		{
+ 185:.\HidReport.c **** 			/* Start with higher speed the first time scroll gesture occurs. */
+ 186:.\HidReport.c **** 			scrollUpdateThreshold = 0;
+ 211              		.loc 1 186 0
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccAndZw6.s 			page 8
+
+
+ 212 00de 254B     		ldr	r3, .L22
+ 213 00e0 0022     		mov	r2, #0
+ 214 00e2 1A61     		str	r2, [r3, #16]
+ 187:.\HidReport.c **** 			mouseReport[MOUSE_RPT_V_POS] = -START_SCROLL_SPEED;
+ 215              		.loc 1 187 0
+ 216 00e4 FC32     		add	r2, r2, #252
+ 217 00e6 DA72     		strb	r2, [r3, #11]
+ 188:.\HidReport.c **** 			PRINT("Down Swipe\n\r");
+ 218              		.loc 1 188 0
+ 219 00e8 2B48     		ldr	r0, .L22+36
+ 220 00ea FFF7FEFF 		bl	UART_UartPutString
+ 221              	.LVL17:
+ 222 00ee 3DE0     		b	.L8
+ 223              	.L20:
+ 189:.\HidReport.c **** 		}
+ 190:.\HidReport.c **** 		else if(++scrollUpdateThreshold >= CONT_SCROLL_UPDATE_FREQ)
+ 224              		.loc 1 190 0
+ 225 00f0 204A     		ldr	r2, .L22
+ 226 00f2 1369     		ldr	r3, [r2, #16]
+ 227 00f4 0133     		add	r3, r3, #1
+ 228 00f6 1361     		str	r3, [r2, #16]
+ 229 00f8 092B     		cmp	r3, #9
+ 230 00fa 37D9     		bls	.L8
+ 191:.\HidReport.c **** 		{
+ 192:.\HidReport.c **** 			/* Control scroll speed by limiting the update rate */
+ 193:.\HidReport.c **** 			scrollUpdateThreshold = 0;
+ 231              		.loc 1 193 0
+ 232 00fc 151C     		mov	r5, r2
+ 233 00fe 0023     		mov	r3, #0
+ 234 0100 1361     		str	r3, [r2, #16]
+ 194:.\HidReport.c **** 			PRINT("Down Swipe\n\r");
+ 235              		.loc 1 194 0
+ 236 0102 2548     		ldr	r0, .L22+36
+ 237 0104 FFF7FEFF 		bl	UART_UartPutString
+ 238              	.LVL18:
+ 195:.\HidReport.c **** 			mouseReport[MOUSE_RPT_V_POS] = -CONT_SCROLL_SPEED;
+ 239              		.loc 1 195 0
+ 240 0108 FF23     		mov	r3, #255
+ 241 010a EB72     		strb	r3, [r5, #11]
+ 242 010c 2EE0     		b	.L8
+ 243              	.L14:
+ 196:.\HidReport.c **** 		}
+ 197:.\HidReport.c **** 		break;
+ 198:.\HidReport.c **** 		
+ 199:.\HidReport.c **** 	case GESTURE_OUTWARD_SWIPE:
+ 200:.\HidReport.c **** 		if(prevGestureId != GESTURE_OUTWARD_SWIPE)
+ 244              		.loc 1 200 0
+ 245 010e 194B     		ldr	r3, .L22
+ 246 0110 1B7B     		ldrb	r3, [r3, #12]
+ 247 0112 092B     		cmp	r3, #9
+ 248 0114 02D0     		beq	.L21
+ 201:.\HidReport.c **** 		{				
+ 202:.\HidReport.c **** 			PRINT("Outward Swipe\n\r");
+ 249              		.loc 1 202 0
+ 250 0116 2148     		ldr	r0, .L22+40
+ 251 0118 FFF7FEFF 		bl	UART_UartPutString
+ 252              	.LVL19:
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccAndZw6.s 			page 9
+
+
+ 253              	.L21:
+ 203:.\HidReport.c **** 		}
+ 204:.\HidReport.c **** 		mouseReport[MOUSE_RPT_X_POS] = (int8)xPos/2;
+ 254              		.loc 1 204 0
+ 255 011c 154A     		ldr	r2, .L22
+ 256 011e 204B     		ldr	r3, .L22+44
+ 257 0120 1B78     		ldrb	r3, [r3]
+ 258 0122 5BB2     		sxtb	r3, r3
+ 259 0124 D90F     		lsr	r1, r3, #31
+ 260 0126 CB18     		add	r3, r1, r3
+ 261 0128 5B10     		asr	r3, r3, #1
+ 262 012a 5372     		strb	r3, [r2, #9]
+ 205:.\HidReport.c **** 		mouseReport[MOUSE_RPT_Y_POS] = -(int8)yPos/2;
+ 263              		.loc 1 205 0
+ 264 012c 1D4B     		ldr	r3, .L22+48
+ 265 012e 1B78     		ldrb	r3, [r3]
+ 266 0130 5BB2     		sxtb	r3, r3
+ 267 0132 5B42     		neg	r3, r3
+ 268 0134 D90F     		lsr	r1, r3, #31
+ 269 0136 CB18     		add	r3, r1, r3
+ 270 0138 5B10     		asr	r3, r3, #1
+ 271 013a 9372     		strb	r3, [r2, #10]
+ 206:.\HidReport.c **** 		break;
+ 272              		.loc 1 206 0
+ 273 013c 16E0     		b	.L8
+ 274              	.L15:
+ 207:.\HidReport.c **** 
+ 208:.\HidReport.c **** 	case GESTURE_INNER_CLKWISE:
+ 209:.\HidReport.c **** 		PRINT("Inner Clockwise\n\r");
+ 275              		.loc 1 209 0
+ 276 013e 1A48     		ldr	r0, .L22+52
+ 277 0140 FFF7FEFF 		bl	UART_UartPutString
+ 278              	.LVL20:
+ 210:.\HidReport.c **** 		break;
+ 279              		.loc 1 210 0
+ 280 0144 12E0     		b	.L8
+ 281              	.L16:
+ 211:.\HidReport.c **** 		
+ 212:.\HidReport.c **** 	case GESTURE_INNER_COUNTER_CLKWISE:
+ 213:.\HidReport.c **** 		PRINT("Inner Counter-Clockwise\n\r");
+ 282              		.loc 1 213 0
+ 283 0146 1948     		ldr	r0, .L22+56
+ 284 0148 FFF7FEFF 		bl	UART_UartPutString
+ 285              	.LVL21:
+ 214:.\HidReport.c **** 		break;
+ 286              		.loc 1 214 0
+ 287 014c 0EE0     		b	.L8
+ 288              	.L17:
+ 215:.\HidReport.c **** 		
+ 216:.\HidReport.c **** 	case GESTURE_OUTER_CLKWISE:
+ 217:.\HidReport.c **** 		if(prevGestureId != GESTURE_OUTER_CLKWISE)
+ 289              		.loc 1 217 0
+ 290 014e 094B     		ldr	r3, .L22
+ 291 0150 1B7B     		ldrb	r3, [r3, #12]
+ 292 0152 0C2B     		cmp	r3, #12
+ 293 0154 0AD0     		beq	.L8
+ 218:.\HidReport.c **** 		{
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccAndZw6.s 			page 10
+
+
+ 219:.\HidReport.c **** 			PRINT("Outer Clockwise\n\r");
+ 294              		.loc 1 219 0
+ 295 0156 1648     		ldr	r0, .L22+60
+ 296 0158 FFF7FEFF 		bl	UART_UartPutString
+ 297              	.LVL22:
+ 298 015c 06E0     		b	.L8
+ 299              	.L18:
+ 220:.\HidReport.c **** 		}
+ 221:.\HidReport.c **** 		break;
+ 222:.\HidReport.c **** 		
+ 223:.\HidReport.c **** 	case GESTURE_OUTER_COUNTER_CLKWISE:
+ 224:.\HidReport.c **** 		if(prevGestureId != GESTURE_OUTER_COUNTER_CLKWISE)
+ 300              		.loc 1 224 0
+ 301 015e 054B     		ldr	r3, .L22
+ 302 0160 1B7B     		ldrb	r3, [r3, #12]
+ 303 0162 0D2B     		cmp	r3, #13
+ 304 0164 02D0     		beq	.L8
+ 225:.\HidReport.c **** 		{
+ 226:.\HidReport.c **** 			PRINT("Outer Counter-Clockwise\n\r");
+ 305              		.loc 1 226 0
+ 306 0166 1348     		ldr	r0, .L22+64
+ 307 0168 FFF7FEFF 		bl	UART_UartPutString
+ 308              	.LVL23:
+ 309              	.L8:
+ 227:.\HidReport.c **** 		}
+ 228:.\HidReport.c **** 		break;
+ 229:.\HidReport.c **** 		
+ 230:.\HidReport.c **** 	default:
+ 231:.\HidReport.c **** 		break;
+ 232:.\HidReport.c **** 	}	
+ 233:.\HidReport.c **** 	
+ 234:.\HidReport.c **** 	prevGestureId = gestureId;
+ 310              		.loc 1 234 0
+ 311 016c 014B     		ldr	r3, .L22
+ 312 016e 1C73     		strb	r4, [r3, #12]
+ 235:.\HidReport.c **** }
+ 313              		.loc 1 235 0
+ 314              		@ sp needed
+ 315 0170 38BD     		pop	{r3, r4, r5, pc}
+ 316              	.L23:
+ 317 0172 C046     		.align	2
+ 318              	.L22:
+ 319 0174 00000000 		.word	.LANCHOR0
+ 320 0178 00000000 		.word	capsenseButtonStatus
+ 321 017c 00000000 		.word	.LC2
+ 322 0180 10000000 		.word	.LC4
+ 323 0184 20000000 		.word	.LC6
+ 324 0188 00000000 		.word	.L10
+ 325 018c 30000000 		.word	.LC9
+ 326 0190 40000000 		.word	.LC11
+ 327 0194 50000000 		.word	.LC13
+ 328 0198 5C000000 		.word	.LC15
+ 329 019c 6C000000 		.word	.LC17
+ 330 01a0 00000000 		.word	xPos
+ 331 01a4 00000000 		.word	yPos
+ 332 01a8 7C000000 		.word	.LC21
+ 333 01ac 90000000 		.word	.LC23
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccAndZw6.s 			page 11
+
+
+ 334 01b0 AC000000 		.word	.LC25
+ 335 01b4 C0000000 		.word	.LC27
+ 336              		.cfi_endproc
+ 337              	.LFE36:
+ 338              		.size	ConvertGestureToHidReport, .-ConvertGestureToHidReport
+ 339              		.global	keyboardReport
+ 340              		.global	mouseReport
+ 341              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 342              		.align	2
+ 343              	.LC2:
+ 344 0000 4C656674 		.ascii	"Left Click\012\015\000"
+ 344      20436C69 
+ 344      636B0A0D 
+ 344      00
+ 345 000d 000000   		.space	3
+ 346              	.LC4:
+ 347 0010 52696768 		.ascii	"Right Click\012\015\000"
+ 347      7420436C 
+ 347      69636B0A 
+ 347      0D00
+ 348 001e 0000     		.space	2
+ 349              	.LC6:
+ 350 0020 4D696464 		.ascii	"Middle Click\012\015\000"
+ 350      6C652043 
+ 350      6C69636B 
+ 350      0A0D00
+ 351 002f 00       		.space	1
+ 352              	.LC9:
+ 353 0030 4C656674 		.ascii	"Left Swipe\012\015\000"
+ 353      20537769 
+ 353      70650A0D 
+ 353      00
+ 354 003d 000000   		.space	3
+ 355              	.LC11:
+ 356 0040 52696768 		.ascii	"Right Swipe\012\015\000"
+ 356      74205377 
+ 356      6970650A 
+ 356      0D00
+ 357 004e 0000     		.space	2
+ 358              	.LC13:
+ 359 0050 55702053 		.ascii	"Up Swipe\012\015\000"
+ 359      77697065 
+ 359      0A0D00
+ 360 005b 00       		.space	1
+ 361              	.LC15:
+ 362 005c 446F776E 		.ascii	"Down Swipe\012\015\000"
+ 362      20537769 
+ 362      70650A0D 
+ 362      00
+ 363 0069 000000   		.space	3
+ 364              	.LC17:
+ 365 006c 4F757477 		.ascii	"Outward Swipe\012\015\000"
+ 365      61726420 
+ 365      53776970 
+ 365      650A0D00 
+ 366              	.LC21:
+ 367 007c 496E6E65 		.ascii	"Inner Clockwise\012\015\000"
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccAndZw6.s 			page 12
+
+
+ 367      7220436C 
+ 367      6F636B77 
+ 367      6973650A 
+ 367      0D00
+ 368 008e 0000     		.space	2
+ 369              	.LC23:
+ 370 0090 496E6E65 		.ascii	"Inner Counter-Clockwise\012\015\000"
+ 370      7220436F 
+ 370      756E7465 
+ 370      722D436C 
+ 370      6F636B77 
+ 371 00aa 0000     		.space	2
+ 372              	.LC25:
+ 373 00ac 4F757465 		.ascii	"Outer Clockwise\012\015\000"
+ 373      7220436C 
+ 373      6F636B77 
+ 373      6973650A 
+ 373      0D00
+ 374 00be 0000     		.space	2
+ 375              	.LC27:
+ 376 00c0 4F757465 		.ascii	"Outer Counter-Clockwise\012\015\000"
+ 376      7220436F 
+ 376      756E7465 
+ 376      722D436C 
+ 376      6F636B77 
+ 377 00da 0000     		.bss
+ 378              		.align	2
+ 379              		.set	.LANCHOR0,. + 0
+ 380              		.type	keyboardReport, %object
+ 381              		.size	keyboardReport, 8
+ 382              	keyboardReport:
+ 383 0000 00000000 		.space	8
+ 383      00000000 
+ 384              		.type	mouseReport, %object
+ 385              		.size	mouseReport, 4
+ 386              	mouseReport:
+ 387 0008 00000000 		.space	4
+ 388              		.type	prevGestureId.5263, %object
+ 389              		.size	prevGestureId.5263, 1
+ 390              	prevGestureId.5263:
+ 391 000c 00       		.space	1
+ 392 000d 000000   		.space	3
+ 393              		.type	scrollUpdateThreshold.5262, %object
+ 394              		.size	scrollUpdateThreshold.5262, 4
+ 395              	scrollUpdateThreshold.5262:
+ 396 0010 00000000 		.space	4
+ 397              		.text
+ 398              	.Letext0:
+ 399              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 400              		.file 3 ".\\Gesture.h"
+ 401              		.file 4 "Generated_Source\\PSoC4/UART_SPI_UART.h"
+ 402              		.section	.debug_info,"",%progbits
+ 403              	.Ldebug_info0:
+ 404 0000 4C030000 		.4byte	0x34c
+ 405 0004 0400     		.2byte	0x4
+ 406 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 407 000a 04       		.byte	0x4
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccAndZw6.s 			page 13
+
+
+ 408 000b 01       		.uleb128 0x1
+ 409 000c D5020000 		.4byte	.LASF43
+ 410 0010 01       		.byte	0x1
+ 411 0011 98020000 		.4byte	.LASF44
+ 412 0015 1A000000 		.4byte	.LASF45
+ 413 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 414 001d 00000000 		.4byte	0
+ 415 0021 00000000 		.4byte	.Ldebug_line0
+ 416 0025 02       		.uleb128 0x2
+ 417 0026 01       		.byte	0x1
+ 418 0027 06       		.byte	0x6
+ 419 0028 A5030000 		.4byte	.LASF0
+ 420 002c 02       		.uleb128 0x2
+ 421 002d 01       		.byte	0x1
+ 422 002e 08       		.byte	0x8
+ 423 002f 67010000 		.4byte	.LASF1
+ 424 0033 02       		.uleb128 0x2
+ 425 0034 02       		.byte	0x2
+ 426 0035 05       		.byte	0x5
+ 427 0036 63030000 		.4byte	.LASF2
+ 428 003a 02       		.uleb128 0x2
+ 429 003b 02       		.byte	0x2
+ 430 003c 07       		.byte	0x7
+ 431 003d DB000000 		.4byte	.LASF3
+ 432 0041 02       		.uleb128 0x2
+ 433 0042 04       		.byte	0x4
+ 434 0043 05       		.byte	0x5
+ 435 0044 81030000 		.4byte	.LASF4
+ 436 0048 02       		.uleb128 0x2
+ 437 0049 04       		.byte	0x4
+ 438 004a 07       		.byte	0x7
+ 439 004b 91010000 		.4byte	.LASF5
+ 440 004f 02       		.uleb128 0x2
+ 441 0050 08       		.byte	0x8
+ 442 0051 05       		.byte	0x5
+ 443 0052 A6020000 		.4byte	.LASF6
+ 444 0056 02       		.uleb128 0x2
+ 445 0057 08       		.byte	0x8
+ 446 0058 07       		.byte	0x7
+ 447 0059 19020000 		.4byte	.LASF7
+ 448 005d 03       		.uleb128 0x3
+ 449 005e 04       		.byte	0x4
+ 450 005f 05       		.byte	0x5
+ 451 0060 696E7400 		.ascii	"int\000"
+ 452 0064 02       		.uleb128 0x2
+ 453 0065 04       		.byte	0x4
+ 454 0066 07       		.byte	0x7
+ 455 0067 02010000 		.4byte	.LASF8
+ 456 006b 04       		.uleb128 0x4
+ 457 006c 6D030000 		.4byte	.LASF9
+ 458 0070 02       		.byte	0x2
+ 459 0071 3801     		.2byte	0x138
+ 460 0073 2C000000 		.4byte	0x2c
+ 461 0077 04       		.uleb128 0x4
+ 462 0078 03020000 		.4byte	.LASF10
+ 463 007c 02       		.byte	0x2
+ 464 007d 3A01     		.2byte	0x13a
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccAndZw6.s 			page 14
+
+
+ 465 007f 48000000 		.4byte	0x48
+ 466 0083 04       		.uleb128 0x4
+ 467 0084 FE010000 		.4byte	.LASF11
+ 468 0088 02       		.byte	0x2
+ 469 0089 3B01     		.2byte	0x13b
+ 470 008b 25000000 		.4byte	0x25
+ 471 008f 04       		.uleb128 0x4
+ 472 0090 A3010000 		.4byte	.LASF12
+ 473 0094 02       		.byte	0x2
+ 474 0095 3D01     		.2byte	0x13d
+ 475 0097 41000000 		.4byte	0x41
+ 476 009b 02       		.uleb128 0x2
+ 477 009c 04       		.byte	0x4
+ 478 009d 04       		.byte	0x4
+ 479 009e 4E010000 		.4byte	.LASF13
+ 480 00a2 02       		.uleb128 0x2
+ 481 00a3 08       		.byte	0x8
+ 482 00a4 04       		.byte	0x4
+ 483 00a5 D7010000 		.4byte	.LASF14
+ 484 00a9 04       		.uleb128 0x4
+ 485 00aa 8B010000 		.4byte	.LASF15
+ 486 00ae 02       		.byte	0x2
+ 487 00af 4901     		.2byte	0x149
+ 488 00b1 B5000000 		.4byte	0xb5
+ 489 00b5 02       		.uleb128 0x2
+ 490 00b6 01       		.byte	0x1
+ 491 00b7 08       		.byte	0x8
+ 492 00b8 8A030000 		.4byte	.LASF16
+ 493 00bc 02       		.uleb128 0x2
+ 494 00bd 04       		.byte	0x4
+ 495 00be 07       		.byte	0x7
+ 496 00bf 71020000 		.4byte	.LASF17
+ 497 00c3 05       		.uleb128 0x5
+ 498 00c4 01       		.byte	0x1
+ 499 00c5 03       		.byte	0x3
+ 500 00c6 B8       		.byte	0xb8
+ 501 00c7 32010000 		.4byte	0x132
+ 502 00cb 06       		.uleb128 0x6
+ 503 00cc DE010000 		.4byte	.LASF18
+ 504 00d0 00       		.sleb128 0
+ 505 00d1 06       		.uleb128 0x6
+ 506 00d2 61020000 		.4byte	.LASF19
+ 507 00d6 01       		.sleb128 1
+ 508 00d7 06       		.uleb128 0x6
+ 509 00d8 28010000 		.4byte	.LASF20
+ 510 00dc 02       		.sleb128 2
+ 511 00dd 06       		.uleb128 0x6
+ 512 00de EE000000 		.4byte	.LASF21
+ 513 00e2 03       		.sleb128 3
+ 514 00e3 06       		.uleb128 0x6
+ 515 00e4 B0000000 		.4byte	.LASF22
+ 516 00e8 04       		.sleb128 4
+ 517 00e9 06       		.uleb128 0x6
+ 518 00ea 54010000 		.4byte	.LASF23
+ 519 00ee 05       		.sleb128 5
+ 520 00ef 06       		.uleb128 0x6
+ 521 00f0 0F010000 		.4byte	.LASF24
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccAndZw6.s 			page 15
+
+
+ 522 00f4 06       		.sleb128 6
+ 523 00f5 06       		.uleb128 0x6
+ 524 00f6 A9010000 		.4byte	.LASF25
+ 525 00fa 07       		.sleb128 7
+ 526 00fb 06       		.uleb128 0x6
+ 527 00fc EB010000 		.4byte	.LASF26
+ 528 0100 08       		.sleb128 8
+ 529 0101 06       		.uleb128 0x6
+ 530 0102 C5000000 		.4byte	.LASF27
+ 531 0106 09       		.sleb128 9
+ 532 0107 06       		.uleb128 0x6
+ 533 0108 8F030000 		.4byte	.LASF28
+ 534 010c 0A       		.sleb128 10
+ 535 010d 06       		.uleb128 0x6
+ 536 010e 7C000000 		.4byte	.LASF29
+ 537 0112 0B       		.sleb128 11
+ 538 0113 06       		.uleb128 0x6
+ 539 0114 75010000 		.4byte	.LASF30
+ 540 0118 0C       		.sleb128 12
+ 541 0119 06       		.uleb128 0x6
+ 542 011a 7A020000 		.4byte	.LASF31
+ 543 011e 0D       		.sleb128 13
+ 544 011f 06       		.uleb128 0x6
+ 545 0120 B4020000 		.4byte	.LASF32
+ 546 0124 0E       		.sleb128 14
+ 547 0125 06       		.uleb128 0x6
+ 548 0126 BA010000 		.4byte	.LASF33
+ 549 012a 0F       		.sleb128 15
+ 550 012b 06       		.uleb128 0x6
+ 551 012c C5020000 		.4byte	.LASF34
+ 552 0130 10       		.sleb128 16
+ 553 0131 00       		.byte	0
+ 554 0132 07       		.uleb128 0x7
+ 555 0133 30020000 		.4byte	.LASF35
+ 556 0137 03       		.byte	0x3
+ 557 0138 CA       		.byte	0xca
+ 558 0139 C3000000 		.4byte	0xc3
+ 559 013d 08       		.uleb128 0x8
+ 560 013e 3B020000 		.4byte	.LASF46
+ 561 0142 01       		.byte	0x1
+ 562 0143 5E       		.byte	0x5e
+ 563 0144 00000000 		.4byte	.LFB36
+ 564 0148 B8010000 		.4byte	.LFE36-.LFB36
+ 565 014c 01       		.uleb128 0x1
+ 566 014d 9C       		.byte	0x9c
+ 567 014e CF020000 		.4byte	0x2cf
+ 568 0152 09       		.uleb128 0x9
+ 569 0153 CD010000 		.4byte	.LASF47
+ 570 0157 01       		.byte	0x1
+ 571 0158 5E       		.byte	0x5e
+ 572 0159 32010000 		.4byte	0x132
+ 573 015d 00000000 		.4byte	.LLST0
+ 574 0161 0A       		.uleb128 0xa
+ 575 0162 9A000000 		.4byte	.LASF36
+ 576 0166 01       		.byte	0x1
+ 577 0167 63       		.byte	0x63
+ 578 0168 77000000 		.4byte	0x77
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccAndZw6.s 			page 16
+
+
+ 579 016c 05       		.uleb128 0x5
+ 580 016d 03       		.byte	0x3
+ 581 016e 10000000 		.4byte	scrollUpdateThreshold.5262
+ 582 0172 0A       		.uleb128 0xa
+ 583 0173 73030000 		.4byte	.LASF37
+ 584 0177 01       		.byte	0x1
+ 585 0178 65       		.byte	0x65
+ 586 0179 32010000 		.4byte	0x132
+ 587 017d 05       		.uleb128 0x5
+ 588 017e 03       		.byte	0x3
+ 589 017f 0C000000 		.4byte	prevGestureId.5263
+ 590 0183 0B       		.uleb128 0xb
+ 591 0184 6900     		.ascii	"i\000"
+ 592 0186 01       		.byte	0x1
+ 593 0187 67       		.byte	0x67
+ 594 0188 77000000 		.4byte	0x77
+ 595 018c 53000000 		.4byte	.LLST1
+ 596 0190 0C       		.uleb128 0xc
+ 597 0191 3C000000 		.4byte	.LVL6
+ 598 0195 32030000 		.4byte	0x332
+ 599 0199 A7010000 		.4byte	0x1a7
+ 600 019d 0D       		.uleb128 0xd
+ 601 019e 01       		.uleb128 0x1
+ 602 019f 50       		.byte	0x50
+ 603 01a0 05       		.uleb128 0x5
+ 604 01a1 03       		.byte	0x3
+ 605 01a2 00000000 		.4byte	.LC2
+ 606 01a6 00       		.byte	0
+ 607 01a7 0C       		.uleb128 0xc
+ 608 01a8 4E000000 		.4byte	.LVL9
+ 609 01ac 32030000 		.4byte	0x332
+ 610 01b0 BE010000 		.4byte	0x1be
+ 611 01b4 0D       		.uleb128 0xd
+ 612 01b5 01       		.uleb128 0x1
+ 613 01b6 50       		.byte	0x50
+ 614 01b7 05       		.uleb128 0x5
+ 615 01b8 03       		.byte	0x3
+ 616 01b9 10000000 		.4byte	.LC4
+ 617 01bd 00       		.byte	0
+ 618 01be 0C       		.uleb128 0xc
+ 619 01bf 60000000 		.4byte	.LVL12
+ 620 01c3 32030000 		.4byte	0x332
+ 621 01c7 D5010000 		.4byte	0x1d5
+ 622 01cb 0D       		.uleb128 0xd
+ 623 01cc 01       		.uleb128 0x1
+ 624 01cd 50       		.byte	0x50
+ 625 01ce 05       		.uleb128 0x5
+ 626 01cf 03       		.byte	0x3
+ 627 01d0 20000000 		.4byte	.LC6
+ 628 01d4 00       		.byte	0
+ 629 01d5 0C       		.uleb128 0xc
+ 630 01d6 78000000 		.4byte	.LVL13
+ 631 01da 32030000 		.4byte	0x332
+ 632 01de EC010000 		.4byte	0x1ec
+ 633 01e2 0D       		.uleb128 0xd
+ 634 01e3 01       		.uleb128 0x1
+ 635 01e4 50       		.byte	0x50
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccAndZw6.s 			page 17
+
+
+ 636 01e5 05       		.uleb128 0x5
+ 637 01e6 03       		.byte	0x3
+ 638 01e7 30000000 		.4byte	.LC9
+ 639 01eb 00       		.byte	0
+ 640 01ec 0C       		.uleb128 0xc
+ 641 01ed 8E000000 		.4byte	.LVL14
+ 642 01f1 32030000 		.4byte	0x332
+ 643 01f5 03020000 		.4byte	0x203
+ 644 01f9 0D       		.uleb128 0xd
+ 645 01fa 01       		.uleb128 0x1
+ 646 01fb 50       		.byte	0x50
+ 647 01fc 05       		.uleb128 0x5
+ 648 01fd 03       		.byte	0x3
+ 649 01fe 40000000 		.4byte	.LC11
+ 650 0202 00       		.byte	0
+ 651 0203 0C       		.uleb128 0xc
+ 652 0204 B6000000 		.4byte	.LVL15
+ 653 0208 32030000 		.4byte	0x332
+ 654 020c 1A020000 		.4byte	0x21a
+ 655 0210 0D       		.uleb128 0xd
+ 656 0211 01       		.uleb128 0x1
+ 657 0212 50       		.byte	0x50
+ 658 0213 05       		.uleb128 0x5
+ 659 0214 03       		.byte	0x3
+ 660 0215 50000000 		.4byte	.LC13
+ 661 0219 00       		.byte	0
+ 662 021a 0C       		.uleb128 0xc
+ 663 021b D0000000 		.4byte	.LVL16
+ 664 021f 32030000 		.4byte	0x332
+ 665 0223 31020000 		.4byte	0x231
+ 666 0227 0D       		.uleb128 0xd
+ 667 0228 01       		.uleb128 0x1
+ 668 0229 50       		.byte	0x50
+ 669 022a 05       		.uleb128 0x5
+ 670 022b 03       		.byte	0x3
+ 671 022c 50000000 		.4byte	.LC13
+ 672 0230 00       		.byte	0
+ 673 0231 0C       		.uleb128 0xc
+ 674 0232 EE000000 		.4byte	.LVL17
+ 675 0236 32030000 		.4byte	0x332
+ 676 023a 48020000 		.4byte	0x248
+ 677 023e 0D       		.uleb128 0xd
+ 678 023f 01       		.uleb128 0x1
+ 679 0240 50       		.byte	0x50
+ 680 0241 05       		.uleb128 0x5
+ 681 0242 03       		.byte	0x3
+ 682 0243 5C000000 		.4byte	.LC15
+ 683 0247 00       		.byte	0
+ 684 0248 0C       		.uleb128 0xc
+ 685 0249 08010000 		.4byte	.LVL18
+ 686 024d 32030000 		.4byte	0x332
+ 687 0251 5F020000 		.4byte	0x25f
+ 688 0255 0D       		.uleb128 0xd
+ 689 0256 01       		.uleb128 0x1
+ 690 0257 50       		.byte	0x50
+ 691 0258 05       		.uleb128 0x5
+ 692 0259 03       		.byte	0x3
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccAndZw6.s 			page 18
+
+
+ 693 025a 5C000000 		.4byte	.LC15
+ 694 025e 00       		.byte	0
+ 695 025f 0C       		.uleb128 0xc
+ 696 0260 1C010000 		.4byte	.LVL19
+ 697 0264 32030000 		.4byte	0x332
+ 698 0268 76020000 		.4byte	0x276
+ 699 026c 0D       		.uleb128 0xd
+ 700 026d 01       		.uleb128 0x1
+ 701 026e 50       		.byte	0x50
+ 702 026f 05       		.uleb128 0x5
+ 703 0270 03       		.byte	0x3
+ 704 0271 6C000000 		.4byte	.LC17
+ 705 0275 00       		.byte	0
+ 706 0276 0C       		.uleb128 0xc
+ 707 0277 44010000 		.4byte	.LVL20
+ 708 027b 32030000 		.4byte	0x332
+ 709 027f 8D020000 		.4byte	0x28d
+ 710 0283 0D       		.uleb128 0xd
+ 711 0284 01       		.uleb128 0x1
+ 712 0285 50       		.byte	0x50
+ 713 0286 05       		.uleb128 0x5
+ 714 0287 03       		.byte	0x3
+ 715 0288 7C000000 		.4byte	.LC21
+ 716 028c 00       		.byte	0
+ 717 028d 0C       		.uleb128 0xc
+ 718 028e 4C010000 		.4byte	.LVL21
+ 719 0292 32030000 		.4byte	0x332
+ 720 0296 A4020000 		.4byte	0x2a4
+ 721 029a 0D       		.uleb128 0xd
+ 722 029b 01       		.uleb128 0x1
+ 723 029c 50       		.byte	0x50
+ 724 029d 05       		.uleb128 0x5
+ 725 029e 03       		.byte	0x3
+ 726 029f 90000000 		.4byte	.LC23
+ 727 02a3 00       		.byte	0
+ 728 02a4 0C       		.uleb128 0xc
+ 729 02a5 5C010000 		.4byte	.LVL22
+ 730 02a9 32030000 		.4byte	0x332
+ 731 02ad BB020000 		.4byte	0x2bb
+ 732 02b1 0D       		.uleb128 0xd
+ 733 02b2 01       		.uleb128 0x1
+ 734 02b3 50       		.byte	0x50
+ 735 02b4 05       		.uleb128 0x5
+ 736 02b5 03       		.byte	0x3
+ 737 02b6 AC000000 		.4byte	.LC25
+ 738 02ba 00       		.byte	0
+ 739 02bb 0E       		.uleb128 0xe
+ 740 02bc 6C010000 		.4byte	.LVL23
+ 741 02c0 32030000 		.4byte	0x332
+ 742 02c4 0D       		.uleb128 0xd
+ 743 02c5 01       		.uleb128 0x1
+ 744 02c6 50       		.byte	0x50
+ 745 02c7 05       		.uleb128 0x5
+ 746 02c8 03       		.byte	0x3
+ 747 02c9 C0000000 		.4byte	.LC27
+ 748 02cd 00       		.byte	0
+ 749 02ce 00       		.byte	0
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccAndZw6.s 			page 19
+
+
+ 750 02cf 0F       		.uleb128 0xf
+ 751 02d0 00000000 		.4byte	.LASF38
+ 752 02d4 03       		.byte	0x3
+ 753 02d5 D2       		.byte	0xd2
+ 754 02d6 77000000 		.4byte	0x77
+ 755 02da 0F       		.uleb128 0xf
+ 756 02db 15000000 		.4byte	.LASF39
+ 757 02df 03       		.byte	0x3
+ 758 02e0 D3       		.byte	0xd3
+ 759 02e1 8F000000 		.4byte	0x8f
+ 760 02e5 0F       		.uleb128 0xf
+ 761 02e6 23010000 		.4byte	.LASF40
+ 762 02ea 03       		.byte	0x3
+ 763 02eb D3       		.byte	0xd3
+ 764 02ec 8F000000 		.4byte	0x8f
+ 765 02f0 10       		.uleb128 0x10
+ 766 02f1 83000000 		.4byte	0x83
+ 767 02f5 00030000 		.4byte	0x300
+ 768 02f9 11       		.uleb128 0x11
+ 769 02fa BC000000 		.4byte	0xbc
+ 770 02fe 03       		.byte	0x3
+ 771 02ff 00       		.byte	0
+ 772 0300 12       		.uleb128 0x12
+ 773 0301 55020000 		.4byte	.LASF41
+ 774 0305 01       		.byte	0x1
+ 775 0306 3C       		.byte	0x3c
+ 776 0307 F0020000 		.4byte	0x2f0
+ 777 030b 05       		.uleb128 0x5
+ 778 030c 03       		.byte	0x3
+ 779 030d 00000000 		.4byte	mouseReport
+ 780 0311 10       		.uleb128 0x10
+ 781 0312 6B000000 		.4byte	0x6b
+ 782 0316 21030000 		.4byte	0x321
+ 783 031a 11       		.uleb128 0x11
+ 784 031b BC000000 		.4byte	0xbc
+ 785 031f 07       		.byte	0x7
+ 786 0320 00       		.byte	0
+ 787 0321 12       		.uleb128 0x12
+ 788 0322 0A020000 		.4byte	.LASF42
+ 789 0326 01       		.byte	0x1
+ 790 0327 44       		.byte	0x44
+ 791 0328 11030000 		.4byte	0x311
+ 792 032c 05       		.uleb128 0x5
+ 793 032d 03       		.byte	0x3
+ 794 032e 00000000 		.4byte	keyboardReport
+ 795 0332 13       		.uleb128 0x13
+ 796 0333 3B010000 		.4byte	.LASF48
+ 797 0337 04       		.byte	0x4
+ 798 0338 7701     		.2byte	0x177
+ 799 033a 44030000 		.4byte	0x344
+ 800 033e 14       		.uleb128 0x14
+ 801 033f 44030000 		.4byte	0x344
+ 802 0343 00       		.byte	0
+ 803 0344 15       		.uleb128 0x15
+ 804 0345 04       		.byte	0x4
+ 805 0346 4A030000 		.4byte	0x34a
+ 806 034a 16       		.uleb128 0x16
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccAndZw6.s 			page 20
+
+
+ 807 034b A9000000 		.4byte	0xa9
+ 808 034f 00       		.byte	0
+ 809              		.section	.debug_abbrev,"",%progbits
+ 810              	.Ldebug_abbrev0:
+ 811 0000 01       		.uleb128 0x1
+ 812 0001 11       		.uleb128 0x11
+ 813 0002 01       		.byte	0x1
+ 814 0003 25       		.uleb128 0x25
+ 815 0004 0E       		.uleb128 0xe
+ 816 0005 13       		.uleb128 0x13
+ 817 0006 0B       		.uleb128 0xb
+ 818 0007 03       		.uleb128 0x3
+ 819 0008 0E       		.uleb128 0xe
+ 820 0009 1B       		.uleb128 0x1b
+ 821 000a 0E       		.uleb128 0xe
+ 822 000b 55       		.uleb128 0x55
+ 823 000c 17       		.uleb128 0x17
+ 824 000d 11       		.uleb128 0x11
+ 825 000e 01       		.uleb128 0x1
+ 826 000f 10       		.uleb128 0x10
+ 827 0010 17       		.uleb128 0x17
+ 828 0011 00       		.byte	0
+ 829 0012 00       		.byte	0
+ 830 0013 02       		.uleb128 0x2
+ 831 0014 24       		.uleb128 0x24
+ 832 0015 00       		.byte	0
+ 833 0016 0B       		.uleb128 0xb
+ 834 0017 0B       		.uleb128 0xb
+ 835 0018 3E       		.uleb128 0x3e
+ 836 0019 0B       		.uleb128 0xb
+ 837 001a 03       		.uleb128 0x3
+ 838 001b 0E       		.uleb128 0xe
+ 839 001c 00       		.byte	0
+ 840 001d 00       		.byte	0
+ 841 001e 03       		.uleb128 0x3
+ 842 001f 24       		.uleb128 0x24
+ 843 0020 00       		.byte	0
+ 844 0021 0B       		.uleb128 0xb
+ 845 0022 0B       		.uleb128 0xb
+ 846 0023 3E       		.uleb128 0x3e
+ 847 0024 0B       		.uleb128 0xb
+ 848 0025 03       		.uleb128 0x3
+ 849 0026 08       		.uleb128 0x8
+ 850 0027 00       		.byte	0
+ 851 0028 00       		.byte	0
+ 852 0029 04       		.uleb128 0x4
+ 853 002a 16       		.uleb128 0x16
+ 854 002b 00       		.byte	0
+ 855 002c 03       		.uleb128 0x3
+ 856 002d 0E       		.uleb128 0xe
+ 857 002e 3A       		.uleb128 0x3a
+ 858 002f 0B       		.uleb128 0xb
+ 859 0030 3B       		.uleb128 0x3b
+ 860 0031 05       		.uleb128 0x5
+ 861 0032 49       		.uleb128 0x49
+ 862 0033 13       		.uleb128 0x13
+ 863 0034 00       		.byte	0
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccAndZw6.s 			page 21
+
+
+ 864 0035 00       		.byte	0
+ 865 0036 05       		.uleb128 0x5
+ 866 0037 04       		.uleb128 0x4
+ 867 0038 01       		.byte	0x1
+ 868 0039 0B       		.uleb128 0xb
+ 869 003a 0B       		.uleb128 0xb
+ 870 003b 3A       		.uleb128 0x3a
+ 871 003c 0B       		.uleb128 0xb
+ 872 003d 3B       		.uleb128 0x3b
+ 873 003e 0B       		.uleb128 0xb
+ 874 003f 01       		.uleb128 0x1
+ 875 0040 13       		.uleb128 0x13
+ 876 0041 00       		.byte	0
+ 877 0042 00       		.byte	0
+ 878 0043 06       		.uleb128 0x6
+ 879 0044 28       		.uleb128 0x28
+ 880 0045 00       		.byte	0
+ 881 0046 03       		.uleb128 0x3
+ 882 0047 0E       		.uleb128 0xe
+ 883 0048 1C       		.uleb128 0x1c
+ 884 0049 0D       		.uleb128 0xd
+ 885 004a 00       		.byte	0
+ 886 004b 00       		.byte	0
+ 887 004c 07       		.uleb128 0x7
+ 888 004d 16       		.uleb128 0x16
+ 889 004e 00       		.byte	0
+ 890 004f 03       		.uleb128 0x3
+ 891 0050 0E       		.uleb128 0xe
+ 892 0051 3A       		.uleb128 0x3a
+ 893 0052 0B       		.uleb128 0xb
+ 894 0053 3B       		.uleb128 0x3b
+ 895 0054 0B       		.uleb128 0xb
+ 896 0055 49       		.uleb128 0x49
+ 897 0056 13       		.uleb128 0x13
+ 898 0057 00       		.byte	0
+ 899 0058 00       		.byte	0
+ 900 0059 08       		.uleb128 0x8
+ 901 005a 2E       		.uleb128 0x2e
+ 902 005b 01       		.byte	0x1
+ 903 005c 3F       		.uleb128 0x3f
+ 904 005d 19       		.uleb128 0x19
+ 905 005e 03       		.uleb128 0x3
+ 906 005f 0E       		.uleb128 0xe
+ 907 0060 3A       		.uleb128 0x3a
+ 908 0061 0B       		.uleb128 0xb
+ 909 0062 3B       		.uleb128 0x3b
+ 910 0063 0B       		.uleb128 0xb
+ 911 0064 27       		.uleb128 0x27
+ 912 0065 19       		.uleb128 0x19
+ 913 0066 11       		.uleb128 0x11
+ 914 0067 01       		.uleb128 0x1
+ 915 0068 12       		.uleb128 0x12
+ 916 0069 06       		.uleb128 0x6
+ 917 006a 40       		.uleb128 0x40
+ 918 006b 18       		.uleb128 0x18
+ 919 006c 9742     		.uleb128 0x2117
+ 920 006e 19       		.uleb128 0x19
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccAndZw6.s 			page 22
+
+
+ 921 006f 01       		.uleb128 0x1
+ 922 0070 13       		.uleb128 0x13
+ 923 0071 00       		.byte	0
+ 924 0072 00       		.byte	0
+ 925 0073 09       		.uleb128 0x9
+ 926 0074 05       		.uleb128 0x5
+ 927 0075 00       		.byte	0
+ 928 0076 03       		.uleb128 0x3
+ 929 0077 0E       		.uleb128 0xe
+ 930 0078 3A       		.uleb128 0x3a
+ 931 0079 0B       		.uleb128 0xb
+ 932 007a 3B       		.uleb128 0x3b
+ 933 007b 0B       		.uleb128 0xb
+ 934 007c 49       		.uleb128 0x49
+ 935 007d 13       		.uleb128 0x13
+ 936 007e 02       		.uleb128 0x2
+ 937 007f 17       		.uleb128 0x17
+ 938 0080 00       		.byte	0
+ 939 0081 00       		.byte	0
+ 940 0082 0A       		.uleb128 0xa
+ 941 0083 34       		.uleb128 0x34
+ 942 0084 00       		.byte	0
+ 943 0085 03       		.uleb128 0x3
+ 944 0086 0E       		.uleb128 0xe
+ 945 0087 3A       		.uleb128 0x3a
+ 946 0088 0B       		.uleb128 0xb
+ 947 0089 3B       		.uleb128 0x3b
+ 948 008a 0B       		.uleb128 0xb
+ 949 008b 49       		.uleb128 0x49
+ 950 008c 13       		.uleb128 0x13
+ 951 008d 02       		.uleb128 0x2
+ 952 008e 18       		.uleb128 0x18
+ 953 008f 00       		.byte	0
+ 954 0090 00       		.byte	0
+ 955 0091 0B       		.uleb128 0xb
+ 956 0092 34       		.uleb128 0x34
+ 957 0093 00       		.byte	0
+ 958 0094 03       		.uleb128 0x3
+ 959 0095 08       		.uleb128 0x8
+ 960 0096 3A       		.uleb128 0x3a
+ 961 0097 0B       		.uleb128 0xb
+ 962 0098 3B       		.uleb128 0x3b
+ 963 0099 0B       		.uleb128 0xb
+ 964 009a 49       		.uleb128 0x49
+ 965 009b 13       		.uleb128 0x13
+ 966 009c 02       		.uleb128 0x2
+ 967 009d 17       		.uleb128 0x17
+ 968 009e 00       		.byte	0
+ 969 009f 00       		.byte	0
+ 970 00a0 0C       		.uleb128 0xc
+ 971 00a1 898201   		.uleb128 0x4109
+ 972 00a4 01       		.byte	0x1
+ 973 00a5 11       		.uleb128 0x11
+ 974 00a6 01       		.uleb128 0x1
+ 975 00a7 31       		.uleb128 0x31
+ 976 00a8 13       		.uleb128 0x13
+ 977 00a9 01       		.uleb128 0x1
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccAndZw6.s 			page 23
+
+
+ 978 00aa 13       		.uleb128 0x13
+ 979 00ab 00       		.byte	0
+ 980 00ac 00       		.byte	0
+ 981 00ad 0D       		.uleb128 0xd
+ 982 00ae 8A8201   		.uleb128 0x410a
+ 983 00b1 00       		.byte	0
+ 984 00b2 02       		.uleb128 0x2
+ 985 00b3 18       		.uleb128 0x18
+ 986 00b4 9142     		.uleb128 0x2111
+ 987 00b6 18       		.uleb128 0x18
+ 988 00b7 00       		.byte	0
+ 989 00b8 00       		.byte	0
+ 990 00b9 0E       		.uleb128 0xe
+ 991 00ba 898201   		.uleb128 0x4109
+ 992 00bd 01       		.byte	0x1
+ 993 00be 11       		.uleb128 0x11
+ 994 00bf 01       		.uleb128 0x1
+ 995 00c0 31       		.uleb128 0x31
+ 996 00c1 13       		.uleb128 0x13
+ 997 00c2 00       		.byte	0
+ 998 00c3 00       		.byte	0
+ 999 00c4 0F       		.uleb128 0xf
+ 1000 00c5 34       		.uleb128 0x34
+ 1001 00c6 00       		.byte	0
+ 1002 00c7 03       		.uleb128 0x3
+ 1003 00c8 0E       		.uleb128 0xe
+ 1004 00c9 3A       		.uleb128 0x3a
+ 1005 00ca 0B       		.uleb128 0xb
+ 1006 00cb 3B       		.uleb128 0x3b
+ 1007 00cc 0B       		.uleb128 0xb
+ 1008 00cd 49       		.uleb128 0x49
+ 1009 00ce 13       		.uleb128 0x13
+ 1010 00cf 3F       		.uleb128 0x3f
+ 1011 00d0 19       		.uleb128 0x19
+ 1012 00d1 3C       		.uleb128 0x3c
+ 1013 00d2 19       		.uleb128 0x19
+ 1014 00d3 00       		.byte	0
+ 1015 00d4 00       		.byte	0
+ 1016 00d5 10       		.uleb128 0x10
+ 1017 00d6 01       		.uleb128 0x1
+ 1018 00d7 01       		.byte	0x1
+ 1019 00d8 49       		.uleb128 0x49
+ 1020 00d9 13       		.uleb128 0x13
+ 1021 00da 01       		.uleb128 0x1
+ 1022 00db 13       		.uleb128 0x13
+ 1023 00dc 00       		.byte	0
+ 1024 00dd 00       		.byte	0
+ 1025 00de 11       		.uleb128 0x11
+ 1026 00df 21       		.uleb128 0x21
+ 1027 00e0 00       		.byte	0
+ 1028 00e1 49       		.uleb128 0x49
+ 1029 00e2 13       		.uleb128 0x13
+ 1030 00e3 2F       		.uleb128 0x2f
+ 1031 00e4 0B       		.uleb128 0xb
+ 1032 00e5 00       		.byte	0
+ 1033 00e6 00       		.byte	0
+ 1034 00e7 12       		.uleb128 0x12
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccAndZw6.s 			page 24
+
+
+ 1035 00e8 34       		.uleb128 0x34
+ 1036 00e9 00       		.byte	0
+ 1037 00ea 03       		.uleb128 0x3
+ 1038 00eb 0E       		.uleb128 0xe
+ 1039 00ec 3A       		.uleb128 0x3a
+ 1040 00ed 0B       		.uleb128 0xb
+ 1041 00ee 3B       		.uleb128 0x3b
+ 1042 00ef 0B       		.uleb128 0xb
+ 1043 00f0 49       		.uleb128 0x49
+ 1044 00f1 13       		.uleb128 0x13
+ 1045 00f2 3F       		.uleb128 0x3f
+ 1046 00f3 19       		.uleb128 0x19
+ 1047 00f4 02       		.uleb128 0x2
+ 1048 00f5 18       		.uleb128 0x18
+ 1049 00f6 00       		.byte	0
+ 1050 00f7 00       		.byte	0
+ 1051 00f8 13       		.uleb128 0x13
+ 1052 00f9 2E       		.uleb128 0x2e
+ 1053 00fa 01       		.byte	0x1
+ 1054 00fb 3F       		.uleb128 0x3f
+ 1055 00fc 19       		.uleb128 0x19
+ 1056 00fd 03       		.uleb128 0x3
+ 1057 00fe 0E       		.uleb128 0xe
+ 1058 00ff 3A       		.uleb128 0x3a
+ 1059 0100 0B       		.uleb128 0xb
+ 1060 0101 3B       		.uleb128 0x3b
+ 1061 0102 05       		.uleb128 0x5
+ 1062 0103 27       		.uleb128 0x27
+ 1063 0104 19       		.uleb128 0x19
+ 1064 0105 3C       		.uleb128 0x3c
+ 1065 0106 19       		.uleb128 0x19
+ 1066 0107 01       		.uleb128 0x1
+ 1067 0108 13       		.uleb128 0x13
+ 1068 0109 00       		.byte	0
+ 1069 010a 00       		.byte	0
+ 1070 010b 14       		.uleb128 0x14
+ 1071 010c 05       		.uleb128 0x5
+ 1072 010d 00       		.byte	0
+ 1073 010e 49       		.uleb128 0x49
+ 1074 010f 13       		.uleb128 0x13
+ 1075 0110 00       		.byte	0
+ 1076 0111 00       		.byte	0
+ 1077 0112 15       		.uleb128 0x15
+ 1078 0113 0F       		.uleb128 0xf
+ 1079 0114 00       		.byte	0
+ 1080 0115 0B       		.uleb128 0xb
+ 1081 0116 0B       		.uleb128 0xb
+ 1082 0117 49       		.uleb128 0x49
+ 1083 0118 13       		.uleb128 0x13
+ 1084 0119 00       		.byte	0
+ 1085 011a 00       		.byte	0
+ 1086 011b 16       		.uleb128 0x16
+ 1087 011c 26       		.uleb128 0x26
+ 1088 011d 00       		.byte	0
+ 1089 011e 49       		.uleb128 0x49
+ 1090 011f 13       		.uleb128 0x13
+ 1091 0120 00       		.byte	0
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccAndZw6.s 			page 25
+
+
+ 1092 0121 00       		.byte	0
+ 1093 0122 00       		.byte	0
+ 1094              		.section	.debug_loc,"",%progbits
+ 1095              	.Ldebug_loc0:
+ 1096              	.LLST0:
+ 1097 0000 00000000 		.4byte	.LVL0
+ 1098 0004 38000000 		.4byte	.LVL5
+ 1099 0008 0100     		.2byte	0x1
+ 1100 000a 50       		.byte	0x50
+ 1101 000b 38000000 		.4byte	.LVL5
+ 1102 000f 3E000000 		.4byte	.LVL7
+ 1103 0013 0400     		.2byte	0x4
+ 1104 0015 F3       		.byte	0xf3
+ 1105 0016 01       		.uleb128 0x1
+ 1106 0017 50       		.byte	0x50
+ 1107 0018 9F       		.byte	0x9f
+ 1108 0019 3E000000 		.4byte	.LVL7
+ 1109 001d 4A000000 		.4byte	.LVL8
+ 1110 0021 0100     		.2byte	0x1
+ 1111 0023 50       		.byte	0x50
+ 1112 0024 4A000000 		.4byte	.LVL8
+ 1113 0028 50000000 		.4byte	.LVL10
+ 1114 002c 0400     		.2byte	0x4
+ 1115 002e F3       		.byte	0xf3
+ 1116 002f 01       		.uleb128 0x1
+ 1117 0030 50       		.byte	0x50
+ 1118 0031 9F       		.byte	0x9f
+ 1119 0032 50000000 		.4byte	.LVL10
+ 1120 0036 5C000000 		.4byte	.LVL11
+ 1121 003a 0100     		.2byte	0x1
+ 1122 003c 50       		.byte	0x50
+ 1123 003d 5C000000 		.4byte	.LVL11
+ 1124 0041 B8010000 		.4byte	.LFE36
+ 1125 0045 0400     		.2byte	0x4
+ 1126 0047 F3       		.byte	0xf3
+ 1127 0048 01       		.uleb128 0x1
+ 1128 0049 50       		.byte	0x50
+ 1129 004a 9F       		.byte	0x9f
+ 1130 004b 00000000 		.4byte	0
+ 1131 004f 00000000 		.4byte	0
+ 1132              	.LLST1:
+ 1133 0053 0C000000 		.4byte	.LVL1
+ 1134 0057 10000000 		.4byte	.LVL2
+ 1135 005b 0200     		.2byte	0x2
+ 1136 005d 30       		.byte	0x30
+ 1137 005e 9F       		.byte	0x9f
+ 1138 005f 10000000 		.4byte	.LVL2
+ 1139 0063 20000000 		.4byte	.LVL4
+ 1140 0067 0100     		.2byte	0x1
+ 1141 0069 53       		.byte	0x53
+ 1142 006a 00000000 		.4byte	0
+ 1143 006e 00000000 		.4byte	0
+ 1144              		.section	.debug_aranges,"",%progbits
+ 1145 0000 1C000000 		.4byte	0x1c
+ 1146 0004 0200     		.2byte	0x2
+ 1147 0006 00000000 		.4byte	.Ldebug_info0
+ 1148 000a 04       		.byte	0x4
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccAndZw6.s 			page 26
+
+
+ 1149 000b 00       		.byte	0
+ 1150 000c 0000     		.2byte	0
+ 1151 000e 0000     		.2byte	0
+ 1152 0010 00000000 		.4byte	.LFB36
+ 1153 0014 B8010000 		.4byte	.LFE36-.LFB36
+ 1154 0018 00000000 		.4byte	0
+ 1155 001c 00000000 		.4byte	0
+ 1156              		.section	.debug_ranges,"",%progbits
+ 1157              	.Ldebug_ranges0:
+ 1158 0000 00000000 		.4byte	.LFB36
+ 1159 0004 B8010000 		.4byte	.LFE36
+ 1160 0008 00000000 		.4byte	0
+ 1161 000c 00000000 		.4byte	0
+ 1162              		.section	.debug_line,"",%progbits
+ 1163              	.Ldebug_line0:
+ 1164 0000 CB000000 		.section	.debug_str,"MS",%progbits,1
+ 1164      02006A00 
+ 1164      00000201 
+ 1164      FB0E0D00 
+ 1164      01010101 
+ 1165              	.LASF38:
+ 1166 0000 63617073 		.ascii	"capsenseButtonStatus\000"
+ 1166      656E7365 
+ 1166      42757474 
+ 1166      6F6E5374 
+ 1166      61747573 
+ 1167              	.LASF39:
+ 1168 0015 78506F73 		.ascii	"xPos\000"
+ 1168      00
+ 1169              	.LASF45:
+ 1170 001a 433A5C55 		.ascii	"C:\\Users\\Javier Barragan\\Documents\\PSoC Creator"
+ 1170      73657273 
+ 1170      5C4A6176 
+ 1170      69657220 
+ 1170      42617272 
+ 1171 0049 5C435938 		.ascii	"\\CY8CKIT_046_USB_Mouse\\CY8CKIT_046_USB_Mouse.cyds"
+ 1171      434B4954 
+ 1171      5F303436 
+ 1171      5F555342 
+ 1171      5F4D6F75 
+ 1172 007a 6E00     		.ascii	"n\000"
+ 1173              	.LASF29:
+ 1174 007c 47455354 		.ascii	"GESTURE_INNER_COUNTER_CLKWISE\000"
+ 1174      5552455F 
+ 1174      494E4E45 
+ 1174      525F434F 
+ 1174      554E5445 
+ 1175              	.LASF36:
+ 1176 009a 7363726F 		.ascii	"scrollUpdateThreshold\000"
+ 1176      6C6C5570 
+ 1176      64617465 
+ 1176      54687265 
+ 1176      73686F6C 
+ 1177              	.LASF22:
+ 1178 00b0 47455354 		.ascii	"GESTURE_MIDDLE_CLICK\000"
+ 1178      5552455F 
+ 1178      4D494444 
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccAndZw6.s 			page 27
+
+
+ 1178      4C455F43 
+ 1178      4C49434B 
+ 1179              	.LASF27:
+ 1180 00c5 47455354 		.ascii	"GESTURE_OUTWARD_SWIPE\000"
+ 1180      5552455F 
+ 1180      4F555457 
+ 1180      4152445F 
+ 1180      53574950 
+ 1181              	.LASF3:
+ 1182 00db 73686F72 		.ascii	"short unsigned int\000"
+ 1182      7420756E 
+ 1182      7369676E 
+ 1182      65642069 
+ 1182      6E7400
+ 1183              	.LASF21:
+ 1184 00ee 47455354 		.ascii	"GESTURE_RIGHT_CLICK\000"
+ 1184      5552455F 
+ 1184      52494748 
+ 1184      545F434C 
+ 1184      49434B00 
+ 1185              	.LASF8:
+ 1186 0102 756E7369 		.ascii	"unsigned int\000"
+ 1186      676E6564 
+ 1186      20696E74 
+ 1186      00
+ 1187              	.LASF24:
+ 1188 010f 47455354 		.ascii	"GESTURE_RIGHT_SWIPE\000"
+ 1188      5552455F 
+ 1188      52494748 
+ 1188      545F5357 
+ 1188      49504500 
+ 1189              	.LASF40:
+ 1190 0123 79506F73 		.ascii	"yPos\000"
+ 1190      00
+ 1191              	.LASF20:
+ 1192 0128 47455354 		.ascii	"GESTURE_LEFT_CLICK\000"
+ 1192      5552455F 
+ 1192      4C454654 
+ 1192      5F434C49 
+ 1192      434B00
+ 1193              	.LASF48:
+ 1194 013b 55415254 		.ascii	"UART_UartPutString\000"
+ 1194      5F556172 
+ 1194      74507574 
+ 1194      53747269 
+ 1194      6E6700
+ 1195              	.LASF13:
+ 1196 014e 666C6F61 		.ascii	"float\000"
+ 1196      7400
+ 1197              	.LASF23:
+ 1198 0154 47455354 		.ascii	"GESTURE_LEFT_SWIPE\000"
+ 1198      5552455F 
+ 1198      4C454654 
+ 1198      5F535749 
+ 1198      504500
+ 1199              	.LASF1:
+ 1200 0167 756E7369 		.ascii	"unsigned char\000"
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccAndZw6.s 			page 28
+
+
+ 1200      676E6564 
+ 1200      20636861 
+ 1200      7200
+ 1201              	.LASF30:
+ 1202 0175 47455354 		.ascii	"GESTURE_OUTER_CLKWISE\000"
+ 1202      5552455F 
+ 1202      4F555445 
+ 1202      525F434C 
+ 1202      4B574953 
+ 1203              	.LASF15:
+ 1204 018b 63686172 		.ascii	"char8\000"
+ 1204      3800
+ 1205              	.LASF5:
+ 1206 0191 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1206      20756E73 
+ 1206      69676E65 
+ 1206      6420696E 
+ 1206      7400
+ 1207              	.LASF12:
+ 1208 01a3 696E7433 		.ascii	"int32\000"
+ 1208      3200
+ 1209              	.LASF25:
+ 1210 01a9 47455354 		.ascii	"GESTURE_UP_SWIPE\000"
+ 1210      5552455F 
+ 1210      55505F53 
+ 1210      57495045 
+ 1210      00
+ 1211              	.LASF33:
+ 1212 01ba 47455354 		.ascii	"GESTURE_DOWN_CLICK\000"
+ 1212      5552455F 
+ 1212      444F574E 
+ 1212      5F434C49 
+ 1212      434B00
+ 1213              	.LASF47:
+ 1214 01cd 67657374 		.ascii	"gestureId\000"
+ 1214      75726549 
+ 1214      6400
+ 1215              	.LASF14:
+ 1216 01d7 646F7562 		.ascii	"double\000"
+ 1216      6C6500
+ 1217              	.LASF18:
+ 1218 01de 47455354 		.ascii	"GESTURE_NONE\000"
+ 1218      5552455F 
+ 1218      4E4F4E45 
+ 1218      00
+ 1219              	.LASF26:
+ 1220 01eb 47455354 		.ascii	"GESTURE_DOWN_SWIPE\000"
+ 1220      5552455F 
+ 1220      444F574E 
+ 1220      5F535749 
+ 1220      504500
+ 1221              	.LASF11:
+ 1222 01fe 696E7438 		.ascii	"int8\000"
+ 1222      00
+ 1223              	.LASF10:
+ 1224 0203 75696E74 		.ascii	"uint32\000"
+ 1224      333200
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccAndZw6.s 			page 29
+
+
+ 1225              	.LASF42:
+ 1226 020a 6B657962 		.ascii	"keyboardReport\000"
+ 1226      6F617264 
+ 1226      5265706F 
+ 1226      727400
+ 1227              	.LASF7:
+ 1228 0219 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1228      206C6F6E 
+ 1228      6720756E 
+ 1228      7369676E 
+ 1228      65642069 
+ 1229              	.LASF35:
+ 1230 0230 74476573 		.ascii	"tGestureId\000"
+ 1230      74757265 
+ 1230      496400
+ 1231              	.LASF46:
+ 1232 023b 436F6E76 		.ascii	"ConvertGestureToHidReport\000"
+ 1232      65727447 
+ 1232      65737475 
+ 1232      7265546F 
+ 1232      48696452 
+ 1233              	.LASF41:
+ 1234 0255 6D6F7573 		.ascii	"mouseReport\000"
+ 1234      65526570 
+ 1234      6F727400 
+ 1235              	.LASF19:
+ 1236 0261 47455354 		.ascii	"GESTURE_RELEASE\000"
+ 1236      5552455F 
+ 1236      52454C45 
+ 1236      41534500 
+ 1237              	.LASF17:
+ 1238 0271 73697A65 		.ascii	"sizetype\000"
+ 1238      74797065 
+ 1238      00
+ 1239              	.LASF31:
+ 1240 027a 47455354 		.ascii	"GESTURE_OUTER_COUNTER_CLKWISE\000"
+ 1240      5552455F 
+ 1240      4F555445 
+ 1240      525F434F 
+ 1240      554E5445 
+ 1241              	.LASF44:
+ 1242 0298 2E5C4869 		.ascii	".\\HidReport.c\000"
+ 1242      64526570 
+ 1242      6F72742E 
+ 1242      6300
+ 1243              	.LASF6:
+ 1244 02a6 6C6F6E67 		.ascii	"long long int\000"
+ 1244      206C6F6E 
+ 1244      6720696E 
+ 1244      7400
+ 1245              	.LASF32:
+ 1246 02b4 47455354 		.ascii	"GESTURE_UP_CLICK\000"
+ 1246      5552455F 
+ 1246      55505F43 
+ 1246      4C49434B 
+ 1246      00
+ 1247              	.LASF34:
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\ccAndZw6.s 			page 30
+
+
+ 1248 02c5 47455354 		.ascii	"GESTURE_INVALID\000"
+ 1248      5552455F 
+ 1248      494E5641 
+ 1248      4C494400 
+ 1249              	.LASF43:
+ 1250 02d5 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1250      4320342E 
+ 1250      392E3320 
+ 1250      32303135 
+ 1250      30333033 
+ 1251 0308 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 1251      20726576 
+ 1251      6973696F 
+ 1251      6E203232 
+ 1251      31323230 
+ 1252 033b 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1252      66756E63 
+ 1252      74696F6E 
+ 1252      2D736563 
+ 1252      74696F6E 
+ 1253              	.LASF2:
+ 1254 0363 73686F72 		.ascii	"short int\000"
+ 1254      7420696E 
+ 1254      7400
+ 1255              	.LASF9:
+ 1256 036d 75696E74 		.ascii	"uint8\000"
+ 1256      3800
+ 1257              	.LASF37:
+ 1258 0373 70726576 		.ascii	"prevGestureId\000"
+ 1258      47657374 
+ 1258      75726549 
+ 1258      6400
+ 1259              	.LASF4:
+ 1260 0381 6C6F6E67 		.ascii	"long int\000"
+ 1260      20696E74 
+ 1260      00
+ 1261              	.LASF16:
+ 1262 038a 63686172 		.ascii	"char\000"
+ 1262      00
+ 1263              	.LASF28:
+ 1264 038f 47455354 		.ascii	"GESTURE_INNER_CLKWISE\000"
+ 1264      5552455F 
+ 1264      494E4E45 
+ 1264      525F434C 
+ 1264      4B574953 
+ 1265              	.LASF0:
+ 1266 03a5 7369676E 		.ascii	"signed char\000"
+ 1266      65642063 
+ 1266      68617200 
+ 1267              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

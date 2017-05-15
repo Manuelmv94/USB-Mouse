@@ -1,0 +1,5 @@
+C:\Users\Javier Barragan\Documents\PSoC Creator\CY8CKIT_046_USB_Mouse\CY8CKIT_046_USB_Mouse.cydsn\CY8CKIT_046_USB_Mouse.cyprj|79b60491-f043-4690-b830-31ba1248e32e
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|05a0e00c-5428-42cc-9077-60a4766c70c1
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|96fa3db4-0c0a-470e-bfa5-d00557d67da6
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|137200d4-f643-4308-81ef-84907fd6e713
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|5dbe45c0-27ac-49c1-bb47-5d69bd0e5109

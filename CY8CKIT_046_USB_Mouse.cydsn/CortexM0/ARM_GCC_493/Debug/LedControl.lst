@@ -1,0 +1,2705 @@
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"LedControl.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.SetLedColor,"ax",%progbits
+  18              		.align	2
+  19              		.global	SetLedColor
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	SetLedColor, %function
+  23              	SetLedColor:
+  24              	.LFB38:
+  25              		.file 1 ".\\LedControl.c"
+   1:.\LedControl.c **** /*******************************************************************************
+   2:.\LedControl.c **** * File Name: LedControl.c
+   3:.\LedControl.c **** *
+   4:.\LedControl.c **** * Version 1.0
+   5:.\LedControl.c **** *
+   6:.\LedControl.c **** * Description: This file contains routines for RGB LED control.
+   7:.\LedControl.c **** *
+   8:.\LedControl.c **** *******************************************************************************
+   9:.\LedControl.c **** * Copyright (2015), Cypress Semiconductor Corporation.
+  10:.\LedControl.c **** *******************************************************************************
+  11:.\LedControl.c **** * This software, including source code, documentation and related materials
+  12:.\LedControl.c **** * ("Software") is owned by Cypress Semiconductor Corporation (Cypress) and is
+  13:.\LedControl.c **** * protected by and subject to worldwide patent protection (United States and 
+  14:.\LedControl.c **** * foreign), United States copyright laws and international treaty provisions. 
+  15:.\LedControl.c **** * Cypress hereby grants to licensee a personal, non-exclusive, non-transferable
+  16:.\LedControl.c **** * license to copy, use, modify, create derivative works of, and compile the 
+  17:.\LedControl.c **** * Cypress source code and derivative works for the sole purpose of creating 
+  18:.\LedControl.c **** * custom software in support of licensee product, such licensee product to be
+  19:.\LedControl.c **** * used only in conjunction with Cypress's integrated circuit as specified in the
+  20:.\LedControl.c **** * applicable agreement. Any reproduction, modification, translation, compilation,
+  21:.\LedControl.c **** * or representation of this Software except as specified above is prohibited 
+  22:.\LedControl.c **** * without the express written permission of Cypress.
+  23:.\LedControl.c **** * 
+  24:.\LedControl.c **** * Disclaimer: THIS SOFTWARE IS PROVIDED AS-IS, WITH NO WARRANTY OF ANY KIND, 
+  25:.\LedControl.c **** * EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, NONINFRINGEMENT, IMPLIED 
+  26:.\LedControl.c **** * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+  27:.\LedControl.c **** * Cypress reserves the Right to make changes to the Software without notice. 
+  28:.\LedControl.c **** * Cypress does not assume any liability arising out of the application or use
+  29:.\LedControl.c **** * of Software or any product or circuit described in the Software. Cypress does
+  30:.\LedControl.c **** * not authorize its products for use as critical components in any products 
+  31:.\LedControl.c **** * where a malfunction or failure may reasonably be expected to result in 
+  32:.\LedControl.c **** * significant injury or death ("ACTIVE Risk Product"). By including Cypress's 
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 2
+
+
+  33:.\LedControl.c **** * product in a ACTIVE Risk Product, the manufacturer of such system or application
+  34:.\LedControl.c **** * assumes all risk of such use and in doing so indemnifies Cypress against all
+  35:.\LedControl.c **** * liability. Use of this Software may be limited by and subject to the applicable
+  36:.\LedControl.c **** * Cypress software license agreement.
+  37:.\LedControl.c **** *******************************************************************************/
+  38:.\LedControl.c **** 
+  39:.\LedControl.c **** #include "project.h"
+  40:.\LedControl.c **** #include "LedControl.h"
+  41:.\LedControl.c **** #include "main.h"
+  42:.\LedControl.c **** 
+  43:.\LedControl.c **** 
+  44:.\LedControl.c **** /*******************************************************************************
+  45:.\LedControl.c **** *	Static Variable Declarations
+  46:.\LedControl.c **** ********************************************************************************/
+  47:.\LedControl.c **** 
+  48:.\LedControl.c **** static bool isRgbLedOn = false;
+  49:.\LedControl.c **** static tLedColor ledColor = INIT_LED_COLOR;
+  50:.\LedControl.c **** static tBrightLevel brightness = INIT_BRIGHT_LEVEL;
+  51:.\LedControl.c **** 
+  52:.\LedControl.c **** 
+  53:.\LedControl.c **** /*******************************************************************************
+  54:.\LedControl.c **** *   External Variable Declarations
+  55:.\LedControl.c **** *******************************************************************************/
+  56:.\LedControl.c **** 
+  57:.\LedControl.c **** 
+  58:.\LedControl.c **** /* Indicates the shift or delta in the slider centroid, accumulated over
+  59:.\LedControl.c ****  * multiple scans. 
+  60:.\LedControl.c ****  */
+  61:.\LedControl.c **** extern uint32 accSliderDelta;
+  62:.\LedControl.c **** 
+  63:.\LedControl.c **** 
+  64:.\LedControl.c **** /*******************************************************************************
+  65:.\LedControl.c **** * Function Name: UpdateLedColor
+  66:.\LedControl.c **** ********************************************************************************
+  67:.\LedControl.c **** * Summary:
+  68:.\LedControl.c **** *  Changes the color of the onboard RGB LED depending on the gesture 
+  69:.\LedControl.c **** *  value passed to the function. This function also saves the new LED color 
+  70:.\LedControl.c **** *  information in the global variable prevLEDColor.
+  71:.\LedControl.c **** *
+  72:.\LedControl.c **** * Parameters:
+  73:.\LedControl.c **** *  gestureId - Id of the gesture detected.
+  74:.\LedControl.c **** *
+  75:.\LedControl.c **** * Return:
+  76:.\LedControl.c **** *  None
+  77:.\LedControl.c **** *
+  78:.\LedControl.c **** *******************************************************************************/
+  79:.\LedControl.c **** void UpdateLedColor(tGestureId gestureId)
+  80:.\LedControl.c **** {
+  81:.\LedControl.c **** 	if(capsenseButtonStatus == CENTRE_BTN_MASK)
+  82:.\LedControl.c **** 	{
+  83:.\LedControl.c **** 		/* Centre button is used to turn on/off the RGB LED */
+  84:.\LedControl.c **** 		if(isRgbLedOn)
+  85:.\LedControl.c **** 		{
+  86:.\LedControl.c **** 			SetLedColor(COLOR_OFF, brightness); 
+  87:.\LedControl.c **** 		}
+  88:.\LedControl.c **** 		else
+  89:.\LedControl.c **** 		{
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 3
+
+
+  90:.\LedControl.c **** 			SetLedColor(ledColor, brightness);
+  91:.\LedControl.c **** 		}
+  92:.\LedControl.c **** 	}
+  93:.\LedControl.c **** 	else if(isRgbLedOn)
+  94:.\LedControl.c **** 	{
+  95:.\LedControl.c **** 		/* Check the gesture and control the output accordingly */	
+  96:.\LedControl.c **** 		switch (gestureId)
+  97:.\LedControl.c **** 		{		
+  98:.\LedControl.c **** 		/* Change color in order of VIBGYOR. */
+  99:.\LedControl.c **** 		case GESTURE_INNER_CLKWISE:
+ 100:.\LedControl.c **** 			switch (ledColor)
+ 101:.\LedControl.c **** 			{
+ 102:.\LedControl.c **** 			case COLOR_VIOLET:
+ 103:.\LedControl.c **** 				ledColor = COLOR_INDIGO;
+ 104:.\LedControl.c **** 				break;
+ 105:.\LedControl.c **** 			
+ 106:.\LedControl.c **** 			case COLOR_INDIGO:
+ 107:.\LedControl.c **** 				ledColor = COLOR_BLUE;
+ 108:.\LedControl.c **** 				break;
+ 109:.\LedControl.c **** 				
+ 110:.\LedControl.c **** 			case COLOR_BLUE:
+ 111:.\LedControl.c **** 				ledColor = COLOR_GREEN;
+ 112:.\LedControl.c **** 				break;
+ 113:.\LedControl.c **** 			
+ 114:.\LedControl.c **** 			case COLOR_GREEN:
+ 115:.\LedControl.c **** 				ledColor = COLOR_YELLOW;
+ 116:.\LedControl.c **** 				break;
+ 117:.\LedControl.c **** 			
+ 118:.\LedControl.c **** 			case COLOR_YELLOW:
+ 119:.\LedControl.c **** 				ledColor = COLOR_ORANGE;
+ 120:.\LedControl.c **** 				break;
+ 121:.\LedControl.c **** 			
+ 122:.\LedControl.c **** 			case COLOR_ORANGE:
+ 123:.\LedControl.c **** 				ledColor = COLOR_RED;
+ 124:.\LedControl.c **** 				break;
+ 125:.\LedControl.c **** 			
+ 126:.\LedControl.c **** 			case COLOR_RED:
+ 127:.\LedControl.c **** 				ledColor = COLOR_VIOLET;
+ 128:.\LedControl.c **** 				break;
+ 129:.\LedControl.c **** 
+ 130:.\LedControl.c **** 			default:
+ 131:.\LedControl.c **** 				ledColor = COLOR_VIOLET;
+ 132:.\LedControl.c **** 				break;
+ 133:.\LedControl.c **** 			}		
+ 134:.\LedControl.c **** 			break;
+ 135:.\LedControl.c **** 			
+ 136:.\LedControl.c **** 			/* Fine color change in reverse order of VIBGYOR. */
+ 137:.\LedControl.c **** 		case GESTURE_INNER_COUNTER_CLKWISE:
+ 138:.\LedControl.c **** 			switch (ledColor)
+ 139:.\LedControl.c **** 			{
+ 140:.\LedControl.c **** 			case COLOR_VIOLET:
+ 141:.\LedControl.c **** 				ledColor = COLOR_RED;
+ 142:.\LedControl.c **** 				break;
+ 143:.\LedControl.c **** 			
+ 144:.\LedControl.c **** 			case COLOR_INDIGO:
+ 145:.\LedControl.c **** 				ledColor = COLOR_VIOLET;
+ 146:.\LedControl.c **** 				break;
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 4
+
+
+ 147:.\LedControl.c **** 				
+ 148:.\LedControl.c **** 			case COLOR_BLUE:
+ 149:.\LedControl.c **** 				ledColor = COLOR_INDIGO;
+ 150:.\LedControl.c **** 				break;
+ 151:.\LedControl.c **** 			
+ 152:.\LedControl.c **** 			case COLOR_GREEN:
+ 153:.\LedControl.c **** 				ledColor = COLOR_BLUE;
+ 154:.\LedControl.c **** 				break;
+ 155:.\LedControl.c **** 			
+ 156:.\LedControl.c **** 			case COLOR_YELLOW:
+ 157:.\LedControl.c **** 				ledColor = COLOR_GREEN;
+ 158:.\LedControl.c **** 				break;
+ 159:.\LedControl.c **** 			
+ 160:.\LedControl.c **** 			case COLOR_ORANGE:
+ 161:.\LedControl.c **** 				ledColor = COLOR_YELLOW;
+ 162:.\LedControl.c **** 				break;
+ 163:.\LedControl.c **** 			
+ 164:.\LedControl.c **** 			case COLOR_RED:
+ 165:.\LedControl.c **** 				ledColor = COLOR_ORANGE;
+ 166:.\LedControl.c **** 				break;
+ 167:.\LedControl.c **** 
+ 168:.\LedControl.c **** 			default:
+ 169:.\LedControl.c **** 				ledColor = COLOR_RED;
+ 170:.\LedControl.c **** 				break;
+ 171:.\LedControl.c **** 			}	
+ 172:.\LedControl.c **** 				break;
+ 173:.\LedControl.c **** 		
+ 174:.\LedControl.c **** 		case GESTURE_OUTER_CLKWISE:													
+ 175:.\LedControl.c **** 			switch(brightness)
+ 176:.\LedControl.c **** 			{
+ 177:.\LedControl.c **** 				case BRIGHT_LEVEL_0:
+ 178:.\LedControl.c **** 					brightness = BRIGHT_LEVEL_1;
+ 179:.\LedControl.c **** 					break;
+ 180:.\LedControl.c **** 				
+ 181:.\LedControl.c **** 				case BRIGHT_LEVEL_1:
+ 182:.\LedControl.c **** 					brightness = BRIGHT_LEVEL_2;
+ 183:.\LedControl.c **** 					break;
+ 184:.\LedControl.c **** 				
+ 185:.\LedControl.c **** 				case BRIGHT_LEVEL_2:
+ 186:.\LedControl.c **** 					brightness = BRIGHT_LEVEL_3;
+ 187:.\LedControl.c **** 					break;
+ 188:.\LedControl.c **** 				
+ 189:.\LedControl.c **** 				case BRIGHT_LEVEL_3:
+ 190:.\LedControl.c **** 					brightness = BRIGHT_LEVEL_4;
+ 191:.\LedControl.c **** 					break;
+ 192:.\LedControl.c **** 				
+ 193:.\LedControl.c **** 				case BRIGHT_LEVEL_4:
+ 194:.\LedControl.c **** 					brightness = BRIGHT_LEVEL_5;
+ 195:.\LedControl.c **** 					break;
+ 196:.\LedControl.c **** 				
+ 197:.\LedControl.c **** 				case BRIGHT_LEVEL_5:
+ 198:.\LedControl.c **** 					brightness = BRIGHT_LEVEL_6;
+ 199:.\LedControl.c **** 					break;
+ 200:.\LedControl.c **** 				
+ 201:.\LedControl.c **** 				case BRIGHT_LEVEL_6:
+ 202:.\LedControl.c **** 					brightness = BRIGHT_LEVEL_7;
+ 203:.\LedControl.c **** 					break;
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 5
+
+
+ 204:.\LedControl.c **** 				
+ 205:.\LedControl.c **** 				case BRIGHT_LEVEL_7:
+ 206:.\LedControl.c **** 					brightness = BRIGHT_LEVEL_8;
+ 207:.\LedControl.c **** 					break;
+ 208:.\LedControl.c **** 				
+ 209:.\LedControl.c **** 				case BRIGHT_LEVEL_8:
+ 210:.\LedControl.c **** 					brightness = BRIGHT_LEVEL_9;
+ 211:.\LedControl.c **** 					break;
+ 212:.\LedControl.c **** 				
+ 213:.\LedControl.c **** 				case BRIGHT_LEVEL_9:
+ 214:.\LedControl.c **** 				/* Saturate at the maximum brightness. */
+ 215:.\LedControl.c **** 					brightness = BRIGHT_LEVEL_9;
+ 216:.\LedControl.c **** 					break;
+ 217:.\LedControl.c **** 				
+ 218:.\LedControl.c **** 				default:
+ 219:.\LedControl.c **** 					/* Start with a default brightness of 70%. */
+ 220:.\LedControl.c **** 					brightness = BRIGHT_LEVEL_7;
+ 221:.\LedControl.c **** 					break;		
+ 222:.\LedControl.c **** 			}			
+ 223:.\LedControl.c **** 			break;
+ 224:.\LedControl.c **** 			
+ 225:.\LedControl.c **** 		case GESTURE_OUTER_COUNTER_CLKWISE:										
+ 226:.\LedControl.c **** 			switch(brightness)
+ 227:.\LedControl.c **** 			{
+ 228:.\LedControl.c **** 				case BRIGHT_LEVEL_0:
+ 229:.\LedControl.c **** 				
+ 230:.\LedControl.c **** 					/* Saturate at the minimum brightness. */
+ 231:.\LedControl.c **** 					brightness = BRIGHT_LEVEL_0;
+ 232:.\LedControl.c **** 					break;
+ 233:.\LedControl.c **** 				
+ 234:.\LedControl.c **** 				case BRIGHT_LEVEL_1:
+ 235:.\LedControl.c **** 					brightness = BRIGHT_LEVEL_0;
+ 236:.\LedControl.c **** 					break;
+ 237:.\LedControl.c **** 				
+ 238:.\LedControl.c **** 				case BRIGHT_LEVEL_2:
+ 239:.\LedControl.c **** 					brightness = BRIGHT_LEVEL_1;
+ 240:.\LedControl.c **** 					break;
+ 241:.\LedControl.c **** 				
+ 242:.\LedControl.c **** 				case BRIGHT_LEVEL_3:
+ 243:.\LedControl.c **** 					brightness = BRIGHT_LEVEL_2;
+ 244:.\LedControl.c **** 					break;
+ 245:.\LedControl.c **** 				
+ 246:.\LedControl.c **** 				case BRIGHT_LEVEL_4:
+ 247:.\LedControl.c **** 					brightness = BRIGHT_LEVEL_3;
+ 248:.\LedControl.c **** 					break;
+ 249:.\LedControl.c **** 				
+ 250:.\LedControl.c **** 				case BRIGHT_LEVEL_5:
+ 251:.\LedControl.c **** 					brightness = BRIGHT_LEVEL_4;
+ 252:.\LedControl.c **** 					break;
+ 253:.\LedControl.c **** 				
+ 254:.\LedControl.c **** 				case BRIGHT_LEVEL_6:
+ 255:.\LedControl.c **** 					brightness = BRIGHT_LEVEL_5;
+ 256:.\LedControl.c **** 					break;
+ 257:.\LedControl.c **** 				
+ 258:.\LedControl.c **** 				case BRIGHT_LEVEL_7:
+ 259:.\LedControl.c **** 					brightness = BRIGHT_LEVEL_6;
+ 260:.\LedControl.c **** 					break;
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 6
+
+
+ 261:.\LedControl.c **** 				
+ 262:.\LedControl.c **** 				case BRIGHT_LEVEL_8:
+ 263:.\LedControl.c **** 					brightness = BRIGHT_LEVEL_7;
+ 264:.\LedControl.c **** 					break;
+ 265:.\LedControl.c **** 				
+ 266:.\LedControl.c **** 				case BRIGHT_LEVEL_9:
+ 267:.\LedControl.c **** 					brightness = BRIGHT_LEVEL_8;
+ 268:.\LedControl.c **** 					break;
+ 269:.\LedControl.c **** 				
+ 270:.\LedControl.c **** 				default:
+ 271:.\LedControl.c **** 					/* Start with a default brightness of 70%. */
+ 272:.\LedControl.c **** 					brightness = BRIGHT_LEVEL_7;
+ 273:.\LedControl.c **** 					break;
+ 274:.\LedControl.c **** 				}
+ 275:.\LedControl.c **** 				
+ 276:.\LedControl.c **** 				break;
+ 277:.\LedControl.c **** 					
+ 278:.\LedControl.c **** 			default:
+ 279:.\LedControl.c **** 				break;
+ 280:.\LedControl.c **** 		}
+ 281:.\LedControl.c **** 		
+ 282:.\LedControl.c **** 		/* Show the color on the RGB LED. */
+ 283:.\LedControl.c **** 		SetLedColor(ledColor, brightness);		
+ 284:.\LedControl.c **** 	}	
+ 285:.\LedControl.c **** }
+ 286:.\LedControl.c **** 
+ 287:.\LedControl.c **** 
+ 288:.\LedControl.c **** /******************************************************************************
+ 289:.\LedControl.c **** * Function Name: SetLedColor
+ 290:.\LedControl.c **** *******************************************************************************
+ 291:.\LedControl.c **** * Summary:
+ 292:.\LedControl.c **** *  Shows a specific color on the onboard RGB LED at a specified
+ 293:.\LedControl.c **** *  brightness level depending on the parameters.
+ 294:.\LedControl.c **** *
+ 295:.\LedControl.c **** * Parameters:
+ 296:.\LedControl.c **** *  color - LED color to be shown on the RGB LED.
+ 297:.\LedControl.c **** *  tempBrightness - Brightness level of the LED.
+ 298:.\LedControl.c **** *
+ 299:.\LedControl.c **** * Return:
+ 300:.\LedControl.c **** *  None
+ 301:.\LedControl.c **** *
+ 302:.\LedControl.c **** *******************************************************************************/
+ 303:.\LedControl.c **** void SetLedColor(tLedColor color, tBrightLevel tempBrightness)
+ 304:.\LedControl.c **** {
+  26              		.loc 1 304 0
+  27              		.cfi_startproc
+  28              	.LVL0:
+  29 0000 10B5     		push	{r4, lr}
+  30              		.cfi_def_cfa_offset 8
+  31              		.cfi_offset 4, -8
+  32              		.cfi_offset 14, -4
+ 305:.\LedControl.c **** 	/* Show the color on the LED by controlling the PWMs. 
+ 306:.\LedControl.c **** 	 * Note that the colors are only approximate. */
+ 307:.\LedControl.c **** 	
+ 308:.\LedControl.c **** 	if(color == COLOR_OFF)
+  33              		.loc 1 308 0
+  34 0002 0028     		cmp	r0, #0
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 7
+
+
+  35 0004 03D1     		bne	.L2
+ 309:.\LedControl.c **** 	{
+ 310:.\LedControl.c **** 		isRgbLedOn = false; 
+  36              		.loc 1 310 0
+  37 0006 0022     		mov	r2, #0
+  38 0008 394B     		ldr	r3, .L15
+  39 000a 1A70     		strb	r2, [r3]
+  40 000c 05E0     		b	.L3
+  41              	.L2:
+ 311:.\LedControl.c **** 	}
+ 312:.\LedControl.c **** 	else 
+ 313:.\LedControl.c **** 	{
+ 314:.\LedControl.c **** 		isRgbLedOn = true;
+  42              		.loc 1 314 0
+  43 000e 384B     		ldr	r3, .L15
+  44 0010 0122     		mov	r2, #1
+  45 0012 1A70     		strb	r2, [r3]
+ 315:.\LedControl.c **** 		/* Copy the color and brightness values to the static variables */
+ 316:.\LedControl.c **** 		ledColor = color;
+  46              		.loc 1 316 0
+  47 0014 5870     		strb	r0, [r3, #1]
+ 317:.\LedControl.c **** 		brightness = tempBrightness;
+  48              		.loc 1 317 0
+  49 0016 374B     		ldr	r3, .L15+4
+  50 0018 1980     		strh	r1, [r3]
+  51              	.L3:
+ 318:.\LedControl.c **** 	}
+ 319:.\LedControl.c **** 	
+ 320:.\LedControl.c **** 	switch(color)
+  52              		.loc 1 320 0
+  53 001a 0828     		cmp	r0, #8
+  54 001c 66D8     		bhi	.L1
+  55 001e 8000     		lsl	r0, r0, #2
+  56              	.LVL1:
+  57 0020 354B     		ldr	r3, .L15+8
+  58 0022 1B58     		ldr	r3, [r3, r0]
+  59 0024 9F46     		mov	pc, r3
+  60              		.section	.rodata
+  61              		.align	2
+  62              	.L6:
+  63 0000 26000000 		.word	.L5
+  64 0004 50000000 		.word	.L7
+  65 0008 66000000 		.word	.L8
+  66 000c 7E000000 		.word	.L9
+  67 0010 94000000 		.word	.L10
+  68 0014 AA000000 		.word	.L11
+  69 0018 C0000000 		.word	.L12
+  70 001c D8000000 		.word	.L13
+  71 0020 3A000000 		.word	.L14
+  72              		.section	.text.SetLedColor
+  73              	.L5:
+ 321:.\LedControl.c **** 	{
+ 322:.\LedControl.c **** 	case COLOR_OFF:
+ 323:.\LedControl.c **** 		PWM_Red_WriteCompare(LED_OFF_PWM_PERIOD);
+  74              		.loc 1 323 0
+  75 0026 0020     		mov	r0, #0
+  76 0028 FFF7FEFF 		bl	PWM_Red_WriteCompare
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 8
+
+
+  77              	.LVL2:
+ 324:.\LedControl.c **** 		PWM_Blue_WriteCompare(LED_OFF_PWM_PERIOD);
+  78              		.loc 1 324 0
+  79 002c 0020     		mov	r0, #0
+  80 002e FFF7FEFF 		bl	PWM_Blue_WriteCompare
+  81              	.LVL3:
+ 325:.\LedControl.c **** 		PWM_Green_WriteCompare(LED_OFF_PWM_PERIOD);
+  82              		.loc 1 325 0
+  83 0032 0020     		mov	r0, #0
+  84 0034 FFF7FEFF 		bl	PWM_Green_WriteCompare
+  85              	.LVL4:
+ 326:.\LedControl.c **** 		break;
+  86              		.loc 1 326 0
+  87 0038 58E0     		b	.L1
+  88              	.LVL5:
+  89              	.L14:
+ 327:.\LedControl.c **** 	
+ 328:.\LedControl.c **** 	case COLOR_WHITE:
+ 329:.\LedControl.c **** 		PWM_Red_WriteCompare(brightness);
+  90              		.loc 1 329 0
+  91 003a 2E4C     		ldr	r4, .L15+4
+  92 003c 2088     		ldrh	r0, [r4]
+  93 003e FFF7FEFF 		bl	PWM_Red_WriteCompare
+  94              	.LVL6:
+ 330:.\LedControl.c **** 		PWM_Blue_WriteCompare(brightness);
+  95              		.loc 1 330 0
+  96 0042 2088     		ldrh	r0, [r4]
+  97 0044 FFF7FEFF 		bl	PWM_Blue_WriteCompare
+  98              	.LVL7:
+ 331:.\LedControl.c **** 		PWM_Green_WriteCompare(brightness);
+  99              		.loc 1 331 0
+ 100 0048 2088     		ldrh	r0, [r4]
+ 101 004a FFF7FEFF 		bl	PWM_Green_WriteCompare
+ 102              	.LVL8:
+ 332:.\LedControl.c **** 		break;
+ 103              		.loc 1 332 0
+ 104 004e 4DE0     		b	.L1
+ 105              	.LVL9:
+ 106              	.L7:
+ 333:.\LedControl.c **** 	
+ 334:.\LedControl.c **** 	case COLOR_VIOLET:
+ 335:.\LedControl.c **** 		PWM_Red_WriteCompare(brightness);
+ 107              		.loc 1 335 0
+ 108 0050 284C     		ldr	r4, .L15+4
+ 109 0052 2088     		ldrh	r0, [r4]
+ 110 0054 FFF7FEFF 		bl	PWM_Red_WriteCompare
+ 111              	.LVL10:
+ 336:.\LedControl.c **** 		PWM_Blue_WriteCompare(brightness);
+ 112              		.loc 1 336 0
+ 113 0058 2088     		ldrh	r0, [r4]
+ 114 005a FFF7FEFF 		bl	PWM_Blue_WriteCompare
+ 115              	.LVL11:
+ 337:.\LedControl.c **** 		PWM_Green_WriteCompare(LED_OFF_PWM_PERIOD);
+ 116              		.loc 1 337 0
+ 117 005e 0020     		mov	r0, #0
+ 118 0060 FFF7FEFF 		bl	PWM_Green_WriteCompare
+ 119              	.LVL12:
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 9
+
+
+ 338:.\LedControl.c **** 		break;
+ 120              		.loc 1 338 0
+ 121 0064 42E0     		b	.L1
+ 122              	.LVL13:
+ 123              	.L8:
+ 339:.\LedControl.c **** 	
+ 340:.\LedControl.c **** 	case COLOR_INDIGO:
+ 341:.\LedControl.c **** 		PWM_Red_WriteCompare(brightness/4);
+ 124              		.loc 1 341 0
+ 125 0066 234C     		ldr	r4, .L15+4
+ 126 0068 2088     		ldrh	r0, [r4]
+ 127 006a 8008     		lsr	r0, r0, #2
+ 128 006c FFF7FEFF 		bl	PWM_Red_WriteCompare
+ 129              	.LVL14:
+ 342:.\LedControl.c **** 		PWM_Blue_WriteCompare(brightness);
+ 130              		.loc 1 342 0
+ 131 0070 2088     		ldrh	r0, [r4]
+ 132 0072 FFF7FEFF 		bl	PWM_Blue_WriteCompare
+ 133              	.LVL15:
+ 343:.\LedControl.c **** 		PWM_Green_WriteCompare(LED_OFF_PWM_PERIOD);
+ 134              		.loc 1 343 0
+ 135 0076 0020     		mov	r0, #0
+ 136 0078 FFF7FEFF 		bl	PWM_Green_WriteCompare
+ 137              	.LVL16:
+ 344:.\LedControl.c **** 		break;
+ 138              		.loc 1 344 0
+ 139 007c 36E0     		b	.L1
+ 140              	.LVL17:
+ 141              	.L9:
+ 345:.\LedControl.c **** 		
+ 346:.\LedControl.c **** 	case COLOR_BLUE:
+ 347:.\LedControl.c **** 		PWM_Red_WriteCompare(LED_OFF_PWM_PERIOD);
+ 142              		.loc 1 347 0
+ 143 007e 0020     		mov	r0, #0
+ 144 0080 FFF7FEFF 		bl	PWM_Red_WriteCompare
+ 145              	.LVL18:
+ 348:.\LedControl.c **** 		PWM_Blue_WriteCompare(brightness);
+ 146              		.loc 1 348 0
+ 147 0084 1B4B     		ldr	r3, .L15+4
+ 148 0086 1888     		ldrh	r0, [r3]
+ 149 0088 FFF7FEFF 		bl	PWM_Blue_WriteCompare
+ 150              	.LVL19:
+ 349:.\LedControl.c **** 		PWM_Green_WriteCompare(LED_OFF_PWM_PERIOD);
+ 151              		.loc 1 349 0
+ 152 008c 0020     		mov	r0, #0
+ 153 008e FFF7FEFF 		bl	PWM_Green_WriteCompare
+ 154              	.LVL20:
+ 350:.\LedControl.c **** 		break;
+ 155              		.loc 1 350 0
+ 156 0092 2BE0     		b	.L1
+ 157              	.LVL21:
+ 158              	.L10:
+ 351:.\LedControl.c **** 	
+ 352:.\LedControl.c **** 	case COLOR_GREEN:
+ 353:.\LedControl.c **** 		PWM_Red_WriteCompare(LED_OFF_PWM_PERIOD);
+ 159              		.loc 1 353 0
+ 160 0094 0020     		mov	r0, #0
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 10
+
+
+ 161 0096 FFF7FEFF 		bl	PWM_Red_WriteCompare
+ 162              	.LVL22:
+ 354:.\LedControl.c **** 		PWM_Blue_WriteCompare(LED_OFF_PWM_PERIOD);
+ 163              		.loc 1 354 0
+ 164 009a 0020     		mov	r0, #0
+ 165 009c FFF7FEFF 		bl	PWM_Blue_WriteCompare
+ 166              	.LVL23:
+ 355:.\LedControl.c **** 		PWM_Green_WriteCompare(brightness);
+ 167              		.loc 1 355 0
+ 168 00a0 144B     		ldr	r3, .L15+4
+ 169 00a2 1888     		ldrh	r0, [r3]
+ 170 00a4 FFF7FEFF 		bl	PWM_Green_WriteCompare
+ 171              	.LVL24:
+ 356:.\LedControl.c **** 		break;
+ 172              		.loc 1 356 0
+ 173 00a8 20E0     		b	.L1
+ 174              	.LVL25:
+ 175              	.L11:
+ 357:.\LedControl.c **** 	
+ 358:.\LedControl.c **** 	case COLOR_YELLOW:
+ 359:.\LedControl.c **** 		PWM_Red_WriteCompare(brightness);
+ 176              		.loc 1 359 0
+ 177 00aa 124C     		ldr	r4, .L15+4
+ 178 00ac 2088     		ldrh	r0, [r4]
+ 179 00ae FFF7FEFF 		bl	PWM_Red_WriteCompare
+ 180              	.LVL26:
+ 360:.\LedControl.c **** 		PWM_Blue_WriteCompare(LED_OFF_PWM_PERIOD);
+ 181              		.loc 1 360 0
+ 182 00b2 0020     		mov	r0, #0
+ 183 00b4 FFF7FEFF 		bl	PWM_Blue_WriteCompare
+ 184              	.LVL27:
+ 361:.\LedControl.c **** 		PWM_Green_WriteCompare(brightness);
+ 185              		.loc 1 361 0
+ 186 00b8 2088     		ldrh	r0, [r4]
+ 187 00ba FFF7FEFF 		bl	PWM_Green_WriteCompare
+ 188              	.LVL28:
+ 362:.\LedControl.c **** 		break;
+ 189              		.loc 1 362 0
+ 190 00be 15E0     		b	.L1
+ 191              	.LVL29:
+ 192              	.L12:
+ 363:.\LedControl.c **** 	
+ 364:.\LedControl.c **** 	case COLOR_ORANGE:
+ 365:.\LedControl.c **** 		PWM_Red_WriteCompare(brightness);
+ 193              		.loc 1 365 0
+ 194 00c0 0C4C     		ldr	r4, .L15+4
+ 195 00c2 2088     		ldrh	r0, [r4]
+ 196 00c4 FFF7FEFF 		bl	PWM_Red_WriteCompare
+ 197              	.LVL30:
+ 366:.\LedControl.c **** 		PWM_Blue_WriteCompare(LED_OFF_PWM_PERIOD);
+ 198              		.loc 1 366 0
+ 199 00c8 0020     		mov	r0, #0
+ 200 00ca FFF7FEFF 		bl	PWM_Blue_WriteCompare
+ 201              	.LVL31:
+ 367:.\LedControl.c **** 		PWM_Green_WriteCompare(brightness/2);	
+ 202              		.loc 1 367 0
+ 203 00ce 2088     		ldrh	r0, [r4]
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 11
+
+
+ 204 00d0 4008     		lsr	r0, r0, #1
+ 205 00d2 FFF7FEFF 		bl	PWM_Green_WriteCompare
+ 206              	.LVL32:
+ 368:.\LedControl.c **** 		break;
+ 207              		.loc 1 368 0
+ 208 00d6 09E0     		b	.L1
+ 209              	.LVL33:
+ 210              	.L13:
+ 369:.\LedControl.c **** 		
+ 370:.\LedControl.c **** 	case COLOR_RED:
+ 371:.\LedControl.c **** 		PWM_Red_WriteCompare(brightness);
+ 211              		.loc 1 371 0
+ 212 00d8 064B     		ldr	r3, .L15+4
+ 213 00da 1888     		ldrh	r0, [r3]
+ 214 00dc FFF7FEFF 		bl	PWM_Red_WriteCompare
+ 215              	.LVL34:
+ 372:.\LedControl.c **** 		PWM_Blue_WriteCompare(LED_OFF_PWM_PERIOD);
+ 216              		.loc 1 372 0
+ 217 00e0 0020     		mov	r0, #0
+ 218 00e2 FFF7FEFF 		bl	PWM_Blue_WriteCompare
+ 219              	.LVL35:
+ 373:.\LedControl.c **** 		PWM_Green_WriteCompare(LED_OFF_PWM_PERIOD);
+ 220              		.loc 1 373 0
+ 221 00e6 0020     		mov	r0, #0
+ 222 00e8 FFF7FEFF 		bl	PWM_Green_WriteCompare
+ 223              	.LVL36:
+ 224              	.L1:
+ 374:.\LedControl.c **** 		break;
+ 375:.\LedControl.c **** 		
+ 376:.\LedControl.c **** 	default:
+ 377:.\LedControl.c **** 		break;
+ 378:.\LedControl.c **** 	}
+ 379:.\LedControl.c **** }
+ 225              		.loc 1 379 0
+ 226              		@ sp needed
+ 227 00ec 10BD     		pop	{r4, pc}
+ 228              	.L16:
+ 229 00ee C046     		.align	2
+ 230              	.L15:
+ 231 00f0 00000000 		.word	.LANCHOR0
+ 232 00f4 00000000 		.word	.LANCHOR1
+ 233 00f8 00000000 		.word	.L6
+ 234              		.cfi_endproc
+ 235              	.LFE38:
+ 236              		.size	SetLedColor, .-SetLedColor
+ 237              		.section	.text.UpdateLedColor,"ax",%progbits
+ 238              		.align	2
+ 239              		.global	UpdateLedColor
+ 240              		.code	16
+ 241              		.thumb_func
+ 242              		.type	UpdateLedColor, %function
+ 243              	UpdateLedColor:
+ 244              	.LFB37:
+  80:.\LedControl.c **** 	if(capsenseButtonStatus == CENTRE_BTN_MASK)
+ 245              		.loc 1 80 0
+ 246              		.cfi_startproc
+ 247              	.LVL37:
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 12
+
+
+ 248 0000 08B5     		push	{r3, lr}
+ 249              		.cfi_def_cfa_offset 8
+ 250              		.cfi_offset 3, -8
+ 251              		.cfi_offset 14, -4
+  81:.\LedControl.c **** 	{
+ 252              		.loc 1 81 0
+ 253 0002 9D4B     		ldr	r3, .L73
+ 254 0004 1B68     		ldr	r3, [r3]
+ 255 0006 102B     		cmp	r3, #16
+ 256 0008 10D1     		bne	.L18
+  84:.\LedControl.c **** 		{
+ 257              		.loc 1 84 0
+ 258 000a 9C4B     		ldr	r3, .L73+4
+ 259 000c 1B78     		ldrb	r3, [r3]
+ 260 000e 002B     		cmp	r3, #0
+ 261 0010 05D0     		beq	.L19
+  86:.\LedControl.c **** 		}
+ 262              		.loc 1 86 0
+ 263 0012 9B4B     		ldr	r3, .L73+8
+ 264 0014 1988     		ldrh	r1, [r3]
+ 265 0016 0020     		mov	r0, #0
+ 266              	.LVL38:
+ 267 0018 FFF7FEFF 		bl	SetLedColor
+ 268              	.LVL39:
+ 269 001c 2AE1     		b	.L17
+ 270              	.LVL40:
+ 271              	.L19:
+  90:.\LedControl.c **** 		}
+ 272              		.loc 1 90 0
+ 273 001e 974B     		ldr	r3, .L73+4
+ 274 0020 5878     		ldrb	r0, [r3, #1]
+ 275              	.LVL41:
+ 276 0022 974B     		ldr	r3, .L73+8
+ 277 0024 1988     		ldrh	r1, [r3]
+ 278 0026 FFF7FEFF 		bl	SetLedColor
+ 279              	.LVL42:
+ 280 002a 23E1     		b	.L17
+ 281              	.LVL43:
+ 282              	.L18:
+  93:.\LedControl.c **** 	{
+ 283              		.loc 1 93 0
+ 284 002c 934B     		ldr	r3, .L73+4
+ 285 002e 1B78     		ldrb	r3, [r3]
+ 286 0030 002B     		cmp	r3, #0
+ 287 0032 00D1     		bne	.LCB244
+ 288 0034 1EE1     		b	.L17	@long jump
+ 289              	.LCB244:
+  96:.\LedControl.c **** 		{		
+ 290              		.loc 1 96 0
+ 291 0036 0B28     		cmp	r0, #11
+ 292 0038 31D0     		beq	.L22
+ 293 003a 02D8     		bhi	.L23
+ 294 003c 0A28     		cmp	r0, #10
+ 295 003e 06D0     		beq	.L24
+ 296 0040 12E1     		b	.L21
+ 297              	.L23:
+ 298 0042 0C28     		cmp	r0, #12
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 13
+
+
+ 299 0044 53D0     		beq	.L25
+ 300 0046 0D28     		cmp	r0, #13
+ 301 0048 00D1     		bne	.LCB258
+ 302 004a AEE0     		b	.L26	@long jump
+ 303              	.LCB258:
+ 304 004c 0CE1     		b	.L21
+ 305              	.L24:
+ 100:.\LedControl.c **** 			{
+ 306              		.loc 1 100 0
+ 307 004e 8B4B     		ldr	r3, .L73+4
+ 308 0050 5A78     		ldrb	r2, [r3, #1]
+ 309 0052 072A     		cmp	r2, #7
+ 310 0054 1FD8     		bhi	.L27
+ 311 0056 9300     		lsl	r3, r2, #2
+ 312 0058 8A4A     		ldr	r2, .L73+12
+ 313 005a D358     		ldr	r3, [r2, r3]
+ 314 005c 9F46     		mov	pc, r3
+ 315              		.section	.rodata
+ 316              		.align	2
+ 317              	.L29:
+ 318 0024 96000000 		.word	.L27
+ 319 0028 5E000000 		.word	.L28
+ 320 002c 66000000 		.word	.L30
+ 321 0030 6E000000 		.word	.L31
+ 322 0034 76000000 		.word	.L32
+ 323 0038 7E000000 		.word	.L33
+ 324 003c 86000000 		.word	.L34
+ 325 0040 8E000000 		.word	.L35
+ 326              		.section	.text.UpdateLedColor
+ 327              	.L28:
+ 103:.\LedControl.c **** 				break;
+ 328              		.loc 1 103 0
+ 329 005e 0222     		mov	r2, #2
+ 330 0060 864B     		ldr	r3, .L73+4
+ 331 0062 5A70     		strb	r2, [r3, #1]
+ 104:.\LedControl.c **** 			
+ 332              		.loc 1 104 0
+ 333 0064 00E1     		b	.L21
+ 334              	.L30:
+ 107:.\LedControl.c **** 				break;
+ 335              		.loc 1 107 0
+ 336 0066 0322     		mov	r2, #3
+ 337 0068 844B     		ldr	r3, .L73+4
+ 338 006a 5A70     		strb	r2, [r3, #1]
+ 108:.\LedControl.c **** 				
+ 339              		.loc 1 108 0
+ 340 006c FCE0     		b	.L21
+ 341              	.L31:
+ 111:.\LedControl.c **** 				break;
+ 342              		.loc 1 111 0
+ 343 006e 0422     		mov	r2, #4
+ 344 0070 824B     		ldr	r3, .L73+4
+ 345 0072 5A70     		strb	r2, [r3, #1]
+ 112:.\LedControl.c **** 			
+ 346              		.loc 1 112 0
+ 347 0074 F8E0     		b	.L21
+ 348              	.L32:
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 14
+
+
+ 115:.\LedControl.c **** 				break;
+ 349              		.loc 1 115 0
+ 350 0076 0522     		mov	r2, #5
+ 351 0078 804B     		ldr	r3, .L73+4
+ 352 007a 5A70     		strb	r2, [r3, #1]
+ 116:.\LedControl.c **** 			
+ 353              		.loc 1 116 0
+ 354 007c F4E0     		b	.L21
+ 355              	.L33:
+ 119:.\LedControl.c **** 				break;
+ 356              		.loc 1 119 0
+ 357 007e 0622     		mov	r2, #6
+ 358 0080 7E4B     		ldr	r3, .L73+4
+ 359 0082 5A70     		strb	r2, [r3, #1]
+ 120:.\LedControl.c **** 			
+ 360              		.loc 1 120 0
+ 361 0084 F0E0     		b	.L21
+ 362              	.L34:
+ 123:.\LedControl.c **** 				break;
+ 363              		.loc 1 123 0
+ 364 0086 0722     		mov	r2, #7
+ 365 0088 7C4B     		ldr	r3, .L73+4
+ 366 008a 5A70     		strb	r2, [r3, #1]
+ 124:.\LedControl.c **** 			
+ 367              		.loc 1 124 0
+ 368 008c ECE0     		b	.L21
+ 369              	.L35:
+ 127:.\LedControl.c **** 				break;
+ 370              		.loc 1 127 0
+ 371 008e 0122     		mov	r2, #1
+ 372 0090 7A4B     		ldr	r3, .L73+4
+ 373 0092 5A70     		strb	r2, [r3, #1]
+ 128:.\LedControl.c **** 
+ 374              		.loc 1 128 0
+ 375 0094 E8E0     		b	.L21
+ 376              	.L27:
+ 131:.\LedControl.c **** 				break;
+ 377              		.loc 1 131 0
+ 378 0096 0122     		mov	r2, #1
+ 379 0098 784B     		ldr	r3, .L73+4
+ 380 009a 5A70     		strb	r2, [r3, #1]
+ 132:.\LedControl.c **** 			}		
+ 381              		.loc 1 132 0
+ 382 009c E4E0     		b	.L21
+ 383              	.L22:
+ 138:.\LedControl.c **** 			{
+ 384              		.loc 1 138 0
+ 385 009e 774B     		ldr	r3, .L73+4
+ 386 00a0 5A78     		ldrb	r2, [r3, #1]
+ 387 00a2 072A     		cmp	r2, #7
+ 388 00a4 1FD8     		bhi	.L36
+ 389 00a6 9300     		lsl	r3, r2, #2
+ 390 00a8 774A     		ldr	r2, .L73+16
+ 391 00aa D358     		ldr	r3, [r2, r3]
+ 392 00ac 9F46     		mov	pc, r3
+ 393              		.section	.rodata
+ 394              		.align	2
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 15
+
+
+ 395              	.L38:
+ 396 0044 E6000000 		.word	.L36
+ 397 0048 AE000000 		.word	.L37
+ 398 004c B6000000 		.word	.L39
+ 399 0050 BE000000 		.word	.L40
+ 400 0054 C6000000 		.word	.L41
+ 401 0058 CE000000 		.word	.L42
+ 402 005c D6000000 		.word	.L43
+ 403 0060 DE000000 		.word	.L44
+ 404              		.section	.text.UpdateLedColor
+ 405              	.L37:
+ 141:.\LedControl.c **** 				break;
+ 406              		.loc 1 141 0
+ 407 00ae 0722     		mov	r2, #7
+ 408 00b0 724B     		ldr	r3, .L73+4
+ 409 00b2 5A70     		strb	r2, [r3, #1]
+ 142:.\LedControl.c **** 			
+ 410              		.loc 1 142 0
+ 411 00b4 D8E0     		b	.L21
+ 412              	.L39:
+ 145:.\LedControl.c **** 				break;
+ 413              		.loc 1 145 0
+ 414 00b6 0122     		mov	r2, #1
+ 415 00b8 704B     		ldr	r3, .L73+4
+ 416 00ba 5A70     		strb	r2, [r3, #1]
+ 146:.\LedControl.c **** 				
+ 417              		.loc 1 146 0
+ 418 00bc D4E0     		b	.L21
+ 419              	.L40:
+ 149:.\LedControl.c **** 				break;
+ 420              		.loc 1 149 0
+ 421 00be 0222     		mov	r2, #2
+ 422 00c0 6E4B     		ldr	r3, .L73+4
+ 423 00c2 5A70     		strb	r2, [r3, #1]
+ 150:.\LedControl.c **** 			
+ 424              		.loc 1 150 0
+ 425 00c4 D0E0     		b	.L21
+ 426              	.L41:
+ 153:.\LedControl.c **** 				break;
+ 427              		.loc 1 153 0
+ 428 00c6 0322     		mov	r2, #3
+ 429 00c8 6C4B     		ldr	r3, .L73+4
+ 430 00ca 5A70     		strb	r2, [r3, #1]
+ 154:.\LedControl.c **** 			
+ 431              		.loc 1 154 0
+ 432 00cc CCE0     		b	.L21
+ 433              	.L42:
+ 157:.\LedControl.c **** 				break;
+ 434              		.loc 1 157 0
+ 435 00ce 0422     		mov	r2, #4
+ 436 00d0 6A4B     		ldr	r3, .L73+4
+ 437 00d2 5A70     		strb	r2, [r3, #1]
+ 158:.\LedControl.c **** 			
+ 438              		.loc 1 158 0
+ 439 00d4 C8E0     		b	.L21
+ 440              	.L43:
+ 161:.\LedControl.c **** 				break;
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 16
+
+
+ 441              		.loc 1 161 0
+ 442 00d6 0522     		mov	r2, #5
+ 443 00d8 684B     		ldr	r3, .L73+4
+ 444 00da 5A70     		strb	r2, [r3, #1]
+ 162:.\LedControl.c **** 			
+ 445              		.loc 1 162 0
+ 446 00dc C4E0     		b	.L21
+ 447              	.L44:
+ 165:.\LedControl.c **** 				break;
+ 448              		.loc 1 165 0
+ 449 00de 0622     		mov	r2, #6
+ 450 00e0 664B     		ldr	r3, .L73+4
+ 451 00e2 5A70     		strb	r2, [r3, #1]
+ 166:.\LedControl.c **** 
+ 452              		.loc 1 166 0
+ 453 00e4 C0E0     		b	.L21
+ 454              	.L36:
+ 169:.\LedControl.c **** 				break;
+ 455              		.loc 1 169 0
+ 456 00e6 0722     		mov	r2, #7
+ 457 00e8 644B     		ldr	r3, .L73+4
+ 458 00ea 5A70     		strb	r2, [r3, #1]
+ 170:.\LedControl.c **** 			}	
+ 459              		.loc 1 170 0
+ 460 00ec BCE0     		b	.L21
+ 461              	.L25:
+ 175:.\LedControl.c **** 			{
+ 462              		.loc 1 175 0
+ 463 00ee 644B     		ldr	r3, .L73+8
+ 464 00f0 1B88     		ldrh	r3, [r3]
+ 465 00f2 FA22     		mov	r2, #250
+ 466 00f4 5201     		lsl	r2, r2, #5
+ 467 00f6 9342     		cmp	r3, r2
+ 468 00f8 3AD0     		beq	.L46
+ 469 00fa 12D8     		bhi	.L47
+ 470 00fc FA22     		mov	r2, #250
+ 471 00fe 9200     		lsl	r2, r2, #2
+ 472 0100 9342     		cmp	r3, r2
+ 473 0102 26D0     		beq	.L48
+ 474 0104 04D8     		bhi	.L49
+ 475 0106 F53A     		sub	r2, r2, #245
+ 476 0108 FF3A     		sub	r2, r2, #255
+ 477 010a 9342     		cmp	r3, r2
+ 478 010c 1CD0     		beq	.L50
+ 479 010e 48E0     		b	.L45
+ 480              	.L49:
+ 481 0110 FA22     		mov	r2, #250
+ 482 0112 D200     		lsl	r2, r2, #3
+ 483 0114 9342     		cmp	r3, r2
+ 484 0116 21D0     		beq	.L51
+ 485 0118 FA22     		mov	r2, #250
+ 486 011a 1201     		lsl	r2, r2, #4
+ 487 011c 9342     		cmp	r3, r2
+ 488 011e 22D0     		beq	.L52
+ 489 0120 3FE0     		b	.L45
+ 490              	.L47:
+ 491 0122 5A4A     		ldr	r2, .L73+20
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 17
+
+
+ 492 0124 9342     		cmp	r3, r2
+ 493 0126 30D0     		beq	.L53
+ 494 0128 07D8     		bhi	.L54
+ 495 012a 594A     		ldr	r2, .L73+24
+ 496 012c 9342     		cmp	r3, r2
+ 497 012e 23D0     		beq	.L55
+ 498 0130 FA22     		mov	r2, #250
+ 499 0132 9201     		lsl	r2, r2, #6
+ 500 0134 9342     		cmp	r3, r2
+ 501 0136 24D0     		beq	.L56
+ 502 0138 33E0     		b	.L45
+ 503              	.L54:
+ 504 013a 564A     		ldr	r2, .L73+28
+ 505 013c 9342     		cmp	r3, r2
+ 506 013e 28D0     		beq	.L57
+ 507 0140 554A     		ldr	r2, .L73+32
+ 508 0142 9342     		cmp	r3, r2
+ 509 0144 29D0     		beq	.L58
+ 510 0146 2CE0     		b	.L45
+ 511              	.L50:
+ 178:.\LedControl.c **** 					break;
+ 512              		.loc 1 178 0
+ 513 0148 FA22     		mov	r2, #250
+ 514 014a 9200     		lsl	r2, r2, #2
+ 515 014c 4C4B     		ldr	r3, .L73+8
+ 516 014e 1A80     		strh	r2, [r3]
+ 179:.\LedControl.c **** 				
+ 517              		.loc 1 179 0
+ 518 0150 8AE0     		b	.L21
+ 519              	.L48:
+ 182:.\LedControl.c **** 					break;
+ 520              		.loc 1 182 0
+ 521 0152 FA22     		mov	r2, #250
+ 522 0154 D200     		lsl	r2, r2, #3
+ 523 0156 4A4B     		ldr	r3, .L73+8
+ 524 0158 1A80     		strh	r2, [r3]
+ 183:.\LedControl.c **** 				
+ 525              		.loc 1 183 0
+ 526 015a 85E0     		b	.L21
+ 527              	.L51:
+ 186:.\LedControl.c **** 					break;
+ 528              		.loc 1 186 0
+ 529 015c FA22     		mov	r2, #250
+ 530 015e 1201     		lsl	r2, r2, #4
+ 531 0160 474B     		ldr	r3, .L73+8
+ 532 0162 1A80     		strh	r2, [r3]
+ 187:.\LedControl.c **** 				
+ 533              		.loc 1 187 0
+ 534 0164 80E0     		b	.L21
+ 535              	.L52:
+ 190:.\LedControl.c **** 					break;
+ 536              		.loc 1 190 0
+ 537 0166 FA22     		mov	r2, #250
+ 538 0168 5201     		lsl	r2, r2, #5
+ 539 016a 454B     		ldr	r3, .L73+8
+ 540 016c 1A80     		strh	r2, [r3]
+ 191:.\LedControl.c **** 				
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 18
+
+
+ 541              		.loc 1 191 0
+ 542 016e 7BE0     		b	.L21
+ 543              	.L46:
+ 194:.\LedControl.c **** 					break;
+ 544              		.loc 1 194 0
+ 545 0170 474A     		ldr	r2, .L73+24
+ 546 0172 434B     		ldr	r3, .L73+8
+ 547 0174 1A80     		strh	r2, [r3]
+ 195:.\LedControl.c **** 				
+ 548              		.loc 1 195 0
+ 549 0176 77E0     		b	.L21
+ 550              	.L55:
+ 198:.\LedControl.c **** 					break;
+ 551              		.loc 1 198 0
+ 552 0178 FA22     		mov	r2, #250
+ 553 017a 9201     		lsl	r2, r2, #6
+ 554 017c 404B     		ldr	r3, .L73+8
+ 555 017e 1A80     		strh	r2, [r3]
+ 199:.\LedControl.c **** 				
+ 556              		.loc 1 199 0
+ 557 0180 72E0     		b	.L21
+ 558              	.L56:
+ 202:.\LedControl.c **** 					break;
+ 559              		.loc 1 202 0
+ 560 0182 424A     		ldr	r2, .L73+20
+ 561 0184 3E4B     		ldr	r3, .L73+8
+ 562 0186 1A80     		strh	r2, [r3]
+ 203:.\LedControl.c **** 				
+ 563              		.loc 1 203 0
+ 564 0188 6EE0     		b	.L21
+ 565              	.L53:
+ 206:.\LedControl.c **** 					break;
+ 566              		.loc 1 206 0
+ 567 018a 424A     		ldr	r2, .L73+28
+ 568 018c 3C4B     		ldr	r3, .L73+8
+ 569 018e 1A80     		strh	r2, [r3]
+ 207:.\LedControl.c **** 				
+ 570              		.loc 1 207 0
+ 571 0190 6AE0     		b	.L21
+ 572              	.L57:
+ 210:.\LedControl.c **** 					break;
+ 573              		.loc 1 210 0
+ 574 0192 414A     		ldr	r2, .L73+32
+ 575 0194 3A4B     		ldr	r3, .L73+8
+ 576 0196 1A80     		strh	r2, [r3]
+ 211:.\LedControl.c **** 				
+ 577              		.loc 1 211 0
+ 578 0198 66E0     		b	.L21
+ 579              	.L58:
+ 215:.\LedControl.c **** 					break;
+ 580              		.loc 1 215 0
+ 581 019a 3F4A     		ldr	r2, .L73+32
+ 582 019c 384B     		ldr	r3, .L73+8
+ 583 019e 1A80     		strh	r2, [r3]
+ 216:.\LedControl.c **** 				
+ 584              		.loc 1 216 0
+ 585 01a0 62E0     		b	.L21
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 19
+
+
+ 586              	.L45:
+ 220:.\LedControl.c **** 					break;		
+ 587              		.loc 1 220 0
+ 588 01a2 3A4A     		ldr	r2, .L73+20
+ 589 01a4 364B     		ldr	r3, .L73+8
+ 590 01a6 1A80     		strh	r2, [r3]
+ 221:.\LedControl.c **** 			}			
+ 591              		.loc 1 221 0
+ 592 01a8 5EE0     		b	.L21
+ 593              	.L26:
+ 226:.\LedControl.c **** 			{
+ 594              		.loc 1 226 0
+ 595 01aa 354B     		ldr	r3, .L73+8
+ 596 01ac 1B88     		ldrh	r3, [r3]
+ 597 01ae FA22     		mov	r2, #250
+ 598 01b0 5201     		lsl	r2, r2, #5
+ 599 01b2 9342     		cmp	r3, r2
+ 600 01b4 3AD0     		beq	.L60
+ 601 01b6 12D8     		bhi	.L61
+ 602 01b8 FA22     		mov	r2, #250
+ 603 01ba 9200     		lsl	r2, r2, #2
+ 604 01bc 9342     		cmp	r3, r2
+ 605 01be 26D0     		beq	.L62
+ 606 01c0 04D8     		bhi	.L63
+ 607 01c2 F53A     		sub	r2, r2, #245
+ 608 01c4 FF3A     		sub	r2, r2, #255
+ 609 01c6 9342     		cmp	r3, r2
+ 610 01c8 1CD0     		beq	.L64
+ 611 01ca 4AE0     		b	.L59
+ 612              	.L63:
+ 613 01cc FA22     		mov	r2, #250
+ 614 01ce D200     		lsl	r2, r2, #3
+ 615 01d0 9342     		cmp	r3, r2
+ 616 01d2 21D0     		beq	.L65
+ 617 01d4 FA22     		mov	r2, #250
+ 618 01d6 1201     		lsl	r2, r2, #4
+ 619 01d8 9342     		cmp	r3, r2
+ 620 01da 22D0     		beq	.L66
+ 621 01dc 41E0     		b	.L59
+ 622              	.L61:
+ 623 01de 2B4A     		ldr	r2, .L73+20
+ 624 01e0 9342     		cmp	r3, r2
+ 625 01e2 31D0     		beq	.L67
+ 626 01e4 07D8     		bhi	.L68
+ 627 01e6 2A4A     		ldr	r2, .L73+24
+ 628 01e8 9342     		cmp	r3, r2
+ 629 01ea 24D0     		beq	.L69
+ 630 01ec FA22     		mov	r2, #250
+ 631 01ee 9201     		lsl	r2, r2, #6
+ 632 01f0 9342     		cmp	r3, r2
+ 633 01f2 25D0     		beq	.L70
+ 634 01f4 35E0     		b	.L59
+ 635              	.L68:
+ 636 01f6 274A     		ldr	r2, .L73+28
+ 637 01f8 9342     		cmp	r3, r2
+ 638 01fa 2AD0     		beq	.L71
+ 639 01fc 264A     		ldr	r2, .L73+32
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 20
+
+
+ 640 01fe 9342     		cmp	r3, r2
+ 641 0200 2BD0     		beq	.L72
+ 642 0202 2EE0     		b	.L59
+ 643              	.L64:
+ 231:.\LedControl.c **** 					break;
+ 644              		.loc 1 231 0
+ 645 0204 FA22     		mov	r2, #250
+ 646 0206 5200     		lsl	r2, r2, #1
+ 647 0208 1D4B     		ldr	r3, .L73+8
+ 648 020a 1A80     		strh	r2, [r3]
+ 232:.\LedControl.c **** 				
+ 649              		.loc 1 232 0
+ 650 020c 2CE0     		b	.L21
+ 651              	.L62:
+ 235:.\LedControl.c **** 					break;
+ 652              		.loc 1 235 0
+ 653 020e FA22     		mov	r2, #250
+ 654 0210 5200     		lsl	r2, r2, #1
+ 655 0212 1B4B     		ldr	r3, .L73+8
+ 656 0214 1A80     		strh	r2, [r3]
+ 236:.\LedControl.c **** 				
+ 657              		.loc 1 236 0
+ 658 0216 27E0     		b	.L21
+ 659              	.L65:
+ 239:.\LedControl.c **** 					break;
+ 660              		.loc 1 239 0
+ 661 0218 FA22     		mov	r2, #250
+ 662 021a 9200     		lsl	r2, r2, #2
+ 663 021c 184B     		ldr	r3, .L73+8
+ 664 021e 1A80     		strh	r2, [r3]
+ 240:.\LedControl.c **** 				
+ 665              		.loc 1 240 0
+ 666 0220 22E0     		b	.L21
+ 667              	.L66:
+ 243:.\LedControl.c **** 					break;
+ 668              		.loc 1 243 0
+ 669 0222 FA22     		mov	r2, #250
+ 670 0224 D200     		lsl	r2, r2, #3
+ 671 0226 164B     		ldr	r3, .L73+8
+ 672 0228 1A80     		strh	r2, [r3]
+ 244:.\LedControl.c **** 				
+ 673              		.loc 1 244 0
+ 674 022a 1DE0     		b	.L21
+ 675              	.L60:
+ 247:.\LedControl.c **** 					break;
+ 676              		.loc 1 247 0
+ 677 022c FA22     		mov	r2, #250
+ 678 022e 1201     		lsl	r2, r2, #4
+ 679 0230 134B     		ldr	r3, .L73+8
+ 680 0232 1A80     		strh	r2, [r3]
+ 248:.\LedControl.c **** 				
+ 681              		.loc 1 248 0
+ 682 0234 18E0     		b	.L21
+ 683              	.L69:
+ 251:.\LedControl.c **** 					break;
+ 684              		.loc 1 251 0
+ 685 0236 FA22     		mov	r2, #250
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 21
+
+
+ 686 0238 5201     		lsl	r2, r2, #5
+ 687 023a 114B     		ldr	r3, .L73+8
+ 688 023c 1A80     		strh	r2, [r3]
+ 252:.\LedControl.c **** 				
+ 689              		.loc 1 252 0
+ 690 023e 13E0     		b	.L21
+ 691              	.L70:
+ 255:.\LedControl.c **** 					break;
+ 692              		.loc 1 255 0
+ 693 0240 134A     		ldr	r2, .L73+24
+ 694 0242 0F4B     		ldr	r3, .L73+8
+ 695 0244 1A80     		strh	r2, [r3]
+ 256:.\LedControl.c **** 				
+ 696              		.loc 1 256 0
+ 697 0246 0FE0     		b	.L21
+ 698              	.L67:
+ 259:.\LedControl.c **** 					break;
+ 699              		.loc 1 259 0
+ 700 0248 FA22     		mov	r2, #250
+ 701 024a 9201     		lsl	r2, r2, #6
+ 702 024c 0C4B     		ldr	r3, .L73+8
+ 703 024e 1A80     		strh	r2, [r3]
+ 260:.\LedControl.c **** 				
+ 704              		.loc 1 260 0
+ 705 0250 0AE0     		b	.L21
+ 706              	.L71:
+ 263:.\LedControl.c **** 					break;
+ 707              		.loc 1 263 0
+ 708 0252 0E4A     		ldr	r2, .L73+20
+ 709 0254 0A4B     		ldr	r3, .L73+8
+ 710 0256 1A80     		strh	r2, [r3]
+ 264:.\LedControl.c **** 				
+ 711              		.loc 1 264 0
+ 712 0258 06E0     		b	.L21
+ 713              	.L72:
+ 267:.\LedControl.c **** 					break;
+ 714              		.loc 1 267 0
+ 715 025a 0E4A     		ldr	r2, .L73+28
+ 716 025c 084B     		ldr	r3, .L73+8
+ 717 025e 1A80     		strh	r2, [r3]
+ 268:.\LedControl.c **** 				
+ 718              		.loc 1 268 0
+ 719 0260 02E0     		b	.L21
+ 720              	.L59:
+ 272:.\LedControl.c **** 					break;
+ 721              		.loc 1 272 0
+ 722 0262 0A4A     		ldr	r2, .L73+20
+ 723 0264 064B     		ldr	r3, .L73+8
+ 724 0266 1A80     		strh	r2, [r3]
+ 725              	.L21:
+ 283:.\LedControl.c **** 	}	
+ 726              		.loc 1 283 0
+ 727 0268 044B     		ldr	r3, .L73+4
+ 728 026a 5878     		ldrb	r0, [r3, #1]
+ 729              	.LVL44:
+ 730 026c 044B     		ldr	r3, .L73+8
+ 731 026e 1988     		ldrh	r1, [r3]
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 22
+
+
+ 732 0270 FFF7FEFF 		bl	SetLedColor
+ 733              	.LVL45:
+ 734              	.L17:
+ 285:.\LedControl.c **** 
+ 735              		.loc 1 285 0
+ 736              		@ sp needed
+ 737 0274 08BD     		pop	{r3, pc}
+ 738              	.L74:
+ 739 0276 C046     		.align	2
+ 740              	.L73:
+ 741 0278 00000000 		.word	capsenseButtonStatus
+ 742 027c 00000000 		.word	.LANCHOR0
+ 743 0280 00000000 		.word	.LANCHOR1
+ 744 0284 24000000 		.word	.L29
+ 745 0288 44000000 		.word	.L38
+ 746 028c 204E0000 		.word	20000
+ 747 0290 E02E0000 		.word	12000
+ 748 0294 C05D0000 		.word	24000
+ 749 0298 606D0000 		.word	28000
+ 750              		.cfi_endproc
+ 751              	.LFE37:
+ 752              		.size	UpdateLedColor, .-UpdateLedColor
+ 753              		.data
+ 754              		.align	1
+ 755              		.set	.LANCHOR1,. + 0
+ 756              		.type	brightness, %object
+ 757              		.size	brightness, 2
+ 758              	brightness:
+ 759 0000 F401     		.short	500
+ 760              		.bss
+ 761              		.set	.LANCHOR0,. + 0
+ 762              		.type	isRgbLedOn, %object
+ 763              		.size	isRgbLedOn, 1
+ 764              	isRgbLedOn:
+ 765 0000 00       		.space	1
+ 766              		.type	ledColor, %object
+ 767              		.size	ledColor, 1
+ 768              	ledColor:
+ 769 0001 00       		.space	1
+ 770              		.text
+ 771              	.Letext0:
+ 772              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 773              		.file 3 ".\\Gesture.h"
+ 774              		.file 4 ".\\LedControl.h"
+ 775              		.file 5 "Generated_Source\\PSoC4/PWM_Red.h"
+ 776              		.file 6 "Generated_Source\\PSoC4/PWM_Blue.h"
+ 777              		.file 7 "Generated_Source\\PSoC4/PWM_Green.h"
+ 778              		.section	.debug_info,"",%progbits
+ 779              	.Ldebug_info0:
+ 780 0000 1C040000 		.4byte	0x41c
+ 781 0004 0400     		.2byte	0x4
+ 782 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 783 000a 04       		.byte	0x4
+ 784 000b 01       		.uleb128 0x1
+ 785 000c C4010000 		.4byte	.LASF64
+ 786 0010 01       		.byte	0x1
+ 787 0011 62010000 		.4byte	.LASF65
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 23
+
+
+ 788 0015 72040000 		.4byte	.LASF66
+ 789 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 790 001d 00000000 		.4byte	0
+ 791 0021 00000000 		.4byte	.Ldebug_line0
+ 792 0025 02       		.uleb128 0x2
+ 793 0026 01       		.byte	0x1
+ 794 0027 06       		.byte	0x6
+ 795 0028 50010000 		.4byte	.LASF0
+ 796 002c 02       		.uleb128 0x2
+ 797 002d 01       		.byte	0x1
+ 798 002e 08       		.byte	0x8
+ 799 002f 52020000 		.4byte	.LASF1
+ 800 0033 02       		.uleb128 0x2
+ 801 0034 02       		.byte	0x2
+ 802 0035 05       		.byte	0x5
+ 803 0036 0C000000 		.4byte	.LASF2
+ 804 003a 02       		.uleb128 0x2
+ 805 003b 02       		.byte	0x2
+ 806 003c 07       		.byte	0x7
+ 807 003d 02030000 		.4byte	.LASF3
+ 808 0041 02       		.uleb128 0x2
+ 809 0042 04       		.byte	0x4
+ 810 0043 05       		.byte	0x5
+ 811 0044 93010000 		.4byte	.LASF4
+ 812 0048 02       		.uleb128 0x2
+ 813 0049 04       		.byte	0x4
+ 814 004a 07       		.byte	0x7
+ 815 004b 69030000 		.4byte	.LASF5
+ 816 004f 02       		.uleb128 0x2
+ 817 0050 08       		.byte	0x8
+ 818 0051 05       		.byte	0x5
+ 819 0052 71010000 		.4byte	.LASF6
+ 820 0056 02       		.uleb128 0x2
+ 821 0057 08       		.byte	0x8
+ 822 0058 07       		.byte	0x7
+ 823 0059 A7020000 		.4byte	.LASF7
+ 824 005d 03       		.uleb128 0x3
+ 825 005e 04       		.byte	0x4
+ 826 005f 05       		.byte	0x5
+ 827 0060 696E7400 		.ascii	"int\000"
+ 828 0064 02       		.uleb128 0x2
+ 829 0065 04       		.byte	0x4
+ 830 0066 07       		.byte	0x7
+ 831 0067 D1020000 		.4byte	.LASF8
+ 832 006b 04       		.uleb128 0x4
+ 833 006c 62030000 		.4byte	.LASF30
+ 834 0070 02       		.byte	0x2
+ 835 0071 3A01     		.2byte	0x13a
+ 836 0073 48000000 		.4byte	0x48
+ 837 0077 02       		.uleb128 0x2
+ 838 0078 04       		.byte	0x4
+ 839 0079 04       		.byte	0x4
+ 840 007a 5C010000 		.4byte	.LASF9
+ 841 007e 02       		.uleb128 0x2
+ 842 007f 08       		.byte	0x8
+ 843 0080 04       		.byte	0x4
+ 844 0081 9B030000 		.4byte	.LASF10
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 24
+
+
+ 845 0085 02       		.uleb128 0x2
+ 846 0086 01       		.byte	0x1
+ 847 0087 08       		.byte	0x8
+ 848 0088 22030000 		.4byte	.LASF11
+ 849 008c 02       		.uleb128 0x2
+ 850 008d 04       		.byte	0x4
+ 851 008e 07       		.byte	0x7
+ 852 008f D7030000 		.4byte	.LASF12
+ 853 0093 05       		.uleb128 0x5
+ 854 0094 01       		.byte	0x1
+ 855 0095 03       		.byte	0x3
+ 856 0096 B8       		.byte	0xb8
+ 857 0097 02010000 		.4byte	0x102
+ 858 009b 06       		.uleb128 0x6
+ 859 009c 15030000 		.4byte	.LASF13
+ 860 00a0 00       		.sleb128 0
+ 861 00a1 06       		.uleb128 0x6
+ 862 00a2 27030000 		.4byte	.LASF14
+ 863 00a6 01       		.sleb128 1
+ 864 00a7 06       		.uleb128 0x6
+ 865 00a8 3D010000 		.4byte	.LASF15
+ 866 00ac 02       		.sleb128 2
+ 867 00ad 06       		.uleb128 0x6
+ 868 00ae 7F010000 		.4byte	.LASF16
+ 869 00b2 03       		.sleb128 3
+ 870 00b3 06       		.uleb128 0x6
+ 871 00b4 39040000 		.4byte	.LASF17
+ 872 00b8 04       		.sleb128 4
+ 873 00b9 06       		.uleb128 0x6
+ 874 00ba DD000000 		.4byte	.LASF18
+ 875 00be 05       		.sleb128 5
+ 876 00bf 06       		.uleb128 0x6
+ 877 00c0 0B010000 		.4byte	.LASF19
+ 878 00c4 06       		.sleb128 6
+ 879 00c5 06       		.uleb128 0x6
+ 880 00c6 AF030000 		.4byte	.LASF20
+ 881 00ca 07       		.sleb128 7
+ 882 00cb 06       		.uleb128 0x6
+ 883 00cc B1010000 		.4byte	.LASF21
+ 884 00d0 08       		.sleb128 8
+ 885 00d1 06       		.uleb128 0x6
+ 886 00d2 4C030000 		.4byte	.LASF22
+ 887 00d6 09       		.sleb128 9
+ 888 00d7 06       		.uleb128 0x6
+ 889 00d8 E0030000 		.4byte	.LASF23
+ 890 00dc 0A       		.sleb128 10
+ 891 00dd 06       		.uleb128 0x6
+ 892 00de 00040000 		.4byte	.LASF24
+ 893 00e2 0B       		.sleb128 11
+ 894 00e3 06       		.uleb128 0x6
+ 895 00e4 31000000 		.4byte	.LASF25
+ 896 00e8 0C       		.sleb128 12
+ 897 00e9 06       		.uleb128 0x6
+ 898 00ea 1F010000 		.4byte	.LASF26
+ 899 00ee 0D       		.sleb128 13
+ 900 00ef 06       		.uleb128 0x6
+ 901 00f0 28040000 		.4byte	.LASF27
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 25
+
+
+ 902 00f4 0E       		.sleb128 14
+ 903 00f5 06       		.uleb128 0x6
+ 904 00f6 BE020000 		.4byte	.LASF28
+ 905 00fa 0F       		.sleb128 15
+ 906 00fb 06       		.uleb128 0x6
+ 907 00fc FB000000 		.4byte	.LASF29
+ 908 0100 10       		.sleb128 16
+ 909 0101 00       		.byte	0
+ 910 0102 07       		.uleb128 0x7
+ 911 0103 5A040000 		.4byte	.LASF31
+ 912 0107 03       		.byte	0x3
+ 913 0108 CA       		.byte	0xca
+ 914 0109 93000000 		.4byte	0x93
+ 915 010d 05       		.uleb128 0x5
+ 916 010e 01       		.byte	0x1
+ 917 010f 04       		.byte	0x4
+ 918 0110 34       		.byte	0x34
+ 919 0111 4C010000 		.4byte	0x14c
+ 920 0115 06       		.uleb128 0x6
+ 921 0116 DE020000 		.4byte	.LASF32
+ 922 011a 00       		.sleb128 0
+ 923 011b 06       		.uleb128 0x6
+ 924 011c 60020000 		.4byte	.LASF33
+ 925 0120 01       		.sleb128 1
+ 926 0121 06       		.uleb128 0x6
+ 927 0122 C0030000 		.4byte	.LASF34
+ 928 0126 02       		.sleb128 2
+ 929 0127 06       		.uleb128 0x6
+ 930 0128 6D020000 		.4byte	.LASF35
+ 931 012c 03       		.sleb128 3
+ 932 012d 06       		.uleb128 0x6
+ 933 012e 8E020000 		.4byte	.LASF36
+ 934 0132 04       		.sleb128 4
+ 935 0133 06       		.uleb128 0x6
+ 936 0134 65040000 		.4byte	.LASF37
+ 937 0138 05       		.sleb128 5
+ 938 0139 06       		.uleb128 0x6
+ 939 013a A2030000 		.4byte	.LASF38
+ 940 013e 06       		.sleb128 6
+ 941 013f 06       		.uleb128 0x6
+ 942 0140 1E040000 		.4byte	.LASF39
+ 943 0144 07       		.sleb128 7
+ 944 0145 06       		.uleb128 0x6
+ 945 0146 00000000 		.4byte	.LASF40
+ 946 014a 08       		.sleb128 8
+ 947 014b 00       		.byte	0
+ 948 014c 07       		.uleb128 0x7
+ 949 014d CD030000 		.4byte	.LASF41
+ 950 0151 04       		.byte	0x4
+ 951 0152 3E       		.byte	0x3e
+ 952 0153 0D010000 		.4byte	0x10d
+ 953 0157 05       		.uleb128 0x5
+ 954 0158 02       		.byte	0x2
+ 955 0159 04       		.byte	0x4
+ 956 015a 42       		.byte	0x42
+ 957 015b AB010000 		.4byte	0x1ab
+ 958 015f 06       		.uleb128 0x6
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 26
+
+
+ 959 0160 47000000 		.4byte	.LASF42
+ 960 0164 F403     		.sleb128 500
+ 961 0166 06       		.uleb128 0x6
+ 962 0167 56000000 		.4byte	.LASF43
+ 963 016b E807     		.sleb128 1000
+ 964 016d 06       		.uleb128 0x6
+ 965 016e 65000000 		.4byte	.LASF44
+ 966 0172 D00F     		.sleb128 2000
+ 967 0174 06       		.uleb128 0x6
+ 968 0175 74000000 		.4byte	.LASF45
+ 969 0179 A01F     		.sleb128 4000
+ 970 017b 06       		.uleb128 0x6
+ 971 017c 83000000 		.4byte	.LASF46
+ 972 0180 C03E     		.sleb128 8000
+ 973 0182 06       		.uleb128 0x6
+ 974 0183 92000000 		.4byte	.LASF47
+ 975 0187 E0DD00   		.sleb128 12000
+ 976 018a 06       		.uleb128 0x6
+ 977 018b A1000000 		.4byte	.LASF48
+ 978 018f 80FD00   		.sleb128 16000
+ 979 0192 06       		.uleb128 0x6
+ 980 0193 B0000000 		.4byte	.LASF49
+ 981 0197 A09C01   		.sleb128 20000
+ 982 019a 06       		.uleb128 0x6
+ 983 019b BF000000 		.4byte	.LASF50
+ 984 019f C0BB01   		.sleb128 24000
+ 985 01a2 06       		.uleb128 0x6
+ 986 01a3 CE000000 		.4byte	.LASF51
+ 987 01a7 E0DA01   		.sleb128 28000
+ 988 01aa 00       		.byte	0
+ 989 01ab 07       		.uleb128 0x7
+ 990 01ac 9A020000 		.4byte	.LASF52
+ 991 01b0 04       		.byte	0x4
+ 992 01b1 4D       		.byte	0x4d
+ 993 01b2 57010000 		.4byte	0x157
+ 994 01b6 08       		.uleb128 0x8
+ 995 01b7 4E040000 		.4byte	.LASF55
+ 996 01bb 01       		.byte	0x1
+ 997 01bc 2F01     		.2byte	0x12f
+ 998 01be 00000000 		.4byte	.LFB38
+ 999 01c2 FC000000 		.4byte	.LFE38-.LFB38
+ 1000 01c6 01       		.uleb128 0x1
+ 1001 01c7 9C       		.byte	0x9c
+ 1002 01c8 5E030000 		.4byte	0x35e
+ 1003 01cc 09       		.uleb128 0x9
+ 1004 01cd 16000000 		.4byte	.LASF53
+ 1005 01d1 01       		.byte	0x1
+ 1006 01d2 2F01     		.2byte	0x12f
+ 1007 01d4 4C010000 		.4byte	0x14c
+ 1008 01d8 00000000 		.4byte	.LLST0
+ 1009 01dc 09       		.uleb128 0x9
+ 1010 01dd E8020000 		.4byte	.LASF54
+ 1011 01e1 01       		.byte	0x1
+ 1012 01e2 2F01     		.2byte	0x12f
+ 1013 01e4 AB010000 		.4byte	0x1ab
+ 1014 01e8 21000000 		.4byte	.LLST1
+ 1015 01ec 0A       		.uleb128 0xa
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 27
+
+
+ 1016 01ed 2C000000 		.4byte	.LVL2
+ 1017 01f1 ED030000 		.4byte	0x3ed
+ 1018 01f5 FF010000 		.4byte	0x1ff
+ 1019 01f9 0B       		.uleb128 0xb
+ 1020 01fa 01       		.uleb128 0x1
+ 1021 01fb 50       		.byte	0x50
+ 1022 01fc 01       		.uleb128 0x1
+ 1023 01fd 30       		.byte	0x30
+ 1024 01fe 00       		.byte	0
+ 1025 01ff 0A       		.uleb128 0xa
+ 1026 0200 32000000 		.4byte	.LVL3
+ 1027 0204 FF030000 		.4byte	0x3ff
+ 1028 0208 12020000 		.4byte	0x212
+ 1029 020c 0B       		.uleb128 0xb
+ 1030 020d 01       		.uleb128 0x1
+ 1031 020e 50       		.byte	0x50
+ 1032 020f 01       		.uleb128 0x1
+ 1033 0210 30       		.byte	0x30
+ 1034 0211 00       		.byte	0
+ 1035 0212 0A       		.uleb128 0xa
+ 1036 0213 38000000 		.4byte	.LVL4
+ 1037 0217 11040000 		.4byte	0x411
+ 1038 021b 25020000 		.4byte	0x225
+ 1039 021f 0B       		.uleb128 0xb
+ 1040 0220 01       		.uleb128 0x1
+ 1041 0221 50       		.byte	0x50
+ 1042 0222 01       		.uleb128 0x1
+ 1043 0223 30       		.byte	0x30
+ 1044 0224 00       		.byte	0
+ 1045 0225 0C       		.uleb128 0xc
+ 1046 0226 42000000 		.4byte	.LVL6
+ 1047 022a ED030000 		.4byte	0x3ed
+ 1048 022e 0C       		.uleb128 0xc
+ 1049 022f 48000000 		.4byte	.LVL7
+ 1050 0233 FF030000 		.4byte	0x3ff
+ 1051 0237 0C       		.uleb128 0xc
+ 1052 0238 4E000000 		.4byte	.LVL8
+ 1053 023c 11040000 		.4byte	0x411
+ 1054 0240 0C       		.uleb128 0xc
+ 1055 0241 58000000 		.4byte	.LVL10
+ 1056 0245 ED030000 		.4byte	0x3ed
+ 1057 0249 0C       		.uleb128 0xc
+ 1058 024a 5E000000 		.4byte	.LVL11
+ 1059 024e FF030000 		.4byte	0x3ff
+ 1060 0252 0A       		.uleb128 0xa
+ 1061 0253 64000000 		.4byte	.LVL12
+ 1062 0257 11040000 		.4byte	0x411
+ 1063 025b 65020000 		.4byte	0x265
+ 1064 025f 0B       		.uleb128 0xb
+ 1065 0260 01       		.uleb128 0x1
+ 1066 0261 50       		.byte	0x50
+ 1067 0262 01       		.uleb128 0x1
+ 1068 0263 30       		.byte	0x30
+ 1069 0264 00       		.byte	0
+ 1070 0265 0C       		.uleb128 0xc
+ 1071 0266 70000000 		.4byte	.LVL14
+ 1072 026a ED030000 		.4byte	0x3ed
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 28
+
+
+ 1073 026e 0C       		.uleb128 0xc
+ 1074 026f 76000000 		.4byte	.LVL15
+ 1075 0273 FF030000 		.4byte	0x3ff
+ 1076 0277 0A       		.uleb128 0xa
+ 1077 0278 7C000000 		.4byte	.LVL16
+ 1078 027c 11040000 		.4byte	0x411
+ 1079 0280 8A020000 		.4byte	0x28a
+ 1080 0284 0B       		.uleb128 0xb
+ 1081 0285 01       		.uleb128 0x1
+ 1082 0286 50       		.byte	0x50
+ 1083 0287 01       		.uleb128 0x1
+ 1084 0288 30       		.byte	0x30
+ 1085 0289 00       		.byte	0
+ 1086 028a 0A       		.uleb128 0xa
+ 1087 028b 84000000 		.4byte	.LVL18
+ 1088 028f ED030000 		.4byte	0x3ed
+ 1089 0293 9D020000 		.4byte	0x29d
+ 1090 0297 0B       		.uleb128 0xb
+ 1091 0298 01       		.uleb128 0x1
+ 1092 0299 50       		.byte	0x50
+ 1093 029a 01       		.uleb128 0x1
+ 1094 029b 30       		.byte	0x30
+ 1095 029c 00       		.byte	0
+ 1096 029d 0C       		.uleb128 0xc
+ 1097 029e 8C000000 		.4byte	.LVL19
+ 1098 02a2 FF030000 		.4byte	0x3ff
+ 1099 02a6 0A       		.uleb128 0xa
+ 1100 02a7 92000000 		.4byte	.LVL20
+ 1101 02ab 11040000 		.4byte	0x411
+ 1102 02af B9020000 		.4byte	0x2b9
+ 1103 02b3 0B       		.uleb128 0xb
+ 1104 02b4 01       		.uleb128 0x1
+ 1105 02b5 50       		.byte	0x50
+ 1106 02b6 01       		.uleb128 0x1
+ 1107 02b7 30       		.byte	0x30
+ 1108 02b8 00       		.byte	0
+ 1109 02b9 0A       		.uleb128 0xa
+ 1110 02ba 9A000000 		.4byte	.LVL22
+ 1111 02be ED030000 		.4byte	0x3ed
+ 1112 02c2 CC020000 		.4byte	0x2cc
+ 1113 02c6 0B       		.uleb128 0xb
+ 1114 02c7 01       		.uleb128 0x1
+ 1115 02c8 50       		.byte	0x50
+ 1116 02c9 01       		.uleb128 0x1
+ 1117 02ca 30       		.byte	0x30
+ 1118 02cb 00       		.byte	0
+ 1119 02cc 0A       		.uleb128 0xa
+ 1120 02cd A0000000 		.4byte	.LVL23
+ 1121 02d1 FF030000 		.4byte	0x3ff
+ 1122 02d5 DF020000 		.4byte	0x2df
+ 1123 02d9 0B       		.uleb128 0xb
+ 1124 02da 01       		.uleb128 0x1
+ 1125 02db 50       		.byte	0x50
+ 1126 02dc 01       		.uleb128 0x1
+ 1127 02dd 30       		.byte	0x30
+ 1128 02de 00       		.byte	0
+ 1129 02df 0C       		.uleb128 0xc
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 29
+
+
+ 1130 02e0 A8000000 		.4byte	.LVL24
+ 1131 02e4 11040000 		.4byte	0x411
+ 1132 02e8 0C       		.uleb128 0xc
+ 1133 02e9 B2000000 		.4byte	.LVL26
+ 1134 02ed ED030000 		.4byte	0x3ed
+ 1135 02f1 0A       		.uleb128 0xa
+ 1136 02f2 B8000000 		.4byte	.LVL27
+ 1137 02f6 FF030000 		.4byte	0x3ff
+ 1138 02fa 04030000 		.4byte	0x304
+ 1139 02fe 0B       		.uleb128 0xb
+ 1140 02ff 01       		.uleb128 0x1
+ 1141 0300 50       		.byte	0x50
+ 1142 0301 01       		.uleb128 0x1
+ 1143 0302 30       		.byte	0x30
+ 1144 0303 00       		.byte	0
+ 1145 0304 0C       		.uleb128 0xc
+ 1146 0305 BE000000 		.4byte	.LVL28
+ 1147 0309 11040000 		.4byte	0x411
+ 1148 030d 0C       		.uleb128 0xc
+ 1149 030e C8000000 		.4byte	.LVL30
+ 1150 0312 ED030000 		.4byte	0x3ed
+ 1151 0316 0A       		.uleb128 0xa
+ 1152 0317 CE000000 		.4byte	.LVL31
+ 1153 031b FF030000 		.4byte	0x3ff
+ 1154 031f 29030000 		.4byte	0x329
+ 1155 0323 0B       		.uleb128 0xb
+ 1156 0324 01       		.uleb128 0x1
+ 1157 0325 50       		.byte	0x50
+ 1158 0326 01       		.uleb128 0x1
+ 1159 0327 30       		.byte	0x30
+ 1160 0328 00       		.byte	0
+ 1161 0329 0C       		.uleb128 0xc
+ 1162 032a D6000000 		.4byte	.LVL32
+ 1163 032e 11040000 		.4byte	0x411
+ 1164 0332 0C       		.uleb128 0xc
+ 1165 0333 E0000000 		.4byte	.LVL34
+ 1166 0337 ED030000 		.4byte	0x3ed
+ 1167 033b 0A       		.uleb128 0xa
+ 1168 033c E6000000 		.4byte	.LVL35
+ 1169 0340 FF030000 		.4byte	0x3ff
+ 1170 0344 4E030000 		.4byte	0x34e
+ 1171 0348 0B       		.uleb128 0xb
+ 1172 0349 01       		.uleb128 0x1
+ 1173 034a 50       		.byte	0x50
+ 1174 034b 01       		.uleb128 0x1
+ 1175 034c 30       		.byte	0x30
+ 1176 034d 00       		.byte	0
+ 1177 034e 0D       		.uleb128 0xd
+ 1178 034f EC000000 		.4byte	.LVL36
+ 1179 0353 11040000 		.4byte	0x411
+ 1180 0357 0B       		.uleb128 0xb
+ 1181 0358 01       		.uleb128 0x1
+ 1182 0359 50       		.byte	0x50
+ 1183 035a 01       		.uleb128 0x1
+ 1184 035b 30       		.byte	0x30
+ 1185 035c 00       		.byte	0
+ 1186 035d 00       		.byte	0
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 30
+
+
+ 1187 035e 0E       		.uleb128 0xe
+ 1188 035f 3D030000 		.4byte	.LASF56
+ 1189 0363 01       		.byte	0x1
+ 1190 0364 4F       		.byte	0x4f
+ 1191 0365 00000000 		.4byte	.LFB37
+ 1192 0369 9C020000 		.4byte	.LFE37-.LFB37
+ 1193 036d 01       		.uleb128 0x1
+ 1194 036e 9C       		.byte	0x9c
+ 1195 036f A8030000 		.4byte	0x3a8
+ 1196 0373 0F       		.uleb128 0xf
+ 1197 0374 F6030000 		.4byte	.LASF57
+ 1198 0378 01       		.byte	0x1
+ 1199 0379 4F       		.byte	0x4f
+ 1200 037a 02010000 		.4byte	0x102
+ 1201 037e 0A010000 		.4byte	.LLST2
+ 1202 0382 0A       		.uleb128 0xa
+ 1203 0383 1C000000 		.4byte	.LVL39
+ 1204 0387 B6010000 		.4byte	0x1b6
+ 1205 038b 95030000 		.4byte	0x395
+ 1206 038f 0B       		.uleb128 0xb
+ 1207 0390 01       		.uleb128 0x1
+ 1208 0391 50       		.byte	0x50
+ 1209 0392 01       		.uleb128 0x1
+ 1210 0393 30       		.byte	0x30
+ 1211 0394 00       		.byte	0
+ 1212 0395 0C       		.uleb128 0xc
+ 1213 0396 2A000000 		.4byte	.LVL42
+ 1214 039a B6010000 		.4byte	0x1b6
+ 1215 039e 0C       		.uleb128 0xc
+ 1216 039f 74020000 		.4byte	.LVL45
+ 1217 03a3 B6010000 		.4byte	0x1b6
+ 1218 03a7 00       		.byte	0
+ 1219 03a8 10       		.uleb128 0x10
+ 1220 03a9 F0000000 		.4byte	.LASF59
+ 1221 03ad 01       		.byte	0x1
+ 1222 03ae 30       		.byte	0x30
+ 1223 03af B9030000 		.4byte	0x3b9
+ 1224 03b3 05       		.uleb128 0x5
+ 1225 03b4 03       		.byte	0x3
+ 1226 03b5 00000000 		.4byte	isRgbLedOn
+ 1227 03b9 02       		.uleb128 0x2
+ 1228 03ba 01       		.byte	0x1
+ 1229 03bb 02       		.byte	0x2
+ 1230 03bc 37030000 		.4byte	.LASF58
+ 1231 03c0 10       		.uleb128 0x10
+ 1232 03c1 7B030000 		.4byte	.LASF60
+ 1233 03c5 01       		.byte	0x1
+ 1234 03c6 31       		.byte	0x31
+ 1235 03c7 4C010000 		.4byte	0x14c
+ 1236 03cb 05       		.uleb128 0x5
+ 1237 03cc 03       		.byte	0x3
+ 1238 03cd 01000000 		.4byte	ledColor
+ 1239 03d1 10       		.uleb128 0x10
+ 1240 03d2 F7020000 		.4byte	.LASF61
+ 1241 03d6 01       		.byte	0x1
+ 1242 03d7 32       		.byte	0x32
+ 1243 03d8 AB010000 		.4byte	0x1ab
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 31
+
+
+ 1244 03dc 05       		.uleb128 0x5
+ 1245 03dd 03       		.byte	0x3
+ 1246 03de 00000000 		.4byte	brightness
+ 1247 03e2 11       		.uleb128 0x11
+ 1248 03e3 9C010000 		.4byte	.LASF67
+ 1249 03e7 03       		.byte	0x3
+ 1250 03e8 D2       		.byte	0xd2
+ 1251 03e9 6B000000 		.4byte	0x6b
+ 1252 03ed 12       		.uleb128 0x12
+ 1253 03ee 1C000000 		.4byte	.LASF62
+ 1254 03f2 05       		.byte	0x5
+ 1255 03f3 5501     		.2byte	0x155
+ 1256 03f5 FF030000 		.4byte	0x3ff
+ 1257 03f9 13       		.uleb128 0x13
+ 1258 03fa 6B000000 		.4byte	0x6b
+ 1259 03fe 00       		.byte	0
+ 1260 03ff 12       		.uleb128 0x12
+ 1261 0400 78020000 		.4byte	.LASF63
+ 1262 0404 06       		.byte	0x6
+ 1263 0405 5501     		.2byte	0x155
+ 1264 0407 11040000 		.4byte	0x411
+ 1265 040b 13       		.uleb128 0x13
+ 1266 040c 6B000000 		.4byte	0x6b
+ 1267 0410 00       		.byte	0
+ 1268 0411 14       		.uleb128 0x14
+ 1269 0412 84030000 		.4byte	.LASF68
+ 1270 0416 07       		.byte	0x7
+ 1271 0417 5501     		.2byte	0x155
+ 1272 0419 13       		.uleb128 0x13
+ 1273 041a 6B000000 		.4byte	0x6b
+ 1274 041e 00       		.byte	0
+ 1275 041f 00       		.byte	0
+ 1276              		.section	.debug_abbrev,"",%progbits
+ 1277              	.Ldebug_abbrev0:
+ 1278 0000 01       		.uleb128 0x1
+ 1279 0001 11       		.uleb128 0x11
+ 1280 0002 01       		.byte	0x1
+ 1281 0003 25       		.uleb128 0x25
+ 1282 0004 0E       		.uleb128 0xe
+ 1283 0005 13       		.uleb128 0x13
+ 1284 0006 0B       		.uleb128 0xb
+ 1285 0007 03       		.uleb128 0x3
+ 1286 0008 0E       		.uleb128 0xe
+ 1287 0009 1B       		.uleb128 0x1b
+ 1288 000a 0E       		.uleb128 0xe
+ 1289 000b 55       		.uleb128 0x55
+ 1290 000c 17       		.uleb128 0x17
+ 1291 000d 11       		.uleb128 0x11
+ 1292 000e 01       		.uleb128 0x1
+ 1293 000f 10       		.uleb128 0x10
+ 1294 0010 17       		.uleb128 0x17
+ 1295 0011 00       		.byte	0
+ 1296 0012 00       		.byte	0
+ 1297 0013 02       		.uleb128 0x2
+ 1298 0014 24       		.uleb128 0x24
+ 1299 0015 00       		.byte	0
+ 1300 0016 0B       		.uleb128 0xb
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 32
+
+
+ 1301 0017 0B       		.uleb128 0xb
+ 1302 0018 3E       		.uleb128 0x3e
+ 1303 0019 0B       		.uleb128 0xb
+ 1304 001a 03       		.uleb128 0x3
+ 1305 001b 0E       		.uleb128 0xe
+ 1306 001c 00       		.byte	0
+ 1307 001d 00       		.byte	0
+ 1308 001e 03       		.uleb128 0x3
+ 1309 001f 24       		.uleb128 0x24
+ 1310 0020 00       		.byte	0
+ 1311 0021 0B       		.uleb128 0xb
+ 1312 0022 0B       		.uleb128 0xb
+ 1313 0023 3E       		.uleb128 0x3e
+ 1314 0024 0B       		.uleb128 0xb
+ 1315 0025 03       		.uleb128 0x3
+ 1316 0026 08       		.uleb128 0x8
+ 1317 0027 00       		.byte	0
+ 1318 0028 00       		.byte	0
+ 1319 0029 04       		.uleb128 0x4
+ 1320 002a 16       		.uleb128 0x16
+ 1321 002b 00       		.byte	0
+ 1322 002c 03       		.uleb128 0x3
+ 1323 002d 0E       		.uleb128 0xe
+ 1324 002e 3A       		.uleb128 0x3a
+ 1325 002f 0B       		.uleb128 0xb
+ 1326 0030 3B       		.uleb128 0x3b
+ 1327 0031 05       		.uleb128 0x5
+ 1328 0032 49       		.uleb128 0x49
+ 1329 0033 13       		.uleb128 0x13
+ 1330 0034 00       		.byte	0
+ 1331 0035 00       		.byte	0
+ 1332 0036 05       		.uleb128 0x5
+ 1333 0037 04       		.uleb128 0x4
+ 1334 0038 01       		.byte	0x1
+ 1335 0039 0B       		.uleb128 0xb
+ 1336 003a 0B       		.uleb128 0xb
+ 1337 003b 3A       		.uleb128 0x3a
+ 1338 003c 0B       		.uleb128 0xb
+ 1339 003d 3B       		.uleb128 0x3b
+ 1340 003e 0B       		.uleb128 0xb
+ 1341 003f 01       		.uleb128 0x1
+ 1342 0040 13       		.uleb128 0x13
+ 1343 0041 00       		.byte	0
+ 1344 0042 00       		.byte	0
+ 1345 0043 06       		.uleb128 0x6
+ 1346 0044 28       		.uleb128 0x28
+ 1347 0045 00       		.byte	0
+ 1348 0046 03       		.uleb128 0x3
+ 1349 0047 0E       		.uleb128 0xe
+ 1350 0048 1C       		.uleb128 0x1c
+ 1351 0049 0D       		.uleb128 0xd
+ 1352 004a 00       		.byte	0
+ 1353 004b 00       		.byte	0
+ 1354 004c 07       		.uleb128 0x7
+ 1355 004d 16       		.uleb128 0x16
+ 1356 004e 00       		.byte	0
+ 1357 004f 03       		.uleb128 0x3
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 33
+
+
+ 1358 0050 0E       		.uleb128 0xe
+ 1359 0051 3A       		.uleb128 0x3a
+ 1360 0052 0B       		.uleb128 0xb
+ 1361 0053 3B       		.uleb128 0x3b
+ 1362 0054 0B       		.uleb128 0xb
+ 1363 0055 49       		.uleb128 0x49
+ 1364 0056 13       		.uleb128 0x13
+ 1365 0057 00       		.byte	0
+ 1366 0058 00       		.byte	0
+ 1367 0059 08       		.uleb128 0x8
+ 1368 005a 2E       		.uleb128 0x2e
+ 1369 005b 01       		.byte	0x1
+ 1370 005c 3F       		.uleb128 0x3f
+ 1371 005d 19       		.uleb128 0x19
+ 1372 005e 03       		.uleb128 0x3
+ 1373 005f 0E       		.uleb128 0xe
+ 1374 0060 3A       		.uleb128 0x3a
+ 1375 0061 0B       		.uleb128 0xb
+ 1376 0062 3B       		.uleb128 0x3b
+ 1377 0063 05       		.uleb128 0x5
+ 1378 0064 27       		.uleb128 0x27
+ 1379 0065 19       		.uleb128 0x19
+ 1380 0066 11       		.uleb128 0x11
+ 1381 0067 01       		.uleb128 0x1
+ 1382 0068 12       		.uleb128 0x12
+ 1383 0069 06       		.uleb128 0x6
+ 1384 006a 40       		.uleb128 0x40
+ 1385 006b 18       		.uleb128 0x18
+ 1386 006c 9742     		.uleb128 0x2117
+ 1387 006e 19       		.uleb128 0x19
+ 1388 006f 01       		.uleb128 0x1
+ 1389 0070 13       		.uleb128 0x13
+ 1390 0071 00       		.byte	0
+ 1391 0072 00       		.byte	0
+ 1392 0073 09       		.uleb128 0x9
+ 1393 0074 05       		.uleb128 0x5
+ 1394 0075 00       		.byte	0
+ 1395 0076 03       		.uleb128 0x3
+ 1396 0077 0E       		.uleb128 0xe
+ 1397 0078 3A       		.uleb128 0x3a
+ 1398 0079 0B       		.uleb128 0xb
+ 1399 007a 3B       		.uleb128 0x3b
+ 1400 007b 05       		.uleb128 0x5
+ 1401 007c 49       		.uleb128 0x49
+ 1402 007d 13       		.uleb128 0x13
+ 1403 007e 02       		.uleb128 0x2
+ 1404 007f 17       		.uleb128 0x17
+ 1405 0080 00       		.byte	0
+ 1406 0081 00       		.byte	0
+ 1407 0082 0A       		.uleb128 0xa
+ 1408 0083 898201   		.uleb128 0x4109
+ 1409 0086 01       		.byte	0x1
+ 1410 0087 11       		.uleb128 0x11
+ 1411 0088 01       		.uleb128 0x1
+ 1412 0089 31       		.uleb128 0x31
+ 1413 008a 13       		.uleb128 0x13
+ 1414 008b 01       		.uleb128 0x1
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 34
+
+
+ 1415 008c 13       		.uleb128 0x13
+ 1416 008d 00       		.byte	0
+ 1417 008e 00       		.byte	0
+ 1418 008f 0B       		.uleb128 0xb
+ 1419 0090 8A8201   		.uleb128 0x410a
+ 1420 0093 00       		.byte	0
+ 1421 0094 02       		.uleb128 0x2
+ 1422 0095 18       		.uleb128 0x18
+ 1423 0096 9142     		.uleb128 0x2111
+ 1424 0098 18       		.uleb128 0x18
+ 1425 0099 00       		.byte	0
+ 1426 009a 00       		.byte	0
+ 1427 009b 0C       		.uleb128 0xc
+ 1428 009c 898201   		.uleb128 0x4109
+ 1429 009f 00       		.byte	0
+ 1430 00a0 11       		.uleb128 0x11
+ 1431 00a1 01       		.uleb128 0x1
+ 1432 00a2 31       		.uleb128 0x31
+ 1433 00a3 13       		.uleb128 0x13
+ 1434 00a4 00       		.byte	0
+ 1435 00a5 00       		.byte	0
+ 1436 00a6 0D       		.uleb128 0xd
+ 1437 00a7 898201   		.uleb128 0x4109
+ 1438 00aa 01       		.byte	0x1
+ 1439 00ab 11       		.uleb128 0x11
+ 1440 00ac 01       		.uleb128 0x1
+ 1441 00ad 31       		.uleb128 0x31
+ 1442 00ae 13       		.uleb128 0x13
+ 1443 00af 00       		.byte	0
+ 1444 00b0 00       		.byte	0
+ 1445 00b1 0E       		.uleb128 0xe
+ 1446 00b2 2E       		.uleb128 0x2e
+ 1447 00b3 01       		.byte	0x1
+ 1448 00b4 3F       		.uleb128 0x3f
+ 1449 00b5 19       		.uleb128 0x19
+ 1450 00b6 03       		.uleb128 0x3
+ 1451 00b7 0E       		.uleb128 0xe
+ 1452 00b8 3A       		.uleb128 0x3a
+ 1453 00b9 0B       		.uleb128 0xb
+ 1454 00ba 3B       		.uleb128 0x3b
+ 1455 00bb 0B       		.uleb128 0xb
+ 1456 00bc 27       		.uleb128 0x27
+ 1457 00bd 19       		.uleb128 0x19
+ 1458 00be 11       		.uleb128 0x11
+ 1459 00bf 01       		.uleb128 0x1
+ 1460 00c0 12       		.uleb128 0x12
+ 1461 00c1 06       		.uleb128 0x6
+ 1462 00c2 40       		.uleb128 0x40
+ 1463 00c3 18       		.uleb128 0x18
+ 1464 00c4 9742     		.uleb128 0x2117
+ 1465 00c6 19       		.uleb128 0x19
+ 1466 00c7 01       		.uleb128 0x1
+ 1467 00c8 13       		.uleb128 0x13
+ 1468 00c9 00       		.byte	0
+ 1469 00ca 00       		.byte	0
+ 1470 00cb 0F       		.uleb128 0xf
+ 1471 00cc 05       		.uleb128 0x5
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 35
+
+
+ 1472 00cd 00       		.byte	0
+ 1473 00ce 03       		.uleb128 0x3
+ 1474 00cf 0E       		.uleb128 0xe
+ 1475 00d0 3A       		.uleb128 0x3a
+ 1476 00d1 0B       		.uleb128 0xb
+ 1477 00d2 3B       		.uleb128 0x3b
+ 1478 00d3 0B       		.uleb128 0xb
+ 1479 00d4 49       		.uleb128 0x49
+ 1480 00d5 13       		.uleb128 0x13
+ 1481 00d6 02       		.uleb128 0x2
+ 1482 00d7 17       		.uleb128 0x17
+ 1483 00d8 00       		.byte	0
+ 1484 00d9 00       		.byte	0
+ 1485 00da 10       		.uleb128 0x10
+ 1486 00db 34       		.uleb128 0x34
+ 1487 00dc 00       		.byte	0
+ 1488 00dd 03       		.uleb128 0x3
+ 1489 00de 0E       		.uleb128 0xe
+ 1490 00df 3A       		.uleb128 0x3a
+ 1491 00e0 0B       		.uleb128 0xb
+ 1492 00e1 3B       		.uleb128 0x3b
+ 1493 00e2 0B       		.uleb128 0xb
+ 1494 00e3 49       		.uleb128 0x49
+ 1495 00e4 13       		.uleb128 0x13
+ 1496 00e5 02       		.uleb128 0x2
+ 1497 00e6 18       		.uleb128 0x18
+ 1498 00e7 00       		.byte	0
+ 1499 00e8 00       		.byte	0
+ 1500 00e9 11       		.uleb128 0x11
+ 1501 00ea 34       		.uleb128 0x34
+ 1502 00eb 00       		.byte	0
+ 1503 00ec 03       		.uleb128 0x3
+ 1504 00ed 0E       		.uleb128 0xe
+ 1505 00ee 3A       		.uleb128 0x3a
+ 1506 00ef 0B       		.uleb128 0xb
+ 1507 00f0 3B       		.uleb128 0x3b
+ 1508 00f1 0B       		.uleb128 0xb
+ 1509 00f2 49       		.uleb128 0x49
+ 1510 00f3 13       		.uleb128 0x13
+ 1511 00f4 3F       		.uleb128 0x3f
+ 1512 00f5 19       		.uleb128 0x19
+ 1513 00f6 3C       		.uleb128 0x3c
+ 1514 00f7 19       		.uleb128 0x19
+ 1515 00f8 00       		.byte	0
+ 1516 00f9 00       		.byte	0
+ 1517 00fa 12       		.uleb128 0x12
+ 1518 00fb 2E       		.uleb128 0x2e
+ 1519 00fc 01       		.byte	0x1
+ 1520 00fd 3F       		.uleb128 0x3f
+ 1521 00fe 19       		.uleb128 0x19
+ 1522 00ff 03       		.uleb128 0x3
+ 1523 0100 0E       		.uleb128 0xe
+ 1524 0101 3A       		.uleb128 0x3a
+ 1525 0102 0B       		.uleb128 0xb
+ 1526 0103 3B       		.uleb128 0x3b
+ 1527 0104 05       		.uleb128 0x5
+ 1528 0105 27       		.uleb128 0x27
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 36
+
+
+ 1529 0106 19       		.uleb128 0x19
+ 1530 0107 3C       		.uleb128 0x3c
+ 1531 0108 19       		.uleb128 0x19
+ 1532 0109 01       		.uleb128 0x1
+ 1533 010a 13       		.uleb128 0x13
+ 1534 010b 00       		.byte	0
+ 1535 010c 00       		.byte	0
+ 1536 010d 13       		.uleb128 0x13
+ 1537 010e 05       		.uleb128 0x5
+ 1538 010f 00       		.byte	0
+ 1539 0110 49       		.uleb128 0x49
+ 1540 0111 13       		.uleb128 0x13
+ 1541 0112 00       		.byte	0
+ 1542 0113 00       		.byte	0
+ 1543 0114 14       		.uleb128 0x14
+ 1544 0115 2E       		.uleb128 0x2e
+ 1545 0116 01       		.byte	0x1
+ 1546 0117 3F       		.uleb128 0x3f
+ 1547 0118 19       		.uleb128 0x19
+ 1548 0119 03       		.uleb128 0x3
+ 1549 011a 0E       		.uleb128 0xe
+ 1550 011b 3A       		.uleb128 0x3a
+ 1551 011c 0B       		.uleb128 0xb
+ 1552 011d 3B       		.uleb128 0x3b
+ 1553 011e 05       		.uleb128 0x5
+ 1554 011f 27       		.uleb128 0x27
+ 1555 0120 19       		.uleb128 0x19
+ 1556 0121 3C       		.uleb128 0x3c
+ 1557 0122 19       		.uleb128 0x19
+ 1558 0123 00       		.byte	0
+ 1559 0124 00       		.byte	0
+ 1560 0125 00       		.byte	0
+ 1561              		.section	.debug_loc,"",%progbits
+ 1562              	.Ldebug_loc0:
+ 1563              	.LLST0:
+ 1564 0000 00000000 		.4byte	.LVL0
+ 1565 0004 20000000 		.4byte	.LVL1
+ 1566 0008 0100     		.2byte	0x1
+ 1567 000a 50       		.byte	0x50
+ 1568 000b 20000000 		.4byte	.LVL1
+ 1569 000f FC000000 		.4byte	.LFE38
+ 1570 0013 0400     		.2byte	0x4
+ 1571 0015 F3       		.byte	0xf3
+ 1572 0016 01       		.uleb128 0x1
+ 1573 0017 50       		.byte	0x50
+ 1574 0018 9F       		.byte	0x9f
+ 1575 0019 00000000 		.4byte	0
+ 1576 001d 00000000 		.4byte	0
+ 1577              	.LLST1:
+ 1578 0021 00000000 		.4byte	.LVL0
+ 1579 0025 2B000000 		.4byte	.LVL2-1
+ 1580 0029 0100     		.2byte	0x1
+ 1581 002b 51       		.byte	0x51
+ 1582 002c 2B000000 		.4byte	.LVL2-1
+ 1583 0030 3A000000 		.4byte	.LVL5
+ 1584 0034 0400     		.2byte	0x4
+ 1585 0036 F3       		.byte	0xf3
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 37
+
+
+ 1586 0037 01       		.uleb128 0x1
+ 1587 0038 51       		.byte	0x51
+ 1588 0039 9F       		.byte	0x9f
+ 1589 003a 3A000000 		.4byte	.LVL5
+ 1590 003e 41000000 		.4byte	.LVL6-1
+ 1591 0042 0100     		.2byte	0x1
+ 1592 0044 51       		.byte	0x51
+ 1593 0045 41000000 		.4byte	.LVL6-1
+ 1594 0049 50000000 		.4byte	.LVL9
+ 1595 004d 0400     		.2byte	0x4
+ 1596 004f F3       		.byte	0xf3
+ 1597 0050 01       		.uleb128 0x1
+ 1598 0051 51       		.byte	0x51
+ 1599 0052 9F       		.byte	0x9f
+ 1600 0053 50000000 		.4byte	.LVL9
+ 1601 0057 57000000 		.4byte	.LVL10-1
+ 1602 005b 0100     		.2byte	0x1
+ 1603 005d 51       		.byte	0x51
+ 1604 005e 57000000 		.4byte	.LVL10-1
+ 1605 0062 66000000 		.4byte	.LVL13
+ 1606 0066 0400     		.2byte	0x4
+ 1607 0068 F3       		.byte	0xf3
+ 1608 0069 01       		.uleb128 0x1
+ 1609 006a 51       		.byte	0x51
+ 1610 006b 9F       		.byte	0x9f
+ 1611 006c 66000000 		.4byte	.LVL13
+ 1612 0070 6F000000 		.4byte	.LVL14-1
+ 1613 0074 0100     		.2byte	0x1
+ 1614 0076 51       		.byte	0x51
+ 1615 0077 6F000000 		.4byte	.LVL14-1
+ 1616 007b 7E000000 		.4byte	.LVL17
+ 1617 007f 0400     		.2byte	0x4
+ 1618 0081 F3       		.byte	0xf3
+ 1619 0082 01       		.uleb128 0x1
+ 1620 0083 51       		.byte	0x51
+ 1621 0084 9F       		.byte	0x9f
+ 1622 0085 7E000000 		.4byte	.LVL17
+ 1623 0089 83000000 		.4byte	.LVL18-1
+ 1624 008d 0100     		.2byte	0x1
+ 1625 008f 51       		.byte	0x51
+ 1626 0090 83000000 		.4byte	.LVL18-1
+ 1627 0094 94000000 		.4byte	.LVL21
+ 1628 0098 0400     		.2byte	0x4
+ 1629 009a F3       		.byte	0xf3
+ 1630 009b 01       		.uleb128 0x1
+ 1631 009c 51       		.byte	0x51
+ 1632 009d 9F       		.byte	0x9f
+ 1633 009e 94000000 		.4byte	.LVL21
+ 1634 00a2 99000000 		.4byte	.LVL22-1
+ 1635 00a6 0100     		.2byte	0x1
+ 1636 00a8 51       		.byte	0x51
+ 1637 00a9 99000000 		.4byte	.LVL22-1
+ 1638 00ad AA000000 		.4byte	.LVL25
+ 1639 00b1 0400     		.2byte	0x4
+ 1640 00b3 F3       		.byte	0xf3
+ 1641 00b4 01       		.uleb128 0x1
+ 1642 00b5 51       		.byte	0x51
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 38
+
+
+ 1643 00b6 9F       		.byte	0x9f
+ 1644 00b7 AA000000 		.4byte	.LVL25
+ 1645 00bb B1000000 		.4byte	.LVL26-1
+ 1646 00bf 0100     		.2byte	0x1
+ 1647 00c1 51       		.byte	0x51
+ 1648 00c2 B1000000 		.4byte	.LVL26-1
+ 1649 00c6 C0000000 		.4byte	.LVL29
+ 1650 00ca 0400     		.2byte	0x4
+ 1651 00cc F3       		.byte	0xf3
+ 1652 00cd 01       		.uleb128 0x1
+ 1653 00ce 51       		.byte	0x51
+ 1654 00cf 9F       		.byte	0x9f
+ 1655 00d0 C0000000 		.4byte	.LVL29
+ 1656 00d4 C7000000 		.4byte	.LVL30-1
+ 1657 00d8 0100     		.2byte	0x1
+ 1658 00da 51       		.byte	0x51
+ 1659 00db C7000000 		.4byte	.LVL30-1
+ 1660 00df D8000000 		.4byte	.LVL33
+ 1661 00e3 0400     		.2byte	0x4
+ 1662 00e5 F3       		.byte	0xf3
+ 1663 00e6 01       		.uleb128 0x1
+ 1664 00e7 51       		.byte	0x51
+ 1665 00e8 9F       		.byte	0x9f
+ 1666 00e9 D8000000 		.4byte	.LVL33
+ 1667 00ed DF000000 		.4byte	.LVL34-1
+ 1668 00f1 0100     		.2byte	0x1
+ 1669 00f3 51       		.byte	0x51
+ 1670 00f4 DF000000 		.4byte	.LVL34-1
+ 1671 00f8 FC000000 		.4byte	.LFE38
+ 1672 00fc 0400     		.2byte	0x4
+ 1673 00fe F3       		.byte	0xf3
+ 1674 00ff 01       		.uleb128 0x1
+ 1675 0100 51       		.byte	0x51
+ 1676 0101 9F       		.byte	0x9f
+ 1677 0102 00000000 		.4byte	0
+ 1678 0106 00000000 		.4byte	0
+ 1679              	.LLST2:
+ 1680 010a 00000000 		.4byte	.LVL37
+ 1681 010e 18000000 		.4byte	.LVL38
+ 1682 0112 0100     		.2byte	0x1
+ 1683 0114 50       		.byte	0x50
+ 1684 0115 18000000 		.4byte	.LVL38
+ 1685 0119 1E000000 		.4byte	.LVL40
+ 1686 011d 0400     		.2byte	0x4
+ 1687 011f F3       		.byte	0xf3
+ 1688 0120 01       		.uleb128 0x1
+ 1689 0121 50       		.byte	0x50
+ 1690 0122 9F       		.byte	0x9f
+ 1691 0123 1E000000 		.4byte	.LVL40
+ 1692 0127 22000000 		.4byte	.LVL41
+ 1693 012b 0100     		.2byte	0x1
+ 1694 012d 50       		.byte	0x50
+ 1695 012e 22000000 		.4byte	.LVL41
+ 1696 0132 2C000000 		.4byte	.LVL43
+ 1697 0136 0400     		.2byte	0x4
+ 1698 0138 F3       		.byte	0xf3
+ 1699 0139 01       		.uleb128 0x1
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 39
+
+
+ 1700 013a 50       		.byte	0x50
+ 1701 013b 9F       		.byte	0x9f
+ 1702 013c 2C000000 		.4byte	.LVL43
+ 1703 0140 6C020000 		.4byte	.LVL44
+ 1704 0144 0100     		.2byte	0x1
+ 1705 0146 50       		.byte	0x50
+ 1706 0147 6C020000 		.4byte	.LVL44
+ 1707 014b 9C020000 		.4byte	.LFE37
+ 1708 014f 0400     		.2byte	0x4
+ 1709 0151 F3       		.byte	0xf3
+ 1710 0152 01       		.uleb128 0x1
+ 1711 0153 50       		.byte	0x50
+ 1712 0154 9F       		.byte	0x9f
+ 1713 0155 00000000 		.4byte	0
+ 1714 0159 00000000 		.4byte	0
+ 1715              		.section	.debug_aranges,"",%progbits
+ 1716 0000 24000000 		.4byte	0x24
+ 1717 0004 0200     		.2byte	0x2
+ 1718 0006 00000000 		.4byte	.Ldebug_info0
+ 1719 000a 04       		.byte	0x4
+ 1720 000b 00       		.byte	0
+ 1721 000c 0000     		.2byte	0
+ 1722 000e 0000     		.2byte	0
+ 1723 0010 00000000 		.4byte	.LFB38
+ 1724 0014 FC000000 		.4byte	.LFE38-.LFB38
+ 1725 0018 00000000 		.4byte	.LFB37
+ 1726 001c 9C020000 		.4byte	.LFE37-.LFB37
+ 1727 0020 00000000 		.4byte	0
+ 1728 0024 00000000 		.4byte	0
+ 1729              		.section	.debug_ranges,"",%progbits
+ 1730              	.Ldebug_ranges0:
+ 1731 0000 00000000 		.4byte	.LFB38
+ 1732 0004 FC000000 		.4byte	.LFE38
+ 1733 0008 00000000 		.4byte	.LFB37
+ 1734 000c 9C020000 		.4byte	.LFE37
+ 1735 0010 00000000 		.4byte	0
+ 1736 0014 00000000 		.4byte	0
+ 1737              		.section	.debug_line,"",%progbits
+ 1738              	.Ldebug_line0:
+ 1739 0000 41010000 		.section	.debug_str,"MS",%progbits,1
+ 1739      02009400 
+ 1739      00000201 
+ 1739      FB0E0D00 
+ 1739      01010101 
+ 1740              	.LASF40:
+ 1741 0000 434F4C4F 		.ascii	"COLOR_WHITE\000"
+ 1741      525F5748 
+ 1741      49544500 
+ 1742              	.LASF2:
+ 1743 000c 73686F72 		.ascii	"short int\000"
+ 1743      7420696E 
+ 1743      7400
+ 1744              	.LASF53:
+ 1745 0016 636F6C6F 		.ascii	"color\000"
+ 1745      7200
+ 1746              	.LASF62:
+ 1747 001c 50574D5F 		.ascii	"PWM_Red_WriteCompare\000"
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 40
+
+
+ 1747      5265645F 
+ 1747      57726974 
+ 1747      65436F6D 
+ 1747      70617265 
+ 1748              	.LASF25:
+ 1749 0031 47455354 		.ascii	"GESTURE_OUTER_CLKWISE\000"
+ 1749      5552455F 
+ 1749      4F555445 
+ 1749      525F434C 
+ 1749      4B574953 
+ 1750              	.LASF42:
+ 1751 0047 42524947 		.ascii	"BRIGHT_LEVEL_0\000"
+ 1751      48545F4C 
+ 1751      4556454C 
+ 1751      5F3000
+ 1752              	.LASF43:
+ 1753 0056 42524947 		.ascii	"BRIGHT_LEVEL_1\000"
+ 1753      48545F4C 
+ 1753      4556454C 
+ 1753      5F3100
+ 1754              	.LASF44:
+ 1755 0065 42524947 		.ascii	"BRIGHT_LEVEL_2\000"
+ 1755      48545F4C 
+ 1755      4556454C 
+ 1755      5F3200
+ 1756              	.LASF45:
+ 1757 0074 42524947 		.ascii	"BRIGHT_LEVEL_3\000"
+ 1757      48545F4C 
+ 1757      4556454C 
+ 1757      5F3300
+ 1758              	.LASF46:
+ 1759 0083 42524947 		.ascii	"BRIGHT_LEVEL_4\000"
+ 1759      48545F4C 
+ 1759      4556454C 
+ 1759      5F3400
+ 1760              	.LASF47:
+ 1761 0092 42524947 		.ascii	"BRIGHT_LEVEL_5\000"
+ 1761      48545F4C 
+ 1761      4556454C 
+ 1761      5F3500
+ 1762              	.LASF48:
+ 1763 00a1 42524947 		.ascii	"BRIGHT_LEVEL_6\000"
+ 1763      48545F4C 
+ 1763      4556454C 
+ 1763      5F3600
+ 1764              	.LASF49:
+ 1765 00b0 42524947 		.ascii	"BRIGHT_LEVEL_7\000"
+ 1765      48545F4C 
+ 1765      4556454C 
+ 1765      5F3700
+ 1766              	.LASF50:
+ 1767 00bf 42524947 		.ascii	"BRIGHT_LEVEL_8\000"
+ 1767      48545F4C 
+ 1767      4556454C 
+ 1767      5F3800
+ 1768              	.LASF51:
+ 1769 00ce 42524947 		.ascii	"BRIGHT_LEVEL_9\000"
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 41
+
+
+ 1769      48545F4C 
+ 1769      4556454C 
+ 1769      5F3900
+ 1770              	.LASF18:
+ 1771 00dd 47455354 		.ascii	"GESTURE_LEFT_SWIPE\000"
+ 1771      5552455F 
+ 1771      4C454654 
+ 1771      5F535749 
+ 1771      504500
+ 1772              	.LASF59:
+ 1773 00f0 69735267 		.ascii	"isRgbLedOn\000"
+ 1773      624C6564 
+ 1773      4F6E00
+ 1774              	.LASF29:
+ 1775 00fb 47455354 		.ascii	"GESTURE_INVALID\000"
+ 1775      5552455F 
+ 1775      494E5641 
+ 1775      4C494400 
+ 1776              	.LASF19:
+ 1777 010b 47455354 		.ascii	"GESTURE_RIGHT_SWIPE\000"
+ 1777      5552455F 
+ 1777      52494748 
+ 1777      545F5357 
+ 1777      49504500 
+ 1778              	.LASF26:
+ 1779 011f 47455354 		.ascii	"GESTURE_OUTER_COUNTER_CLKWISE\000"
+ 1779      5552455F 
+ 1779      4F555445 
+ 1779      525F434F 
+ 1779      554E5445 
+ 1780              	.LASF15:
+ 1781 013d 47455354 		.ascii	"GESTURE_LEFT_CLICK\000"
+ 1781      5552455F 
+ 1781      4C454654 
+ 1781      5F434C49 
+ 1781      434B00
+ 1782              	.LASF0:
+ 1783 0150 7369676E 		.ascii	"signed char\000"
+ 1783      65642063 
+ 1783      68617200 
+ 1784              	.LASF9:
+ 1785 015c 666C6F61 		.ascii	"float\000"
+ 1785      7400
+ 1786              	.LASF65:
+ 1787 0162 2E5C4C65 		.ascii	".\\LedControl.c\000"
+ 1787      64436F6E 
+ 1787      74726F6C 
+ 1787      2E6300
+ 1788              	.LASF6:
+ 1789 0171 6C6F6E67 		.ascii	"long long int\000"
+ 1789      206C6F6E 
+ 1789      6720696E 
+ 1789      7400
+ 1790              	.LASF16:
+ 1791 017f 47455354 		.ascii	"GESTURE_RIGHT_CLICK\000"
+ 1791      5552455F 
+ 1791      52494748 
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 42
+
+
+ 1791      545F434C 
+ 1791      49434B00 
+ 1792              	.LASF4:
+ 1793 0193 6C6F6E67 		.ascii	"long int\000"
+ 1793      20696E74 
+ 1793      00
+ 1794              	.LASF67:
+ 1795 019c 63617073 		.ascii	"capsenseButtonStatus\000"
+ 1795      656E7365 
+ 1795      42757474 
+ 1795      6F6E5374 
+ 1795      61747573 
+ 1796              	.LASF21:
+ 1797 01b1 47455354 		.ascii	"GESTURE_DOWN_SWIPE\000"
+ 1797      5552455F 
+ 1797      444F574E 
+ 1797      5F535749 
+ 1797      504500
+ 1798              	.LASF64:
+ 1799 01c4 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1799      4320342E 
+ 1799      392E3320 
+ 1799      32303135 
+ 1799      30333033 
+ 1800 01f7 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 1800      20726576 
+ 1800      6973696F 
+ 1800      6E203232 
+ 1800      31323230 
+ 1801 022a 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1801      66756E63 
+ 1801      74696F6E 
+ 1801      2D736563 
+ 1801      74696F6E 
+ 1802              	.LASF1:
+ 1803 0252 756E7369 		.ascii	"unsigned char\000"
+ 1803      676E6564 
+ 1803      20636861 
+ 1803      7200
+ 1804              	.LASF33:
+ 1805 0260 434F4C4F 		.ascii	"COLOR_VIOLET\000"
+ 1805      525F5649 
+ 1805      4F4C4554 
+ 1805      00
+ 1806              	.LASF35:
+ 1807 026d 434F4C4F 		.ascii	"COLOR_BLUE\000"
+ 1807      525F424C 
+ 1807      554500
+ 1808              	.LASF63:
+ 1809 0278 50574D5F 		.ascii	"PWM_Blue_WriteCompare\000"
+ 1809      426C7565 
+ 1809      5F577269 
+ 1809      7465436F 
+ 1809      6D706172 
+ 1810              	.LASF36:
+ 1811 028e 434F4C4F 		.ascii	"COLOR_GREEN\000"
+ 1811      525F4752 
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 43
+
+
+ 1811      45454E00 
+ 1812              	.LASF52:
+ 1813 029a 74427269 		.ascii	"tBrightLevel\000"
+ 1813      6768744C 
+ 1813      6576656C 
+ 1813      00
+ 1814              	.LASF7:
+ 1815 02a7 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1815      206C6F6E 
+ 1815      6720756E 
+ 1815      7369676E 
+ 1815      65642069 
+ 1816              	.LASF28:
+ 1817 02be 47455354 		.ascii	"GESTURE_DOWN_CLICK\000"
+ 1817      5552455F 
+ 1817      444F574E 
+ 1817      5F434C49 
+ 1817      434B00
+ 1818              	.LASF8:
+ 1819 02d1 756E7369 		.ascii	"unsigned int\000"
+ 1819      676E6564 
+ 1819      20696E74 
+ 1819      00
+ 1820              	.LASF32:
+ 1821 02de 434F4C4F 		.ascii	"COLOR_OFF\000"
+ 1821      525F4F46 
+ 1821      4600
+ 1822              	.LASF54:
+ 1823 02e8 74656D70 		.ascii	"tempBrightness\000"
+ 1823      42726967 
+ 1823      68746E65 
+ 1823      737300
+ 1824              	.LASF61:
+ 1825 02f7 62726967 		.ascii	"brightness\000"
+ 1825      68746E65 
+ 1825      737300
+ 1826              	.LASF3:
+ 1827 0302 73686F72 		.ascii	"short unsigned int\000"
+ 1827      7420756E 
+ 1827      7369676E 
+ 1827      65642069 
+ 1827      6E7400
+ 1828              	.LASF13:
+ 1829 0315 47455354 		.ascii	"GESTURE_NONE\000"
+ 1829      5552455F 
+ 1829      4E4F4E45 
+ 1829      00
+ 1830              	.LASF11:
+ 1831 0322 63686172 		.ascii	"char\000"
+ 1831      00
+ 1832              	.LASF14:
+ 1833 0327 47455354 		.ascii	"GESTURE_RELEASE\000"
+ 1833      5552455F 
+ 1833      52454C45 
+ 1833      41534500 
+ 1834              	.LASF58:
+ 1835 0337 5F426F6F 		.ascii	"_Bool\000"
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 44
+
+
+ 1835      6C00
+ 1836              	.LASF56:
+ 1837 033d 55706461 		.ascii	"UpdateLedColor\000"
+ 1837      74654C65 
+ 1837      64436F6C 
+ 1837      6F7200
+ 1838              	.LASF22:
+ 1839 034c 47455354 		.ascii	"GESTURE_OUTWARD_SWIPE\000"
+ 1839      5552455F 
+ 1839      4F555457 
+ 1839      4152445F 
+ 1839      53574950 
+ 1840              	.LASF30:
+ 1841 0362 75696E74 		.ascii	"uint32\000"
+ 1841      333200
+ 1842              	.LASF5:
+ 1843 0369 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1843      20756E73 
+ 1843      69676E65 
+ 1843      6420696E 
+ 1843      7400
+ 1844              	.LASF60:
+ 1845 037b 6C656443 		.ascii	"ledColor\000"
+ 1845      6F6C6F72 
+ 1845      00
+ 1846              	.LASF68:
+ 1847 0384 50574D5F 		.ascii	"PWM_Green_WriteCompare\000"
+ 1847      47726565 
+ 1847      6E5F5772 
+ 1847      69746543 
+ 1847      6F6D7061 
+ 1848              	.LASF10:
+ 1849 039b 646F7562 		.ascii	"double\000"
+ 1849      6C6500
+ 1850              	.LASF38:
+ 1851 03a2 434F4C4F 		.ascii	"COLOR_ORANGE\000"
+ 1851      525F4F52 
+ 1851      414E4745 
+ 1851      00
+ 1852              	.LASF20:
+ 1853 03af 47455354 		.ascii	"GESTURE_UP_SWIPE\000"
+ 1853      5552455F 
+ 1853      55505F53 
+ 1853      57495045 
+ 1853      00
+ 1854              	.LASF34:
+ 1855 03c0 434F4C4F 		.ascii	"COLOR_INDIGO\000"
+ 1855      525F494E 
+ 1855      4449474F 
+ 1855      00
+ 1856              	.LASF41:
+ 1857 03cd 744C6564 		.ascii	"tLedColor\000"
+ 1857      436F6C6F 
+ 1857      7200
+ 1858              	.LASF12:
+ 1859 03d7 73697A65 		.ascii	"sizetype\000"
+ 1859      74797065 
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 45
+
+
+ 1859      00
+ 1860              	.LASF23:
+ 1861 03e0 47455354 		.ascii	"GESTURE_INNER_CLKWISE\000"
+ 1861      5552455F 
+ 1861      494E4E45 
+ 1861      525F434C 
+ 1861      4B574953 
+ 1862              	.LASF57:
+ 1863 03f6 67657374 		.ascii	"gestureId\000"
+ 1863      75726549 
+ 1863      6400
+ 1864              	.LASF24:
+ 1865 0400 47455354 		.ascii	"GESTURE_INNER_COUNTER_CLKWISE\000"
+ 1865      5552455F 
+ 1865      494E4E45 
+ 1865      525F434F 
+ 1865      554E5445 
+ 1866              	.LASF39:
+ 1867 041e 434F4C4F 		.ascii	"COLOR_RED\000"
+ 1867      525F5245 
+ 1867      4400
+ 1868              	.LASF27:
+ 1869 0428 47455354 		.ascii	"GESTURE_UP_CLICK\000"
+ 1869      5552455F 
+ 1869      55505F43 
+ 1869      4C49434B 
+ 1869      00
+ 1870              	.LASF17:
+ 1871 0439 47455354 		.ascii	"GESTURE_MIDDLE_CLICK\000"
+ 1871      5552455F 
+ 1871      4D494444 
+ 1871      4C455F43 
+ 1871      4C49434B 
+ 1872              	.LASF55:
+ 1873 044e 5365744C 		.ascii	"SetLedColor\000"
+ 1873      6564436F 
+ 1873      6C6F7200 
+ 1874              	.LASF31:
+ 1875 045a 74476573 		.ascii	"tGestureId\000"
+ 1875      74757265 
+ 1875      496400
+ 1876              	.LASF37:
+ 1877 0465 434F4C4F 		.ascii	"COLOR_YELLOW\000"
+ 1877      525F5945 
+ 1877      4C4C4F57 
+ 1877      00
+ 1878              	.LASF66:
+ 1879 0472 433A5C55 		.ascii	"C:\\Users\\Javier Barragan\\Documents\\PSoC Creator"
+ 1879      73657273 
+ 1879      5C4A6176 
+ 1879      69657220 
+ 1879      42617272 
+ 1880 04a1 5C435938 		.ascii	"\\CY8CKIT_046_USB_Mouse\\CY8CKIT_046_USB_Mouse.cyds"
+ 1880      434B4954 
+ 1880      5F303436 
+ 1880      5F555342 
+ 1880      5F4D6F75 
+ARM GAS  C:\Users\JAVIER~1\AppData\Local\Temp\cc7aakaO.s 			page 46
+
+
+ 1881 04d2 6E00     		.ascii	"n\000"
+ 1882              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
